@@ -1,11 +1,10 @@
 import type { Config } from "tailwindcss";
 
 content: [
-  "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  "./app/**/*.{js,ts,jsx,tsx,mdx,css}",
   "./components/**/*.{js,ts,jsx,tsx,mdx}",
   "./hooks/**/*.{js,ts,jsx,tsx,mdx}",
   "./lib/**/*.{js,ts,jsx,tsx,mdx}",
-  "./styles/**/*.{css}"
 ],
   theme: {
   	extend: {
