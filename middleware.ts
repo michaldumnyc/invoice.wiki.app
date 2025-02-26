@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
     connect-src 'self' https://www.google.com/recaptcha/ https://*.vercel.app;
     block-all-mixed-content;
     upgrade-insecure-requests;
-  `
+  `.replace(/__NONCE__/g, nonce);
 
   const requestHeaders = new Headers(request.headers)
   requestHeaders.set("x-nonce", nonce)
