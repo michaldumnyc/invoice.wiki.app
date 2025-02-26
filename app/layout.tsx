@@ -1,12 +1,10 @@
 import type React from "react"
 import { Inter } from "next/font/google"
-import "./globals.css"
-import "./styles/components.css"
+import "@/app/styles/globals.css";
 import type { Metadata } from "next"
 import { headers } from "next/headers"
 import Script from "next/script"
 import { PrivacyBanner } from "@/components/PrivacyBanner"
-import "../styles/global.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
