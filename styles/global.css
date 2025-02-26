@@ -1,0 +1,84 @@
+/* Добавьте этот файл в ваш проект */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Добавьте здесь другие часто используемые стили */
+
+/* Add these styles for Radix UI and other dynamic components */
+[data-radix-popper-content-wrapper] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: max-content;
+  min-width: max-content;
+  box-sizing: border-box;
+}
+
+[data-state="open"] {
+  animation: fadeIn 0.2s ease-out;
+}
+
+[data-state="closed"] {
+  animation: fadeOut 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Add styles for Select component positioning */
+.select-content {
+  position: relative;
+  z-index: 50;
+  min-width: 8rem;
+  overflow: hidden;
+  background-color: var(--background);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.select-viewport {
+  padding: 0.25rem;
+}
+
+/* Add any other necessary styles here */
+
