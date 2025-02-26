@@ -26,7 +26,7 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-          nonce={nonce}
+          nonce={nonce ?? undefined}
         />
       </head>
       <body className={inter.className}>
