@@ -75,6 +75,5 @@
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.7.3",
 		"@swc/core": "^1.11.1",
-		"@next/swc": "^15.1.7"
 	}
 }
