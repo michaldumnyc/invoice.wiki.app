@@ -21,30 +21,32 @@ export default function Header() {
           </Link>
 
           {/* Desktop & Tablet Navigation (Visible on lg and larger) */}
-          <ul className="hidden lg:flex space-x-6">
-            <li>
-              <Link
-                href="/about"
-                className={cn(
-                  "text-gray-600 hover:text-blue-500 transition-colors",
-                  pathname === "/about" && "text-blue-500",
-                )}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/create-invoice"
-                className={cn(
-                  "text-gray-600 hover:text-blue-500 transition-colors",
-                  pathname === "/create-invoice" && "text-blue-500",
-                )}
-              >
-                Create Invoice
-              </Link>
-            </li>
-          </ul>
+          <div className="hidden lg:block">
+            <ul className="flex space-x-6">
+              <li>
+                <Link
+                  href="/about"
+                  className={cn(
+                    "text-gray-600 hover:text-blue-500 transition-colors",
+                    pathname === "/about" && "text-blue-500",
+                  )}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/create-invoice"
+                  className={cn(
+                    "text-gray-600 hover:text-blue-500 transition-colors",
+                    pathname === "/create-invoice" && "text-blue-500",
+                  )}
+                >
+                  Create Invoice
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           {/* Mobile Menu (Visible only on small screens) */}
           <MobileMenu />
