@@ -1355,7 +1355,6 @@ const CreateInvoiceForm = () => {
       </section>
       {/* Add nonce to any inline styles */}
       <style nonce={nonce}></style>
-    </ErrorBoundary>
   )
 }
 
