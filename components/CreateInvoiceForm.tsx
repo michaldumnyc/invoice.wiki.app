@@ -280,9 +280,9 @@ const CreateInvoiceForm = () => {
   }, [executeRecaptcha])
 
   return (
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
-        <Header />
-        <div className="container px-4 md:px-6 mx-auto max-w-4xl">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <Header />
+      <div className="container px-4 md:px-6 mx-auto max-w-4xl">
           <div className="text-left mb-8">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Create Invoice</h1>
             <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
