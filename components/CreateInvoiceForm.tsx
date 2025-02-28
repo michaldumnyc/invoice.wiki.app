@@ -19,7 +19,6 @@ import { generateInvoicePDF } from "@/app/utils/generate-pdf"
 import { currencies } from "@/app/utils/currencies"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import { ErrorBoundary } from "react-error-boundary"
 import { TermsDialog } from "@/components/TermsDialog"
 import { invoiceFormSchema } from "@/lib/schemas"
 import { useMediaQuery } from "@/hooks/useMediaQuery"
@@ -281,13 +280,6 @@ const CreateInvoiceForm = () => {
   }, [executeRecaptcha])
 
   return (
-    <ErrorBoundary
-      fallback={
-        <Alert variant="destructive">
-          <AlertDescription>Something went wrong. Please try again later.</AlertDescription>
-        </Alert>
-      }
-    >
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <Header />
         <div className="container px-4 md:px-6 mx-auto max-w-4xl">
