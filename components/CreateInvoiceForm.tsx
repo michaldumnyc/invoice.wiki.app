@@ -24,6 +24,14 @@ import { TermsDialog } from "@/components/TermsDialog"
 import { invoiceFormSchema } from "@/lib/schemas"
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 
+// Импортируем функции для очистки ввода
+import {
+  sanitizeInput,
+  sanitizeEmail,
+  sanitizeWebsite,
+  sanitizeNumber,
+} from "@/lib/security"
+
 const paymentMethods = [
   { value: "bank_transfer", label: "Bank Transfer" },
   { value: "cash", label: "Cash" },
@@ -161,7 +169,7 @@ const CreateInvoiceForm = () => {
         setError("Failed to verify reCAPTCHA. Please try again.")
       }
     }
-  }, [])  
+  }, [])
 
   const onSubmit = useCallback(
     async (data: InvoiceFormValues) => {
@@ -302,6 +310,7 @@ const CreateInvoiceForm = () => {
                         <CardTitle>Seller Information</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
+                        {/* sellerCompanyName */}
                         <FormField
                           control={control}
                           name="sellerCompanyName"
@@ -309,12 +318,18 @@ const CreateInvoiceForm = () => {
                             <FormItem>
                               <FormLabel>Company Name *</FormLabel>
                               <FormControl>
-                                <Input {...field} maxLength={100} />
+                                <Input
+                                  {...field}
+                                  maxLength={100}
+                                  onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* sellerAddress */}
                         <FormField
                           control={control}
                           name="sellerAddress"
@@ -322,12 +337,18 @@ const CreateInvoiceForm = () => {
                             <FormItem>
                               <FormLabel>Address *</FormLabel>
                               <FormControl>
-                                <Input {...field} maxLength={250} />
+                                <Input
+                                  {...field}
+                                  maxLength={250}
+                                  onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* sellerCompanyId */}
                         <FormField
                           control={control}
                           name="sellerCompanyId"
@@ -350,12 +371,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.sellerCompanyId && <Input {...field} maxLength={40} />}
+                                {fieldVisibility.sellerCompanyId && (
+                                  <Input
+                                    {...field}
+                                    maxLength={40}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* sellerVatId */}
                         <FormField
                           control={control}
                           name="sellerVatId"
@@ -378,12 +407,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.sellerVatId && <Input {...field} maxLength={43} />}
+                                {fieldVisibility.sellerVatId && (
+                                  <Input
+                                    {...field}
+                                    maxLength={43}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* sellerEmail */}
                         <FormField
                           control={control}
                           name="sellerEmail"
@@ -406,12 +443,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.sellerEmail && <Input {...field} maxLength={90} />}
+                                {fieldVisibility.sellerEmail && (
+                                  <Input
+                                    {...field}
+                                    maxLength={90}
+                                    onChange={(e) => field.onChange(sanitizeEmail(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* sellerWebsite */}
                         <FormField
                           control={control}
                           name="sellerWebsite"
@@ -439,7 +484,9 @@ const CreateInvoiceForm = () => {
                                     {...field}
                                     maxLength={60}
                                     onChange={(e) => {
-                                      const value = e.target.value.replace(/^(https?:\/\/)/, "")
+                                      const raw = sanitizeWebsite(e.target.value)
+                                      // убираем http:// https://
+                                      const value = raw.replace(/^(https?:\\/\\/)/, "")
                                       field.onChange(value)
                                     }}
                                   />
@@ -458,6 +505,7 @@ const CreateInvoiceForm = () => {
                         <CardTitle>Buyer Information</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
+                        {/* buyerCompanyName */}
                         <FormField
                           control={control}
                           name="buyerCompanyName"
@@ -465,12 +513,18 @@ const CreateInvoiceForm = () => {
                             <FormItem>
                               <FormLabel>Company Name *</FormLabel>
                               <FormControl>
-                                <Input {...field} maxLength={100} />
+                                <Input
+                                  {...field}
+                                  maxLength={100}
+                                  onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* buyerAddress */}
                         <FormField
                           control={control}
                           name="buyerAddress"
@@ -478,12 +532,18 @@ const CreateInvoiceForm = () => {
                             <FormItem>
                               <FormLabel>Address *</FormLabel>
                               <FormControl>
-                                <Input {...field} maxLength={250} />
+                                <Input
+                                  {...field}
+                                  maxLength={250}
+                                  onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* buyerCompanyId */}
                         <FormField
                           control={control}
                           name="buyerCompanyId"
@@ -506,12 +566,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.buyerCompanyId && <Input {...field} maxLength={40} />}
+                                {fieldVisibility.buyerCompanyId && (
+                                  <Input
+                                    {...field}
+                                    maxLength={40}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* buyerVatId */}
                         <FormField
                           control={control}
                           name="buyerVatId"
@@ -534,12 +602,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.buyerVatId && <Input {...field} maxLength={43} />}
+                                {fieldVisibility.buyerVatId && (
+                                  <Input
+                                    {...field}
+                                    maxLength={43}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* buyerEmail */}
                         <FormField
                           control={control}
                           name="buyerEmail"
@@ -562,12 +638,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.buyerEmail && <Input {...field} maxLength={90} />}
+                                {fieldVisibility.buyerEmail && (
+                                  <Input
+                                    {...field}
+                                    maxLength={90}
+                                    onChange={(e) => field.onChange(sanitizeEmail(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* buyerWebsite */}
                         <FormField
                           control={control}
                           name="buyerWebsite"
@@ -595,7 +679,8 @@ const CreateInvoiceForm = () => {
                                     {...field}
                                     maxLength={60}
                                     onChange={(e) => {
-                                      const value = e.target.value.replace(/^(https?:\/\/)/, "")
+                                      const raw = sanitizeWebsite(e.target.value)
+                                      const value = raw.replace(/^(https?:\\/\\/)/, "")
                                       field.onChange(value)
                                     }}
                                   />
@@ -616,6 +701,7 @@ const CreateInvoiceForm = () => {
                     </CardHeader>
                     <CardContent>
                       <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"} gap-4`}>
+                        {/* invoiceNumber */}
                         <FormField
                           control={control}
                           name="invoiceNumber"
@@ -623,12 +709,17 @@ const CreateInvoiceForm = () => {
                             <FormItem>
                               <FormLabel>Invoice Number *</FormLabel>
                               <FormControl>
-                                <Input {...field} maxLength={30} />
+                                <Input
+                                  {...field}
+                                  maxLength={30}
+                                  onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+                        {/* issueDate */}
                         <FormField
                           control={control}
                           name="issueDate"
@@ -646,6 +737,7 @@ const CreateInvoiceForm = () => {
                             </FormItem>
                           )}
                         />
+                        {/* dueDate */}
                         <FormField
                           control={control}
                           name="dueDate"
@@ -663,6 +755,7 @@ const CreateInvoiceForm = () => {
                             </FormItem>
                           )}
                         />
+                        {/* currency */}
                         <FormField
                           control={control}
                           name="currency"
@@ -676,9 +769,9 @@ const CreateInvoiceForm = () => {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent className="max-h-[200px] overflow-y-auto">
-                                  {currencies.map((currency) => (
-                                    <SelectItem key={currency.code} value={currency.code}>
-                                      {currency.code} - {currency.name}
+                                  {currencies.map((c) => (
+                                    <SelectItem key={c.code} value={c.code}>
+                                      {c.code} - {c.name}
                                     </SelectItem>
                                   ))}
                                 </SelectContent>
@@ -698,6 +791,7 @@ const CreateInvoiceForm = () => {
                     </CardHeader>
                     <CardContent>
                       <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"} gap-4`}>
+                        {/* referenceNumber */}
                         <FormField
                           control={control}
                           name="referenceNumber"
@@ -720,12 +814,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.referenceNumber && <Input {...field} maxLength={35} />}
+                                {fieldVisibility.referenceNumber && (
+                                  <Input
+                                    {...field}
+                                    maxLength={35}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* customerReferenceNumber */}
                         <FormField
                           control={control}
                           name="customerReferenceNumber"
@@ -748,12 +850,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.customerReferenceNumber && <Input {...field} maxLength={35} />}
+                                {fieldVisibility.customerReferenceNumber && (
+                                  <Input
+                                    {...field}
+                                    maxLength={35}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* orderNumber */}
                         <FormField
                           control={control}
                           name="orderNumber"
@@ -776,12 +886,20 @@ const CreateInvoiceForm = () => {
                                 </Button>
                               </div>
                               <FormControl>
-                                {fieldVisibility.orderNumber && <Input {...field} maxLength={35} />}
+                                {fieldVisibility.orderNumber && (
+                                  <Input
+                                    {...field}
+                                    maxLength={35}
+                                    onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                  />
+                                )}
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* paymentMethod */}
                         <FormField
                           control={control}
                           name="paymentMethod"
@@ -806,8 +924,10 @@ const CreateInvoiceForm = () => {
                             </FormItem>
                           )}
                         />
+
                         {paymentMethod === "bank_transfer" && (
                           <>
+                            {/* bankAccount */}
                             <FormField
                               control={control}
                               name="bankAccount"
@@ -830,12 +950,20 @@ const CreateInvoiceForm = () => {
                                     </Button>
                                   </div>
                                   <FormControl>
-                                    {fieldVisibility.bankAccount && <Input {...field} maxLength={35} />}
+                                    {fieldVisibility.bankAccount && (
+                                      <Input
+                                        {...field}
+                                        maxLength={35}
+                                        onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                      />
+                                    )}
                                   </FormControl>
                                   <FormMessage />
                                 </FormItem>
                               )}
                             />
+
+                            {/* iban */}
                             <FormField
                               control={control}
                               name="iban"
@@ -858,12 +986,20 @@ const CreateInvoiceForm = () => {
                                     </Button>
                                   </div>
                                   <FormControl>
-                                    {fieldVisibility.iban && <Input {...field} maxLength={34} />}
+                                    {fieldVisibility.iban && (
+                                      <Input
+                                        {...field}
+                                        maxLength={34}
+                                        onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                      />
+                                    )}
                                   </FormControl>
                                   <FormMessage />
                                 </FormItem>
                               )}
                             />
+
+                            {/* swift */}
                             <FormField
                               control={control}
                               name="swift"
@@ -886,7 +1022,13 @@ const CreateInvoiceForm = () => {
                                     </Button>
                                   </div>
                                   <FormControl>
-                                    {fieldVisibility.swift && <Input {...field} maxLength={11} />}
+                                    {fieldVisibility.swift && (
+                                      <Input
+                                        {...field}
+                                        maxLength={11}
+                                        onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                      />
+                                    )}
                                   </FormControl>
                                   <FormMessage />
                                 </FormItem>
@@ -915,7 +1057,7 @@ const CreateInvoiceForm = () => {
                                 {...field}
                                 maxLength={210}
                                 onChange={(e) => {
-                                  let value = e.target.value
+                                  let value = sanitizeInput(e.target.value)
                                   // Insert line break every 105 characters
                                   value = value.replace(/(.{105})/g, "$1\n")
                                   field.onChange(value)
@@ -940,7 +1082,10 @@ const CreateInvoiceForm = () => {
                         render={({ field }) => (
                           <FormItem className="flex flex-row items-center space-x-3 space-y-0">
                             <FormControl>
-                              <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                              <Checkbox
+                                checked={field.value}
+                                onCheckedChange={field.onChange}
+                              />
                             </FormControl>
                             <div className="space-y-1 leading-none">
                               <FormLabel>Mark as Paid</FormLabel>
@@ -958,9 +1103,14 @@ const CreateInvoiceForm = () => {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        {fields.map((field, index) => (
-                          <div key={field.id} className="space-y-4">
-                            <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-4"} gap-4`}>
+                        {fields.map((fieldItem, index) => (
+                          <div key={fieldItem.id} className="space-y-4">
+                            <div
+                              className={`grid ${
+                                isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-4"
+                              } gap-4`}
+                            >
+                              {/* item name */}
                               <FormField
                                 control={control}
                                 name={`items.${index}.name`}
@@ -968,12 +1118,18 @@ const CreateInvoiceForm = () => {
                                   <FormItem>
                                     <FormLabel>Item Name</FormLabel>
                                     <FormControl>
-                                      <Input {...field} maxLength={130} />
+                                      <Input
+                                        {...field}
+                                        maxLength={130}
+                                        onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
+                                      />
                                     </FormControl>
                                     <FormMessage />
                                   </FormItem>
                                 )}
                               />
+
+                              {/* quantity */}
                               <FormField
                                 control={control}
                                 name={`items.${index}.quantity`}
@@ -985,11 +1141,14 @@ const CreateInvoiceForm = () => {
                                         type="number"
                                         {...field}
                                         onChange={(e) => {
-                                          const value = Math.min(
-                                            Math.max(1, Number.parseInt(e.target.value) || 1),
-                                            999999,
-                                          )
-                                          field.onChange(value)
+                                          const raw = sanitizeNumber(e.target.value)
+                                          let valueNum = parseInt(raw, 10)
+                                          if (Number.isNaN(valueNum)) {
+                                            valueNum = 1
+                                          }
+                                          // ограничиваем от 1 до 999999
+                                          const clamped = Math.min(Math.max(1, valueNum), 999999)
+                                          field.onChange(clamped)
                                         }}
                                         min={1}
                                         max={999999}
@@ -999,6 +1158,8 @@ const CreateInvoiceForm = () => {
                                   </FormItem>
                                 )}
                               />
+
+                              {/* price */}
                               <FormField
                                 control={control}
                                 name={`items.${index}.price`}
@@ -1010,11 +1171,14 @@ const CreateInvoiceForm = () => {
                                         type="number"
                                         {...field}
                                         onChange={(e) => {
-                                          const value = Math.min(
-                                            Math.max(0, Number.parseFloat(e.target.value) || 0),
-                                            999999999,
-                                          )
-                                          field.onChange(value)
+                                          const raw = sanitizeNumber(e.target.value)
+                                          let valueNum = parseFloat(raw)
+                                          if (Number.isNaN(valueNum)) {
+                                            valueNum = 0
+                                          }
+                                          // от 0 до 999999999
+                                          const clamped = Math.min(Math.max(0, valueNum), 999999999)
+                                          field.onChange(clamped)
                                         }}
                                         min={0}
                                         max={999999999}
@@ -1025,6 +1189,8 @@ const CreateInvoiceForm = () => {
                                   </FormItem>
                                 )}
                               />
+
+                              {/* vatRate */}
                               <FormField
                                 control={control}
                                 name={`items.${index}.vatRate`}
@@ -1036,11 +1202,14 @@ const CreateInvoiceForm = () => {
                                         type="number"
                                         {...field}
                                         onChange={(e) => {
-                                          const value = Math.min(
-                                            Math.max(0, Number.parseFloat(e.target.value) || 0),
-                                            100,
-                                          )
-                                          field.onChange(value)
+                                          const raw = sanitizeNumber(e.target.value)
+                                          let valueNum = parseFloat(raw)
+                                          if (Number.isNaN(valueNum)) {
+                                            valueNum = 0
+                                          }
+                                          // от 0 до 100
+                                          const clamped = Math.min(Math.max(0, valueNum), 100)
+                                          field.onChange(clamped)
                                         }}
                                         min={0}
                                         max={100}
@@ -1064,6 +1233,8 @@ const CreateInvoiceForm = () => {
                             </Button>
                           </div>
                         ))}
+
+                        {/* Add Item Button */}
                         <Button
                           type="button"
                           variant="outline"
@@ -1074,12 +1245,15 @@ const CreateInvoiceForm = () => {
                           Add Item
                         </Button>
                         {fields.length >= 10 && (
-                          <p className="text-sm text-muted-foreground mt-2">Maximum number of items (10) reached.</p>
+                          <p className="text-sm text-muted-foreground mt-2">
+                            Maximum number of items (10) reached.
+                          </p>
                         )}
                       </div>
                     </CardContent>
                   </Card>
 
+                  {/* Terms Accepted + Submit */}
                   <div className={`flex ${isMobile ? "flex-col" : "flex-row"} items-center gap-4 mt-8`}>
                     <FormField
                       control={form.control}
@@ -1087,7 +1261,10 @@ const CreateInvoiceForm = () => {
                       render={({ field }) => (
                         <FormItem className="flex flex-row items-center space-x-3 space-y-0">
                           <FormControl>
-                            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                            <Checkbox
+                              checked={field.value}
+                              onCheckedChange={field.onChange}
+                            />
                           </FormControl>
                           <div className="space-y-1 leading-none">
                             <FormLabel>
@@ -1137,18 +1314,22 @@ const CreateInvoiceForm = () => {
                           <div className="grid grid-cols-2 gap-x-4 text-right">
                             <span className="text-gray-600">Net Total:</span>
                             <span className="font-medium">
-                              {new Intl.NumberFormat("en-US", { style: "currency", currency: currency }).format(
-                                items.reduce((sum, item) => sum + item.quantity * item.price, 0),
-                              )}
+                              {new Intl.NumberFormat("en-US", {
+                                style: "currency",
+                                currency: currency,
+                              }).format(items.reduce((sum, item) => sum + item.quantity * item.price, 0))}
                             </span>
 
                             <span className="text-gray-600">VAT Total:</span>
                             <span className="font-medium">
-                              {new Intl.NumberFormat("en-US", { style: "currency", currency: currency }).format(
+                              {new Intl.NumberFormat("en-US", {
+                                style: "currency",
+                                currency: currency,
+                              }).format(
                                 items.reduce((sum, item) => {
                                   const netPrice = item.quantity * item.price
                                   return sum + (netPrice * item.vatRate) / 100
-                                }, 0),
+                                }, 0)
                               )}
                             </span>
 
@@ -1156,9 +1337,10 @@ const CreateInvoiceForm = () => {
                             <span className="font-bold">
                               {isPaid
                                 ? "PAID!"
-                                : new Intl.NumberFormat("en-US", { style: "currency", currency: currency }).format(
-                                    total,
-                                  )}
+                                : new Intl.NumberFormat("en-US", {
+                                    style: "currency",
+                                    currency: currency,
+                                  }).format(total)}
                             </span>
                           </div>
 
@@ -1185,4 +1367,3 @@ const CreateInvoiceForm = () => {
 }
 
 export default CreateInvoiceForm
-
