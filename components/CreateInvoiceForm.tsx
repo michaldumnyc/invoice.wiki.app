@@ -280,6 +280,7 @@ const CreateInvoiceForm = () => {
   }, [executeRecaptcha])
 
   return (
+      <>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <Header />
         <div className="container px-4 md:px-6 mx-auto max-w-4xl">
