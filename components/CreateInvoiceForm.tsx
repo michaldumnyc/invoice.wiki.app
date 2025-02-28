@@ -7,6 +7,7 @@ import type * as z from "zod"
 import { format } from "date-fns"
 import { Plus, Trash2, Eye, EyeOff, ArrowRight } from "lucide-react"
 
+import { FormItem, FormLabel } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
@@ -280,7 +281,6 @@ const CreateInvoiceForm = () => {
   }, [executeRecaptcha])
 
   return (
-      <>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <Header />
         <div className="container px-4 md:px-6 mx-auto max-w-4xl">
