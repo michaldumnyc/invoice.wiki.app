@@ -1,7 +1,4 @@
-// security.ts
 import DOMPurify from "isomorphic-dompurify"
-// 1. Устанавливаем библиотеку validator
-// npm install validator
 import validator from "validator"
 
 /**
