@@ -1,0 +1,5 @@
+Contact: mailto:security@invoice.wiki
+Expires: 2026-03-02T00:00:00.000Z
+Preferred-Languages: en, cz, sk, ru, ua
+Canonical: https://invoice.wiki/.well-known/security.txt
+Policy: https://invoice.wiki/security-policy 

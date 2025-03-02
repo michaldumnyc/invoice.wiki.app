@@ -1,0 +1,3 @@
+# Invoice.wiki Ads.txt file
+# Currently we don't have advertising partners
+# This file is reserved for future use when the site may include advertising 
