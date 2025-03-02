@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice.wiki Icon Export</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f8fafc;
+    }
+    
+    h1 {
+      color: #1e3a8a;
+      text-align: center;
+    }
+    
+    .icons-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    
+    .icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .icon-title {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #475569;
+    }
+    
+    .instructions {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    ol {
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    code {
+      background-color: #f1f5f9;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Invoice.wiki - Icon Export</h1>
+  
+  <div class="icons-container">
+    <!-- 512x512 Icon -->
+    <div class="icon-wrapper">
+      <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="512" height="512" rx="80" fill="#3B82F6"/>
+        <rect x="128" y="96" width="256" height="320" rx="16" fill="white"/>
+        <rect x="160" y="160" width="192" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="192" width="160" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="224" width="192" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="256" width="120" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="320" width="192" height="32" rx="8" fill="#1D4ED8"/>
+        <path d="M240 64L272 96H208L240 64Z" fill="#1D4ED8"/>
+      </svg>
+      <div class="icon-title">icon-512x512.png</div>
+    </div>
+    
+    <!-- 192x192 Icon -->
+    <div class="icon-wrapper">
+      <svg width="192" height="192" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="512" height="512" rx="80" fill="#3B82F6"/>
+        <rect x="128" y="96" width="256" height="320" rx="16" fill="white"/>
+        <rect x="160" y="160" width="192" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="192" width="160" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="224" width="192" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="256" width="120" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="320" width="192" height="32" rx="8" fill="#1D4ED8"/>
+        <path d="M240 64L272 96H208L240 64Z" fill="#1D4ED8"/>
+      </svg>
+      <div class="icon-title">icon-192x192.png</div>
+    </div>
+    
+    <!-- 180x180 Icon (Apple Touch) -->
+    <div class="icon-wrapper">
+      <svg width="180" height="180" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="512" height="512" rx="80" fill="#3B82F6"/>
+        <rect x="128" y="96" width="256" height="320" rx="16" fill="white"/>
+        <rect x="160" y="160" width="192" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="192" width="160" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="224" width="192" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="256" width="120" height="8" rx="4" fill="#93C5FD"/>
+        <rect x="160" y="320" width="192" height="32" rx="8" fill="#1D4ED8"/>
+        <path d="M240 64L272 96H208L240 64Z" fill="#1D4ED8"/>
+      </svg>
+      <div class="icon-title">apple-touch-icon.png</div>
+    </div>
+  </div>
+  
+  <div class="instructions">
+    <h2>Instructions for exporting icons:</h2>
+    <ol>
+      <li>Take a screenshot of each icon above</li>
+      <li>Crop the screenshot to the dimensions of the icon itself</li>
+      <li>Save each icon with its corresponding name in the <code>/public/icons/</code> directory</li>
+      <li>Make sure the file dimensions match their names (512x512, 192x192, 180x180)</li>
+      <li>For creating favicon.ico, use any online converter to transform icon-512x512.png into a multi-size ico file</li>
+      <li>Place favicon.ico in the <code>/public/</code> directory</li>
+    </ol>
+  </div>
+</body>
+</html> 
