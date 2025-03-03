@@ -3,6 +3,19 @@ import type { NextRequest } from "next/server"
 import { nanoid } from "nanoid"
 
 export function middleware(request: NextRequest) {
+  // Handle Vercel Insights
+  if (request.nextUrl.pathname.startsWith('/_vercel/insights/')) {
+    const response = NextResponse.next()
+    response.headers.set('X-Content-Type-Options', 'nosniff')
+    response.headers.set('Cache-Control', 'public, max-age=31536000')
+    return response
+  }
+
+  // Handle static files
+  if (request.nextUrl.pathname.startsWith('/_next/static/')) {
+    return NextResponse.next()
+  }
+
   // Skip API routes
   if (request.nextUrl.pathname.startsWith("/api/")) {
     return NextResponse.next()
@@ -16,7 +29,7 @@ export function middleware(request: NextRequest) {
     default-src 'self';
     script-src 'self' 'nonce-${nonce}';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https://invoice.wiki;
+    img-src 'self' data: blob: https://invoice.wiki;
     font-src 'self' data:;
     object-src 'none';
     base-uri 'self';
@@ -25,10 +38,9 @@ export function middleware(request: NextRequest) {
     frame-src 'none';
     connect-src 'self';
     media-src 'self';
-    worker-src 'self';
+    worker-src 'self' blob:;
     child-src 'none';
-    block-all-mixed-content;
-    upgrade-insecure-requests;
+    block-all-mixed-content
   `.replace(/__NONCE__/g, nonce);
 
   const requestHeaders = new Headers(request.headers)
@@ -69,7 +81,11 @@ export function middleware(request: NextRequest) {
   return response
 }
 
-// Exclude API and static files from middleware processing
+// Update matcher to include Vercel Insights
 export const config = {
-  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  matcher: [
+    '/((?!api|favicon.ico).*)',     // Match everything except API and favicon
+    '/_next/static/:path*',         // Include static files
+    '/_vercel/insights/:path*'      // Include Vercel Insights
+  ]
 }
