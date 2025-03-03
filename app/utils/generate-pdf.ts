@@ -70,7 +70,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     doc.setTextColor(...textColor)
     doc.setFontSize(24)
     doc.setFont("NotoSans", "bold")
-    doc.text(`Invoice ${data.invoice?.number || ""}`, margin + 1, headerY + headerHeight / 2, {
+    doc.text(`Invoice ${data.invoice?.number || ""}`, margin, headerY + headerHeight / 2, {
       align: "left",
       baseline: "middle",
     })
@@ -279,13 +279,13 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
           lineWidth: 0.1,
         },
         columnStyles: {
-          0: { cellWidth: 40, overflow: "linebreak" }, // Description column
-          1: { cellWidth: 16, overflow: "linebreak" }, // Quantity column
-          2: { cellWidth: 28, overflow: "linebreak" }, // Unit Price column
-          3: { cellWidth: 16, overflow: "linebreak" }, // VAT Rate column
-          4: { cellWidth: 28, overflow: "linebreak" }, // Net Price column
-          5: { cellWidth: 28, overflow: "linebreak" }, // VAT Amount column
-          6: { cellWidth: 29 - 1, overflow: "linebreak" }, // Total column - slightly reduced width
+          0: { cellWidth: 49, overflow: "linebreak" }, // Description column
+          1: { cellWidth: 13, overflow: "linebreak" }, // Quantity column
+          2: { cellWidth: 25, overflow: "linebreak" }, // Unit Price column
+          3: { cellWidth: 13, overflow: "linebreak" }, // VAT Rate column
+          4: { cellWidth: 25, overflow: "linebreak" }, // Net Price column
+          5: { cellWidth: 25, overflow: "linebreak" }, // VAT Amount column
+          6: { cellWidth: 34 - 1, overflow: "linebreak" }, // Total column - slightly reduced width
         },
         headStyles: {
           fillColor: primaryColor,
@@ -296,7 +296,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
         alternateRowStyles: {
           fillColor: "#f8fafc",
         },
-        margin: { left: 15, right: 16, top: 15, bottom: 15 }, // Adjusted right margin
+        margin: { left: 15, right: 15, top: 15, bottom: 15 }, // Adjusted right margin
         tableWidth: tableWidth - 1, // Slightly reduced table width to align with header
         didDrawPage: (data) => {
           // Add header and footer on each page
@@ -391,6 +391,23 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       pageHeight - 5, 
       { align: "center" }
     )
+
+    const blob = new Blob([doc.output("blob")], { type: "application/pdf" })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement("a")
+    link.href = url
+    link.download = `invoice-${data.invoice?.number || ""}.pdf`
+    link.target = "_blank" // Add target blank for mobile browsers
+    link.rel = "noopener noreferrer" // Security best practice
+    // Try to open PDF in new tab for mobile browsers
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.open(url, "_blank")
+    } else {
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+    URL.revokeObjectURL(url)
 
     return doc
   } catch (error) {

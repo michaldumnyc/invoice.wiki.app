@@ -31,11 +31,11 @@ export const viewport: Viewport = {
 // Extended metadata for SEO
 export const metadata: Metadata = {
   title: {
-    default: "Invoice.wiki - Free Online Invoice Generator | Create & Download Invoices",
+    default: "Invoice.wiki - Free Invoice Maker & Generator | Create Professional Invoices",
     template: "%s | Invoice.wiki",
   },
-  description: "Generate invoices online for free. No registration required. Secure, simple, and fast invoice generator with PDF download and VAT support.",
-  keywords: ["invoice generator", "free invoice", "online invoice", "invoice maker", "invoice template", "PDF invoice", "VAT invoice", "business invoice"],
+  description: "Free Invoice Generator. Create invoices online instantly. Download as PDF. Perfect for freelancers and small businesses. Free invoice generator with VAT support. | Free Invoice Maker",
+  keywords: ["invoice generator", "free invoice maker", "free invoice generator", "online invoice", "invoice maker", "invoice template", "PDF invoice", "VAT invoice", "business invoice", "professional invoice", "free invoicing software"],
   authors: [{ name: "Invoice.wiki Team" }],
   creator: "Invoice.wiki",
   publisher: "Invoice.wiki",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://invoice.wiki",
-    title: "Invoice.wiki - Free Online Invoice Generator",
-    description: "Generate invoices online for free. No registration required. Secure and fast invoice generator with PDF download.",
+    title: "Invoice.wiki - Free Invoice Maker & Generator",
+    description: "Free invoice maker and generator. Create invoices online instantly and for Free. No registration required. Perfect for freelancers and small businesses.",
     siteName: "Invoice.wiki",
     images: [
       {
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Invoice.wiki - Free Online Invoice Generator",
-    description: "Generate invoices online for free. No registration required. Secure and fast invoice generator with PDF download.",
+    title: "Invoice.wiki - Free Invoice Maker & Generator",
+    description: "Free invoice maker and generator. Create invoices online instantly and for Free. No registration required. Perfect for freelancers and small businesses.",
     images: ["/icons/icon-512x512.svg"],
   },
   category: "Finance",

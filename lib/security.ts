@@ -14,17 +14,14 @@ export function sanitizeInput(input: string, maxLength = 250): string {
 /**
  * Sanitize email address:
  * 1. Sanitize HTML tags (rarely needed, but just in case)
- * 2. Validate that the string is an email using validator.isEmail
- * 3. If valid - trim to 200 characters. If not - return empty string
+ * 2. Allow partial email input by not validating format
+ * 3. Trim to 200 characters
  */
 export function sanitizeEmail(email: string): string {
   // First remove tags
   const sanitized = DOMPurify.sanitize(email)
-  // Check email format with validator.isEmail
-  if (validator.isEmail(sanitized)) {
-    return sanitized.slice(0, 200)
-  }
-  return ""
+  // Remove any potentially harmful characters but keep basic email characters
+  return sanitized.replace(/[^a-zA-Z0-9@._+-]/g, '').slice(0, 200)
 }
 
 /**
