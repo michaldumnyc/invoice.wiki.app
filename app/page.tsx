@@ -1,3 +1,7 @@
+// Принудительная статическая генерация для улучшения TTFB
+export const dynamic = 'force-static'
+export const revalidate = 3600 // 1 час
+
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"

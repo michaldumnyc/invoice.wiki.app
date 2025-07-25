@@ -1,3 +1,6 @@
+// Принудительная статическая генерация для улучшения TTFB
+export const dynamic = 'force-static'
+
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
 import LoadingSpinner from "@/components/LoadingSpinner"
