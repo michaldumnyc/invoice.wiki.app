@@ -6,17 +6,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  
-  // Performance optimizations
-  compress: true,
-  generateEtags: true,
-  trailingSlash: false,
-  
-  // Experimental features for performance
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react'],
-  },
+
+
   webpack: (config, { dev, isServer }) => {
     // PDF generation optimization
     if (!dev && !isServer) {
@@ -45,48 +36,18 @@ const nextConfig = {
 
   headers: async () => {
     return [
-      // Static assets caching
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-      // Icons and images caching
-      {
-        source: "/icons/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, s-maxage=31536000" },
-        ],
-      },
-      {
-        source: "/images/:path*", 
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, s-maxage=31536000" },
-        ],
-      },
-      // Fonts caching
-      {
-        source: "/fonts/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-      // Security headers for all pages
       {
         source: "/:path*",
         headers: [
+          { key: "Server", value: "" },
+          { key: "X-Powered-By", value: "" },
+          { key: "X-Nextjs-Cache", value: "" },
+          { key: "X-React-Server-Component", value: "" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-XSS-Protection", value: "1; mode=block" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
-      },
-      // Page caching for static content
-      {
-        source: "/((?!api|_next).*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400" },
+          { key: "Cache-Control", value: "no-store, max-age=0" },
         ],
       },
     ];

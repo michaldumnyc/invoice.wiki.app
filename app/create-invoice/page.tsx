@@ -1,7 +1,4 @@
-// Принудительная статическая генерация для улучшения TTFB
-export const dynamic = 'force-static'
-
-import dynamicImport from "next/dynamic"
+import dynamic from "next/dynamic"
 import { Suspense } from "react"
 import LoadingSpinner from "@/components/LoadingSpinner"
 import type { Metadata } from "next"
@@ -16,7 +13,7 @@ export const metadata: Metadata = {
   },
 }
 
-const CreateInvoiceForm = dynamicImport(() => import("@/components/CreateInvoiceForm"), {
+const CreateInvoiceForm = dynamic(() => import("@/components/CreateInvoiceForm"), {
   loading: () => <LoadingSpinner />,
 })
 

@@ -1,6 +1,3 @@
-// Принудительная статическая генерация для улучшения TTFB
-export const dynamic = 'force-static'
-
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { ContactButton } from "@/components/ContactButton"
