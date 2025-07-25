@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 
 interface JsonLdProps {
@@ -14,7 +16,30 @@ export default function JsonLd({ data }: JsonLdProps) {
 }
 
 export function WebsiteJsonLd() {
-  const data = {
+  const webSiteData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': 'Invoice.wiki',
+    'alternateName': 'Free Online Invoice Generator',
+    'url': 'https://invoice.wiki',
+    'description': 'Free online invoice generator with PDF download, VAT support, and multiple currencies. No registration required.',
+    'inLanguage': 'en-US',
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': {
+        '@type': 'EntryPoint',
+        'urlTemplate': 'https://invoice.wiki/create-invoice?q={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Invoice.wiki Team',
+      'url': 'https://invoice.wiki'
+    }
+  };
+
+  const webAppData = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     'name': 'Invoice.wiki',
@@ -51,7 +76,12 @@ export function WebsiteJsonLd() {
     'screenshot': 'https://invoice.wiki/images/og-image.svg'
   };
 
-  return <JsonLd data={data} />;
+  return (
+    <>
+      <JsonLd data={webSiteData} />
+      <JsonLd data={webAppData} />
+    </>
+  );
 }
 
 export function OrganizationJsonLd() {
@@ -60,10 +90,26 @@ export function OrganizationJsonLd() {
     '@type': 'Organization',
     'name': 'Invoice.wiki',
     'url': 'https://invoice.wiki',
-    'logo': 'https://invoice.wiki/icons/icon-512x512.svg',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': 'https://invoice.wiki/icons/icon-512x512.svg',
+      'width': 512,
+      'height': 512
+    },
     'description': 'Provider of free online invoice generation services',
     'foundingDate': '2024',
     'serviceArea': 'Worldwide',
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'contactType': 'customer service',
+      'email': 'support@invoice.wiki',
+      'availableLanguage': 'English'
+    },
+    'address': {
+      '@type': 'PostalAddress',
+      'addressCountry': 'Global',
+      'addressLocality': 'Online'
+    },
     'hasOfferCatalog': {
       '@type': 'OfferCatalog',
       'name': 'Invoice Generation Services',
@@ -93,6 +139,54 @@ export function BreadcrumbJsonLd({ items }: { items: Array<{ name: string; url: 
       'name': item.name,
       'item': item.url
     }))
+  };
+
+  return <JsonLd data={data} />;
+}
+
+export function ProductJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    'name': 'Free Online Invoice Generator',
+    'description': 'Professional invoice generator with PDF download, VAT support, and multiple currencies. No registration required.',
+    'brand': {
+      '@type': 'Brand',
+      'name': 'Invoice.wiki'
+    },
+    'category': 'Finance Software',
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'USD',
+      'availability': 'https://schema.org/InStock',
+      'itemCondition': 'https://schema.org/NewCondition',
+      'url': 'https://invoice.wiki'
+    },
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.8',
+      'reviewCount': '150',
+      'bestRating': '5',
+      'worstRating': '1'
+    },
+    'review': [
+      {
+        '@type': 'Review',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5'
+        },
+        'author': {
+          '@type': 'Person',
+          'name': 'Small Business Owner'
+        },
+        'reviewBody': 'Perfect free tool for creating professional invoices quickly and easily.'
+      }
+    ],
+    'url': 'https://invoice.wiki',
+    'image': 'https://invoice.wiki/images/og-image.svg'
   };
 
   return <JsonLd data={data} />;

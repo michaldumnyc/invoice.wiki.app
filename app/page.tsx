@@ -5,7 +5,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import React from "react"
-import { WebsiteJsonLd, OrganizationJsonLd } from "./components/JsonLd"
+import { WebsiteJsonLd, OrganizationJsonLd, ProductJsonLd } from "./components/JsonLd"
 
 // Additional metadata for the home page
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export default function HomePage() {
     <>
       <WebsiteJsonLd />
       <OrganizationJsonLd />
+      <ProductJsonLd />
       
       <div className="min-h-screen flex flex-col">
         <Header />
