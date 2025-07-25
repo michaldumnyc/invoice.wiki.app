@@ -20,9 +20,9 @@ export function WebsiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     'name': 'Invoice.wiki',
-    'alternateName': 'Free Online Invoice Generator',
+    'alternateName': 'Free Online Invoice Maker & Generator',
     'url': 'https://invoice.wiki',
-    'description': 'Free online invoice generator with PDF download, VAT support, and multiple currencies. No registration required.',
+    'description': 'Free online invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.',
     'inLanguage': 'en-US',
     'potentialAction': {
       '@type': 'SearchAction',
@@ -43,10 +43,10 @@ export function WebsiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     'name': 'Invoice.wiki',
-    'alternateName': 'Free Online Invoice Generator',
+    'alternateName': 'Free Online Invoice Maker & Generator',
     'url': 'https://invoice.wiki',
     'logo': 'https://invoice.wiki/icons/icon-512x512.svg',
-    'description': 'Free online invoice generator with PDF download, VAT support, and multiple currencies. No registration required.',
+    'description': 'Free online invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.',
     'applicationCategory': 'FinanceApplication',
     'operatingSystem': 'Any',
     'browserRequirements': 'Requires JavaScript. Modern browser recommended.',
@@ -148,8 +148,9 @@ export function ProductJsonLd() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    'name': 'Free Online Invoice Generator',
-    'description': 'Professional invoice generator with PDF download, VAT support, and multiple currencies. No registration required.',
+    'name': 'Free Online Invoice Maker & Generator',
+    'description': 'Professional invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.',
+    'inLanguage': 'en-US',
     'brand': {
       '@type': 'Brand',
       'name': 'Invoice.wiki'

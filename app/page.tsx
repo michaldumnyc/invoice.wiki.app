@@ -36,7 +36,7 @@ export default function HomePage() {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
                 <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-                  <span className="text-foreground">Free Invoice Generator</span>
+                  <span className="text-foreground">Free Invoice Maker</span>
                   <br className="sm:hidden" />
                   <span className="text-blue-500"> - Create Invoices in</span>
                   <span className="text-blue-600"> Seconds</span>

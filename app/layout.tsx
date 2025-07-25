@@ -46,7 +46,11 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://invoice.wiki"),
   alternates: {
-    canonical: "/"
+    canonical: "/",
+    languages: {
+      'en-US': '/',
+      'en': '/'
+    }
   },
   robots: {
     index: true,
