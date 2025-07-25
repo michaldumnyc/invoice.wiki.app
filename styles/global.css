@@ -170,6 +170,12 @@
 }
 
 /* ========= CUSTOM COMPONENT STYLES ========= */
+
+/* Fix for H1 in semantic elements - explicit font size */
+section h1, article h1, aside h1, nav h1 {
+  font-size: inherit !important;
+}
+
 .select-content {
   position: relative;
   z-index: 50;
