@@ -3,7 +3,7 @@ import "@/styles/global.css";
 import type { Metadata, Viewport } from "next";
 import { PrivacyBanner } from "@/components/PrivacyBanner";
 import { ToastProvider } from "@/components/ui/toast-provider";
-import { headers } from "next/headers";
+
 
 // Import local base64-encoded fonts (these will be handled in global.css)
 import { notoSansRegularBase64 } from "@/utils/fonts/notoSansRegular";
@@ -111,14 +111,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const headersList = headers();
-  const nonce = headersList.get("x-nonce") || "";
-  
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         {/* Fonts are now included in global.css */}
-        <meta name="x-nonce" content={nonce} />
         {/* SVG favicon with PNG fallback for older browsers */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" title="Invoice.wiki Icon" />
         <link rel="alternate icon" href="/favicon.ico" type="image/x-icon" title="Invoice.wiki Icon" />

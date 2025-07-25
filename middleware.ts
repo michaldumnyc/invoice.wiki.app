@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { nanoid } from "nanoid"
+
 
 export function middleware(request: NextRequest) {
   // Handle Vercel Insights
@@ -21,10 +21,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  const nonce = nanoid()
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}';
+    script-src 'self' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: blob: https://invoice.wiki;
     font-src 'self' data:;
@@ -33,15 +32,14 @@ export function middleware(request: NextRequest) {
     form-action 'self';
     frame-ancestors 'none';
     frame-src 'none';
-    connect-src 'self';
+    connect-src 'self' ws: wss:;
     media-src 'self';
     worker-src 'self' blob:;
     child-src 'none';
     block-all-mixed-content
-  `.replace(/__NONCE__/g, nonce);
+  `;
 
   const requestHeaders = new Headers(request.headers)
-  requestHeaders.set("x-nonce", nonce)
 
   const response = NextResponse.next({
     request: {
@@ -53,7 +51,6 @@ export function middleware(request: NextRequest) {
   
   // Add security headers
   response.headers.set("Content-Security-Policy", cspHeader.replace(/\s{2,}/g, " ").trim())
-  response.headers.set("X-Nonce", nonce)
   response.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
   response.headers.set("X-Frame-Options", "DENY")
   response.headers.set("X-Content-Type-Options", "nosniff")

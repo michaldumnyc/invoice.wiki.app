@@ -3,6 +3,7 @@ import { Suspense } from "react"
 import LoadingSpinner from "@/components/LoadingSpinner"
 import type { Metadata } from "next"
 import { BreadcrumbJsonLd } from "../components/JsonLd"
+import { headers } from "next/headers"
 
 export const metadata: Metadata = {
   title: "Create Invoice - Free Online Invoice Generator",

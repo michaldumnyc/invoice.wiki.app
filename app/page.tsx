@@ -18,6 +18,10 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://invoice.wiki",
+    languages: {
+      'en-US': '/',
+      'en': '/'
+    }
   },
 };
 

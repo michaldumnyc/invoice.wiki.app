@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ========= FONT DEFINITIONS ========= */
-/* Fonts are loaded via standard CSS to avoid using nonce */
+/* Fonts are loaded via standard CSS */
 @font-face {
   font-family: 'NotoSans';
   src: url('/fonts/NotoSans-Regular.ttf') format('truetype');
