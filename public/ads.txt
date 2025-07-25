@@ -1,0 +1,3 @@
+# ads.txt file for invoice.wiki
+# This site does not participate in advertising networks
+# No authorized advertising partners 

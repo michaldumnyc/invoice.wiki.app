@@ -1,0 +1,5 @@
+Contact: support@invoice.wiki
+Expires: 2025-12-31T23:59:59.000Z
+Canonical: https://invoice.wiki/.well-known/security.txt
+Policy: https://invoice.wiki/privacy-policy
+Preferred-Languages: en 
