@@ -15,7 +15,7 @@ export default function JsonLd({ data }: JsonLdProps) {
   )
 }
 
-// WebSite + WebApplication
+// ✅ WebSite + WebApplication
 export function WebsiteJsonLd() {
   const webSiteData = {
     "@context": "https://schema.org",
@@ -86,7 +86,7 @@ export function WebsiteJsonLd() {
   )
 }
 
-// Organization
+// ✅ Organization
 export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -132,7 +132,7 @@ export function OrganizationJsonLd() {
   return <JsonLd data={data} />
 }
 
-// Product
+// ✅ Product
 export function ProductJsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -184,7 +184,7 @@ export function ProductJsonLd() {
   return <JsonLd data={data} />
 }
 
-// Breadcrumb
+// ✅ Breadcrumb
 export function BreadcrumbJsonLd({
   items
 }: {
@@ -246,6 +246,32 @@ export function FaqJsonLd() {
         }
       }
     ]
+  }
+
+  return <JsonLd data={data} />
+}
+
+// ✅ About Page Schema
+export function AboutPageJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Invoice.wiki",
+    "url": "https://invoice.wiki/about",
+    "description":
+      "Learn more about Invoice.wiki, a free and secure online invoice generator for freelancers, contractors, and businesses.",
+    "mainEntity": {
+      "@type": "WebApplication",
+      "name": "Invoice.wiki",
+      "applicationCategory": "FinanceApplication",
+      "url": "https://invoice.wiki"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Invoice.wiki Team",
+      "url": "https://invoice.wiki"
+    },
+    "inLanguage": "en-US"
   }
 
   return <JsonLd data={data} />
