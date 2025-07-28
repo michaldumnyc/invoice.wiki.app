@@ -8,41 +8,49 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import React from "react"
-import { WebsiteJsonLd, OrganizationJsonLd, ProductJsonLd } from "./components/JsonLd"
+import {
+  WebsiteJsonLd,
+  OrganizationJsonLd,
+  ProductJsonLd,
+  FaqJsonLd
+} from "./components/JsonLd"
 
 export const metadata: Metadata = {
   title: "Invoice.wiki - Free Invoice Generator | Create Professional Invoices Online",
-  description: "Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, and multiple currencies. No registration required - start now!",
+  description:
+    "Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, and multiple currencies. No registration required - start now!",
   alternates: {
     canonical: "https://invoice.wiki",
     languages: {
-      'en-US': '/',
-      'en': '/'
+      "en-US": "/",
+      en: "/"
     }
   },
   openGraph: {
-    title: 'Invoice.wiki - Free Invoice Generator',
-    description: 'Create invoices instantly online. Free PDF download, no registration needed.',
-    url: 'https://invoice.wiki',
-    siteName: 'Invoice.wiki',
+    title: "Invoice.wiki - Free Invoice Generator",
+    description:
+      "Create invoices instantly online. Free PDF download, no registration needed.",
+    url: "https://invoice.wiki",
+    siteName: "Invoice.wiki",
     images: [
       {
-        url: 'https://invoice.wiki/og-image.png',
+        url: "https://invoice.wiki/og-image.png",
         width: 1200,
         height: 630,
-        alt: 'Invoice.wiki - Free Online Invoice Maker',
-      },
+        alt: "Invoice.wiki - Free Online Invoice Maker"
+      }
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website"
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Invoice.wiki - Free Invoice Generator',
-    description: 'Create and download invoices online as PDF. No sign-up required.',
-    images: ['https://invoice.wiki/og-image.png'],
+    card: "summary_large_image",
+    title: "Invoice.wiki - Free Invoice Generator",
+    description:
+      "Create and download invoices online as PDF. No sign-up required.",
+    images: ["https://invoice.wiki/og-image.png"]
   }
-};
+}
 
 export default function HomePage() {
   return (
@@ -50,6 +58,7 @@ export default function HomePage() {
       <WebsiteJsonLd />
       <OrganizationJsonLd />
       <ProductJsonLd />
+      <FaqJsonLd />
 
       <div className="min-h-screen flex flex-col">
         <Header />
