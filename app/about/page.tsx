@@ -2,12 +2,12 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { ContactButton } from "@/components/ContactButton"
 import type { Metadata } from "next"
-import { BreadcrumbJsonLd } from "../components/JsonLd"
+import { BreadcrumbJsonLd, AboutPageJsonLd } from "../components/JsonLd"
 
 export const metadata: Metadata = {
   title: "About Invoice.wiki - Free Invoice Generator & Secure Online Billing",
-  description: "Discover how Invoice.wiki helps freelancers, contractors, and businesses create free invoices online. Secure, fast, no registration, and PDF download included.",
-
+  description:
+    "Discover how Invoice.wiki helps freelancers, contractors, and businesses create free invoices online. Secure, fast, no registration, and PDF download included.",
   alternates: {
     canonical: "https://invoice.wiki/about",
   },
@@ -18,47 +18,55 @@ export default function AboutPage() {
 
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
-    { name: "About", url: "https://invoice.wiki/about" }
-  ];
+    { name: "About", url: "https://invoice.wiki/about" },
+  ]
 
   return (
     <div className="min-h-screen flex flex-col">
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <AboutPageJsonLd />
       <Header />
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12">
           <div className="max-w-3xl mx-auto">
             {/* Headline */}
-            <h1 className="text-4xl font-bold mb-8">About Invoice.wiki - Free Invoice Generator for Freelancers & Businesses</h1>
+            <h1 className="text-4xl font-bold mb-8">
+              About Invoice.wiki - Free Invoice Generator for Freelancers & Businesses
+            </h1>
             <p className="text-xl text-foreground mb-8">
-              Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses, contractors, and entrepreneurs.
-              Create and download professional invoices as PDFs with full privacy — no sign-up, no data tracking, and no installation required.
-              Whether you're billing local clients or international partners, our tool makes invoicing fast, secure, and accessible.
+              Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
+              contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no
+              sign-up, no data tracking, and no installation required. Whether you're billing local clients or
+              international partners, our tool makes invoicing fast, secure, and accessible.
             </p>
 
             {/* Mission */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Our Mission</h2>
             <p className="mb-6">
-              We believe professional invoicing should be accessible to everyone. Our online invoice maker simplifies the billing process
-              with a clean interface, automatic tax and total calculations, and instant PDF generation. With Invoice.wiki, anyone can create
-              accurate business invoices without technical skills or accounts.
+              We believe professional invoicing should be accessible to everyone. Our online invoice maker simplifies
+              the billing process with a clean interface, automatic tax and total calculations, and instant PDF
+              generation. With Invoice.wiki, anyone can create accurate business invoices without technical skills or
+              accounts.
             </p>
             <p className="mb-6">
-              We never store your data. All information is processed locally in your browser to ensure full privacy and security.
+              We never store your data. All information is processed locally in your browser to ensure full privacy and
+              security.
             </p>
 
             {/* What is an invoice */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">What is an Invoice?</h2>
             <p className="mb-6">
-              An invoice is an official document used to request payment for goods or services. It outlines what was sold, who sold it, who bought it,
-              the agreed price, tax amounts, and payment terms. Invoices serve as critical financial and legal records.
+              An invoice is an official document used to request payment for goods or services. It outlines what was
+              sold, who sold it, who bought it, the agreed price, tax amounts, and payment terms. Invoices serve as
+              critical financial and legal records.
             </p>
 
             {/* History and purpose */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">History and Purpose</h2>
             <p className="mb-6">
-              Invoices have been part of commerce since early accounting systems were developed. Today, digital invoicing has become
-              standard across industries and borders, supporting smooth trade, clear tax records, and timely payments.
+              Invoices have been part of commerce since early accounting systems were developed. Today, digital
+              invoicing has become standard across industries and borders, supporting smooth trade, clear tax records,
+              and timely payments.
             </p>
 
             {/* Components of an invoice */}
@@ -112,12 +120,11 @@ export default function AboutPage() {
             {/* Legal significance */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Legal Relevance of Invoices</h2>
             <p className="mb-6">
-              Invoices are official commercial records. They can be used for tax reporting, financial accounting, and legal protection.
-              Depending on your country, invoicing may follow specific rules like VAT formatting in the EU or sales tax declarations in the US.
+              Invoices are official commercial records. They can be used for tax reporting, financial accounting, and
+              legal protection. Depending on your country, invoicing may follow specific rules like VAT formatting in
+              the EU or sales tax declarations in the US.
             </p>
-            <p className="mb-6">
-              Common legal purposes of invoices include:
-            </p>
+            <p className="mb-6">Common legal purposes of invoices include:</p>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li>Verifying business transactions.</li>
               <li>Filing tax returns and claiming deductions.</li>
@@ -138,9 +145,7 @@ export default function AboutPage() {
 
             {/* Contacts */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Contact Us</h2>
-            <p className="mb-6">
-              Have questions, suggestions, or feedback? We’d love to hear from you.
-            </p>
+            <p className="mb-6">Have questions, suggestions, or feedback? We’d love to hear from you.</p>
             <ContactButton email={supportEmail} />
           </div>
         </div>
