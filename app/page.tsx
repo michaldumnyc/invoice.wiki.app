@@ -160,21 +160,19 @@ export default function HomePage() {
               <div className="max-w-4xl mx-auto">
                 <div className="space-y-6 text-foreground/90">
                   <p className="text-lg leading-relaxed">
-                    Creating professional invoices has never been easier. Our free online invoice generator allows you to 
-                    create, customize, and download professional invoices in minutes. Whether you're a freelancer sending 
-                    your first invoice or a small business owner managing multiple clients, our tool provides everything 
-                    you need to get paid faster.
+                    Creating professional invoices has never been easier with our comprehensive online invoice generation platform that combines simplicity with powerful features. Our free online invoice generator allows you to create, customize, and download professional invoices in just minutes, whether you're a freelancer sending your first invoice to a client or an experienced small business owner managing multiple ongoing client relationships and complex billing scenarios.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    The invoice maker supports multiple currencies, VAT calculations, and various payment terms. You can 
-                    add your company logo, customize colors, and include detailed line items with quantities, rates, and 
-                    descriptions. All invoices are generated as high-quality PDF files that you can send directly to 
-                    your clients or print for your records.
+                    The invoice maker supports multiple international currencies, sophisticated VAT calculations, flexible payment terms, customizable due dates, and detailed line items with quantities, rates, and comprehensive descriptions. You can easily add your company logo, customize brand colors, include detailed business information, and create professional-looking invoices that are generated as high-quality PDF files suitable for sending directly to clients or printing for your permanent business records.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    Security and privacy are our top priorities. Your invoice data is processed locally in your browser 
-                    and never stored on our servers. This means your sensitive business information remains completely 
-                    private and secure. Start creating professional invoices today without any registration or fees.
+                    Security and privacy are our highest priorities when handling your sensitive business and financial information. Your invoice data is processed entirely locally in your browser using advanced client-side encryption and never stored on our servers, ensuring your sensitive business information remains completely private and secure. Start <Link href="/create-invoice" className="text-blue-600 hover:underline">creating professional invoices</Link> today without any registration requirements or subscription fees.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Our advanced invoice generator includes powerful features that streamline your billing process and help you maintain professional relationships with clients. The platform automatically calculates totals, applies discounts, manages tax rates across different regions, and ensures compliance with international invoicing standards. Whether you need to create simple one-time invoices or manage recurring billing cycles, our comprehensive toolset adapts to your specific business requirements.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Built with modern web technologies, our invoice creation platform delivers exceptional performance and reliability across all devices and browsers. The responsive design ensures your invoices look perfect whether viewed on desktop computers, tablets, or mobile devices. Advanced PDF generation capabilities produce crisp, print-ready documents that maintain professional formatting and can be easily shared via email or stored in cloud services for future reference.
                   </p>
                 </div>
               </div>
@@ -184,13 +182,13 @@ export default function HomePage() {
           {/* CTA Section */}
           <section aria-labelledby="cta-heading" className="bg-background dark:bg-background border-t py-12 md:py-20">
             <div className="container mx-auto px-4 text-center">
-              <h2 id="cta-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Ready to Create Your Invoice?</h2>
+              <h2 id="cta-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Ready to Create Your Professional Invoice?</h2>
               <p className="text-lg sm:text-xl text-foreground/80 mb-8">
-                No registration required. Start creating professional invoices online with our free invoice generator.
+                No registration required, no hidden fees, no complex setup procedures. Start creating professional invoices online immediately with our free invoice generator that delivers results in seconds. Perfect for freelancers, consultants, contractors, and small business owners who need reliable billing solutions.
               </p>
-              <Link href="/create-invoice" aria-label="Get started creating your invoice now">
+              <Link href="/create-invoice" aria-label="Begin creating your professional invoice immediately">
                 <Button size="lg" variant="default" className="bg-blue-600 hover:bg-blue-700">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                  Start Building Invoice <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
