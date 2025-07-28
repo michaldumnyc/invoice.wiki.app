@@ -5,8 +5,8 @@ import type { Metadata } from "next"
 import { BreadcrumbJsonLd } from "../components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "About Invoice.wiki - Free Invoice Generator",
-  description: "Learn about Invoice.wiki - a free, secure online invoice generator. Create professional invoices with no registration, full privacy protection, and PDF download.",
+  title: "About Invoice.wiki - Free Invoice Generator & Secure Online Billing",
+  description: "Discover how Invoice.wiki helps freelancers, contractors, and businesses create free invoices online. Secure, fast, no registration, and PDF download included.",
 
   alternates: {
     canonical: "https://invoice.wiki/about",
@@ -29,125 +29,117 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6 py-8 md:py-12">
           <div className="max-w-3xl mx-auto">
             {/* Headline */}
-            <h1 className="text-4xl font-bold mb-8">About Invoice.wiki - Free Invoice Generator</h1>
+            <h1 className="text-4xl font-bold mb-8">About Invoice.wiki - Free Invoice Generator for Freelancers & Businesses</h1>
             <p className="text-xl text-foreground mb-8">
-              Invoice.wiki is a free online invoice maker that helps freelancers and businesses create professional invoices quickly,
-              conveniently, and securely. Our invoice template generator makes business invoicing accessible
-              to everyone, regardless of their level of knowledge and experience.
+              Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses, contractors, and entrepreneurs.
+              Create and download professional invoices as PDFs with full privacy — no sign-up, no data tracking, and no installation required.
+              Whether you're billing local clients or international partners, our tool makes invoicing fast, secure, and accessible.
             </p>
 
             {/* Mission */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Our Mission</h2>
             <p className="mb-6">
-              We believe that creating business invoices should not be complicated. Our online invoice maker offers an easy-to-use 
-              and intuitive service that allows freelancers and businesses to create professional invoices without registration, 
-              complex configurations, or hidden fees.
+              We believe professional invoicing should be accessible to everyone. Our online invoice maker simplifies the billing process
+              with a clean interface, automatic tax and total calculations, and instant PDF generation. With Invoice.wiki, anyone can create
+              accurate business invoices without technical skills or accounts.
             </p>
             <p className="mb-6">
-              We ensure maximum privacy and security – all data is processed locally in your 
-              browser, without being sent to any servers.
+              We never store your data. All information is processed locally in your browser to ensure full privacy and security.
             </p>
 
             {/* What is an invoice */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">What is an Invoice?</h2>
             <p className="mb-6">
-              An invoice is an official commercial document that a seller provides to a buyer to record
-              the sale of goods or services. It confirms the buyer's obligation to pay the specified amount
-              under the agreed terms. Invoices serve as a legal basis for accounting and taxation.
+              An invoice is an official document used to request payment for goods or services. It outlines what was sold, who sold it, who bought it,
+              the agreed price, tax amounts, and payment terms. Invoices serve as critical financial and legal records.
             </p>
 
             {/* History and purpose */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">History and Purpose</h2>
             <p className="mb-6">
-              Historically, invoices have been used in trade since the inception of accounting systems.
-              They serve as a key element in financial transactions, ensuring transparency and record-keeping 
-              for both parties. In today's world, invoices are an essential tool in e-commerce 
-              and international trade.
+              Invoices have been part of commerce since early accounting systems were developed. Today, digital invoicing has become
+              standard across industries and borders, supporting smooth trade, clear tax records, and timely payments.
             </p>
 
             {/* Components of an invoice */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">Invoice Components</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">Key Components of an Invoice</h2>
 
             {/* Seller information */}
             <h3 className="text-xl font-semibold mt-8 mb-4">Seller Information</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Company Name –</strong> The official name of the business.</li>
-              <li><strong>Address –</strong> The registered or operational business address.</li>
-              <li><strong>Company Registration Number –</strong> A unique company identifier (Company ID).</li>
-              <li><strong>VAT Number (VAT ID) –</strong> If applicable, the Value Added Tax identification number.</li>
-              <li><strong>Contact Information –</strong> Email and website of the company.</li>
+              <li><strong>Company Name –</strong> Official business name.</li>
+              <li><strong>Business Address –</strong> Registered address of the seller.</li>
+              <li><strong>Company ID –</strong> Official registration number.</li>
+              <li><strong>VAT Number –</strong> Tax identification number (if applicable).</li>
+              <li><strong>Contact Details –</strong> Email, phone number, and website.</li>
             </ul>
 
             {/* Customer information */}
             <h3 className="text-xl font-semibold mt-8 mb-4">Buyer Information</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Company Name –</strong> The legal name of the client.</li>
-              <li><strong>Address –</strong> The client's registered or operational address.</li>
-              <li><strong>Company Registration Number and VAT ID –</strong> If applicable.</li>
-              <li><strong>Contact Information –</strong> Email and website of the client.</li>
+              <li><strong>Client Name –</strong> Name of the person or business being billed.</li>
+              <li><strong>Client Address –</strong> Delivery or legal address.</li>
+              <li><strong>Company ID & VAT (if any) –</strong> Tax info of the buyer.</li>
+              <li><strong>Contact –</strong> Client’s email or phone number.</li>
             </ul>
 
             {/* Invoice details */}
             <h3 className="text-xl font-semibold mt-8 mb-4">Invoice Details</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Invoice Number –</strong> A unique identifier for the document.</li>
-              <li><strong>Issue Date –</strong> When the invoice was created.</li>
-              <li><strong>Due Date –</strong> The deadline for payment.</li>
-              <li><strong>Currency –</strong> The currency in which the transaction is conducted.</li>
-              <li><strong>Reference Numbers –</strong> Additional order or transaction identifiers.</li>
+              <li><strong>Invoice Number –</strong> Unique identifier for tracking.</li>
+              <li><strong>Issue & Due Dates –</strong> When invoice was created and when payment is due.</li>
+              <li><strong>Currency –</strong> Used for the transaction.</li>
+              <li><strong>Reference –</strong> Optional PO or order numbers.</li>
             </ul>
 
             {/* Payment information */}
             <h3 className="text-xl font-semibold mt-8 mb-4">Payment Information</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Payment Methods –</strong> Bank transfer, cash, credit card, PayPal, and others.</li>
-              <li><strong>Bank Account Details –</strong> Account number, IBAN, SWIFT/BIC code.</li>
-              <li><strong>Payment Status –</strong> Indicates whether the invoice has been paid.</li>
+              <li><strong>Accepted Methods –</strong> Bank transfer, card, PayPal, cash, etc.</li>
+              <li><strong>Bank Details –</strong> Account number, IBAN, BIC/SWIFT.</li>
+              <li><strong>Status –</strong> Paid or unpaid label.</li>
             </ul>
 
             {/* Commodities and settlements */}
-            <h3 className="text-xl font-semibold mt-8 mb-4">Items and Calculations</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4">Items and Totals</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Item Name –</strong> The product or service being sold.</li>
-              <li><strong>Quantity –</strong> The number of units of goods or services provided.</li>
-              <li><strong>Unit Price –</strong> The cost of a single unit.</li>
-              <li><strong>VAT Rate –</strong> The applicable percentage of Value Added Tax.</li>
-              <li><strong>Total Calculation –</strong> Automatic computation of the total cost, including taxes.</li>
+              <li><strong>Service/Product –</strong> Name of what was sold.</li>
+              <li><strong>Quantity & Unit Price –</strong> Per-item breakdown.</li>
+              <li><strong>VAT –</strong> Percentage applied (if applicable).</li>
+              <li><strong>Total –</strong> Final amount including tax.</li>
             </ul>
 
             {/* Legal significance */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">Legal Significance of an Invoice</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">Legal Relevance of Invoices</h2>
             <p className="mb-6">
-              An invoice is an official document confirming the seller's right to receive payment and the 
-              buyer's obligation to make the payment. Different countries have their own laws and regulations 
-              for invoicing, governed by tax authorities. For example, in the European Union, the VAT system 
-              applies, while in the United States, Sales Tax is used.
+              Invoices are official commercial records. They can be used for tax reporting, financial accounting, and legal protection.
+              Depending on your country, invoicing may follow specific rules like VAT formatting in the EU or sales tax declarations in the US.
             </p>
             <p className="mb-6">
-              By law, an invoice can be used for:
+              Common legal purposes of invoices include:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li>Confirming a transaction between a buyer and a seller.</li>
-              <li>Accounting and financial reporting.</li>
-              <li>Calculating and paying taxes.</li>
-              <li>Resolving potential disputes between parties.</li>
+              <li>Verifying business transactions.</li>
+              <li>Filing tax returns and claiming deductions.</li>
+              <li>Documenting payment terms and amounts.</li>
+              <li>Providing evidence in disputes or audits.</li>
             </ul>
 
             {/* Advantages of Invoice.wiki */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">Advantages of Invoice.wiki</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">Why Choose Invoice.wiki?</h2>
             <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li><strong>Free invoice maker –</strong> No subscriptions or hidden fees for our invoice generator.</li>
-              <li><strong>No registration required –</strong> Start creating business invoices immediately without an account.</li>
-              <li><strong>Full confidentiality –</strong> Your invoice data is not stored on servers.</li>
-              <li><strong>PDF invoice generation –</strong> Download professional invoices in PDF format.</li>
-              <li><strong>Multi-currency support –</strong> Create invoices for international clients and freelancer work.</li>
-              <li><strong>Flexible invoice template –</strong> Customize invoice fields to meet your business needs.</li>
+              <li><strong>Free forever –</strong> No subscriptions, no trials, no fees.</li>
+              <li><strong>Instant PDF invoices –</strong> Ready-to-download professional documents.</li>
+              <li><strong>Browser-based –</strong> Use on any device without installing anything.</li>
+              <li><strong>No login –</strong> Start creating invoices immediately.</li>
+              <li><strong>Multi-currency & tax support –</strong> Ideal for international invoicing.</li>
+              <li><strong>Secure & private –</strong> Your data never leaves your browser.</li>
             </ul>
 
             {/* Contacts */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Contact Us</h2>
             <p className="mb-6">
-              If you have any questions or suggestions, please don't hesitate to reach out to us.
+              Have questions, suggestions, or feedback? We’d love to hear from you.
             </p>
             <ContactButton email={supportEmail} />
           </div>
