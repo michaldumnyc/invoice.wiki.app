@@ -2,6 +2,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { ContactButton } from "@/components/ContactButton"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { BreadcrumbJsonLd, AboutPageJsonLd } from "../components/JsonLd"
 
 export const metadata: Metadata = {
@@ -11,6 +12,31 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://invoice.wiki/about",
   },
+  openGraph: {
+    title: "About Invoice.wiki - Free Invoice Generator",
+    description:
+      "Learn how Invoice.wiki provides free online invoice generation for freelancers and businesses. No registration required, secure browser-based processing.",
+    url: "https://invoice.wiki/about",
+    siteName: "Invoice.wiki",
+    images: [
+      {
+        url: "/images/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "About Invoice.wiki - Free Invoice Generator",
+        type: "image/svg+xml",
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Invoice.wiki - Free Invoice Generator",
+    description:
+      "Learn about our free online invoice generator for freelancers and businesses.",
+    images: ["/images/twitter-card.svg"]
+  }
 }
 
 export default function AboutPage() {
@@ -35,22 +61,22 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-foreground mb-8">
               Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
-              contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no
+              contractors, and entrepreneurs. <Link href="/create-invoice" className="text-blue-600 hover:underline">Create and download professional invoices</Link> as PDFs with full privacy — no
               sign-up, no data tracking, and no installation required. Whether you're billing local clients or
-              international partners, our tool makes invoicing fast, secure, and accessible.
+              international partners, our tool makes invoicing fast, secure, and accessible. Ready to get started? Visit our <Link href="/create-invoice" className="text-blue-600 hover:underline">invoice generator</Link> now.
             </p>
 
             {/* Mission */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Our Mission</h2>
             <p className="mb-6">
-              We believe professional invoicing should be accessible to everyone. Our online invoice maker simplifies
+              We believe professional invoicing should be accessible to everyone. Our <Link href="/create-invoice" className="text-blue-600 hover:underline">online invoice maker</Link> simplifies
               the billing process with a clean interface, automatic tax and total calculations, and instant PDF
               generation. With Invoice.wiki, anyone can create accurate business invoices without technical skills or
               accounts.
             </p>
             <p className="mb-6">
               We never store your data. All information is processed locally in your browser to ensure full privacy and
-              security.
+              security. Learn more about our <Link href="/privacy-policy" className="text-blue-600 hover:underline">privacy protection measures</Link>.
             </p>
 
             {/* What is an invoice */}
@@ -142,6 +168,22 @@ export default function AboutPage() {
               <li><strong>Multi-currency & tax support –</strong> Ideal for international invoicing.</li>
               <li><strong>Secure & private –</strong> Your data never leaves your browser.</li>
             </ul>
+            
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
+              <h3 className="text-xl font-semibold mb-4">Ready to Create Your First Invoice?</h3>
+              <p className="mb-4">
+                Join thousands of freelancers and small business owners who trust Invoice.wiki for their billing needs. 
+                Our <Link href="/create-invoice" className="text-blue-600 hover:underline">free invoice generator</Link> helps you create professional invoices in minutes, not hours.
+              </p>
+              <p className="mb-4">
+                Whether you need to bill for consulting services, freelance work, or product sales, our platform 
+                handles VAT calculations, multiple currencies, and generates PDF invoices that look professional 
+                and meet international standards.
+              </p>
+              <Link href="/create-invoice" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                Start Creating Invoices →
+              </Link>
+            </div>
 
             {/* Contacts */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Contact Us</h2>

@@ -68,12 +68,10 @@ export default function CreateInvoicePage() {
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <section className="container max-w-5xl mx-auto px-4 sm:px-6 py-10">
           <h1 className="text-4xl sm:text-5xl font-bold text-center mb-6">
-            Free Invoice Generator – Create & Download Your Invoice Now
+            Create Invoice
           </h1>
-          <p className="text-base sm:text-lg text-center text-foreground/80 mb-8 max-w-3xl mx-auto">
-            Use our free online invoice maker to generate professional invoices
-            in seconds. Add multiple items, calculate VAT automatically, choose
-            currencies, set payment terms, and export a polished PDF – no registration needed.
+          <p className="text-base sm:text-lg text-center text-foreground/80 mb-8 max-w-2xl mx-auto">
+            Generate professional invoices with PDF export. No registration required.
           </p>
 
           {/* Invoice Form */}
