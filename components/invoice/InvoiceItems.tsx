@@ -50,6 +50,7 @@ export function InvoiceItems({
                         <Input
                           {...field}
                           maxLength={130}
+                          placeholder="Product or service name"
                           onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                           className={highlightedField === `items.${index}.name` ? "border-red-500 error-highlight" : ""}
                         />

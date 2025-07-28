@@ -38,6 +38,7 @@ export function InvoiceDetails({
                   <Input
                     {...field}
                     maxLength={30}
+                    placeholder="INV-2024-001"
                     onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                     className={highlightedField === "invoiceNumber" ? "border-red-500 error-highlight" : ""}
                   />

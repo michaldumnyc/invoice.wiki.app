@@ -19,6 +19,14 @@ const cleanBase64 = (base64String: string) => {
 }
 
 /**
+ * Removes protocol from website URL for clean PDF display
+ */
+const formatWebsiteUrl = (url: string): string => {
+  if (!url) return url
+  return url.replace(/^(https?:\/\/)/, "")
+}
+
+/**
  * Generates a PDF invoice from the provided form data
  * @param data The invoice form data containing all information for the invoice
  * @returns A Promise resolving to the jsPDF document object or null if generation fails
@@ -156,7 +164,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       data.seller?.companyId && `Company ID: ${data.seller.companyId}`,
       data.seller?.vatId && `VAT ID: ${data.seller.vatId}`,
       data.seller?.email && `Email: ${data.seller.email}`,
-      data.seller?.website && `Website: ${data.seller.website}`,
+      data.seller?.website && `Website: ${formatWebsiteUrl(data.seller.website)}`,
     ].filter(Boolean)
 
     sellerInfo.forEach((info) => {
@@ -185,7 +193,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       data.buyer?.companyId && `Company ID: ${data.buyer.companyId}`,
       data.buyer?.vatId && `VAT ID: ${data.buyer.vatId}`,
       data.buyer?.email && `Email: ${data.buyer.email}`,
-      data.buyer?.website && `Website: ${data.buyer.website}`,
+      data.buyer?.website && `Website: ${formatWebsiteUrl(data.buyer.website)}`,
     ].filter(Boolean)
 
     buyerInfo.forEach((info) => {

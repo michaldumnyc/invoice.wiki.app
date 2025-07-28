@@ -37,6 +37,7 @@ export function SellerInformation({
                 <Input
                   {...field}
                   maxLength={100}
+                  placeholder="Your Company Name"
                   onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                   className={highlightedField === "sellerCompanyName" ? "border-red-500 error-highlight" : ""}
                 />
@@ -57,6 +58,7 @@ export function SellerInformation({
                 <Input
                   {...field}
                   maxLength={250}
+                  placeholder="123 Business St, City, Country"
                   onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                   className={highlightedField === "sellerAddress" ? "border-red-500 error-highlight" : ""}
                 />
@@ -80,6 +82,7 @@ export function SellerInformation({
               maxLength={40}
               sanitizer={sanitizeInput}
               highlightedField={highlightedField}
+              placeholder="12345678"
             />
           )}
         />
@@ -98,6 +101,7 @@ export function SellerInformation({
               maxLength={43}
               sanitizer={sanitizeInput}
               highlightedField={highlightedField}
+              placeholder="GB123456789"
             />
           )}
         />
@@ -117,6 +121,7 @@ export function SellerInformation({
               sanitizer={sanitizeEmail}
               highlightedField={highlightedField}
               type="email"
+              placeholder="contact@company.com"
             />
           )}
         />
@@ -138,7 +143,7 @@ export function SellerInformation({
                 return raw.replace(/^(https?:\/\/)/, "")
               }}
               highlightedField={highlightedField}
-              type="url"
+              type="text"
               placeholder="example.com"
             />
           )}

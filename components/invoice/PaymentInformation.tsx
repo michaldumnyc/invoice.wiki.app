@@ -67,6 +67,7 @@ export function PaymentInformation({
                     <Input
                       {...field}
                       maxLength={35}
+                      placeholder="123456789"
                       aria-label="Reference Number"
                       onChange={(e) => {
                         field.onChange(sanitizeInput(e.target.value));
@@ -110,6 +111,7 @@ export function PaymentInformation({
                 maxLength={35}
                 sanitizer={sanitizeInput}
                 highlightedField={highlightedField}
+                placeholder="REF-2024-001"
               />
             )}
           />
@@ -127,6 +129,7 @@ export function PaymentInformation({
                 onToggle={() => toggleFieldVisibility("orderNumber")}
                 maxLength={35}
                 sanitizer={sanitizeInput}
+                placeholder="ORD-2024-001"
                 highlightedField={highlightedField}
               />
             )}
@@ -174,6 +177,7 @@ export function PaymentInformation({
                     maxLength={35}
                     sanitizer={sanitizeInput}
                     highlightedField={highlightedField}
+                    placeholder="12345678"
                   />
                 )}
               />

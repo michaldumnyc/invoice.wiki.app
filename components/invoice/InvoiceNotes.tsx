@@ -28,6 +28,7 @@ export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
                 <Textarea
                   {...field}
                   maxLength={210}
+                  placeholder="Payment terms: Net 30 days. Thank you for your business!"
                   onChange={(e) => {
                     let value = sanitizeInput(e.target.value)
                     // Insert line break every 105 characters

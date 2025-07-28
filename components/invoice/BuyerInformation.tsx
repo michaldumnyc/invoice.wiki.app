@@ -37,6 +37,7 @@ export function BuyerInformation({
                 <Input
                   {...field}
                   maxLength={100}
+                  placeholder="Client Company Name"
                   onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                   className={highlightedField === "buyerCompanyName" ? "border-red-500 error-highlight" : ""}
                 />
@@ -57,6 +58,7 @@ export function BuyerInformation({
                 <Input
                   {...field}
                   maxLength={250}
+                  placeholder="456 Client Ave, City, Country"
                   onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                   className={highlightedField === "buyerAddress" ? "border-red-500 error-highlight" : ""}
                 />
@@ -80,6 +82,7 @@ export function BuyerInformation({
               maxLength={40}
               sanitizer={sanitizeInput}
               highlightedField={highlightedField}
+              placeholder="87654321"
             />
           )}
         />
@@ -98,6 +101,7 @@ export function BuyerInformation({
               maxLength={43}
               sanitizer={sanitizeInput}
               highlightedField={highlightedField}
+              placeholder="DE987654321"
             />
           )}
         />
@@ -117,6 +121,7 @@ export function BuyerInformation({
               sanitizer={sanitizeEmail}
               highlightedField={highlightedField}
               type="email"
+              placeholder="client@company.com"
             />
           )}
         />
@@ -138,7 +143,7 @@ export function BuyerInformation({
                 return raw.replace(/^(https?:\/\/)/, "")
               }}
               highlightedField={highlightedField}
-              type="url"
+              type="text"
               placeholder="example.com"
             />
           )}
