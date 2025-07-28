@@ -1,12 +1,13 @@
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
 import LoadingSpinner from "@/components/LoadingSpinner"
+import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import {
   BreadcrumbJsonLd,
   WebsiteJsonLd,
   ProductJsonLd,
-  OrganizationJsonLd
+  OrganizationJsonLd,
 } from "../components/JsonLd"
 
 export const metadata: Metadata = {
@@ -41,9 +42,12 @@ export const metadata: Metadata = {
   },
 }
 
-const CreateInvoiceForm = dynamic(() => import("@/components/CreateInvoiceForm"), {
-  loading: () => <LoadingSpinner />,
-})
+const CreateInvoiceForm = dynamic(
+  () => import("@/components/CreateInvoiceForm"),
+  {
+    loading: () => <LoadingSpinner />,
+  }
+)
 
 export default function CreateInvoicePage() {
   const breadcrumbItems = [
@@ -59,6 +63,7 @@ export default function CreateInvoicePage() {
       <OrganizationJsonLd />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 
+      {/* Main content */}
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <section className="container max-w-5xl mx-auto px-4 sm:px-6 py-10">
           <h1 className="text-4xl sm:text-5xl font-bold text-center mb-6">
@@ -76,6 +81,11 @@ export default function CreateInvoicePage() {
           </Suspense>
         </section>
       </main>
+
+      {/* Full-width footer */}
+      <footer className="w-full mt-auto">
+        <Footer />
+      </footer>
     </div>
   )
 }
