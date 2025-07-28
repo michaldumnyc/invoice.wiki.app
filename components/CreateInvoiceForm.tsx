@@ -427,7 +427,6 @@ const CreateInvoiceForm: React.FC = () => {
           </FormProvider>
         </div>
       </div>
-      <Footer />
     </section>
   )
 }
