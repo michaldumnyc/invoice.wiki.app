@@ -29,6 +29,10 @@ export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
                   {...field}
                   maxLength={210}
                   placeholder="Payment terms: Net 30 days. Thank you for your business!"
+                  autoComplete="off"
+                  data-lpignore="true"
+                  data-form-type="other"
+                  spellCheck="false"
                   onChange={(e) => {
                     let value = sanitizeInput(e.target.value)
                     // Insert line break every 105 characters

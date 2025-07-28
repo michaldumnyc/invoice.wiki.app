@@ -75,7 +75,7 @@ export function WebsiteJsonLd() {
     "datePublished": "2024-01-01",
     "inLanguage": "en-US",
     "isAccessibleForFree": true,
-    "screenshot": "https://invoice.wiki/images/og-image.svg"
+    "screenshot": "https://invoice.wiki/images/og-image.png"
   }
 
   return (
@@ -178,7 +178,7 @@ export function ProductJsonLd() {
       }
     ],
     "url": "https://invoice.wiki",
-    "image": "https://invoice.wiki/images/og-image.svg"
+    "image": "https://invoice.wiki/images/og-image.png"
   }
 
   return <JsonLd data={data} />
@@ -277,6 +277,43 @@ export function AboutPageJsonLd() {
       "url": "https://invoice.wiki"
     },
     "inLanguage": "en-US"
+  }
+
+  return <JsonLd data={data} />
+}
+
+// ✅ Invoice Example Image Schema
+export function InvoiceExampleImageJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "name": "Professional Invoice Example",
+    "description": "Sample professional invoice created with Invoice.wiki free online invoice generator showing complete business details, itemized services, VAT calculations, payment information, and clean formatting ready for PDF download",
+    "url": "https://invoice.wiki/images/invoice-example.png",
+    "contentUrl": "https://invoice.wiki/images/invoice-example.png",
+    "width": "800",
+    "height": "1000",
+    "encodingFormat": "image/png",
+    "creator": {
+      "@type": "WebApplication",
+      "name": "Invoice.wiki",
+      "url": "https://invoice.wiki"
+    },
+    "license": "https://invoice.wiki",
+    "keywords": [
+      "invoice example",
+      "professional invoice template",
+      "free invoice generator",
+      "business invoice sample",
+      "VAT invoice template",
+      "PDF invoice example"
+    ],
+    "about": {
+      "@type": "WebApplication",
+      "name": "Free Invoice Generator",
+      "applicationCategory": "BusinessApplication",
+      "description": "Free online invoice generator for creating professional invoices"
+    }
   }
 
   return <JsonLd data={data} />

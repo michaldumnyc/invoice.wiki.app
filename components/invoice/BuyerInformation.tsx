@@ -38,6 +38,9 @@ export function BuyerInformation({
                   {...field}
                   maxLength={100}
                   placeholder="Client Company Name"
+                  autoComplete="off"
+                  data-lpignore="true"
+                  data-form-type="other"
                   onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                   className={highlightedField === "buyerCompanyName" ? "border-red-500 error-highlight" : ""}
                 />
@@ -59,6 +62,9 @@ export function BuyerInformation({
                   {...field}
                   maxLength={250}
                   placeholder="456 Client Ave, City, Country"
+                  autoComplete="off"
+                  data-lpignore="true"
+                  data-form-type="other"
                   onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                   className={highlightedField === "buyerAddress" ? "border-red-500 error-highlight" : ""}
                 />

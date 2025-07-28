@@ -66,31 +66,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://invoice.wiki",
-    title: "Invoice.wiki - Free Invoice Maker & Generator",
+    title: "Invoice.wiki - Free Invoice Generator",
     description: "Free invoice maker and generator. Create invoices online instantly and for Free. No registration required. Perfect for freelancers and small businesses.",
     siteName: "Invoice.wiki",
     images: [
       {
-        url: "/images/og-image.svg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Invoice.wiki - Free Invoice Generator",
-        type: "image/svg+xml",
+        type: "image/png",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Invoice.wiki - Free Invoice Maker & Generator",
-    description: "Free invoice maker and generator. Create invoices online instantly and for Free. No registration required. Perfect for freelancers and small businesses.",
-    images: [
-      {
-        url: "/images/twitter-card.svg",
-        alt: "Invoice.wiki - Free Invoice Generator",
-      }
-    ],
-    creator: "@invoice_wiki",
+    title: "Invoice.wiki - Free Invoice Generator",
+    description: "Create professional invoices online instantly. Free invoice maker with PDF download, VAT support, and multiple currencies. No registration required.",
+    images: ["/images/twitter-card.png"],
+    site: "@invoice_wiki",
   },
   category: "Finance",
   applicationName: "Invoice.wiki",

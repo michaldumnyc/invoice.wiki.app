@@ -58,6 +58,9 @@ export function ToggleableFormField({
               maxLength={maxLength}
               placeholder={placeholder}
               aria-label={label}
+              autoComplete="off"
+              data-lpignore="true"
+              data-form-type="other"
               onChange={(e) => field.onChange(sanitizer(e.target.value))}
               className={highlightedField === fieldName ? "border-red-500 error-highlight" : ""}
             />

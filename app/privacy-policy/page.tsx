@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     siteName: "Invoice.wiki",
     images: [
       {
-        url: "/images/og-image.svg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Invoice.wiki Privacy Policy",
-        type: "image/svg+xml",
+        type: "image/png",
       }
     ],
     locale: "en_US",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy - Invoice.wiki",
     description:
       "Learn about Invoice.wiki's privacy-first approach to online invoice generation.",
-    images: ["/images/twitter-card.svg"]
+    images: ["/images/twitter-card.png"]
   }
 }
 

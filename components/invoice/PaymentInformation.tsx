@@ -69,6 +69,9 @@ export function PaymentInformation({
                       maxLength={35}
                       placeholder="123456789"
                       aria-label="Reference Number"
+                      autoComplete="off"
+                      data-lpignore="true"
+                      data-form-type="other"
                       onChange={(e) => {
                         field.onChange(sanitizeInput(e.target.value));
                         setManuallyEditedReference(true);

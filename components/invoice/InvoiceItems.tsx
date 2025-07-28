@@ -51,6 +51,9 @@ export function InvoiceItems({
                           {...field}
                           maxLength={130}
                           placeholder="Product or service name"
+                          autoComplete="off"
+                          data-lpignore="true"
+                          data-form-type="other"
                           onChange={(e) => field.onChange(sanitizeInput(e.target.value))}
                           className={highlightedField === `items.${index}.name` ? "border-red-500 error-highlight" : ""}
                         />
@@ -71,6 +74,9 @@ export function InvoiceItems({
                         <Input
                           type="number"
                           {...field}
+                          autoComplete="off"
+                          data-lpignore="true"
+                          data-form-type="other"
                           onChange={(e) => {
                             const raw = sanitizeNumber(e.target.value)
                             let valueNum = parseInt(raw, 10)
@@ -101,6 +107,9 @@ export function InvoiceItems({
                         <Input
                           type="number"
                           {...field}
+                          autoComplete="off"
+                          data-lpignore="true"
+                          data-form-type="other"
                           onChange={(e) => {
                             const raw = sanitizeNumber(e.target.value)
                             let valueNum = parseFloat(raw)
@@ -132,6 +141,9 @@ export function InvoiceItems({
                         <Input
                           type="number"
                           {...field}
+                          autoComplete="off"
+                          data-lpignore="true"
+                          data-form-type="other"
                           onChange={(e) => {
                             const raw = sanitizeNumber(e.target.value)
                             let valueNum = parseFloat(raw)
