@@ -71,7 +71,7 @@ export default function CreateInvoicePage() {
             Create Invoice
           </h1>
           <p className="text-base sm:text-lg text-center text-foreground/80 mb-8 max-w-2xl mx-auto">
-            Generate professional invoices with PDF export. No registration required.
+            Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required.
           </p>
 
           {/* Invoice Form */}
