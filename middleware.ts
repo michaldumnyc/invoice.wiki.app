@@ -3,6 +3,20 @@ import type { NextRequest } from "next/server"
 
 
 export function middleware(request: NextRequest) {
+  const url = request.nextUrl
+
+  // Redirect www to non-www
+  if (url.hostname.startsWith('www.')) {
+    const newUrl = new URL(url)
+    newUrl.hostname = url.hostname.substring(4)
+    return NextResponse.redirect(newUrl, 301)
+  }
+
+  // Redirect index files to root
+  if (url.pathname === '/index.html' || url.pathname === '/index.php') {
+    return NextResponse.redirect(new URL('/', url), 301)
+  }
+
   // Handle Vercel Insights
   if (request.nextUrl.pathname.startsWith('/_vercel/insights/')) {
     const response = NextResponse.next()

@@ -7,6 +7,20 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
 
+  redirects: async () => {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.php',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 
   webpack: (config, { dev, isServer }) => {
     // PDF generation optimization

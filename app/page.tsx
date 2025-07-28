@@ -16,14 +16,13 @@ import {
 } from "./components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Invoice.wiki - Free Invoice Generator | Create Professional Invoices Online",
+  title: "Free Invoice Generator - Invoice.wiki",
   description:
     "Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, and multiple currencies. No registration required - start now!",
   alternates: {
     canonical: "https://invoice.wiki",
     languages: {
-      "en-US": "/",
-      en: "/"
+      "en-US": "/"
     }
   },
   openGraph: {
@@ -68,10 +67,9 @@ export default function HomePage() {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
                 <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-                  <span className="text-foreground">Free Invoice Maker & Generator</span>
+                  <span className="text-foreground">Free Invoice Generator</span>
                   <br className="sm:hidden" />
-                  <span className="text-blue-500"> – Create and Download</span>
-                  <span className="text-blue-600"> PDF Invoices Instantly</span>
+                  <span className="text-blue-500"> Create PDF Invoices</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-foreground/80 mb-8">
                   Use our free online invoice maker to create professional invoices for clients. Generate and download PDF invoices instantly. Ideal for freelancers, small business owners, and contractors. No sign-up or installation required — just fast, secure, and simple billing.

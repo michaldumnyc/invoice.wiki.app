@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 // Extended metadata for SEO
 export const metadata: Metadata = {
   title: {
-    default: "Invoice.wiki - Free Invoice Maker & Generator | Create Professional Invoices",
+    default: "Invoice.wiki - Free Invoice Generator",
     template: "%s | Invoice.wiki",
   },
   description: "Free online invoice generator. Create professional invoices instantly with PDF download, VAT support, and multiple currencies. No registration required.",
@@ -48,8 +48,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      'en-US': '/',
-      'en': '/'
+      'en-US': '/'
     }
   },
   robots: {
