@@ -30,9 +30,22 @@ export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
                   maxLength={210}
                   placeholder="Payment terms: Net 30 days. Thank you for your business!"
                   autoComplete="off"
-                  data-lpignore="true"
-                  data-form-type="other"
+                  autoCapitalize="off"
+                  autoCorrect="off"
                   spellCheck="false"
+                  data-lpignore="true"
+                  data-1p-ignore="true"
+                  data-bwignore="true"
+                  data-dashlane-ignore="true"
+                  data-form-type="other"
+                  data-testid="invoice-notes"
+                  role="textbox"
+                  aria-label="Invoice notes and payment terms"
+                  onFocus={(e) => {
+                    // Prevent browser extensions from interfering
+                    e.target.setAttribute('data-form-type', 'other')
+                    e.target.setAttribute('autocomplete', 'off')
+                  }}
                   onChange={(e) => {
                     let value = sanitizeInput(e.target.value)
                     // Insert line break every 105 characters

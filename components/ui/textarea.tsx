@@ -12,6 +12,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({ classNa
         className,
       )}
       ref={ref}
+      autoComplete="off"
+      data-form-type="other"
       {...props}
     />
   )

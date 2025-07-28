@@ -1,7 +1,7 @@
 import type React from "react";
 import "@/styles/global.css";
 import type { Metadata, Viewport } from "next";
-import { PrivacyBanner } from "@/components/PrivacyBanner";
+
 import { ToastProvider } from "@/components/ui/toast-provider";
 
 
@@ -133,7 +133,6 @@ export default function RootLayout({
       <body className="min-h-screen antialiased bg-background text-foreground">
         <ToastProvider>
           {children}
-          <PrivacyBanner />
         </ToastProvider>
       </body>
     </html>
