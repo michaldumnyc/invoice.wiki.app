@@ -13,6 +13,11 @@ export default function Footer() {
           <div className="text-xl font-semibold mb-4">Quick Links</div>
             <ul className="space-y-2">
               <li>
+                <Link href="/" className="hover:text-blue-300 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-blue-300 transition-colors">
                   About
                 </Link>

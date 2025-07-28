@@ -26,6 +26,17 @@ export default function Header() {
             <ul className="flex space-x-6">
               <li>
                 <Link
+                  href="/"
+                  className={cn(
+                    "text-foreground hover:text-primary transition-colors",
+                    pathname === "/" && "text-primary",
+                  )}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",

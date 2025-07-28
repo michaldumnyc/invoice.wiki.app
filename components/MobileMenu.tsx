@@ -34,6 +34,13 @@ export function MobileMenu() {
           >
             <nav className="flex flex-col space-y-4">
               <Link
+                href="/"
+                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/" && "bg-accent")}
+                onClick={closeMenu}
+              >
+                Home
+              </Link>
+              <Link
                 href="/about"
                 className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/about" && "bg-accent")}
                 onClick={closeMenu}
