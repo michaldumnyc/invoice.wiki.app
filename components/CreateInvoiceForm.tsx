@@ -33,6 +33,7 @@ import {
 
 // Import decimal utilities for precise financial calculations
 import { calculateInvoiceTotals, toNumber } from "@/lib/decimal-utils"
+import { isValid } from "date-fns"
 
 const CreateInvoiceForm: React.FC = () => {
   const { showToast } = useToastProvider()
@@ -135,6 +136,13 @@ const CreateInvoiceForm: React.FC = () => {
     async (data: InvoiceFormValues) => {
       try {
         setIsSubmitting(true)
+        
+        // Validate dates before processing
+        if (!isValid(data.issueDate) || !isValid(data.dueDate)) {
+          showToast("Please ensure all dates are valid", "error")
+          setIsSubmitting(false)
+          return
+        }
         
         const pdfData = {
           ...data,

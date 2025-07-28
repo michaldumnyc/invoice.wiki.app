@@ -1,6 +1,6 @@
 import jsPDF from "jspdf"
 import autoTable from "jspdf-autotable"
-import { format } from "date-fns"
+import { format, isValid } from "date-fns"
 import type { InvoiceFormData } from "@/types/invoice"
 import { currencies } from "./currencies"
 import { calculateInvoiceTotals, calculateItemTotal, toNumber, toDecimal } from "@/lib/decimal-utils"
@@ -93,10 +93,16 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Update initial position for invoice details
     const detailsStartY = headerY + headerHeight + 10
 
+    // Helper function to safely format dates
+    const formatSafeDate = (date: any): string => {
+      const safeDate = date ? new Date(date) : new Date()
+      return isValid(safeDate) ? format(safeDate, "dd.MM.yyyy") : format(new Date(), "dd.MM.yyyy")
+    }
+
     // Invoice Details
     const invoiceDetails = [
-      ["Issue Date", format(new Date(data.invoice?.issueDate || new Date()), "dd.MM.yyyy")],
-      ["Due Date", format(new Date(data.invoice?.dueDate || new Date()), "dd.MM.yyyy")],
+      ["Issue Date", formatSafeDate(data.invoice?.issueDate)],
+      ["Due Date", formatSafeDate(data.invoice?.dueDate)],
       data.invoice?.referenceNumber && ["Reference Number", data.invoice.referenceNumber],
       data.invoice?.customerReferenceNumber && ["Customer Reference", data.invoice.customerReferenceNumber],
       data.invoice?.orderNumber && ["Order Number", data.invoice.orderNumber],

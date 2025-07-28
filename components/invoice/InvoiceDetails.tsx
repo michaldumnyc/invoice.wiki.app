@@ -1,6 +1,6 @@
 import React from "react"
 import { Control } from "react-hook-form"
-import { format } from "date-fns"
+import { format, isValid } from "date-fns"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -58,8 +58,13 @@ export function InvoiceDetails({
                 <FormControl>
                   <Input
                     type="date"
-                    value={format(field.value, "yyyy-MM-dd")}
-                    onChange={(e) => field.onChange(new Date(e.target.value))}
+                    value={isValid(field.value) ? format(field.value, "yyyy-MM-dd") : ""}
+                    onChange={(e) => {
+                      const date = new Date(e.target.value)
+                      if (isValid(date)) {
+                        field.onChange(date)
+                      }
+                    }}
                     className={highlightedField === "issueDate" ? "border-red-500 error-highlight" : ""}
                   />
                 </FormControl>
@@ -78,8 +83,13 @@ export function InvoiceDetails({
                 <FormControl>
                   <Input
                     type="date"
-                    value={format(field.value, "yyyy-MM-dd")}
-                    onChange={(e) => field.onChange(new Date(e.target.value))}
+                    value={isValid(field.value) ? format(field.value, "yyyy-MM-dd") : ""}
+                    onChange={(e) => {
+                      const date = new Date(e.target.value)
+                      if (isValid(date)) {
+                        field.onChange(date)
+                      }
+                    }}
                     className={highlightedField === "dueDate" ? "border-red-500 error-highlight" : ""}
                   />
                 </FormControl>
