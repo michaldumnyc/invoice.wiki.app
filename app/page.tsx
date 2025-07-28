@@ -129,7 +129,7 @@ export default function HomePage() {
               <div className="space-y-6 text-foreground/90">
                 <div>
                   <h3 className="font-semibold">Do I need to register to create invoices?</h3>
-                  <p>No, our invoice generator is completely free and doesn’t require registration or login.</p>
+                  <p>No, our invoice generator is completely free and doesn't require registration or login.</p>
                 </div>
                 <div>
                   <h3 className="font-semibold">Can I download my invoice as PDF?</h3>
@@ -142,6 +142,36 @@ export default function HomePage() {
                 <div>
                   <h3 className="font-semibold">Does it support VAT?</h3>
                   <p>Yes, you can add VAT and tax values to your invoice easily.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section aria-labelledby="benefits-heading" className="py-12 md:py-20">
+            <div className="container mx-auto px-4">
+              <h2 id="benefits-heading" className="text-2xl sm:text-3xl font-bold text-center mb-12">
+                Professional Invoice Generation Made Simple
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <div className="space-y-6 text-foreground/90">
+                  <p className="text-lg leading-relaxed">
+                    Creating professional invoices has never been easier. Our free online invoice generator allows you to 
+                    create, customize, and download professional invoices in minutes. Whether you're a freelancer sending 
+                    your first invoice or a small business owner managing multiple clients, our tool provides everything 
+                    you need to get paid faster.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    The invoice maker supports multiple currencies, VAT calculations, and various payment terms. You can 
+                    add your company logo, customize colors, and include detailed line items with quantities, rates, and 
+                    descriptions. All invoices are generated as high-quality PDF files that you can send directly to 
+                    your clients or print for your records.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Security and privacy are our top priorities. Your invoice data is processed locally in your browser 
+                    and never stored on our servers. This means your sensitive business information remains completely 
+                    private and secure. Start creating professional invoices today without any registration or fees.
+                  </p>
                 </div>
               </div>
             </div>
