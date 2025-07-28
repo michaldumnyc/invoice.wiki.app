@@ -1,9 +1,11 @@
 {
   "name": "Invoice.wiki - Free Invoice Generator",
   "short_name": "Invoice.wiki",
-  "description": "Free online invoice generator with PDF download and VAT support",
+  "description": "Free online invoice generator. Create professional invoices instantly with PDF download, VAT support, and multiple currencies. No registration required.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#3b82f6",
   "icons": [
@@ -14,19 +16,30 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-192x192.svg",
-      "sizes": "192x192",
+      "src": "/favicon.svg",
+      "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icons/icon-512x512.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
-  "categories": ["finance", "business", "productivity"],
+  "categories": ["finance", "business", "productivity", "utilities"],
   "lang": "en-US",
-  "dir": "ltr"
+  "dir": "ltr",
+  "id": "invoice-wiki-generator",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Create Invoice",
+      "short_name": "Create",
+      "description": "Start creating a new invoice",
+      "url": "/create-invoice",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
 } 

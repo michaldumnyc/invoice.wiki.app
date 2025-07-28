@@ -120,6 +120,14 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         {/* SVG Apple Touch Icon */}
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.svg" type="image/svg+xml" title="Invoice.wiki Apple Touch Icon" />
+        {/* PWA Meta Tags */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Invoice.wiki" />
+        <meta name="application-name" content="Invoice.wiki" />
+        <meta name="msapplication-config" content="none" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -215,8 +215,7 @@ export function FaqJsonLd() {
         "name": "Do I need to register to create invoices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text":
-            "No, our invoice generator is completely free and doesn’t require registration or login."
+          "text": "Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our invoice creation page and start building professional invoices immediately without providing personal information."
         }
       },
       {
@@ -224,25 +223,31 @@ export function FaqJsonLd() {
         "name": "Can I download my invoice as PDF?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text":
-            "Yes, you can instantly download your invoice as a professional PDF file."
+          "text": "Yes, you can instantly download your professionally formatted invoice as a high-quality PDF file that's ready for sending to clients or printing for your business records. Our PDF generation system ensures perfect formatting across all devices and platforms."
         }
       },
       {
         "@type": "Question",
-        "name": "Is this tool free?",
+        "name": "Is this tool completely free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text":
-            "Yes, Invoice.wiki is a 100% free invoice maker for personal and commercial use."
+          "text": "Yes, Invoice.wiki is a 100% free invoice maker for both personal and commercial use with no hidden fees, subscription costs, or premium features. We believe professional invoice generation should be accessible to everyone, from individual freelancers to growing businesses."
         }
       },
       {
         "@type": "Question",
-        "name": "Does it support VAT?",
+        "name": "Does it support VAT and tax calculations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can add VAT and tax values to your invoice easily."
+          "text": "Absolutely! You can easily add VAT rates, tax percentages, and various fee structures to your invoices with automatic calculations. Our system supports multiple tax types and handles complex billing scenarios commonly required in different countries and industries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What currencies are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our invoice generator supports 40+ international currencies including USD, EUR, GBP, CAD, AUD, CHF, JPY, SEK, NOK, DKK, PLN, CZK, UAH, CNY, INR, SGD, HKD, NZD, BRL, MXN, ZAR, TRY, ILS, AED, THB, and many others. You can select your preferred currency and the system will format amounts according to standard financial conventions for that currency."
         }
       }
     ]

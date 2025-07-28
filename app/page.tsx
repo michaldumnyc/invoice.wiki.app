@@ -145,7 +145,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">What currencies are supported?</h3>
-                  <p className="leading-relaxed">Our invoice generator supports multiple international currencies including USD, EUR, GBP, CAD, AUD, and many others. You can select your preferred currency and the system will format amounts according to standard financial conventions for that currency.</p>
+                  <p className="leading-relaxed">Our invoice generator supports 40+ international currencies including USD, EUR, GBP, CAD, AUD, CHF, JPY, SEK, NOK, DKK, PLN, CZK, UAH, CNY, INR, SGD, HKD, NZD, BRL, MXN, ZAR, TRY, ILS, AED, THB, and many others. You can select your preferred currency and the system will format amounts according to standard financial conventions for that currency, ensuring professional invoices for clients worldwide.</p>
                 </div>
               </div>
             </div>
