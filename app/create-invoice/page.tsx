@@ -25,10 +25,11 @@ export const metadata: Metadata = {
     siteName: "Invoice.wiki",
     images: [
       {
-        url: "https://invoice.wiki/images/og-image.svg",
+        url: "/images/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Create invoice instantly with Invoice.wiki",
+        type: "image/svg+xml",
       },
     ],
     type: "website",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: "Create Invoice - Free Invoice Maker",
     description:
       "Generate invoices online with PDF export and multi-currency support.",
-    images: ["https://invoice.wiki/images/og-image.svg"],
+    images: ["/images/twitter-card.svg"],
   },
 }
 
