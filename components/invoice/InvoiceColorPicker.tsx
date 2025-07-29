@@ -33,7 +33,7 @@ export function InvoiceColorPicker({ selectedColorId, onColorChange, className, 
       </label>
       
       <Select value={selectedColorId} onValueChange={onColorChange}>
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full" aria-label="Select invoice accent color">
           <SelectValue>
             {selectedColor && (
               <div className="flex items-center gap-2">

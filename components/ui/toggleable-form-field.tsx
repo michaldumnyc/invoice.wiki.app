@@ -44,6 +44,7 @@ export function ToggleableFormField({
           variant="ghost"
           size="sm"
           onClick={onToggle}
+          aria-label={isVisible ? `Hide ${label}` : `Show ${label}`}
         >
           {isVisible ? (
             <EyeOff className="h-4 w-4 mr-2" />

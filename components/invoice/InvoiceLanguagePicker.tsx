@@ -33,7 +33,7 @@ export function InvoiceLanguagePicker({ selectedLanguageId, onLanguageChange, cl
       </label>
       
       <Select value={selectedLanguageId} onValueChange={onLanguageChange}>
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full" aria-label="Select invoice language">
           <SelectValue>
             {selectedLanguage && (
               <div className="flex items-center gap-2">
