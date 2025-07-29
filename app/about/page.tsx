@@ -177,7 +177,13 @@ export default function AboutPage() {
               Here's an example of what your invoices will look like:
             </p>
             
-            <div className="bg-white dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 p-4 mb-8 shadow-lg">
+            <div 
+              className="bg-card rounded-lg border-2 border-border p-4 mb-8 shadow-lg"
+              style={{
+                backgroundColor: 'var(--card)',
+                borderColor: 'var(--border)'
+              }}
+            >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/2">
                   <img 
@@ -213,7 +219,7 @@ export default function AboutPage() {
                       <span>Print-ready formatting</span>
                     </li>
                   </ul>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+                  <p className="text-sm text-muted-foreground mt-4">
                     Every invoice maintains this professional standard, ensuring your business 
                     makes a great impression with every client interaction.
                   </p>

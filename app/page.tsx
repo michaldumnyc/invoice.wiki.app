@@ -125,7 +125,7 @@ export default function HomePage() {
           </section>
 
           {/* Invoice Example Section */}
-          <section aria-labelledby="example-heading" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20">
+          <section aria-labelledby="example-heading" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-background dark:via-secondary dark:to-background">
             <div className="container mx-auto px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
@@ -140,7 +140,13 @@ export default function HomePage() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   {/* Invoice Preview Image */}
                   <div className="order-2 lg:order-1">
-                    <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 sm:p-6 border dark:border-gray-700">
+                    <div 
+                      className="relative bg-card rounded-lg shadow-2xl p-4 sm:p-6 border border-border"
+                      style={{
+                        backgroundColor: 'var(--card)',
+                        borderColor: 'var(--border)'
+                      }}
+                    >
                       <img 
                         src="/images/invoice-example.png"
                         alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"

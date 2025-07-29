@@ -100,7 +100,7 @@ Thank you for your help!
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-red-50 via-white to-gray-50 dark:from-gray-900 dark:via-red-900/20 dark:to-gray-800">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-red-50 via-white to-gray-50 dark:bg-gradient-to-br dark:from-background dark:via-secondary dark:to-background">
       <Card className="w-full max-w-2xl">
         <CardHeader className="text-center">
           <div className="mx-auto w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
@@ -109,7 +109,7 @@ Thank you for your help!
           <CardTitle className="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">
             {getErrorTitle()}
           </CardTitle>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-muted-foreground">
             {getErrorDescription()}
           </p>
         </CardHeader>
@@ -158,7 +158,7 @@ Thank you for your help!
           </div>
 
           {/* Alternative Solution */}
-          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+          <div className="text-center text-sm text-muted-foreground">
             <p>If the problem persists, try using a different browser or device.</p>
             {supportEmail && (
               <p className="mt-1">
