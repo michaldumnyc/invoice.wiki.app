@@ -181,7 +181,7 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Automatic Calculations</h3>
-                          <p className="text-muted-foreground">VAT rates, subtotals, and grand totals are calculated automatically with precision, eliminating manual errors and saving valuable time.</p>
+                          <p className="text-muted-foreground">VAT rates, subtotals, and grand totals are calculated automatically with high precision using mathematical rounding (0.5 rounds up) to 2 decimal places, eliminating manual errors and saving valuable time.</p>
                         </div>
                       </div>
                       
