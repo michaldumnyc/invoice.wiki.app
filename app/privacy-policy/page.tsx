@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
               <p className="mb-4 leading-relaxed">
                 If you have any questions about our privacy policy or security measures, please{" "}
-                <ContactButton email={supportEmail} />.
+                <ContactButton email={privacyEmail} />.
               </p>
             </div>
           </div>
