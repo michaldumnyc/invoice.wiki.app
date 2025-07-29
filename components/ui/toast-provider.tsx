@@ -52,8 +52,6 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         message={toast.message} 
         open={toast.visible} 
         variant={toast.type}
-        position="bottomLeft"
-        duration={4000}
         onClose={() => setToast(prev => ({ ...prev, visible: false }))} 
       />
     </ToastContext.Provider>

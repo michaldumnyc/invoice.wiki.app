@@ -32,7 +32,6 @@ export interface ToastProps extends VariantProps<typeof toastVariants> {
 export function Toast({
   message,
   variant,
-  position,
   open,
   onClose,
   duration = 4000,
@@ -72,11 +71,7 @@ export function Toast({
   return (
     <div 
       className={cn(
-        toastVariants({ 
-          variant, 
-          position,
-          visibility: isVisible ? "shown" : "hidden"
-        }),
+        toastVariants({ variant }),
         "flex items-center gap-3"
       )} 
       role="alert"
