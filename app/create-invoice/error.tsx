@@ -163,7 +163,7 @@ Thank you for your help!
             {supportEmail && (
               <p className="mt-1">
                 You can also contact us directly at{" "}
-                <a href={`mailto:${supportEmail}`} className="text-blue-600 dark:text-blue-400 hover:underline">
+                <a href={`mailto:${supportEmail}`} className="text-primary hover:underline">
                   {supportEmail}
                 </a>
               </p>

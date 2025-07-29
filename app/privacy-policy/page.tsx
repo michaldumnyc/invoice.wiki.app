@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
 
               <h2 className="text-2xl font-semibold mb-4">Anonymous Analytics</h2>
               <p className="mb-4 leading-relaxed">
-                We use Vercel Analytics to understand how our <Link href="/create-invoice" className="text-blue-600 hover:underline">free invoice generator</Link> is being used. This helps us improve the service and identify technical issues. The analytics data is completely anonymous and includes only:
+                We use Vercel Analytics to understand how our <Link href="/create-invoice" className="text-primary hover:underline">free invoice generator</Link> is being used. This helps us improve the service and identify technical issues. The analytics data is completely anonymous and includes only:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-6">
                 <li>Page views and popular features</li>
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage() {
 
               <h2 className="text-2xl font-semibold mb-4">Third-Party Services</h2>
               <p className="mb-4 leading-relaxed">
-                Invoice.wiki is hosted on Vercel's secure infrastructure. While we don't send your invoice data to any third parties, standard web hosting logs may contain basic technical information like request times and general error data. Learn more <Link href="/about" className="text-blue-600 hover:underline">about our platform</Link> and security measures.
+                Invoice.wiki is hosted on Vercel's secure infrastructure. While we don't send your invoice data to any third parties, standard web hosting logs may contain basic technical information like request times and general error data. Learn more <Link href="/about" className="text-primary hover:underline">about our platform</Link> and security measures.
               </p>
 
               <h2 className="text-2xl font-semibold mb-4">Your Rights and Control</h2>

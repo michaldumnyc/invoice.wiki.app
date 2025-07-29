@@ -6,30 +6,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const toastVariants = cva(
-  "fixed flex items-center w-auto max-w-md p-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out z-50",
+  "relative flex items-center justify-between p-4 mb-2 rounded-lg shadow-lg",
   {
     variants: {
       variant: {
-        default: "bg-white text-gray-900 border-l-4 border-blue-500",
-        success: "bg-white text-gray-900 border-l-4 border-green-500",
-        error: "bg-white text-gray-900 border-l-4 border-red-500",
-        warning: "bg-white text-gray-900 border-l-4 border-yellow-500",
+        default: "bg-card text-card-foreground border-l-4 border-primary",
+        success: "bg-card text-card-foreground border-l-4 border-green-500",
+        error: "bg-card text-card-foreground border-l-4 border-red-500",
+        warning: "bg-card text-card-foreground border-l-4 border-yellow-500",
       },
-      position: {
-        topRight: "top-4 right-4 transform translate-x-0",
-        topLeft: "top-4 left-4 transform translate-x-0",
-        bottomRight: "bottom-4 right-4 transform translate-x-0",
-        bottomLeft: "bottom-4 left-4 transform translate-x-0",
-      },
-      visibility: {
-        shown: "opacity-100 translate-y-0",
-        hidden: "opacity-0 translate-y-2",
-      }
     },
     defaultVariants: {
       variant: "default",
-      position: "bottomLeft",
-      visibility: "hidden",
     },
   }
 )
@@ -97,7 +85,7 @@ export function Toast({
       <div className="text-sm font-medium flex-grow">{message}</div>
       <button
         type="button"
-        className="ml-auto inline-flex h-6 w-6 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
+        className="ml-auto inline-flex h-6 w-6 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground focus:outline-none"
         onClick={() => {
           setIsVisible(false)
           if (onClose) onClose()

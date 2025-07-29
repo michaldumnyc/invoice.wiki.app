@@ -105,18 +105,6 @@
     border-color: var(--border);
     background-color: var(--card);
   }
-
-  /* Force dark theme adaptation for any remaining white elements */
-  .dark [class*="bg-white"]:not(.invoice-example-img) {
-    background-color: var(--card) !important;
-    border-color: var(--border) !important;
-  }
-  
-  .dark [style*="background-color: white"],
-  .dark [style*="background-color: #fff"],
-  .dark [style*="background-color: #ffffff"] {
-    background-color: var(--card) !important;
-  }
 }
 
 /* ========= UTILITIES ========= */

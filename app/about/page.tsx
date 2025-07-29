@@ -62,22 +62,16 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-foreground mb-8">
               Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
-              contractors, and entrepreneurs. <Link href="/create-invoice" className="text-blue-600 hover:underline">Create and download professional invoices</Link> as PDFs with full privacy — no
-              sign-up, no data tracking, and no installation required. Whether you're billing local clients or
-              international partners, our tool makes invoicing fast, secure, and accessible. Ready to get started? Visit our <Link href="/create-invoice" className="text-blue-600 hover:underline">invoice generator</Link> now.
+              contractors, and entrepreneurs. <Link href="/create-invoice" className="text-primary hover:underline">Create and download professional invoices</Link> as PDFs with full privacy — no
+              registration needed. Explore our comprehensive <Link href="/create-invoice" className="text-primary hover:underline">invoice generator</Link> now.
             </p>
 
-            {/* Mission */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">Our Mission</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">How We Prioritize Your Privacy</h2>
             <p className="mb-6">
-              We believe professional invoicing should be accessible to everyone. Our <Link href="/create-invoice" className="text-blue-600 hover:underline">online invoice maker</Link> simplifies
-              the billing process with a clean interface, automatic tax and total calculations, and instant PDF
-              generation. With Invoice.wiki, anyone can create accurate business invoices without technical skills or
-              accounts.
-            </p>
-            <p className="mb-6">
-              We never store your data. All information is processed locally in your browser to ensure full privacy and
-              security. Learn more about our <Link href="/privacy-policy" className="text-blue-600 hover:underline">privacy protection measures</Link>.
+              We believe professional invoicing should be accessible to everyone. Our <Link href="/create-invoice" className="text-primary hover:underline">online invoice maker</Link> simplifies
+              the process while maintaining the highest standards of data protection and user privacy. Your invoice
+              information stays entirely on your device, processed locally in your browser for maximum data
+              security. Learn more about our <Link href="/privacy-policy" className="text-primary hover:underline">privacy protection measures</Link>.
             </p>
 
             {/* What is an invoice */}
@@ -177,13 +171,7 @@ export default function AboutPage() {
               Here's an example of what your invoices will look like:
             </p>
             
-            <div 
-              className="bg-card rounded-lg border-2 border-border p-4 mb-8 shadow-lg"
-              style={{
-                backgroundColor: 'var(--card)',
-                borderColor: 'var(--border)'
-              }}
-            >
+            <div className="bg-card rounded-lg border-2 border-border p-4 mb-8 shadow-lg">
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/2">
                   <img 
@@ -231,7 +219,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold mb-4">Ready to Create Your First Invoice?</h3>
               <p className="mb-4">
                 Join thousands of freelancers and small business owners who trust Invoice.wiki for their billing needs. 
-                Our <Link href="/create-invoice" className="text-blue-600 hover:underline">free invoice generator</Link> helps you create professional invoices in minutes, not hours.
+                Our <Link href="/create-invoice" className="text-primary hover:underline">free invoice generator</Link> helps you create professional invoices in minutes, not hours.
               </p>
               <p className="mb-4">
                 Whether you need to bill for consulting services, freelance work, or product sales, our platform 

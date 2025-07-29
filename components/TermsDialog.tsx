@@ -101,7 +101,7 @@ export function TermsDialog({ open, onOpenChange }: TermsDialogProps) {
             <p>If you have any questions regarding these Terms, please contact us:</p>
             <div className="mt-2">
               <p>
-                <Link href="/privacy-policy#contact" className="text-blue-500 dark:text-blue-400 hover:underline">
+                <Link href="/privacy-policy#contact" className="text-primary hover:underline">
                   Contact Support
                 </Link>
               </p>

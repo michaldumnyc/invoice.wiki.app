@@ -398,7 +398,7 @@ const CreateInvoiceForm: React.FC = () => {
                             I agree to the invoice.wiki{" "}
                             <button
                               type="button"
-                              className="text-blue-700 dark:text-blue-400 hover:underline font-medium"
+                              className="text-primary hover:underline font-medium"
                               onClick={() => setTermsDialogOpen(true)}
                             >
                               Terms and Conditions
