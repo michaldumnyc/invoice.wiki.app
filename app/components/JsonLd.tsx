@@ -111,7 +111,7 @@ export function OrganizationJsonLd() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "support@invoice.wiki",
+      "email": "info@invoice.wiki",
       "availableLanguage": ["English", "German", "Czech", "Polish", "Slovak", "Ukrainian"]
     },
     "address": {
