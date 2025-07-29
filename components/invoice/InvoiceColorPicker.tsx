@@ -3,6 +3,7 @@
 import React from "react"
 import { invoiceColors, type InvoiceColor } from "@/app/utils/invoice-colors"
 import { cn } from "@/lib/utils"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface InvoiceColorPickerProps {
   selectedColorId: string
@@ -23,60 +24,40 @@ export function InvoiceColorPicker({ selectedColorId, onColorChange, className, 
   }
   
   const t = translations || defaultTranslations
+  const selectedColor = invoiceColors.find(c => c.id === selectedColorId)
+  
   return (
-    <div className={cn("space-y-3", className)}>
-      <div className="flex flex-col space-y-2">
-        <label className="text-sm font-medium text-foreground">
-          {t.title}
-        </label>
-        <p className="text-xs text-muted-foreground">
-          {t.description}
-        </p>
-      </div>
+    <div className={cn("space-y-2", className)}>
+      <label className="text-sm font-medium text-foreground">
+        {t.title}
+      </label>
       
-      <div className="grid grid-cols-5 gap-3">
-        {invoiceColors.map((color) => (
-          <button
-            key={color.id}
-            type="button"
-            onClick={() => onColorChange(color.id)}
-            className={cn(
-              "relative w-12 h-12 rounded-full border-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
-              selectedColorId === color.id 
-                ? "border-primary ring-2 ring-primary ring-offset-2 scale-105" 
-                : "border-border hover:border-muted-foreground"
-            )}
-            title={color.name}
-            aria-label={`Select ${color.name} color`}
-          >
-            {/* Half-circle split design */}
-            <div className="w-full h-full rounded-full overflow-hidden relative">
-              {/* White half */}
-              <div className="absolute inset-0 bg-white"></div>
-              {/* Colored half */}
-              <div 
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: `linear-gradient(90deg, transparent 50%, ${color.hex} 50%)`
-                }}
-              ></div>
-              
-              {/* Selected indicator */}
-              {selectedColorId === color.id && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full border border-gray-400 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  </div>
+      <Select value={selectedColorId} onValueChange={onColorChange}>
+        <SelectTrigger className="w-full">
+          <SelectValue>
+            {selectedColor && (
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full overflow-hidden border border-border">
+                  <div className="w-full h-full" style={{ backgroundColor: selectedColor.hex }}></div>
                 </div>
-              )}
-            </div>
-          </button>
-        ))}
-      </div>
-      
-      <div className="text-xs text-muted-foreground">
-        {t.selected}: <span className="font-medium">{invoiceColors.find(c => c.id === selectedColorId)?.name || 'Blue'}</span>
-      </div>
+                <span>{selectedColor.name}</span>
+              </div>
+            )}
+          </SelectValue>
+        </SelectTrigger>
+        <SelectContent>
+          {invoiceColors.map((color) => (
+            <SelectItem key={color.id} value={color.id}>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full overflow-hidden border border-border">
+                  <div className="w-full h-full" style={{ backgroundColor: color.hex }}></div>
+                </div>
+                <span>{color.name}</span>
+              </div>
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   )
 } 

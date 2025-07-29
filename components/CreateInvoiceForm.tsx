@@ -332,6 +332,51 @@ const CreateInvoiceForm: React.FC = () => {
           <FormProvider {...form}>
             <Form {...form}>
               <form onSubmit={handleSubmit(onSubmit, scrollToFirstError)} className="space-y-8 w-full mb-16">
+                {/* Invoice Settings - Color and Language */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-card rounded-lg border border-border">
+                  <FormField
+                    control={control}
+                    name="colorId"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <InvoiceColorPicker
+                            selectedColorId={field.value}
+                            onColorChange={field.onChange}
+                            translations={{
+                              title: formTranslations.invoiceColorSelection,
+                              description: formTranslations.colorDescription,
+                              selected: "Selected"
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={control}
+                    name="languageId"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <InvoiceLanguagePicker
+                            selectedLanguageId={field.value}
+                            onLanguageChange={field.onChange}
+                            translations={{
+                              title: formTranslations.invoiceLanguageSelection,
+                              description: formTranslations.languageDescription,
+                              selected: "Selected"
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
                 {/* Seller and Buyer Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <SellerInformation
@@ -381,53 +426,7 @@ const CreateInvoiceForm: React.FC = () => {
                   isMobile={isMobile}
                 />
 
-                {/* Invoice Color Selection */}
-                <div className="bg-card p-6 rounded-lg border border-border">
-                  <FormField
-                    control={control}
-                    name="colorId"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <InvoiceColorPicker
-                            selectedColorId={field.value}
-                            onColorChange={field.onChange}
-                            translations={{
-                              title: formTranslations.invoiceColorSelection,
-                              description: formTranslations.colorDescription,
-                              selected: "Selected"
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
 
-                {/* Invoice Language Selection */}
-                <div className="bg-card p-6 rounded-lg border border-border">
-                  <FormField
-                    control={control}
-                    name="languageId"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <InvoiceLanguagePicker
-                            selectedLanguageId={field.value}
-                            onLanguageChange={field.onChange}
-                            translations={{
-                              title: formTranslations.invoiceLanguageSelection,
-                              description: formTranslations.languageDescription,
-                              selected: "Selected"
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
 
                 {/* Payment Information */}
                 <PaymentInformation
