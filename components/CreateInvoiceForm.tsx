@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { preloadPDFModules } from "@/lib/pdf-generator"
+import { generateInvoicePDFLazy, preloadPDFModules } from "@/lib/pdf-generator"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { TermsDialog } from "@/components/TermsDialog"
@@ -35,7 +35,6 @@ import {
 
 // Import decimal utilities for precise financial calculations
 import { calculateInvoiceTotals, toNumber } from "@/lib/decimal-utils"
-import { generateInvoicePDFLazy } from "@/app/utils/generate-pdf"
 import { isValid } from "date-fns"
 import { getFormLanguageById } from "@/app/utils/form-languages"
 

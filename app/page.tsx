@@ -2,6 +2,7 @@ export const dynamic = 'force-static'
 export const revalidate = 3600 // 1h
 
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/Header"
@@ -141,13 +142,12 @@ export default function HomePage() {
                   {/* Invoice Preview Image */}
                   <div className="order-2 lg:order-1">
                     <div className="relative bg-card rounded-lg shadow-2xl p-4 sm:p-6 border border-border">
-                      <img 
+                      <Image 
                         src="/images/invoice-example.png"
                         alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"
                         className="w-full h-auto rounded border invoice-example-img"
-                        loading="lazy"
-                        width="800"
-                        height="1000"
+                        width={800}
+                        height={1000}
                       />
                       <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                         PDF Ready
