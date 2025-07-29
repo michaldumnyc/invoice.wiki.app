@@ -6,6 +6,24 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  
+  // Performance optimizations
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react'],
+  },
+  
+  // Target modern browsers to reduce polyfills
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
+  // Image optimization
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1 year
+  },
 
   redirects: async () => {
     return [
@@ -50,6 +68,26 @@ const nextConfig = {
 
   headers: async () => {
     return [
+      // Static assets caching
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        source: "/images/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000" },
+        ],
+      },
+      {
+        source: "/icons/:path*", 
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000" },
+        ],
+      },
+      // Security headers for pages
       {
         source: "/:path*",
         headers: [

@@ -73,9 +73,9 @@ export default function HomePage() {
                 <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
                   <span className="text-foreground">Free Invoice Generator</span>
                   <br className="sm:hidden" />
-                  <span className="text-blue-500"> Create PDF Invoices</span>
+                  <span className="text-primary"> Create PDF Invoices</span>
                 </h1>
-                <p className="text-lg sm:text-xl text-foreground/80 mb-8">
+                <p className="text-lg sm:text-xl text-muted-foreground mb-8">
                   Use our comprehensive free online invoice maker to create professional invoices for clients with advanced features including automatic VAT calculations, multi-currency support, and instant PDF generation. Generate and download perfectly formatted PDF invoices instantly without any registration requirements. Our platform is specifically designed for freelancers, small business owners, independent contractors, and entrepreneurs who need a reliable, fast, secure, and completely free billing solution that works seamlessly across all devices and browsers.
                 </p>
                 <Link href="/create-invoice" aria-label="Start creating your professional invoice now">
@@ -101,7 +101,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Lightning-Fast Invoice Generation</h3>
-                  <p className="text-foreground/80 dark:text-foreground">Generate professional invoices in seconds with our streamlined <Link href="/create-invoice" className="text-primary hover:underline">invoice generator interface</Link> that requires zero learning curve and delivers instant results.</p>
+                  <p className="text-muted-foreground">Generate professional invoices in seconds with our streamlined <Link href="/create-invoice" className="text-primary hover:underline">invoice generator interface</Link> that requires zero learning curve and delivers instant results.</p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -110,7 +110,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Bank-Level Security & Privacy</h3>
-                  <p className="text-foreground/80 dark:text-foreground">Your sensitive invoice data stays completely secure on your device and never gets stored on our servers, ensuring absolute privacy. Learn more about our <Link href="/privacy-policy" className="text-primary hover:underline">privacy protection measures</Link>.</p>
+                  <p className="text-muted-foreground">Your sensitive invoice data stays completely secure on your device and never gets stored on our servers, ensuring absolute privacy. Learn more about our <Link href="/privacy-policy" className="text-primary hover:underline">privacy protection measures</Link>.</p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -146,8 +146,11 @@ export default function HomePage() {
                         src="/images/invoice-example.png"
                         alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"
                         className="w-full h-auto rounded border invoice-example-img"
-                        width={800}
-                        height={1000}
+                        width={400}
+                        height={500}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                        priority={false}
+                        quality={75}
                       />
                       <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                         PDF Ready
