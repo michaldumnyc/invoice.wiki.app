@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { ToggleableFormField } from "@/components/ui/toggleable-form-field"
-import { sanitizeInput, sanitizeEmail, sanitizeWebsite } from "@/lib/security"
+import { sanitizeInput } from "@/lib/security"
 import { FieldVisibility, InvoiceFormValues } from "./types"
 
 interface SellerInformationProps {
@@ -117,63 +117,87 @@ export function SellerInformation({
         />
 
         {/* sellerCompanyId */}
-        <ToggleableFormField
+        <FormField
           control={control}
           name="sellerCompanyId"
-          label={t.companyId}
-          placeholder={t.placeholders.companyId}
-          maxLength={40}
-          isVisible={fieldVisibility.sellerCompanyId}
-          onToggle={() => toggleFieldVisibility('sellerCompanyId')}
-          highlightedField={highlightedField}
-          hideText={t.hide}
-          showText={t.show}
+          render={({ field }) => (
+            <ToggleableFormField
+              label={t.companyId}
+              fieldName="sellerCompanyId"
+              field={field}
+              placeholder={t.placeholders.companyId}
+              maxLength={40}
+              isVisible={fieldVisibility.sellerCompanyId}
+              onToggle={() => toggleFieldVisibility('sellerCompanyId')}
+              highlightedField={highlightedField}
+              hideText={t.hide}
+              showText={t.show}
+            />
+          )}
         />
 
         {/* sellerVatId */}
-        <ToggleableFormField
+        <FormField
           control={control}
           name="sellerVatId"
-          label={t.vatId}
-          placeholder={t.placeholders.vatId}
-          maxLength={43}
-          isVisible={fieldVisibility.sellerVatId}
-          onToggle={() => toggleFieldVisibility('sellerVatId')}
-          highlightedField={highlightedField}
-          hideText={t.hide}
-          showText={t.show}
+          render={({ field }) => (
+            <ToggleableFormField
+              label={t.vatId}
+              fieldName="sellerVatId"
+              field={field}
+              placeholder={t.placeholders.vatId}
+              maxLength={43}
+              isVisible={fieldVisibility.sellerVatId}
+              onToggle={() => toggleFieldVisibility('sellerVatId')}
+              highlightedField={highlightedField}
+              hideText={t.hide}
+              showText={t.show}
+            />
+          )}
         />
 
         {/* sellerEmail */}
-        <ToggleableFormField
+        <FormField
           control={control}
           name="sellerEmail"
-          label={t.email}
-          placeholder={t.placeholders.email}
-          maxLength={90}
-          type="email"
-          isVisible={fieldVisibility.sellerEmail}
-          onToggle={() => toggleFieldVisibility('sellerEmail')}
-          highlightedField={highlightedField}
-          sanitizer="email"
-          hideText={t.hide}
-          showText={t.show}
+          render={({ field }) => (
+            <ToggleableFormField
+              label={t.email}
+              fieldName="sellerEmail"
+              field={field}
+              placeholder={t.placeholders.email}
+              maxLength={90}
+              type="email"
+              isVisible={fieldVisibility.sellerEmail}
+              onToggle={() => toggleFieldVisibility('sellerEmail')}
+              highlightedField={highlightedField}
+              sanitizer={(value) => value} // email sanitizer will be handled in Input
+              hideText={t.hide}
+              showText={t.show}
+            />
+          )}
         />
 
         {/* sellerWebsite */}
-        <ToggleableFormField
+        <FormField
           control={control}
           name="sellerWebsite"
-          label={t.website}
-          placeholder={t.placeholders.website}
-          maxLength={60}
-          type="text"
-          isVisible={fieldVisibility.sellerWebsite}
-          onToggle={() => toggleFieldVisibility('sellerWebsite')}
-          highlightedField={highlightedField}
-          sanitizer="website"
-          hideText={t.hide}
-          showText={t.show}
+          render={({ field }) => (
+            <ToggleableFormField
+              label={t.website}
+              fieldName="sellerWebsite"
+              field={field}
+              placeholder={t.placeholders.website}
+              maxLength={60}
+              type="text"
+              isVisible={fieldVisibility.sellerWebsite}
+              onToggle={() => toggleFieldVisibility('sellerWebsite')}
+              highlightedField={highlightedField}
+              sanitizer={(value) => value.replace(/^(https?:\/\/)/, "")} // remove protocol
+              hideText={t.hide}
+              showText={t.show}
+            />
+          )}
         />
       </CardContent>
     </Card>

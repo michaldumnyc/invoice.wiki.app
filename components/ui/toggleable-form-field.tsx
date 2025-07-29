@@ -16,6 +16,8 @@ interface ToggleableFormFieldProps {
   placeholder?: string
   type?: string
   customContent?: React.ReactNode // For custom input content
+  hideText?: string
+  showText?: string
 }
 
 export function ToggleableFormField({
@@ -29,7 +31,9 @@ export function ToggleableFormField({
   highlightedField,
   placeholder,
   type = "text",
-  customContent
+  customContent,
+  hideText = "Hide",
+  showText = "Show"
 }: ToggleableFormFieldProps) {
   return (
     <FormItem>
@@ -46,7 +50,7 @@ export function ToggleableFormField({
           ) : (
             <Eye className="h-4 w-4 mr-2" />
           )}
-          {isVisible ? "Hide" : "Show"}
+          {isVisible ? hideText : showText}
         </Button>
       </div>
       <FormControl>

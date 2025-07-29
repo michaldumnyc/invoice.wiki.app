@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { ToggleableFormField } from "@/components/ui/toggleable-form-field"
-import { sanitizeInput, sanitizeEmail, sanitizeWebsite } from "@/lib/security"
 import { FieldVisibility, InvoiceFormValues } from "./types"
 
 interface BuyerInformationProps {
@@ -128,9 +127,11 @@ export function BuyerInformation({
               isVisible={fieldVisibility.buyerCompanyId}
               onToggle={() => toggleFieldVisibility("buyerCompanyId")}
               maxLength={40}
-              sanitizer={sanitizeInput}
+              sanitizer={(value) => value}
               highlightedField={highlightedField}
               placeholder={t.placeholders.companyId}
+              hideText={t.hide}
+              showText={t.show}
             />
           )}
         />
@@ -147,9 +148,11 @@ export function BuyerInformation({
               isVisible={fieldVisibility.buyerVatId}
               onToggle={() => toggleFieldVisibility("buyerVatId")}
               maxLength={43}
-              sanitizer={sanitizeInput}
+              sanitizer={(value) => value}
               highlightedField={highlightedField}
               placeholder={t.placeholders.vatId}
+              hideText={t.hide}
+              showText={t.show}
             />
           )}
         />
@@ -166,10 +169,12 @@ export function BuyerInformation({
               isVisible={fieldVisibility.buyerEmail}
               onToggle={() => toggleFieldVisibility("buyerEmail")}
               maxLength={90}
-              sanitizer={sanitizeEmail}
+              sanitizer={(value) => value}
               highlightedField={highlightedField}
               type="email"
               placeholder={t.placeholders.email}
+              hideText={t.hide}
+              showText={t.show}
             />
           )}
         />
@@ -186,13 +191,12 @@ export function BuyerInformation({
               isVisible={fieldVisibility.buyerWebsite}
               onToggle={() => toggleFieldVisibility("buyerWebsite")}
               maxLength={60}
-              sanitizer={(value) => {
-                const raw = sanitizeWebsite(value)
-                return raw.replace(/^(https?:\/\/)/, "")
-              }}
+              sanitizer={(value) => value.replace(/^(https?:\/\/)/, ""))
               highlightedField={highlightedField}
               type="text"
               placeholder={t.placeholders.website}
+              hideText={t.hide}
+              showText={t.show}
             />
           )}
         />
