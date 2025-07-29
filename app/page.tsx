@@ -101,7 +101,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Lightning-Fast Invoice Generation</h3>
-                  <p className="text-muted-foreground">Generate professional invoices in seconds with our streamlined <Link href="/create-invoice" className="text-primary hover:underline">invoice generator interface</Link> that requires zero learning curve and delivers instant results.</p>
+                  <p className="text-muted-foreground">Generate professional invoices in seconds with our streamlined <Link href="/create-invoice" className="text-primary underline hover:no-underline">invoice generator interface</Link> that requires zero learning curve and delivers instant results.</p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -110,7 +110,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Bank-Level Security & Privacy</h3>
-                  <p className="text-muted-foreground">Your sensitive invoice data stays completely secure on your device and never gets stored on our servers, ensuring absolute privacy. Learn more about our <Link href="/privacy-policy" className="text-primary hover:underline">privacy protection measures</Link>.</p>
+                  <p className="text-muted-foreground">Your sensitive invoice data stays completely secure on your device and never gets stored on our servers, ensuring absolute privacy. Learn more about our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy protection measures</Link>.</p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -119,7 +119,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Zero Installation Required</h3>
-                  <p className="text-foreground/80 dark:text-foreground">Access our powerful invoice creator directly in your browser without downloading software or creating accounts. Discover more <Link href="/about" className="text-primary hover:underline">about our platform features</Link> and capabilities.</p>
+                  <p className="text-muted-foreground">Access our powerful invoice creator directly in your browser without downloading software or creating accounts. Discover more <Link href="/about" className="text-primary underline hover:no-underline">about our platform features</Link> and capabilities.</p>
                 </article>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function HomePage() {
                   <h2 id="example-heading" className="text-2xl sm:text-3xl font-bold text-center mb-4">
                     See What You'll Create
                   </h2>
-                  <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                     Generate professional invoices that impress clients and ensure prompt payment. Our free invoice generator creates clean, modern invoices with all essential business details, automatic calculations, and perfect formatting.
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Clean Professional Design</h3>
-                          <p className="text-foreground/80">Every invoice generated maintains consistent, professional formatting that reflects well on your business and builds client trust.</p>
+                          <p className="text-muted-foreground">Every invoice generated maintains consistent, professional formatting that reflects well on your business and builds client trust.</p>
                         </div>
                       </div>
                       
@@ -181,7 +181,7 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Automatic Calculations</h3>
-                          <p className="text-foreground/80">VAT rates, subtotals, and grand totals are calculated automatically with precision, eliminating manual errors and saving valuable time.</p>
+                          <p className="text-muted-foreground">VAT rates, subtotals, and grand totals are calculated automatically with precision, eliminating manual errors and saving valuable time.</p>
                         </div>
                       </div>
                       
@@ -193,7 +193,7 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Complete Business Information</h3>
-                          <p className="text-foreground/80">Include all necessary business details: company information, addresses, VAT IDs, payment terms, and contact information for complete transparency.</p>
+                          <p className="text-muted-foreground">Include all necessary business details: company information, addresses, VAT IDs, payment terms, and contact information for complete transparency.</p>
                         </div>
                       </div>
                       
@@ -205,7 +205,7 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Instant PDF Download</h3>
-                          <p className="text-foreground/80">Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation.</p>
+                          <p className="text-muted-foreground">Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation.</p>
                         </div>
                       </div>
                       
@@ -217,7 +217,7 @@ export default function HomePage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Customizable Colors & Languages</h3>
-                          <p className="text-foreground/80">NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech, Polish, Slovak, Ukrainian) to match your brand and serve international clients.</p>
+                          <p className="text-muted-foreground">NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech, Polish, Slovak, Ukrainian) to match your brand and serve international clients.</p>
                         </div>
                       </div>
                     </div>
@@ -240,7 +240,7 @@ export default function HomePage() {
               <div className="space-y-6 text-foreground/90">
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Do I need to register to create invoices?</h3>
-                  <p className="leading-relaxed">Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our <Link href="/create-invoice" className="text-primary hover:underline">invoice creation page</Link> and start building professional invoices immediately without providing personal information.</p>
+                  <p className="leading-relaxed">Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our <Link href="/create-invoice" className="text-primary underline hover:no-underline">invoice creation page</Link> and start building professional invoices immediately without providing personal information.</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Can I download my invoice as PDF?</h3>
@@ -281,7 +281,7 @@ export default function HomePage() {
                     The invoice maker supports multiple international currencies, sophisticated VAT calculations, flexible payment terms, customizable due dates, and detailed line items with quantities, rates, and comprehensive descriptions. You can easily add your company logo, customize brand colors, include detailed business information, and create professional-looking invoices that are generated as high-quality PDF files suitable for sending directly to clients or printing for your permanent business records.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    Security and privacy are our highest priorities when handling your sensitive business and financial information. Your invoice data is processed entirely locally in your browser using advanced client-side encryption and never stored on our servers, ensuring your sensitive business information remains completely private and secure. Start <Link href="/create-invoice" className="text-primary hover:underline">creating professional invoices</Link> today without any registration requirements or subscription fees.
+                    Security and privacy are our highest priorities when handling your sensitive business and financial information. Your invoice data is processed entirely locally in your browser using advanced client-side encryption and never stored on our servers, ensuring your sensitive business information remains completely private and secure. Start <Link href="/create-invoice" className="text-primary underline hover:no-underline">creating professional invoices</Link> today without any registration requirements or subscription fees.
                   </p>
                   <p className="text-lg leading-relaxed">
                     Our advanced invoice generator includes powerful features that streamline your billing process and help you maintain professional relationships with clients. The platform automatically calculates totals, applies discounts, manages tax rates across different regions, and ensures compliance with international invoicing standards. Whether you need to create simple one-time invoices or manage recurring billing cycles, our comprehensive toolset adapts to your specific business requirements.
@@ -298,7 +298,7 @@ export default function HomePage() {
           <section aria-labelledby="cta-heading" className="bg-background dark:bg-background border-t py-12 md:py-20">
             <div className="container mx-auto px-4 text-center">
               <h2 id="cta-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Ready to Create Your Professional Invoice?</h2>
-              <p className="text-lg sm:text-xl text-foreground/80 mb-8">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8">
                 No registration required, no hidden fees, no complex setup procedures. Start creating professional invoices online immediately with our free invoice generator that delivers results in seconds. Perfect for freelancers, consultants, contractors, and small business owners who need reliable billing solutions.
               </p>
               <Link href="/create-invoice" aria-label="Begin creating your professional invoice immediately">
