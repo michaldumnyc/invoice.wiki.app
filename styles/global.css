@@ -98,6 +98,13 @@
   .dark input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
   }
+
+  /* Invoice example image adaptation for dark theme */
+  .dark .invoice-example-img {
+    filter: invert(0.92) hue-rotate(180deg) brightness(0.85) contrast(1.15);
+    border-color: var(--border);
+    background-color: var(--card);
+  }
 }
 
 /* ========= UTILITIES ========= */

@@ -144,7 +144,7 @@ export default function HomePage() {
                       <img 
                         src="/images/invoice-example.png"
                         alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"
-                        className="w-full h-auto rounded border"
+                        className="w-full h-auto rounded border invoice-example-img"
                         loading="lazy"
                         width="800"
                         height="1000"
