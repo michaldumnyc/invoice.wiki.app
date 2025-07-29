@@ -125,7 +125,7 @@ export default function HomePage() {
           </section>
 
           {/* Invoice Example Section */}
-          <section aria-labelledby="example-heading" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-white to-gray-50">
+          <section aria-labelledby="example-heading" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20">
             <div className="container mx-auto px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
@@ -140,7 +140,7 @@ export default function HomePage() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   {/* Invoice Preview Image */}
                   <div className="order-2 lg:order-1">
-                    <div className="relative bg-white rounded-lg shadow-2xl p-4 sm:p-6 border">
+                    <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-4 sm:p-6 border dark:border-gray-700">
                       <img 
                         src="/images/invoice-example.png"
                         alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"
@@ -159,8 +159,8 @@ export default function HomePage() {
                   <div className="order-1 lg:order-2 space-y-6">
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
+                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
@@ -171,8 +171,8 @@ export default function HomePage() {
                       </div>
                       
                       <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
+                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
@@ -183,8 +183,8 @@ export default function HomePage() {
                       </div>
                       
                       <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
+                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
@@ -195,28 +195,22 @@ export default function HomePage() {
                       </div>
                       
                       <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
+                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg text-foreground">Instant PDF Download</h3>
-                          <p className="text-foreground/80">Generate high-quality PDF invoices instantly that are perfect for emailing to clients, printing, or storing in your business records.</p>
+                          <p className="text-foreground/80">Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation.</p>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="pt-6">
-                      <Link href="/create-invoice" aria-label="Start creating your professional invoice now">
-                        <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white">
-                          Create Your Invoice Now
-                          <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
+                    <div className="pt-4">
+                      <Link href="/create-invoice" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        Try It Now - Free →
                       </Link>
-                      <p className="text-sm text-foreground/60 mt-3">
-                        No registration required • Free forever • Professional results in minutes
-                      </p>
                     </div>
                   </div>
                 </div>

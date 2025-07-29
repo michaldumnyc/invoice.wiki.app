@@ -177,7 +177,7 @@ export default function AboutPage() {
               Here's an example of what your invoices will look like:
             </p>
             
-            <div className="bg-white rounded-lg border-2 border-gray-200 p-4 mb-8 shadow-lg">
+            <div className="bg-white dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 p-4 mb-8 shadow-lg">
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/2">
                   <img 
@@ -198,26 +198,22 @@ export default function AboutPage() {
                     </li>
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span>Automatic VAT and total calculations</span>
+                      <span>Automatic VAT calculations and totals</span>
                     </li>
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span>Complete business information display</span>
+                      <span>Complete business and client information</span>
                     </li>
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span>International currency support</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                      <span>High-quality PDF output</span>
+                      <span>Payment terms and banking details</span>
                     </li>
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                       <span>Print-ready formatting</span>
                     </li>
                   </ul>
-                  <p className="text-sm text-gray-600 mt-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                     Every invoice maintains this professional standard, ensuring your business 
                     makes a great impression with every client interaction.
                   </p>

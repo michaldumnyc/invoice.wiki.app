@@ -132,12 +132,21 @@ const CreateInvoiceForm: React.FC = () => {
     }
   }, [items])
 
+  // Handle critical errors that should show error.tsx with instructions
+  const handleCriticalError = (message: string, technicalDetails?: string) => {
+    const error = new Error(message)
+    if (technicalDetails) {
+      error.stack = technicalDetails
+    }
+    throw error
+  }
+
   const onSubmit = useCallback(
     async (data: InvoiceFormValues) => {
       try {
         setIsSubmitting(true)
         
-        // Validate dates before processing
+        // Validate dates before processing - keep as toast (validation error)
         if (!isValid(data.issueDate) || !isValid(data.dueDate)) {
           showToast("Please ensure all dates are valid", "error")
           setIsSubmitting(false)
@@ -183,13 +192,17 @@ const CreateInvoiceForm: React.FC = () => {
         const pdfBlob = await generateInvoicePDFLazy(pdfData)
 
         if (!pdfBlob) {
-          showToast("Failed to generate PDF. Please try again later.", "error")
-          setIsSubmitting(false)
+          // Critical error - show error.tsx with instructions
+          handleCriticalError(
+            "PDF Generation Failed", 
+            "The PDF generation system is currently unavailable. This could be due to browser compatibility issues, memory constraints, or a temporary service problem."
+          )
           return
         }
 
         const blob = new Blob([pdfBlob.output("blob")], { type: "application/pdf" })
         const url = URL.createObjectURL(blob)
+
         const link = document.createElement("a")
         link.href = url
         link.download = `invoice-${data.invoiceNumber}.pdf`
@@ -203,8 +216,17 @@ const CreateInvoiceForm: React.FC = () => {
         setManuallyEditedReference(false)
         setIsSubmitting(false)
       } catch (err) {
-        showToast("Failed to create invoice. Please check your data and try again.", "error")
-        setIsSubmitting(false)
+        // Check if it's our intentional critical error
+        if (err instanceof Error && err.message === "PDF Generation Failed") {
+          // Re-throw to show error.tsx
+          throw err
+        }
+        
+        // For unexpected errors, also show error.tsx with technical details
+        handleCriticalError(
+          "Unexpected Error During Invoice Creation",
+          `An unexpected error occurred: ${err instanceof Error ? err.message : 'Unknown error'}\n\nTechnical details: ${err instanceof Error ? err.stack : 'No stack trace available'}`
+        )
       }
     },
     [form, totals.grand, showToast],

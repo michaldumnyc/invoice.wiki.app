@@ -17,19 +17,75 @@ export default function Error({
   }, [error])
 
   const supportEmail = process.env.SUPPORT_EMAIL
+
+  // Determine error type and customize instructions
+  const isPdfError = error.message.includes("PDF Generation Failed")
+  const isValidationError = error.message.includes("validation") || error.message.includes("required")
   
+  const getErrorTitle = () => {
+    if (isPdfError) return "PDF Generation Problem"
+    if (isValidationError) return "Form Validation Error"
+    return "Oops! Something went wrong"
+  }
+  
+  const getErrorDescription = () => {
+    if (isPdfError) {
+      return "We couldn't generate your PDF invoice. This is usually a temporary issue with the PDF generation system."
+    }
+    if (isValidationError) {
+      return "There's an issue with the information you've entered. Please check your form and try again."
+    }
+    return "An unexpected error occurred while creating your invoice. We're sorry for the inconvenience."
+  }
+  
+  const getSpecificInstructions = () => {
+    if (isPdfError) {
+      return (
+        <div className="mb-4">
+          <h4 className="font-semibold mb-2">Try these solutions first:</h4>
+          <ol className="list-decimal list-inside space-y-1 text-sm">
+            <li>Refresh the page and try again</li>
+            <li>Try using a different browser (Chrome, Firefox, Edge)</li>
+            <li>Clear your browser cache and cookies</li>
+            <li>Disable browser extensions temporarily</li>
+            <li>Ensure you have enough device memory available</li>
+          </ol>
+        </div>
+      )
+    }
+    
+    if (isValidationError) {
+      return (
+        <div className="mb-4">
+          <h4 className="font-semibold mb-2">Please check:</h4>
+          <ul className="list-disc list-inside space-y-1 text-sm">
+            <li>All required fields are filled in</li>
+            <li>Dates are in the correct format</li>
+            <li>Numbers are positive values</li>
+            <li>Email addresses are valid</li>
+          </ul>
+        </div>
+      )
+    }
+    
+    return null
+  }
+  
+  // Safe error info for email (no sensitive data)
   const handleEmailSupport = () => {
+    const errorType = isPdfError ? 'PDF Generation' : isValidationError ? 'Form Validation' : 'General'
+    const timestamp = new Date().toISOString()
+    const browserInfo = navigator.userAgent
+    
     const subject = encodeURIComponent("Invoice Generator Error Report")
     const body = encodeURIComponent(`
 Hello,
 
 I encountered an error while using the Invoice Generator:
 
-Error Message: ${error.message}
-Error Stack: ${error.stack || 'Not available'}
-Digest: ${error.digest || 'Not available'}
-Timestamp: ${new Date().toISOString()}
-User Agent: ${navigator.userAgent}
+Error Type: ${errorType}
+When it happened: ${timestamp}
+Browser: ${browserInfo}
 
 Steps I was taking:
 [Please describe what you were doing when the error occurred]
@@ -44,21 +100,31 @@ Thank you for your help!
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-red-50 via-white to-gray-50">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-red-50 via-white to-gray-50 dark:from-gray-900 dark:via-red-900/20 dark:to-gray-800">
       <Card className="w-full max-w-2xl">
         <CardHeader className="text-center">
-          <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-            <AlertTriangle className="w-8 h-8 text-red-600" />
+          <div className="mx-auto w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
+            <AlertTriangle className="w-8 h-8 text-red-600 dark:text-red-400" />
           </div>
-          <CardTitle className="text-2xl font-bold text-red-600 mb-2">
-            Oops! Something went wrong
+          <CardTitle className="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">
+            {getErrorTitle()}
           </CardTitle>
-          <p className="text-gray-600">
-            An unexpected error occurred while creating your invoice. We're sorry for the inconvenience.
+          <p className="text-gray-600 dark:text-gray-400">
+            {getErrorDescription()}
           </p>
         </CardHeader>
         
         <CardContent className="space-y-6">
+          {/* Specific Instructions */}
+          {getSpecificInstructions() && (
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800">
+              <h3 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-3">
+                Quick Fix Suggestions
+              </h3>
+              {getSpecificInstructions()}
+            </div>
+          )}
+
           {/* Quick Actions */}
           <div className="flex gap-3 justify-center">
             <Button onClick={reset} className="flex items-center gap-2">
@@ -71,76 +137,38 @@ Thank you for your help!
           </div>
 
           {/* Help Us Fix This */}
-          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-            <h3 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+            <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-3 flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              Help us fix this issue
+              Still having problems?
             </h3>
-            <p className="text-blue-700 text-sm mb-4">
-              To help us resolve this error quickly, please follow these steps:
+            <p className="text-blue-700 dark:text-blue-300 text-sm mb-4">
+              If the issue persists, please let us know and we'll help you resolve it quickly.
             </p>
-            
-            <ol className="text-sm text-blue-700 space-y-2 mb-4 list-decimal list-inside">
-              <li>
-                <strong>Open Developer Tools:</strong>
-                <ul className="mt-1 ml-4 space-y-1 list-disc list-inside text-xs">
-                  <li><kbd className="px-1 py-0.5 bg-white rounded border">F12</kbd> (Windows/Linux)</li>
-                  <li><kbd className="px-1 py-0.5 bg-white rounded border">Cmd+Opt+I</kbd> (Mac)</li>
-                  <li>Or right-click → "Inspect Element"</li>
-                </ul>
-              </li>
-              <li><strong>Go to "Console" tab</strong> in Developer Tools</li>
-              <li><strong>Refresh the page</strong> and <strong>repeat the action</strong> that caused the error</li>
-              <li><strong>Select all text</strong> in Console (<kbd className="px-1 py-0.5 bg-white rounded border">Ctrl+A</kbd> / <kbd className="px-1 py-0.5 bg-white rounded border">Cmd+A</kbd>)</li>
-              <li><strong>Copy</strong> (<kbd className="px-1 py-0.5 bg-white rounded border">Ctrl+C</kbd> / <kbd className="px-1 py-0.5 bg-white rounded border">Cmd+C</kbd>) and send to us via email</li>
-            </ol>
 
-                         {supportEmail && (
-               <Button 
-                 onClick={handleEmailSupport}
-                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-               >
-                 <Mail className="w-4 h-4 mr-2" />
-                 Send Error Report to {supportEmail}
-               </Button>
-             )}
+            {supportEmail && (
+              <Button 
+                onClick={handleEmailSupport}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Contact Support
+              </Button>
+            )}
           </div>
 
-          {/* Error Details */}
-          <details className="bg-gray-50 rounded-lg p-4 border">
-            <summary className="cursor-pointer font-medium text-gray-700 hover:text-gray-900">
-              Technical Details (for developers)
-            </summary>
-            <div className="mt-3 p-3 bg-gray-100 rounded text-xs font-mono overflow-auto max-h-40">
-              <div className="mb-2">
-                <strong>Error:</strong> {error.message}
-              </div>
-              {error.digest && (
-                <div className="mb-2">
-                  <strong>Digest:</strong> {error.digest}
-                </div>
-              )}
-              {error.stack && (
-                <div>
-                  <strong>Stack:</strong>
-                  <pre className="mt-1 text-xs">{error.stack}</pre>
-                </div>
-              )}
-            </div>
-          </details>
-
-          {/* Alternative */}
-                     <div className="text-center text-sm text-gray-500">
-             <p>If the problem persists, try using a different browser or device.</p>
-             {supportEmail && (
-               <p className="mt-1">
-                 You can also create invoices manually and contact us at{" "}
-                 <a href={`mailto:${supportEmail}`} className="text-blue-600 hover:underline">
-                   {supportEmail}
-                 </a>
-               </p>
-             )}
-           </div>
+          {/* Alternative Solution */}
+          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>If the problem persists, try using a different browser or device.</p>
+            {supportEmail && (
+              <p className="mt-1">
+                You can also contact us directly at{" "}
+                <a href={`mailto:${supportEmail}`} className="text-blue-600 dark:text-blue-400 hover:underline">
+                  {supportEmail}
+                </a>
+              </p>
+            )}
+          </div>
         </CardContent>
       </Card>
     </div>
