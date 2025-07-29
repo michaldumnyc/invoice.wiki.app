@@ -7,17 +7,8 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   
-  // Performance optimizations
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react'],
-  },
-  
-  // Target modern browsers to reduce polyfills
+  // Safe performance optimizations
   swcMinify: true,
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
   
   // Image optimization
   images: {
