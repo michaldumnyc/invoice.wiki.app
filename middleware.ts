@@ -5,15 +5,16 @@ import type { NextRequest } from "next/server"
 export function middleware(request: NextRequest) {
   const url = request.nextUrl
 
-  // Redirect www to non-www
+  // Redirect www to non-www (canonical URL)
   if (url.hostname.startsWith('www.')) {
     const newUrl = new URL(url)
     newUrl.hostname = url.hostname.substring(4)
     return NextResponse.redirect(newUrl, 301)
   }
 
-  // Redirect index files to root
-  if (url.pathname === '/index.html' || url.pathname === '/index.php') {
+  // Redirect index files to root (comprehensive list)
+  const indexPaths = ['/index.html', '/index.php', '/index.htm', '/default.html', '/default.php']
+  if (indexPaths.includes(url.pathname)) {
     return NextResponse.redirect(new URL('/', url), 301)
   }
 
@@ -88,11 +89,18 @@ export function middleware(request: NextRequest) {
   return response
 }
 
-// Update matcher to include Vercel Insights
+// Matcher configuration for middleware
 export const config = {
   matcher: [
-    '/((?!api|favicon.ico).*)',     // Match everything except API and favicon
-    '/_next/static/:path*',         // Include static files
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - robots.txt, sitemap.xml (static SEO files)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)',
     '/_vercel/insights/:path*'      // Include Vercel Insights
   ]
 }

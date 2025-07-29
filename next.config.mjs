@@ -16,20 +16,7 @@ const nextConfig = {
     minimumCacheTTL: 31536000, // 1 year
   },
 
-  redirects: async () => {
-    return [
-      {
-        source: '/index.html',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/index.php',
-        destination: '/',
-        permanent: true,
-      },
-    ];
-  },
+
 
   webpack: (config, { dev, isServer }) => {
     // PDF generation optimization

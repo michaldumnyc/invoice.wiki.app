@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
             <div className="space-y-6 text-foreground">
               <h2 className="text-2xl font-semibold mb-4">Data Protection Statement</h2>
               <p className="mb-4 leading-relaxed">
-                <Link href="/" className="text-blue-600 hover:underline">Invoice.wiki</Link> online invoice maker does not collect personal data. All invoice generation happens within your web browser.
+                <Link href="/" className="text-primary underline hover:no-underline">Invoice.wiki</Link> online invoice maker does not collect personal data. All invoice generation happens within your web browser.
                 Professional invoices and PDFs are created on your device, and all invoice data is cleared when you close your browser.
               </p>
               <p className="mb-4 leading-relaxed">
@@ -74,11 +74,11 @@ export default function PrivacyPolicyPage() {
 
               <h2 className="text-2xl font-semibold mb-4">How We Protect Your Privacy</h2>
               <p className="mb-4 leading-relaxed">
-                At Invoice.wiki, we believe your business information should remain completely private. Our <Link href="/create-invoice" className="text-blue-600 hover:underline">invoice generator</Link> is designed with privacy-first principles:
+                At Invoice.wiki, we believe your business information should remain completely private. Our <Link href="/create-invoice" className="text-primary underline hover:no-underline">invoice generator</Link> is designed with privacy-first principles:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-6">
                 <li><strong>Local Processing:</strong> All invoice data is processed locally in your browser using JavaScript. No information is sent to our servers.</li>
-                <li><strong>No Registration Required:</strong> You can start <Link href="/create-invoice" className="text-blue-600 hover:underline">creating invoices</Link> immediately without providing any personal information.</li>
+                <li><strong>No Registration Required:</strong> You can start <Link href="/create-invoice" className="text-primary underline hover:no-underline">creating invoices</Link> immediately without providing any personal information.</li>
                 <li><strong>No Data Storage:</strong> We don't store your invoice details, client information, or business data on our servers.</li>
                 <li><strong>Secure PDF Generation:</strong> PDF files are created locally in your browser and downloaded directly to your device.</li>
                 <li><strong>No Email Required:</strong> Unlike other invoice generators, we never ask for your email address or contact details.</li>
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
 
               <h2 className="text-2xl font-semibold mb-4">Anonymous Analytics</h2>
               <p className="mb-4 leading-relaxed">
-                We use Vercel Analytics to understand how our <Link href="/create-invoice" className="text-primary hover:underline">free invoice generator</Link> is being used. This helps us improve the service and identify technical issues. The analytics data is completely anonymous and includes only:
+                We use Vercel Analytics to understand how our <Link href="/create-invoice" className="text-primary underline hover:no-underline">free invoice generator</Link> is being used. This helps us improve the service and identify technical issues. The analytics data is completely anonymous and includes only:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-6">
                 <li>Page views and popular features</li>
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage() {
 
               <h2 className="text-2xl font-semibold mb-4">Third-Party Services</h2>
               <p className="mb-4 leading-relaxed">
-                Invoice.wiki is hosted on Vercel's secure infrastructure. While we don't send your invoice data to any third parties, standard web hosting logs may contain basic technical information like request times and general error data. Learn more <Link href="/about" className="text-primary hover:underline">about our platform</Link> and security measures.
+                Invoice.wiki is hosted on Vercel's secure infrastructure. While we don't send your invoice data to any third parties, standard web hosting logs may contain basic technical information like request times and general error data. Learn more <Link href="/about" className="text-primary underline hover:no-underline">about our platform</Link> and security measures.
               </p>
 
               <h2 className="text-2xl font-semibold mb-4">Your Rights and Control</h2>
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
                  <p className="mb-4 leading-relaxed">
                   Experience the most private way to generate professional invoices online. No registration, no data collection, just fast and secure billing.
                 </p>
-                <Link href="/create-invoice" className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                <Link href="/create-invoice" className="inline-flex items-center px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors">
                   Start Creating Private Invoices →
                 </Link>
               </div>
