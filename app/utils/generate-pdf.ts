@@ -4,6 +4,8 @@ import { format, isValid } from "date-fns"
 import type { InvoiceFormData } from "@/types/invoice"
 import { currencies } from "./currencies"
 import { calculateInvoiceTotals, calculateItemTotal, toNumber, toDecimal } from "@/lib/decimal-utils"
+import { getInvoiceColorById } from "./invoice-colors"
+import { getInvoiceLanguageById } from "./invoice-languages"
 
 // Import base64-encoded fonts
 import { notoSansRegularBase64 } from "@/utils/fonts/notoSansRegular"
@@ -60,10 +62,15 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       throw new Error(`Failed to load fonts: ${fontError instanceof Error ? fontError.message : String(fontError)}`)
     }
 
-    // Define colors matching website theme
-    const primaryColor: [number, number, number] = [37, 99, 235] // blue-600 in RGB
+    // Define colors based on selected invoice color
+    const selectedColor = getInvoiceColorById(data.colorId || 'blue')
+    const primaryColor: [number, number, number] = selectedColor.rgb
     const textColor: [number, number, number] = [31, 41, 55] // gray-800 in RGB
     const mutedColor: [number, number, number] = [107, 114, 128] // gray-500 in RGB
+
+    // Get language translations
+    const selectedLanguage = getInvoiceLanguageById(data.languageId || 'en')
+    const t = selectedLanguage.texts
 
     // Header with invoice number
     const pageWidth = doc.internal.pageSize.width
@@ -76,7 +83,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     doc.setTextColor(...textColor)
     doc.setFontSize(24)
     doc.setFont("NotoSans", "bold")
-    doc.text(`Invoice ${data.invoice?.number || ""}`, margin, headerY + headerHeight / 2, {
+    doc.text(`${t.invoice} ${data.invoice?.number || ""}`, margin, headerY + headerHeight / 2, {
       align: "left",
       baseline: "middle",
     })
@@ -101,11 +108,11 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
 
     // Invoice Details
     const invoiceDetails = [
-      ["Issue Date", formatSafeDate(data.invoice?.issueDate)],
-      ["Due Date", formatSafeDate(data.invoice?.dueDate)],
-      data.invoice?.referenceNumber && ["Reference Number", data.invoice.referenceNumber],
-      data.invoice?.customerReferenceNumber && ["Customer Reference", data.invoice.customerReferenceNumber],
-      data.invoice?.orderNumber && ["Order Number", data.invoice.orderNumber],
+      [t.issueDate, formatSafeDate(data.invoice?.issueDate)],
+      [t.dueDate, formatSafeDate(data.invoice?.dueDate)],
+      data.invoice?.referenceNumber && [t.referenceNumber, data.invoice.referenceNumber],
+      data.invoice?.customerReferenceNumber && [t.customerReference, data.invoice.customerReferenceNumber],
+      data.invoice?.orderNumber && [t.orderNumber, data.invoice.orderNumber],
     ].filter(Boolean) as string[][]
 
     invoiceDetails.forEach((detail, index) => {
@@ -167,10 +174,10 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     const sellerInfo = [
       data.seller?.companyName,
       data.seller?.address,
-      data.seller?.companyId && `Company ID: ${data.seller.companyId}`,
-      data.seller?.vatId && `VAT ID: ${data.seller.vatId}`,
-      data.seller?.email && `Email: ${data.seller.email}`,
-      data.seller?.website && `Website: ${formatWebsiteUrl(data.seller.website)}`,
+      data.seller?.companyId && `${t.companyId}: ${data.seller.companyId}`,
+      data.seller?.vatId && `${t.vatId}: ${data.seller.vatId}`,
+      data.seller?.email && `${t.email}: ${data.seller.email}`,
+      data.seller?.website && `${t.website}: ${formatWebsiteUrl(data.seller.website)}`,
     ].filter(Boolean)
 
     sellerInfo.forEach((info) => {
@@ -196,10 +203,10 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     const buyerInfo = [
       data.buyer?.companyName,
       data.buyer?.address,
-      data.buyer?.companyId && `Company ID: ${data.buyer.companyId}`,
-      data.buyer?.vatId && `VAT ID: ${data.buyer.vatId}`,
-      data.buyer?.email && `Email: ${data.buyer.email}`,
-      data.buyer?.website && `Website: ${formatWebsiteUrl(data.buyer.website)}`,
+      data.buyer?.companyId && `${t.companyId}: ${data.buyer.companyId}`,
+      data.buyer?.vatId && `${t.vatId}: ${data.buyer.vatId}`,
+      data.buyer?.email && `${t.email}: ${data.buyer.email}`,
+      data.buyer?.website && `${t.website}: ${formatWebsiteUrl(data.buyer.website)}`,
     ].filter(Boolean)
 
     buyerInfo.forEach((info) => {
@@ -218,7 +225,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       doc.setFontSize(12)
       doc.setTextColor(...primaryColor)
       doc.setFont("NotoSans", "bold")
-      doc.text("Payment Information", 15, paymentY)
+      doc.text(t.paymentInformation, 15, paymentY)
       doc.setTextColor(...textColor)
       doc.setFont("NotoSans", "normal")
       doc.setFontSize(10)
@@ -227,25 +234,25 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       const getPaymentMethodLabel = (method: string) => {
         switch (method) {
           case "cash":
-            return "Cash"
+            return t.paymentMethods.cash
           case "bank_transfer":
-            return "Bank Transfer"
+            return t.paymentMethods.bankTransfer
           case "paypal":
-            return "PayPal"
+            return t.paymentMethods.paypal
           case "credit_card":
-            return "Credit Card"
+            return t.paymentMethods.creditCard
           case "wise":
-            return "Wise"
+            return t.paymentMethods.wise
           default:
-            return "Unknown"
+            return t.paymentMethods.unknown
         }
       }
 
       const paymentInfo = [
-        `Payment Method: ${getPaymentMethodLabel(data.payment.method)}`,
-        data.payment.bankAccount && `Bank Account: ${data.payment.bankAccount}`,
-        data.payment.iban && `IBAN: ${data.payment.iban}`,
-        data.payment.swift && `SWIFT/BIC: ${data.payment.swift}`,
+        `${t.paymentMethod}: ${getPaymentMethodLabel(data.payment.method)}`,
+        data.payment.bankAccount && `${t.bankAccount}: ${data.payment.bankAccount}`,
+        data.payment.iban && `${t.iban}: ${data.payment.iban}`,
+        data.payment.swift && `${t.swiftBic}: ${data.payment.swift}`,
       ].filter(Boolean) as string[] // Type hint
       
       paymentInfo.forEach((info) => {
@@ -265,7 +272,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     try {
       autoTable(doc, {
         startY: tableStartY,
-        head: [["Description", "Quantity", "Unit Price", "VAT %", "Net Price", "VAT Amount", "Total"]],
+        head: [[t.table.description, t.table.quantity, t.table.unitPrice, t.table.vatPercent, t.table.netPrice, t.table.vatAmount, t.table.total]],
         body: (data.items || []).map((item) => {
           // Use decimal utilities for precise calculations
           const { netPrice, vatAmount, totalPrice } = calculateItemTotal(
@@ -305,7 +312,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
         },
         headStyles: {
           fillColor: primaryColor,
-          textColor: "#ffffff",
+          textColor: selectedColor.headerText,
           fontSize: 10,
           fontStyle: "bold",
         },
@@ -351,7 +358,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       doc.setFontSize(12)
       doc.setTextColor(...primaryColor)
       doc.setFont("NotoSans", "bold")
-      doc.text("Notes", 15, finalY)
+      doc.text(t.notes, 15, finalY)
       doc.setTextColor(...textColor)
       doc.setFont("NotoSans", "normal")
       doc.setFontSize(10)
@@ -364,12 +371,12 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Summary aligned with right edge
     doc.setFontSize(10)
     doc.setTextColor(...mutedColor)
-    doc.text("Net Total", rightEdge - 70, finalY)
-    doc.text("VAT Total", rightEdge - 70, finalY + 7)
+    doc.text(t.netTotal, rightEdge - 70, finalY)
+    doc.text(t.vatTotal, rightEdge - 70, finalY + 7)
     doc.setTextColor(...primaryColor)
     doc.setFontSize(12)
     doc.setFont("NotoSans", "bold")
-    doc.text("Total Due", rightEdge - 70, finalY + 14)
+    doc.text(t.totalDue, rightEdge - 70, finalY + 14)
 
     // Amounts
     doc.setTextColor(...textColor)
@@ -382,7 +389,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     doc.setFont("NotoSans", "bold")
 
     if (data.isPaid) {
-      doc.text("PAID!", rightEdge, finalY + 14, { align: "right" })
+      doc.text(t.paid, rightEdge, finalY + 14, { align: "right" })
     } else {
       doc.text(formatCurrency(total), rightEdge, finalY + 14, { align: "right" })
     }
@@ -397,7 +404,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     doc.setFontSize(8)
     doc.setTextColor(...mutedColor)
     doc.setFont("NotoSans", "normal")
-    doc.text("Generated by Invoice.wiki", doc.internal.pageSize.width / 2, pageHeight - 10, { align: "center" })
+    doc.text(t.generatedBy, doc.internal.pageSize.width / 2, pageHeight - 10, { align: "center" })
 
     // Page number
     doc.text(

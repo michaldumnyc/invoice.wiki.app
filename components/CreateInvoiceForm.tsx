@@ -27,13 +27,17 @@ import {
   PaymentStatus,
   InvoiceItems,
   InvoiceTotals,
+  InvoiceColorPicker,
+  InvoiceLanguagePicker,
   type FieldVisibility,
   type InvoiceFormValues
 } from "@/components/invoice"
 
 // Import decimal utilities for precise financial calculations
 import { calculateInvoiceTotals, toNumber } from "@/lib/decimal-utils"
+import { generateInvoicePDFLazy } from "@/app/utils/generate-pdf"
 import { isValid } from "date-fns"
+import { getFormLanguageById } from "@/app/utils/form-languages"
 
 const CreateInvoiceForm: React.FC = () => {
   const { showToast } = useToastProvider()
@@ -96,6 +100,8 @@ const CreateInvoiceForm: React.FC = () => {
       swift: "",
       items: [{ name: "", quantity: 1, price: 0, vatRate: 0 }],
       notes: "",
+      colorId: "blue",
+      languageId: "en",
       isPaid: false,
       termsAccepted: false,
     },
@@ -112,6 +118,10 @@ const CreateInvoiceForm: React.FC = () => {
   const isPaid = watch("isPaid")
   const currency = watch("currency")
   const invoiceNumber = watch("invoiceNumber")
+  const languageId = watch("languageId")
+
+  // Get form translations based on selected language
+  const formTranslations = getFormLanguageById(languageId || 'en').form
 
   // Watch for changes in invoiceNumber and update referenceNumber with digits only
   useEffect(() => {
@@ -330,13 +340,39 @@ const CreateInvoiceForm: React.FC = () => {
                     fieldVisibility={fieldVisibility}
                     toggleFieldVisibility={toggleFieldVisibility}
                     highlightedField={highlightedField}
+                    translations={{
+                      title: formTranslations.sellerInformation,
+                      companyName: formTranslations.companyName,
+                      address: formTranslations.address,
+                      companyId: formTranslations.companyId,
+                      vatId: formTranslations.vatId,
+                      email: formTranslations.email,
+                      website: formTranslations.website,
+                      hide: formTranslations.hide,
+                      show: formTranslations.show,
+                      placeholders: formTranslations.placeholders
+                    }}
                   />
-                  <BuyerInformation
-                    control={control}
-                    fieldVisibility={fieldVisibility}
-                    toggleFieldVisibility={toggleFieldVisibility}
-                    highlightedField={highlightedField}
-                  />
+                  <div>
+                    <BuyerInformation
+                      control={control}
+                      fieldVisibility={fieldVisibility}
+                      toggleFieldVisibility={toggleFieldVisibility}
+                      highlightedField={highlightedField}
+                      translations={{
+                        title: formTranslations.buyerInformation,
+                        companyName: formTranslations.companyName,
+                        address: formTranslations.address,
+                        companyId: formTranslations.companyId,
+                        vatId: formTranslations.vatId,
+                        email: formTranslations.email,
+                        website: formTranslations.website,
+                        hide: formTranslations.hide,
+                        show: formTranslations.show,
+                        placeholders: formTranslations.placeholders
+                      }}
+                    />
+                  </div>
                 </div>
 
                 {/* Invoice Details */}
@@ -345,6 +381,54 @@ const CreateInvoiceForm: React.FC = () => {
                   highlightedField={highlightedField}
                   isMobile={isMobile}
                 />
+
+                {/* Invoice Color Selection */}
+                <div className="bg-card p-6 rounded-lg border border-border">
+                  <FormField
+                    control={control}
+                    name="colorId"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <InvoiceColorPicker
+                            selectedColorId={field.value}
+                            onColorChange={field.onChange}
+                            translations={{
+                              title: formTranslations.invoiceColorSelection,
+                              description: formTranslations.colorDescription,
+                              selected: "Selected"
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                {/* Invoice Language Selection */}
+                <div className="bg-card p-6 rounded-lg border border-border">
+                  <FormField
+                    control={control}
+                    name="languageId"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <InvoiceLanguagePicker
+                            selectedLanguageId={field.value}
+                            onLanguageChange={field.onChange}
+                            translations={{
+                              title: formTranslations.invoiceLanguageSelection,
+                              description: formTranslations.languageDescription,
+                              selected: "Selected"
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
                 {/* Payment Information */}
                 <PaymentInformation

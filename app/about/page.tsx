@@ -66,6 +66,20 @@ export default function AboutPage() {
               registration needed. Explore our comprehensive <Link href="/create-invoice" className="text-primary hover:underline">invoice generator</Link> now.
             </p>
 
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
+              <h2 className="text-xl font-semibold mb-3 text-blue-800 dark:text-blue-300">🎨 New Features by Popular Demand!</h2>
+              <p className="text-blue-700 dark:text-blue-300 mb-4">
+                We've listened to our community and added exciting new customization options to make your invoices even more professional and accessible:
+              </p>
+              <ul className="space-y-2 text-blue-700 dark:text-blue-300">
+                <li><strong>🎨 Custom Colors:</strong> Choose from 10 beautiful accent colors (Blue, Green, Red, Purple, Orange, Pink, Teal, Yellow, Slate, Black) to match your brand identity.</li>
+                <li><strong>🌍 Multiple Languages:</strong> Generate invoices in 6 languages - English, German (Deutsch), Czech (Čeština), Polish (Polski), Slovak (Slovenčina), and Ukrainian (Українська) to serve international clients.</li>
+              </ul>
+              <p className="text-blue-700 dark:text-blue-300 mt-4">
+                <Link href="/create-invoice" className="text-primary hover:underline font-medium">Try these new features</Link> and create invoices that truly represent your business!
+              </p>
+            </div>
+
             <h2 className="text-2xl font-semibold mt-12 mb-4">How We Prioritize Your Privacy</h2>
             <p className="mb-6">
               We believe professional invoicing should be accessible to everyone. Our <Link href="/create-invoice" className="text-primary hover:underline">online invoice maker</Link> simplifies

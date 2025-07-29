@@ -12,18 +12,60 @@ interface SellerInformationProps {
   fieldVisibility: Pick<FieldVisibility, 'sellerCompanyId' | 'sellerVatId' | 'sellerEmail' | 'sellerWebsite'>
   toggleFieldVisibility: (field: keyof FieldVisibility) => void
   highlightedField: string | null
+  translations?: {
+    title: string
+    companyName: string
+    address: string
+    companyId: string
+    vatId: string
+    email: string
+    website: string
+    hide: string
+    show: string
+    placeholders: {
+      companyName: string
+      address: string
+      companyId: string
+      vatId: string
+      email: string
+      website: string
+    }
+  }
 }
 
 export function SellerInformation({
   control,
   fieldVisibility,
   toggleFieldVisibility,
-  highlightedField
+  highlightedField,
+  translations
 }: SellerInformationProps) {
+  const defaultTranslations = {
+    title: "Seller Information",
+    companyName: "Company Name",
+    address: "Address",
+    companyId: "Company ID",
+    vatId: "VAT ID",
+    email: "Email",
+    website: "Website",
+    hide: "Hide",
+    show: "Show",
+    placeholders: {
+      companyName: "Your Company Ltd.",
+      address: "123 Business Street, City, Country",
+      companyId: "12345678",
+      vatId: "GB123456789",
+      email: "contact@company.com",
+      website: "example.com"
+    }
+  }
+  
+  const t = translations || defaultTranslations
+
   return (
     <Card className="card-content">
       <CardHeader>
-        <CardTitle>Seller Information</CardTitle>
+        <CardTitle>{t.title}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {/* sellerCompanyName */}
@@ -32,12 +74,12 @@ export function SellerInformation({
           name="sellerCompanyName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company Name *</FormLabel>
+              <FormLabel>{t.companyName} *</FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   maxLength={100}
-                  placeholder="Your Company Name"
+                  placeholder={t.placeholders.companyName}
                   autoComplete="off"
                   data-lpignore="true"
                   data-form-type="other"
@@ -56,12 +98,12 @@ export function SellerInformation({
           name="sellerAddress"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Address *</FormLabel>
+              <FormLabel>{t.address} *</FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   maxLength={250}
-                  placeholder="123 Business St, City, Country"
+                  placeholder={t.placeholders.address}
                   autoComplete="off"
                   data-lpignore="true"
                   data-form-type="other"
@@ -75,84 +117,63 @@ export function SellerInformation({
         />
 
         {/* sellerCompanyId */}
-        <FormField
+        <ToggleableFormField
           control={control}
           name="sellerCompanyId"
-          render={({ field }) => (
-            <ToggleableFormField
-              label="Company ID"
-              fieldName="sellerCompanyId"
-              field={field}
-              isVisible={fieldVisibility.sellerCompanyId}
-              onToggle={() => toggleFieldVisibility("sellerCompanyId")}
-              maxLength={40}
-              sanitizer={sanitizeInput}
-              highlightedField={highlightedField}
-              placeholder="12345678"
-            />
-          )}
+          label={t.companyId}
+          placeholder={t.placeholders.companyId}
+          maxLength={40}
+          isVisible={fieldVisibility.sellerCompanyId}
+          onToggle={() => toggleFieldVisibility('sellerCompanyId')}
+          highlightedField={highlightedField}
+          hideText={t.hide}
+          showText={t.show}
         />
 
         {/* sellerVatId */}
-        <FormField
+        <ToggleableFormField
           control={control}
           name="sellerVatId"
-          render={({ field }) => (
-            <ToggleableFormField
-              label="VAT ID"
-              fieldName="sellerVatId"
-              field={field}
-              isVisible={fieldVisibility.sellerVatId}
-              onToggle={() => toggleFieldVisibility("sellerVatId")}
-              maxLength={43}
-              sanitizer={sanitizeInput}
-              highlightedField={highlightedField}
-              placeholder="GB123456789"
-            />
-          )}
+          label={t.vatId}
+          placeholder={t.placeholders.vatId}
+          maxLength={43}
+          isVisible={fieldVisibility.sellerVatId}
+          onToggle={() => toggleFieldVisibility('sellerVatId')}
+          highlightedField={highlightedField}
+          hideText={t.hide}
+          showText={t.show}
         />
 
         {/* sellerEmail */}
-        <FormField
+        <ToggleableFormField
           control={control}
           name="sellerEmail"
-          render={({ field }) => (
-            <ToggleableFormField
-              label="Email"
-              fieldName="sellerEmail"
-              field={field}
-              isVisible={fieldVisibility.sellerEmail}
-              onToggle={() => toggleFieldVisibility("sellerEmail")}
-              maxLength={90}
-              sanitizer={sanitizeEmail}
-              highlightedField={highlightedField}
-              type="email"
-              placeholder="contact@company.com"
-            />
-          )}
+          label={t.email}
+          placeholder={t.placeholders.email}
+          maxLength={90}
+          type="email"
+          isVisible={fieldVisibility.sellerEmail}
+          onToggle={() => toggleFieldVisibility('sellerEmail')}
+          highlightedField={highlightedField}
+          sanitizer="email"
+          hideText={t.hide}
+          showText={t.show}
         />
 
         {/* sellerWebsite */}
-        <FormField
+        <ToggleableFormField
           control={control}
           name="sellerWebsite"
-          render={({ field }) => (
-            <ToggleableFormField
-              label="Website"
-              fieldName="sellerWebsite"
-              field={field}
-              isVisible={fieldVisibility.sellerWebsite}
-              onToggle={() => toggleFieldVisibility("sellerWebsite")}
-              maxLength={60}
-              sanitizer={(value) => {
-                const raw = sanitizeWebsite(value)
-                return raw.replace(/^(https?:\/\/)/, "")
-              }}
-              highlightedField={highlightedField}
-              type="text"
-              placeholder="example.com"
-            />
-          )}
+          label={t.website}
+          placeholder={t.placeholders.website}
+          maxLength={60}
+          type="text"
+          isVisible={fieldVisibility.sellerWebsite}
+          onToggle={() => toggleFieldVisibility('sellerWebsite')}
+          highlightedField={highlightedField}
+          sanitizer="website"
+          hideText={t.hide}
+          showText={t.show}
         />
       </CardContent>
     </Card>

@@ -25,7 +25,9 @@ export function WebsiteJsonLd() {
     "url": "https://invoice.wiki",
     "description":
       "Free online invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.",
-    "inLanguage": "en-US",
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-07-29",
+    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -49,7 +51,7 @@ export function WebsiteJsonLd() {
     "url": "https://invoice.wiki",
     "logo": "https://invoice.wiki/icons/icon-512x512.svg",
     "description":
-      "Free online invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.",
+      "Free online invoice maker and generator with PDF download, VAT support, multiple currencies, custom colors, and multi-language support. No registration required.",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript. Modern browser recommended.",
@@ -58,6 +60,8 @@ export function WebsiteJsonLd() {
       "PDF invoice generation",
       "VAT calculation",
       "Multiple currencies support",
+      "Custom color themes",
+      "Multi-language support",
       "No registration required",
       "Browser-based processing"
     ],
@@ -72,8 +76,9 @@ export function WebsiteJsonLd() {
       "name": "Invoice.wiki Team",
       "url": "https://invoice.wiki"
     },
-    "datePublished": "2024-01-01",
-    "inLanguage": "en-US",
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-07-29",
+    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "isAccessibleForFree": true,
     "screenshot": "https://invoice.wiki/images/og-image.png"
   }
@@ -100,13 +105,14 @@ export function OrganizationJsonLd() {
       "height": 512
     },
     "description": "Provider of free online invoice generation services",
-    "foundingDate": "2024",
+    "foundingDate": "2025-02-04",
+    "dateModified": "2025-07-29",
     "serviceArea": "Worldwide",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "support@invoice.wiki",
-      "availableLanguage": "English"
+      "availableLanguage": ["English", "German", "Czech", "Polish", "Slovak", "Ukrainian"]
     },
     "address": {
       "@type": "PostalAddress",
@@ -249,8 +255,18 @@ export function FaqJsonLd() {
           "@type": "Answer",
           "text": "Our invoice generator supports 40+ international currencies including USD, EUR, GBP, CAD, AUD, CHF, JPY, SEK, NOK, DKK, PLN, CZK, UAH, CNY, INR, SGD, HKD, NZD, BRL, MXN, ZAR, TRY, ILS, AED, THB, and many others. You can select your preferred currency and the system will format amounts according to standard financial conventions for that currency."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize invoice colors and languages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! By popular demand, we've added customization options. Choose from 10 professional accent colors (Blue, Green, Red, Purple, Orange, Pink, Teal, Yellow, Slate, Black) to match your brand identity. Plus, generate invoices in 6 languages: English, German (Deutsch), Czech (Čeština), Polish (Polski), Slovak (Slovenčina), and Ukrainian (Українська) to serve international clients professionally."
+        }
       }
-    ]
+    ],
+    "datePublished": "2025-07-25",
+    "dateModified": "2025-07-29"
   }
 
   return <JsonLd data={data} />
@@ -276,7 +292,9 @@ export function AboutPageJsonLd() {
       "name": "Invoice.wiki Team",
       "url": "https://invoice.wiki"
     },
-    "inLanguage": "en-US"
+    "datePublished": "2025-07-25",
+    "dateModified": "2025-07-29",
+    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"]
   }
 
   return <JsonLd data={data} />
@@ -288,7 +306,7 @@ export function InvoiceExampleImageJsonLd() {
     "@context": "https://schema.org",
     "@type": "ImageObject",
     "name": "Professional Invoice Example",
-    "description": "Sample professional invoice created with Invoice.wiki free online invoice generator showing complete business details, itemized services, VAT calculations, payment information, and clean formatting ready for PDF download",
+    "description": "Sample professional invoice created with Invoice.wiki free online invoice generator showing complete business details, itemized services, VAT calculations, payment information, and clean formatting ready for PDF download. Now features customizable colors and multi-language support.",
     "url": "https://invoice.wiki/images/invoice-example.png",
     "contentUrl": "https://invoice.wiki/images/invoice-example.png",
     "width": "800",
@@ -306,13 +324,18 @@ export function InvoiceExampleImageJsonLd() {
       "free invoice generator",
       "business invoice sample",
       "VAT invoice template",
-      "PDF invoice example"
+      "PDF invoice example",
+      "customizable invoice colors",
+      "multi-language invoices",
+      "international invoicing"
     ],
+    "datePublished": "2025-07-25",
+    "dateModified": "2025-07-29",
     "about": {
       "@type": "WebApplication",
       "name": "Free Invoice Generator",
       "applicationCategory": "BusinessApplication",
-      "description": "Free online invoice generator for creating professional invoices"
+      "description": "Free online invoice generator for creating professional invoices with custom colors and multi-language support"
     }
   }
 

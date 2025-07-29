@@ -107,6 +107,8 @@ export const invoiceFormSchema = z.object({
     .max(210)
     .optional()
     .transform((v) => (v ? sanitizeString(v) : v)),
+  colorId: z.string().min(1).max(20).default("blue").transform(sanitizeString),
+  languageId: z.string().min(1).max(10).default("en").transform(sanitizeString),
   isPaid: z.boolean(),
   termsAccepted: z.boolean().refine((val) => val === true, {
     message: "You must accept the terms and conditions",

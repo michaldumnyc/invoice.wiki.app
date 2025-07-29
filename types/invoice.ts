@@ -42,6 +42,8 @@ export type InvoiceFormData = {
     vatRate: number
   }[]
   notes?: string
+  colorId: string
+  languageId: string
   isPaid: boolean
   total: number
 }

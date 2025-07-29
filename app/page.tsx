@@ -205,6 +205,18 @@ export default function HomePage() {
                           <p className="text-foreground/80">Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation.</p>
                         </div>
                       </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
+                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-lg text-foreground">Customizable Colors & Languages</h3>
+                          <p className="text-foreground/80">NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech, Polish, Slovak, Ukrainian) to match your brand and serve international clients.</p>
+                        </div>
+                      </div>
                     </div>
                     
                     <div className="pt-4">
@@ -242,6 +254,10 @@ export default function HomePage() {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">What currencies are supported?</h3>
                   <p className="leading-relaxed">Our invoice generator supports 40+ international currencies including USD, EUR, GBP, CAD, AUD, CHF, JPY, SEK, NOK, DKK, PLN, CZK, UAH, CNY, INR, SGD, HKD, NZD, BRL, MXN, ZAR, TRY, ILS, AED, THB, and many others. You can select your preferred currency and the system will format amounts according to standard financial conventions for that currency, ensuring professional invoices for clients worldwide.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Can I customize invoice colors and languages?</h3>
+                  <p className="leading-relaxed">Yes! By popular demand, we've added customization options. Choose from 10 professional accent colors (Blue, Green, Red, Purple, Orange, Pink, Teal, Yellow, Slate, Black) to match your brand. Plus, generate invoices in 6 languages: English, German (Deutsch), Czech (Čeština), Polish (Polski), Slovak (Slovenčina), and Ukrainian (Українська) to serve international clients professionally.</p>
                 </div>
               </div>
             </div>
