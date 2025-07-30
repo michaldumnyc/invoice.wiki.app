@@ -58,7 +58,6 @@ export default function HomePage() {
   return (
     <>
       <WebsiteJsonLd />
-      <WebPageJsonLd />
       <OrganizationJsonLd />
       <ProductJsonLd />
       <FaqJsonLd />
