@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 import {
   BreadcrumbJsonLd,
   WebsiteJsonLd,
-  ProductJsonLd,
+  SoftwareApplicationJsonLd,
   OrganizationJsonLd,
 } from "../components/JsonLd"
 
@@ -60,7 +60,7 @@ export default function CreateInvoicePage() {
     <div className="min-h-screen flex flex-col">
       {/* Structured Data */}
       <WebsiteJsonLd />
-      <ProductJsonLd />
+      <SoftwareApplicationJsonLd />
       <OrganizationJsonLd />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 
