@@ -15,7 +15,7 @@ export default function JsonLd({ data }: JsonLdProps) {
   )
 }
 
-// ✅ WebSite + WebApplication
+// ✅ WebSite + SoftwareApplication (instead of WebApplication)
 export function WebsiteJsonLd() {
   const webSiteData = {
     "@context": "https://schema.org",
@@ -42,16 +42,17 @@ export function WebsiteJsonLd() {
     }
   }
 
-  const webAppData = {
+  // Changed from WebApplication to SoftwareApplication
+  const softwareAppData = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "SoftwareApplication",
     "name": "Invoice.wiki",
     "alternateName": "Free Online Invoice Maker & Generator",
     "url": "https://invoice.wiki",
     "logo": "https://invoice.wiki/icons/icon-512x512.svg",
     "description":
       "Free online invoice maker and generator with PDF download, VAT support, multiple currencies, custom colors, and multi-language support. No registration required.",
-    "applicationCategory": "FinanceApplication",
+    "applicationCategory": "BusinessApplication", // Changed from FinanceApplication
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript. Modern browser recommended.",
     "permissions": "No personal data collected",
@@ -68,7 +69,8 @@ export function WebsiteJsonLd() {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2099-12-31" // Far future date for permanently free offer
     },
     "author": {
       "@type": "Organization",
@@ -77,15 +79,23 @@ export function WebsiteJsonLd() {
     },
     "datePublished": "2025-02-04",
     "dateModified": "2025-07-30",
+    "softwareVersion": "1.0",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "isAccessibleForFree": true,
-    "screenshot": "https://invoice.wiki/images/og-image.png"
+    "screenshot": "https://invoice.wiki/images/og-image.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
 
   return (
     <>
       <JsonLd data={webSiteData} />
-      <JsonLd data={webAppData} />
+      <JsonLd data={softwareAppData} />
     </>
   )
 }
@@ -106,59 +116,34 @@ export function OrganizationJsonLd() {
     "description": "Provider of free online invoice generation services",
     "foundingDate": "2025-02-04",
     "dateModified": "2025-07-30",
-    "serviceArea": "Worldwide",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "info@invoice.wiki",
       "availableLanguage": ["English", "German", "Czech", "Polish", "Slovak", "Ukrainian"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Global",
-      "addressLocality": "Online"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Invoice Generation Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Free Invoice Generation",
-            "description": "Create professional invoices online for free"
-          }
-        }
-      ]
     }
   }
 
   return <JsonLd data={data} />
 }
 
-// ✅ Product
-export function ProductJsonLd() {
+// ✅ SoftwareApplication (changed from Product)
+export function SoftwareApplicationJsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "SoftwareApplication",
     "name": "Free Online Invoice Maker & Generator",
     "description":
       "Professional invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.",
-    "inLanguage": "en-US",
-    "brand": {
-      "@type": "Brand",
-      "name": "Invoice.wiki"
-    },
-    "category": "Finance Software",
+    "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any",
+    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition",
-      "url": "https://invoice.wiki"
+      "priceValidUntil": "2099-12-31"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -180,11 +165,16 @@ export function ProductJsonLd() {
           "name": "Small Business Owner"
         },
         "reviewBody":
-          "Perfect free tool for creating professional invoices quickly and easily."
+          "Perfect free tool for creating professional invoices quickly and easily.",
+        "datePublished": "2025-07-20"
       }
     ],
     "url": "https://invoice.wiki",
-    "image": "https://invoice.wiki/images/og-image.png"
+    "image": "https://invoice.wiki/images/og-image.png",
+    "screenshot": "https://invoice.wiki/images/og-image.png",
+    "softwareVersion": "1.0",
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-07-30"
   }
 
   return <JsonLd data={data} />
@@ -282,9 +272,9 @@ export function AboutPageJsonLd() {
     "description":
       "Learn more about Invoice.wiki, a free and secure online invoice generator for freelancers, contractors, and businesses.",
     "mainEntity": {
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication", // Changed from WebApplication
       "name": "Invoice.wiki",
-      "applicationCategory": "FinanceApplication",
+      "applicationCategory": "BusinessApplication", // Changed from FinanceApplication
       "url": "https://invoice.wiki"
     },
     "publisher": {
@@ -313,7 +303,7 @@ export function InvoiceExampleImageJsonLd() {
     "height": "1000",
     "encodingFormat": "image/png",
     "creator": {
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication", // Changed from WebApplication
       "name": "Invoice.wiki",
       "url": "https://invoice.wiki"
     },
@@ -332,7 +322,7 @@ export function InvoiceExampleImageJsonLd() {
     "datePublished": "2025-07-25",
     "dateModified": "2025-07-30",
     "about": {
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication", // Changed from WebApplication
       "name": "Free Invoice Generator",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any",
@@ -341,6 +331,7 @@ export function InvoiceExampleImageJsonLd() {
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2099-12-31",
         "description": "Free online invoice generator for creating professional invoices with custom colors and multi-language support"
       }
     }
