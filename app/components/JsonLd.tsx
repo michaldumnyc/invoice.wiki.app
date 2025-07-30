@@ -238,7 +238,7 @@ export function InvoiceExampleImageJsonLd() {
     "height": "1000",
     "encodingFormat": "image/png",
     "creator": {
-      "@type": "SoftwareApplication", // Changed from WebApplication
+      "@type": "Organization",
       "name": "Invoice.wiki",
       "url": "https://invoice.wiki"
     },
@@ -255,21 +255,7 @@ export function InvoiceExampleImageJsonLd() {
       "international invoicing"
     ],
     "datePublished": "2025-07-25",
-    "dateModified": "2025-07-30",
-    "about": {
-      "@type": "SoftwareApplication", // Changed from WebApplication
-      "name": "Free Invoice Generator",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2099-12-31",
-        "description": "Free online invoice generator for creating professional invoices with custom colors and multi-language support"
-      }
-    }
+    "dateModified": "2025-07-30"
   }
 
   return <JsonLd data={data} />
