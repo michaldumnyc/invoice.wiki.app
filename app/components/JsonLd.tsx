@@ -15,9 +15,9 @@ export default function JsonLd({ data }: JsonLdProps) {
   )
 }
 
-// ✅ WebSite + SoftwareApplication (instead of WebApplication)
+// ✅ WebSite only - for homepage
 export function WebsiteJsonLd() {
-  const webSiteData = {
+  const data = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Invoice.wiki",
@@ -42,62 +42,7 @@ export function WebsiteJsonLd() {
     }
   }
 
-  // Changed from WebApplication to SoftwareApplication
-  const softwareAppData = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Invoice.wiki",
-    "alternateName": "Free Online Invoice Maker & Generator",
-    "url": "https://invoice.wiki",
-    "logo": "https://invoice.wiki/icons/icon-512x512.svg",
-    "description":
-      "Free online invoice maker and generator with PDF download, VAT support, multiple currencies, custom colors, and multi-language support. No registration required.",
-    "applicationCategory": "BusinessApplication", // Changed from FinanceApplication
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript. Modern browser recommended.",
-    "permissions": "No personal data collected",
-    "featureList": [
-      "PDF invoice generation",
-      "VAT calculation",
-      "Multiple currencies support",
-      "Custom color themes",
-      "Multi-language support",
-      "No registration required",
-      "Browser-based processing"
-    ],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2099-12-31" // Far future date for permanently free offer
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Invoice.wiki Team",
-      "url": "https://invoice.wiki"
-    },
-    "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30",
-    "softwareVersion": "1.0",
-    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
-    "isAccessibleForFree": true,
-    "screenshot": "https://invoice.wiki/images/og-image.png",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
-  }
-
-  return (
-    <>
-      <JsonLd data={webSiteData} />
-      <JsonLd data={softwareAppData} />
-    </>
-  )
+  return <JsonLd data={data} />
 }
 
 // ✅ Organization
@@ -145,30 +90,7 @@ export function SoftwareApplicationJsonLd() {
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2099-12-31"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Small Business Owner"
-        },
-        "reviewBody":
-          "Perfect free tool for creating professional invoices quickly and easily.",
-        "datePublished": "2025-07-20"
-      }
-    ],
+    // REMOVED aggregateRating and review - no real reviews on site
     "url": "https://invoice.wiki",
     "image": "https://invoice.wiki/images/og-image.png",
     "screenshot": "https://invoice.wiki/images/og-image.png",
