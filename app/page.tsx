@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "Free Invoice Generator - Invoice.wiki",
   description:
-    "Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, and multiple currencies. No registration required - start now!",
+    "Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, multiple currencies and languages.",
   alternates: {
     canonical: "https://invoice.wiki",
     languages: {
