@@ -26,7 +26,7 @@ export function WebsiteJsonLd() {
     "description":
       "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-29",
+    "dateModified": "2025-07-30",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "potentialAction": {
       "@type": "SearchAction",
@@ -77,7 +77,7 @@ export function WebsiteJsonLd() {
       "url": "https://invoice.wiki"
     },
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-29",
+    "dateModified": "2025-07-30",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "isAccessibleForFree": true,
     "screenshot": "https://invoice.wiki/images/og-image.png"
@@ -106,7 +106,7 @@ export function OrganizationJsonLd() {
     },
     "description": "Provider of free online invoice generation services",
     "foundingDate": "2025-02-04",
-    "dateModified": "2025-07-29",
+    "dateModified": "2025-07-30",
     "serviceArea": "Worldwide",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -267,7 +267,7 @@ export function FaqJsonLd() {
       }
     ],
     "datePublished": "2025-07-25",
-    "dateModified": "2025-07-29"
+    "dateModified": "2025-07-30"
   }
 
   return <JsonLd data={data} />
@@ -294,7 +294,7 @@ export function AboutPageJsonLd() {
       "url": "https://invoice.wiki"
     },
     "datePublished": "2025-07-25",
-    "dateModified": "2025-07-29",
+    "dateModified": "2025-07-30",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"]
   }
 
@@ -331,11 +331,17 @@ export function InvoiceExampleImageJsonLd() {
       "international invoicing"
     ],
     "datePublished": "2025-07-25",
-    "dateModified": "2025-07-29",
+    "dateModified": "2025-07-30",
     "about": {
       "@type": "WebApplication",
       "name": "Free Invoice Generator",
       "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+"offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD",
+  "availability": "https://schema.org/InStock",
       "description": "Free online invoice generator for creating professional invoices with custom colors and multi-language support"
     }
   }
