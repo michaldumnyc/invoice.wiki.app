@@ -12,7 +12,7 @@ import React from "react"
 import {
   WebsiteJsonLd,
   OrganizationJsonLd,
-  ProductJsonLd,
+  SoftwareApplicationJsonLd,
   FaqJsonLd,
   InvoiceExampleImageJsonLd
 } from "./components/JsonLd"
@@ -59,7 +59,7 @@ export default function HomePage() {
     <>
       <WebsiteJsonLd />
       <OrganizationJsonLd />
-      <ProductJsonLd />
+      <SoftwareApplicationJsonLd />
       <FaqJsonLd />
       <InvoiceExampleImageJsonLd />
 
