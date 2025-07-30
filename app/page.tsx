@@ -51,6 +51,12 @@ export const metadata: Metadata = {
     description:
       "Create professional invoices instantly. Free PDF download, no registration needed.",
     images: ["/images/twitter-card.png"]
+  },
+  other: {
+    "article:published_time": "2025-02-04T00:00:00Z",
+    "article:modified_time": "2025-07-30T00:00:00Z",
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-07-30"
   }
 }
 

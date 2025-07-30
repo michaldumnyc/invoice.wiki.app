@@ -39,6 +39,12 @@ export const metadata: Metadata = {
       "Generate invoices online with PDF export and multi-currency support.",
     images: ["/images/twitter-card.png"],
   },
+  other: {
+    "article:published_time": "2025-02-04T00:00:00Z",
+    "article:modified_time": "2025-07-30T00:00:00Z",
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-07-30"
+  }
 }
 
 const CreateInvoiceForm = dynamic(

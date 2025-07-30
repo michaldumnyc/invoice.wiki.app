@@ -177,7 +177,7 @@ export function FaqJsonLd() {
         }
       }
     ],
-    "datePublished": "2025-07-25",
+    "datePublished": "2025-02-04",
     "dateModified": "2025-07-30"
   }
 
@@ -217,7 +217,7 @@ export function AboutPageJsonLd() {
       "name": "Invoice.wiki Team",
       "url": "https://invoice.wiki"
     },
-    "datePublished": "2025-07-25",
+    "datePublished": "2025-02-04",
     "dateModified": "2025-07-30",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"]
   }
@@ -254,7 +254,7 @@ export function InvoiceExampleImageJsonLd() {
       "multi-language invoices",
       "international invoicing"
     ],
-    "datePublished": "2025-07-25",
+    "datePublished": "2025-02-04",
     "dateModified": "2025-07-30"
   }
 
