@@ -152,6 +152,7 @@ export function ProductJsonLd() {
       "name": "Invoice.wiki"
     },
     "category": "Finance Software",
+    "operatingSystem": "Any",
     "offers": {
       "@type": "Offer",
       "price": "0",
