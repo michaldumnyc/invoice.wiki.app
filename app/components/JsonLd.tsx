@@ -23,8 +23,7 @@ export function WebsiteJsonLd() {
     "name": "Invoice.wiki",
     "alternateName": "Free Online Invoice Maker & Generator",
     "url": "https://invoice.wiki",
-    "description":
-      "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
+    "description": "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
     "datePublished": "2025-02-04",
     "dateModified": "2025-07-30",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
@@ -337,12 +336,13 @@ export function InvoiceExampleImageJsonLd() {
       "name": "Free Invoice Generator",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any",
-"offers": {
-  "@type": "Offer",
-  "price": "0",
-  "priceCurrency": "USD",
-  "availability": "https://schema.org/InStock",
-      "description": "Free online invoice generator for creating professional invoices with custom colors and multi-language support"
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "Free online invoice generator for creating professional invoices with custom colors and multi-language support"
+      }
     }
   }
 
