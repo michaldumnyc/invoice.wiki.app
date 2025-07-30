@@ -9,7 +9,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import React from "react"
-import WebPageJsonLd from "@/components/WebPageJsonLd"
+import WebPageJsonLd from "./components/WebPageJsonLd"
 import {
   WebsiteJsonLd,
   OrganizationJsonLd,
