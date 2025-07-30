@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   publisher: "Invoice.wiki",
     other: {
     "article:published_time": "2025-02-04",
-    "article:modified_time": "2025-07-29"
+    "article:modified_time": "2025-07-30"
   },
   formatDetection: {
     email: false,
