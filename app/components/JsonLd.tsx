@@ -194,10 +194,23 @@ export function AboutPageJsonLd() {
     "description":
       "Learn more about Invoice.wiki, a free and secure online invoice generator for freelancers, contractors, and businesses.",
     "mainEntity": {
-      "@type": "SoftwareApplication", // Changed from WebApplication
+      "@type": "SoftwareApplication",
       "name": "Invoice.wiki",
-      "applicationCategory": "BusinessApplication", // Changed from FinanceApplication
-      "url": "https://invoice.wiki"
+      "description": "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "url": "https://invoice.wiki",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2099-12-31"
+      },
+      "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
+      "softwareVersion": "1.0",
+      "datePublished": "2025-02-04",
+      "dateModified": "2025-07-30"
     },
     "publisher": {
       "@type": "Organization",

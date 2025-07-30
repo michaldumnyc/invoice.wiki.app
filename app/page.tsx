@@ -13,7 +13,8 @@ import {
   WebsiteJsonLd,
   OrganizationJsonLd,
   FaqJsonLd,
-  InvoiceExampleImageJsonLd
+  InvoiceExampleImageJsonLd,
+  SoftwareApplicationJsonLd
 } from "./components/JsonLd"
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function HomePage() {
     <>
       <WebsiteJsonLd />
       <OrganizationJsonLd />
+      <SoftwareApplicationJsonLd />
       <FaqJsonLd />
       <InvoiceExampleImageJsonLd />
 
