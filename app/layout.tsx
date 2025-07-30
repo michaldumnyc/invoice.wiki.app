@@ -34,11 +34,15 @@ export const metadata: Metadata = {
     default: "Invoice.wiki - Free Invoice Generator",
     template: "%s | Invoice.wiki",
   },
-  description: "Free online invoice generator. Create professional invoices instantly with PDF download, VAT support, and multiple currencies. No registration required.",
+  description: "Free online invoice generator. Create professional invoices instantly with PDF download, VAT support, multiple currencies and languages.",
 
   authors: [{ name: "Invoice.wiki Team" }],
   creator: "Invoice.wiki",
   publisher: "Invoice.wiki",
+    other: {
+    "article:published_time": "2025-02-04",
+    "article:modified_time": "2025-07-29"
+  },
   formatDetection: {
     email: false,
     address: false,
