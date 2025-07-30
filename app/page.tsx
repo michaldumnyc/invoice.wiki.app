@@ -14,7 +14,9 @@ import {
   OrganizationJsonLd,
   FaqJsonLd,
   InvoiceExampleImageJsonLd,
-  SoftwareApplicationJsonLd
+  SoftwareApplicationJsonLd,
+  WebPageJsonLd,
+  BreadcrumbJsonLd
 } from "./components/JsonLd"
 
 export const metadata: Metadata = {
@@ -61,8 +63,18 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://invoice.wiki" }
+  ]
+
   return (
     <>
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <WebPageJsonLd 
+        url="https://invoice.wiki"
+        name="Free Invoice Generator - Invoice.wiki"
+        description="Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, multiple currencies and languages."
+      />
       <WebsiteJsonLd />
       <OrganizationJsonLd />
       <SoftwareApplicationJsonLd />
@@ -107,7 +119,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Lightning-Fast Invoice Generation</h3>
-                  <p className="text-muted-foreground">Generate professional invoices in seconds with our streamlined <Link href="/create-invoice" className="text-primary underline hover:no-underline">invoice generator interface</Link> that requires zero learning curve and delivers instant results.</p>
+                  <p className="text-muted-foreground">Generate professional invoices in seconds with our streamlined invoice generator interface that requires zero learning curve and delivers instant results.</p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -246,7 +258,7 @@ export default function HomePage() {
               <div className="space-y-6 text-foreground/90">
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Do I need to register to create invoices?</h3>
-                  <p className="leading-relaxed">Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our <Link href="/create-invoice" className="text-primary underline hover:no-underline">invoice creation page</Link> and start building professional invoices immediately without providing personal information.</p>
+                  <p className="leading-relaxed">Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our invoice creation page and start building professional invoices immediately without providing personal information.</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Can I download my invoice as PDF?</h3>
@@ -287,7 +299,7 @@ export default function HomePage() {
                     The invoice maker supports multiple international currencies, sophisticated VAT calculations, flexible payment terms, customizable due dates, and detailed line items with quantities, rates, and comprehensive descriptions. You can easily add your company logo, customize brand colors, include detailed business information, and create professional-looking invoices that are generated as high-quality PDF files suitable for sending directly to clients or printing for your permanent business records.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    Security and privacy are our highest priorities when handling your sensitive business and financial information. Your invoice data is processed entirely locally in your browser using advanced client-side encryption and never stored on our servers, ensuring your sensitive business information remains completely private and secure. Start <Link href="/create-invoice" className="text-primary underline hover:no-underline">creating professional invoices</Link> today without any registration requirements or subscription fees.
+                    Security and privacy are our highest priorities when handling your sensitive business and financial information. Your invoice data is processed entirely locally in your browser using advanced client-side encryption and never stored on our servers, ensuring your sensitive business information remains completely private and secure. Start creating professional invoices today without any registration requirements or subscription fees.
                   </p>
                   <p className="text-lg leading-relaxed">
                     Our advanced invoice generator includes powerful features that streamline your billing process and help you maintain professional relationships with clients. The platform automatically calculates totals, applies discounts, manages tax rates across different regions, and ensures compliance with international invoicing standards. Whether you need to create simple one-time invoices or manage recurring billing cycles, our comprehensive toolset adapts to your specific business requirements.

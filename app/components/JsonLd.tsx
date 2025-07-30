@@ -260,3 +260,26 @@ export function InvoiceExampleImageJsonLd() {
 
   return <JsonLd data={data} />
 }
+
+// ✅ WebPage Schema
+export function WebPageJsonLd({ 
+  url, 
+  name, 
+  description 
+}: { 
+  url: string
+  name: string 
+  description: string 
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": name,
+    "description": description,
+    "url": url,
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-07-30"
+  }
+
+  return <JsonLd data={data} />
+}
