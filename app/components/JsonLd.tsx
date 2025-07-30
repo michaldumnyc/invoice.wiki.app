@@ -24,7 +24,7 @@ export function WebsiteJsonLd() {
     "alternateName": "Free Online Invoice Maker & Generator",
     "url": "https://invoice.wiki",
     "description":
-      "Free online invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.",
+      "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
     "datePublished": "2025-02-04",
     "dateModified": "2025-07-29",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
