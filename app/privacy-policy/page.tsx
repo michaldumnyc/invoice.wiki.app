@@ -63,13 +63,13 @@ export default function PrivacyPolicyPage() {
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+            <h1 className="text-4xl font-bold mb-8">Privacy Policy - Invoice Wiki Generator</h1>
 
             <div className="space-y-6 text-foreground">
-              <h2 className="text-2xl font-semibold mb-4">Data Protection Statement</h2>
+              <h2 className="text-2xl font-semibold mb-4">Invoice Generator Privacy - No Data Collection</h2>
               <p className="mb-4 leading-relaxed">
-                <Link href="/" className="text-primary underline hover:no-underline">Invoice.wiki</Link> online invoice maker does not collect personal data. All invoice generation happens within your web browser.
-                Professional invoices and PDFs are created on your device, and all invoice data is cleared when you close your browser.
+                <Link href="/" className="text-primary underline hover:no-underline">Invoice Wiki</Link> free invoice generator does not collect personal data. All invoice creation and PDF generation happens within your web browser.
+                Professional invoices are created on your device, and all invoice data is cleared when you close your browser.
               </p>
               <p className="mb-4 leading-relaxed">
                 We do not use cookies for tracking or advertising. The only data we store in your browser is 
@@ -80,16 +80,16 @@ export default function PrivacyPolicyPage() {
                 This data does not contain any personal information.
               </p>
 
-              <h2 className="text-2xl font-semibold mb-4">How We Protect Your Privacy</h2>
+              <h2 className="text-2xl font-semibold mb-4">How Invoice Wiki Protects Your Privacy When You Create Invoice</h2>
               <p className="mb-4 leading-relaxed">
-                At Invoice.wiki, we believe your business information should remain completely private. Our invoice generator is designed with privacy-first principles:
+                At Invoice Wiki, we believe your business information should remain completely private. Our free invoice generator is designed with privacy-first principles when you generate invoice:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-6">
-                <li><strong>Local Processing:</strong> All invoice data is processed locally in your browser using JavaScript. No information is sent to our servers.</li>
-                <li><strong>No Registration Required:</strong> You can start creating invoices immediately without providing any personal information.</li>
-                <li><strong>No Data Storage:</strong> We don't store your invoice details, client information, or business data on our servers.</li>
-                <li><strong>Secure PDF Generation:</strong> PDF files are created locally in your browser and downloaded directly to your device.</li>
-                <li><strong>No Email Required:</strong> Unlike other invoice generators, we never ask for your email address or contact details.</li>
+                <li><strong>Local Processing:</strong> All invoice generator data is processed locally in your browser using JavaScript. No information is sent to our servers when you create invoice.</li>
+                <li><strong>No Registration Required:</strong> You can start creating invoices immediately without providing any personal information to use our invoice creator.</li>
+                <li><strong>No Data Storage:</strong> We don't store your invoice details, client information, or business data on our servers when you generate invoice.</li>
+                <li><strong>Secure PDF Generation:</strong> PDF invoice files are created locally in your browser and downloaded directly to your device.</li>
+                <li><strong>No Email Required:</strong> Unlike other invoice generators, we never ask for your email address or contact details to create invoice.</li>
               </ul>
 
               <h2 className="text-2xl font-semibold mb-4">What Information We Don't Collect</h2>

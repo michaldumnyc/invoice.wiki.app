@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
+import Link from "next/link"
 import LoadingSpinner from "@/components/LoadingSpinner"
 import Footer from "@/components/Footer"
 import type { Metadata } from "next"
@@ -75,7 +76,7 @@ export default function CreateInvoicePage() {
             Create Invoice
           </h1>
           <p className="text-base sm:text-lg text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required.
+            Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private - see our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy policy</Link>.
           </p>
 
           {/* Invoice Form */}
