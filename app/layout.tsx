@@ -20,11 +20,10 @@ const cleanBase64 = (base64String: string) => {
 const cleanedNotoSansRegular = cleanBase64(notoSansRegularBase64);
 const cleanedNotoSansBold = cleanBase64(notoSansBoldBase64);
 
-// Viewport configuration for all pages
+// Viewport configuration for all pages - removed maximumScale for accessibility
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
   themeColor: '#3b82f6' // blue color for browser theme
 };
 
@@ -41,9 +40,9 @@ export const metadata: Metadata = {
   publisher: "Invoice.wiki",
     other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-07-30T00:00:00Z",
+    "article:modified_time": "2025-08-12T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
+    "dateModified": "2025-08-12"
   },
   formatDetection: {
     email: false,
@@ -60,12 +59,16 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
       'max-image-preview': 'large',
       'max-video-preview': -1,
       'max-snippet': -1,
+      noimageindex: false,
+      notranslate: false,
+      noarchive: false,
     },
   },
   openGraph: {
@@ -92,10 +95,13 @@ export const metadata: Metadata = {
     description: "Create professional invoices online instantly. Free invoice maker with PDF download, VAT support, and multiple currencies. No registration required.",
     images: ["/images/twitter-card.png"],
     site: "@invoice_wiki",
+    creator: "@invoice_wiki",
   },
   category: "Finance",
   applicationName: "Invoice.wiki",
   manifest: "/manifest.json",
+  keywords: ["free invoice generator", "invoice maker", "PDF invoice", "VAT calculator", "business invoicing", "freelancer tools"],
+  classification: "Business Software",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" }

@@ -25,7 +25,7 @@ export function WebsiteJsonLd() {
     "url": "https://invoice.wiki",
     "description": "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30",
+    "dateModified": "2025-08-12",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "potentialAction": {
       "@type": "SearchAction",
@@ -60,7 +60,7 @@ export function OrganizationJsonLd() {
     },
     "description": "Provider of free online invoice generation services",
     "foundingDate": "2025-02-04",
-    "dateModified": "2025-07-30",
+    "dateModified": "2025-08-12",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
@@ -218,7 +218,7 @@ export function AboutPageJsonLd() {
       "url": "https://invoice.wiki"
     },
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30",
+    "dateModified": "2025-08-12",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"]
   }
 

@@ -14,22 +14,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="hover:text-primary transition-colors">
-                  Home
+                  Free Invoice Generator
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-primary transition-colors">
-                  About
+                  About Invoice.wiki
                 </Link>
               </li>
               <li>
                 <Link href="/create-invoice" className="hover:text-primary transition-colors">
-                  Create Invoice
+                  Create Professional Invoice
                 </Link>
               </li>
               <li>
                 <Link href="/privacy-policy" className="hover:text-primary transition-colors">
-                  Privacy Policy
+                  Privacy Policy Details
                 </Link>
               </li>
             </ul>

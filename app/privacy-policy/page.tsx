@@ -35,13 +35,15 @@ export const metadata: Metadata = {
     title: "Privacy Policy - Invoice.wiki",
     description:
       "Learn about Invoice.wiki's privacy-first approach to online invoice generation.",
-    images: ["/images/twitter-card.png"]
+    images: ["/images/twitter-card.png"],
+    site: "@invoice_wiki",
+    creator: "@invoice_wiki",
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-07-30T00:00:00Z",
+    "article:modified_time": "2025-08-12T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
+    "dateModified": "2025-08-12"
   }
 }
 

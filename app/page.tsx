@@ -2,7 +2,6 @@ export const dynamic = 'force-static'
 export const revalidate = 3600 // 1h
 
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/Header"
@@ -18,6 +17,7 @@ import {
   WebPageJsonLd,
   BreadcrumbJsonLd
 } from "./components/JsonLd"
+import { InvoiceExampleSection } from "@/components/InvoiceExampleSection"
 
 export const metadata: Metadata = {
   title: "Free Invoice Generator - Invoice.wiki",
@@ -52,13 +52,15 @@ export const metadata: Metadata = {
     title: "Invoice.wiki - Free Invoice Generator",
     description:
       "Create professional invoices instantly. Free PDF download, no registration needed.",
-    images: ["/images/twitter-card.png"]
+    images: ["/images/twitter-card.png"],
+    site: "@invoice_wiki",
+    creator: "@invoice_wiki",
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-07-30T00:00:00Z",
+    "article:modified_time": "2025-08-12T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
+    "dateModified": "2025-08-12"
   }
 }
 
@@ -88,13 +90,11 @@ export default function HomePage() {
           <section aria-labelledby="hero-heading" className="bg-background py-12 md:py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
-                <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-                  <span className="text-foreground">Free Invoice Generator</span>
-                  <br className="sm:hidden" />
-                  <span className="text-primary"> Create PDF Invoices</span>
+                <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-foreground">
+                  Free Invoice Generator - Create PDF Invoices
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground mb-8">
-                  Use our comprehensive free online invoice maker to create professional invoices for clients with advanced features including automatic VAT calculations, multi-currency support, and instant PDF generation. Generate and download perfectly formatted PDF invoices instantly without any registration requirements. Our platform is specifically designed for freelancers, small business owners, independent contractors, and entrepreneurs who need a reliable, fast, secure, and completely free billing solution that works seamlessly across all devices and browsers.
+                  Use our comprehensive <strong>free online invoice maker</strong> to create professional invoices for clients with advanced features including <strong>automatic VAT calculations</strong>, multi-currency support, and <strong>instant PDF generation</strong>. Generate and download perfectly formatted PDF invoices instantly without any registration requirements. Our platform is specifically designed for freelancers, small business owners, independent contractors, and entrepreneurs who need a reliable, fast, secure, and completely <strong>free billing solution</strong> that works seamlessly across all devices and browsers.
                 </p>
                 <Link href="/create-invoice" aria-label="Start creating your professional invoice now">
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
@@ -113,28 +113,22 @@ export default function HomePage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <article className="text-center p-6">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    ⚡
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Lightning-Fast Invoice Generation</h3>
-                  <p className="text-muted-foreground">Generate professional invoices in seconds with our streamlined invoice generator interface that requires zero learning curve and delivers instant results.</p>
+                  <p className="text-muted-foreground">Generate <strong>professional invoices in seconds</strong> with our streamlined invoice generator interface that requires zero learning curve and delivers instant results.</p>
                 </article>
                 <article className="text-center p-6">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    🔒
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Bank-Level Security & Privacy</h3>
-                  <p className="text-muted-foreground">Your sensitive invoice data stays completely secure on your device and never gets stored on our servers, ensuring absolute privacy. Learn more about our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy protection measures</Link>.</p>
+                  <p className="text-muted-foreground">Your sensitive invoice data stays <strong>completely secure on your device</strong> and never gets stored on our servers, ensuring absolute privacy. Learn more about our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy protection measures</Link>.</p>
                 </article>
                 <article className="text-center p-6">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    🌐
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Zero Installation Required</h3>
                   <p className="text-muted-foreground">Access our powerful invoice creator directly in your browser without downloading software or creating accounts. Discover more <Link href="/about" className="text-primary underline hover:no-underline">about our platform features</Link> and capabilities.</p>
@@ -143,113 +137,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Invoice Example Section */}
-          <section aria-labelledby="example-heading" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-background dark:via-secondary dark:to-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-12">
-                  <h2 id="example-heading" className="text-2xl sm:text-3xl font-bold text-center mb-4">
-                    See What You'll Create
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Generate professional invoices that impress clients and ensure prompt payment. Our free invoice generator creates clean, modern invoices with all essential business details, automatic calculations, and perfect formatting.
-                  </p>
-                </div>
-                
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                  {/* Invoice Preview Image */}
-                  <div className="order-2 lg:order-1">
-                    <div className="relative bg-card rounded-lg shadow-2xl p-4 sm:p-6 border border-border">
-                      <Image 
-                        src="/images/invoice-example.png"
-                        alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"
-                        className="w-full h-auto rounded border invoice-example-img"
-                        width={400}
-                        height={500}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                        priority={false}
-                        quality={75}
-                      />
-                      <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-                        PDF Ready
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Benefits Content */}
-                  <div className="order-1 lg:order-2 space-y-6">
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-lg text-foreground">Clean Professional Design</h3>
-                          <p className="text-muted-foreground">Every invoice generated maintains consistent, professional formatting that reflects well on your business and builds client trust.</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-lg text-foreground">Automatic Calculations</h3>
-                          <p className="text-muted-foreground">VAT rates, subtotals, and grand totals are calculated automatically with high precision using mathematical rounding (0.5 rounds up) to 2 decimal places, eliminating manual errors and saving valuable time.</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-lg text-foreground">Complete Business Information</h3>
-                          <p className="text-muted-foreground">Include all necessary business details: company information, addresses, VAT IDs, payment terms, and contact information for complete transparency.</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-lg text-foreground">Instant PDF Download</h3>
-                          <p className="text-muted-foreground">Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation.</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1">
-                          <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-lg text-foreground">Customizable Colors & Languages</h3>
-                          <p className="text-muted-foreground">NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech, Polish, Slovak, Ukrainian) to match your brand and serve international clients.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="pt-4">
-                      <Link href="/create-invoice" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                        Try It Now - Free →
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <InvoiceExampleSection />
 
           {/* FAQ Section */}
           <section aria-labelledby="faq-heading" className="py-12 md:py-20 bg-muted">

@@ -1,0 +1,31 @@
+# Invoice.wiki
+
+> Free online invoice generator that creates professional PDF invoices instantly with VAT calculations, multi-currency support, and complete privacy - no registration required.
+
+Invoice.wiki is a browser-based invoice generation tool designed for freelancers, small businesses, and entrepreneurs. All invoice processing happens locally in your browser for maximum security and privacy. The platform supports 40+ currencies, automatic VAT calculations, customizable colors and languages (English, German, Czech, Polish, Slovak, Ukrainian).
+
+Key features:
+- Instant PDF generation with professional formatting
+- Automatic VAT and tax calculations with precision rounding
+- Multi-currency support with proper formatting
+- Complete privacy - no data stored on servers
+- No registration or login required
+- Customizable invoice colors and languages
+- Mobile-responsive design
+
+## Core Pages
+
+- [Homepage](https://invoice.wiki/): Main landing page with features overview and invoice examples
+- [Create Invoice](https://invoice.wiki/create-invoice): Interactive invoice creation form with real-time preview
+- [About](https://invoice.wiki/about): Detailed information about Invoice.wiki, invoice components, and legal significance
+- [Privacy Policy](https://invoice.wiki/privacy-policy): Complete privacy protection details and data handling practices
+
+## Technical Documentation
+
+- [Invoice Components Guide](https://invoice.wiki/about#key-components-of-an-invoice): Detailed breakdown of seller information, buyer information, invoice details, payment information, and items/totals
+- [Supported Currencies](https://invoice.wiki/about): List of 40+ supported international currencies with proper formatting
+- [Legal Information](https://invoice.wiki/about#legal-relevance-of-invoices): Invoice legal significance, tax reporting, and compliance requirements
+
+## Optional
+
+- [Security Features](https://invoice.wiki/privacy-policy): Browser-based processing, local data handling, and encryption details
