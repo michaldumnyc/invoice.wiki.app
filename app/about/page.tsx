@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto">
             {/* Headline */}
             <h1 className="text-4xl font-bold mb-8">
-              About Invoice.wiki - Free Invoice Generator for Freelancers & Businesses
+              About Invoice Wiki - Create Invoice Generator for Freelancers & Businesses
             </h1>
             <p className="text-xl text-foreground mb-8">
               Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
@@ -98,7 +98,7 @@ export default function AboutPage() {
             </p>
 
             {/* What is an invoice */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">What is an Invoice?</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">What is an Invoice? Generate Invoice Guide</h2>
             <p className="mb-6">
               An invoice is an official document used to request payment for goods or services. It outlines what was
               sold, who sold it, who bought it, the agreed price, tax amounts, and payment terms. Invoices serve as
@@ -117,7 +117,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold mt-12 mb-4">Key Components of an Invoice</h2>
 
             {/* Seller information */}
-            <h3 className="text-xl font-semibold mt-8 mb-4">Seller Information</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4">Invoice Creator - Seller Information</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Company Name –</strong> Official business name.</li>
               <li><strong>Business Address –</strong> Registered address of the seller.</li>
@@ -136,7 +136,7 @@ export default function AboutPage() {
             </ul>
 
             {/* Invoice details */}
-            <h3 className="text-xl font-semibold mt-8 mb-4">Invoice Details</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4">Generate Invoice Details</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Invoice Number –</strong> Unique identifier for tracking.</li>
               <li><strong>Issue & Due Dates –</strong> When invoice was created and when payment is due.</li>
@@ -153,7 +153,7 @@ export default function AboutPage() {
             </ul>
 
             {/* Commodities and settlements */}
-            <h3 className="text-xl font-semibold mt-8 mb-4">Items and Totals</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4">Invoice Generator - Items and Totals</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Service/Product –</strong> Name of what was sold.</li>
               <li><strong>Quantity & Unit Price –</strong> Per-item breakdown.</li>
@@ -177,7 +177,7 @@ export default function AboutPage() {
             </ul>
 
             {/* Advantages of Invoice.wiki */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">Why Choose Invoice.wiki?</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">Why Choose Invoice Wiki Generator?</h2>
             <ul className="list-disc pl-6 space-y-2 mb-8">
               <li><strong>Free forever –</strong> No subscriptions, no trials, no fees.</li>
               <li><strong>Instant PDF invoices –</strong> Ready-to-download professional documents.</li>
@@ -188,7 +188,7 @@ export default function AboutPage() {
             </ul>
 
             {/* Invoice Quality Example */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">Professional Results Every Time</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">Create Invoices - Professional Results Every Time</h2>
             <p className="mb-6">
               Our invoice generator creates clean, professional documents that reflect well on your business. 
               Here's an example of what your invoices will look like:

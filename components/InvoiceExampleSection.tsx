@@ -45,7 +45,7 @@ export function InvoiceExampleSection() {
                   >
                     <Image 
                       src="/images/invoice-example.png"
-                      alt="Professional invoice example created with Invoice.wiki free invoice generator showing company details, itemized services, VAT calculations, and payment information"
+                      alt="Create invoice example - Professional invoice generator Invoice Wiki showing PDF invoice template with VAT calculations, invoice creator features, and generate invoice details"
                       className="w-full h-auto rounded border invoice-example-img"
                       width={400}
                       height={500}
@@ -134,7 +134,7 @@ export function InvoiceExampleSection() {
         isOpen={isModalOpen}
         onClose={closeModal}
         imageSrc="/images/invoice-example.png"
-        imageAlt="Professional invoice example created with Invoice.wiki showing detailed formatting, VAT calculations, and business information"
+        imageAlt="Create invoice example - Professional invoice generator Invoice Wiki showing PDF invoice template with VAT calculations, invoice creator features, and generate invoice details"
         imageTitle="Professional Invoice Example"
       />
     </>

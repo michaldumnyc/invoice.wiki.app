@@ -109,14 +109,14 @@ export default function HomePage() {
           <section aria-labelledby="features-heading" className="py-12 md:py-20">
             <div className="container mx-auto px-4">
               <h2 id="features-heading" className="text-2xl sm:text-3xl font-bold text-center mb-12">
-                Why Choose Our Online Invoice Maker?
+                Why Choose Our Invoice Generator?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                     ⚡
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Lightning-Fast Invoice Generation</h3>
+                  <h3 className="text-xl font-semibold mb-2">Generate Invoice in Seconds</h3>
                   <p className="text-muted-foreground">Generate <strong>professional invoices in seconds</strong> with our streamlined invoice generator interface that requires zero learning curve and delivers instant results.</p>
                 </article>
                 <article className="text-center p-6">
@@ -130,7 +130,7 @@ export default function HomePage() {
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                     🌐
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Zero Installation Required</h3>
+                  <h3 className="text-xl font-semibold mb-2">Create Invoice Online - No Installation</h3>
                   <p className="text-muted-foreground">Access our powerful invoice creator directly in your browser without downloading software or creating accounts. Discover more <Link href="/about" className="text-primary underline hover:no-underline">about our platform features</Link> and capabilities.</p>
                 </article>
               </div>
@@ -145,15 +145,15 @@ export default function HomePage() {
               <h2 id="faq-heading" className="text-2xl sm:text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
               <div className="space-y-6 text-foreground/90">
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Do I need to register to create invoices?</h3>
+                  <h3 className="font-semibold text-lg mb-2">Do I need to register to create invoices with Invoice Wiki?</h3>
                   <p className="leading-relaxed">Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our invoice creation page and start building professional invoices immediately without providing personal information.</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Can I download my invoice as PDF?</h3>
+                  <h3 className="font-semibold text-lg mb-2">Can I generate invoice as PDF instantly?</h3>
                   <p className="leading-relaxed">Yes, you can instantly download your professionally formatted invoice as a high-quality PDF file that's ready for sending to clients or printing for your business records. Our PDF generation system ensures perfect formatting across all devices and platforms.</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Is this tool completely free?</h3>
+                  <h3 className="font-semibold text-lg mb-2">Is this invoice generator completely free?</h3>
                   <p className="leading-relaxed">Yes, Invoice.wiki is a 100% free invoice maker for both personal and commercial use with no hidden fees, subscription costs, or premium features. We believe professional invoice generation should be accessible to everyone, from individual freelancers to growing businesses.</p>
                 </div>
                 <div>
