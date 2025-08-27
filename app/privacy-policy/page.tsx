@@ -3,7 +3,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { ContactButton } from "@/components/ContactButton"
 import type { Metadata } from "next"
-import { BreadcrumbJsonLd } from "../components/JsonLd"
+import { BreadcrumbJsonLd, WebPageJsonLd } from "../components/JsonLd"
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Invoice.wiki",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-12T00:00:00Z",
+    "article:modified_time": "2025-08-27T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12"
+    "dateModified": "2025-08-27"
   }
 }
 
@@ -51,6 +51,10 @@ const privacyEmail = process.env.PRIVACY_EMAIL || "contact@example.com"
 
 
 export default function PrivacyPolicyPage() {
+  // ISO 8601 metadata for the page
+  const pageCreationDate = "2025-02-04T12:00:00.000Z"
+  const pageModificationDate = "2025-08-27T18:30:00.000Z"
+
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
     { name: "Privacy Policy", url: "https://invoice.wiki/privacy-policy" }
@@ -59,6 +63,13 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <WebPageJsonLd 
+        url="https://invoice.wiki/privacy-policy"
+        name="Privacy Policy - Invoice Wiki Generator"
+        description="Invoice.wiki privacy policy explains our commitment to protecting your data. We don't collect or store personal information - everything runs locally in your browser for maximum privacy."
+        dateCreated={pageCreationDate}
+        dateModified={pageModificationDate}
+      />
       <Header />
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12">

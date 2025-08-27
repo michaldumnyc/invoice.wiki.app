@@ -184,6 +184,10 @@ const faqCategories = [
 ]
 
 export default function FAQPage() {
+  // ISO 8601 metadata for the page
+  const pageCreationDate = "2025-08-26T12:00:00.000Z"  // вчера
+  const pageModificationDate = "2025-08-27T18:30:00.000Z"  // сегодня
+
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
     { name: "FAQ", url: "https://invoice.wiki/faq" },
@@ -197,6 +201,8 @@ export default function FAQPage() {
         url="https://invoice.wiki/faq"
         name="Frequently Asked Questions - Invoice Generator"
         description="Get answers to common questions about our free invoice generator. Learn about invoicing, VAT compliance, PDF downloads, and business billing."
+        dateCreated={pageCreationDate}
+        dateModified={pageModificationDate}
       />
       
       <Header />

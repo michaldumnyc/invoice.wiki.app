@@ -4,7 +4,7 @@ import { ContactButton } from "@/components/ContactButton"
 import { AboutInvoiceExample } from "@/components/AboutInvoiceExample"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { BreadcrumbJsonLd, AboutPageJsonLd, InvoiceExampleImageJsonLd } from "../components/JsonLd"
+import { BreadcrumbJsonLd, AboutPageJsonLd, WebPageJsonLd } from "../components/JsonLd"
 
 export const metadata: Metadata = {
   title: "About Invoice.wiki - Free Invoice Generator & Secure Online Billing",
@@ -42,14 +42,18 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-12T00:00:00Z",
+    "article:modified_time": "2025-08-27T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12"
+    "dateModified": "2025-08-27"
   }
 }
 
 export default function AboutPage() {
   const supportEmail = process.env.SUPPORT_EMAIL || "contact@example.com"
+  
+  // ISO 8601 metadata for the page
+  const pageCreationDate = "2025-02-04T12:00:00.000Z"
+  const pageModificationDate = "2025-08-27T18:30:00.000Z"
 
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
@@ -59,8 +63,14 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <WebPageJsonLd 
+        url="https://invoice.wiki/about"
+        name="About Invoice Wiki - Create Invoice Generator for Freelancers & Businesses"
+        description="Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses, contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no registration needed."
+        dateCreated={pageCreationDate}
+        dateModified={pageModificationDate}
+      />
       <AboutPageJsonLd />
-      <InvoiceExampleImageJsonLd />
       <Header />
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12">
@@ -73,8 +83,8 @@ export default function AboutPage() {
               Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
               contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no
               registration needed. Explore our comprehensive invoice generator and learn from our 
-              <Link href="/guides" className="text-primary underline hover:no-underline">step-by-step guides</Link> and 
-              <Link href="/blog" className="text-primary underline hover:no-underline">expert insights</Link> now.
+              <Link href="/faq" className="text-primary underline hover:no-underline">FAQ section</Link> and 
+              <Link href="/create-invoice" className="text-primary underline hover:no-underline">create your first invoice</Link> now.
             </p>
 
             <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
@@ -169,7 +179,7 @@ export default function AboutPage() {
               Invoices are official commercial records. They can be used for tax reporting, financial accounting, and
               legal protection. Depending on your country, invoicing may follow specific rules like VAT formatting in
               the EU or sales tax declarations in the US. Learn more about international requirements in our 
-              <Link href="/blog/international-invoice-guide" className="text-primary underline hover:no-underline">international invoice guide</Link>.
+              our comprehensive guide above.
             </p>
             <p className="mb-6">Common legal purposes of invoices include:</p>
             <ul className="list-disc pl-6 space-y-2 mb-8">

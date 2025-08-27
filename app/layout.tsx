@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   publisher: "Invoice.wiki",
     other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-12T00:00:00Z",
+    "article:modified_time": "2025-08-27T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12"
+    "dateModified": "2025-08-27"
   },
   formatDetection: {
     email: false,
@@ -138,9 +138,7 @@ export default function RootLayout({
         <meta name="application-name" content="Invoice.wiki" />
         <meta name="msapplication-config" content="none" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Using local base64 fonts - no external font loading needed */}
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="https://invoice.wiki" />
 

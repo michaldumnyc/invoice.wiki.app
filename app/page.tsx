@@ -1,6 +1,10 @@
 export const dynamic = 'force-static'
 export const revalidate = 3600 // 1h
 
+// ISO 8601 metadata for the page
+const pageCreationDate = "2025-02-04T12:00:00.000Z"
+const pageModificationDate = "2025-08-27T18:30:00.000Z"
+
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -58,9 +62,9 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-12T00:00:00Z",
+    "article:modified_time": "2025-08-27T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12"
+    "dateModified": "2025-08-27"
   }
 }
 
@@ -76,6 +80,8 @@ export default function HomePage() {
         url="https://invoice.wiki"
         name="Free Invoice Generator - Invoice.wiki"
         description="Free online invoice maker. Create professional invoices instantly with PDF download, VAT calculation, multiple currencies and languages."
+        dateCreated={pageCreationDate}
+        dateModified={pageModificationDate}
       />
       <WebsiteJsonLd />
       <OrganizationJsonLd />
@@ -310,20 +316,20 @@ export default function HomePage() {
                 Invoice Resources & Guides
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <Link href="/blog" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
+                <Link href="/faq" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
-                    📝
+                    ❓
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">Blog & Tips</h3>
-                  <p className="text-muted-foreground text-sm">Expert insights on invoicing, VAT compliance, and business billing best practices.</p>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">FAQ & Support</h3>
+                  <p className="text-muted-foreground text-sm">Get answers to common questions about invoicing, privacy, and using our generator.</p>
                 </Link>
                 
-                <Link href="/guides" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
+                <Link href="/about" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
                   <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
-                    📚
+                    ℹ️
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">Step-by-Step Guides</h3>
-                  <p className="text-muted-foreground text-sm">Comprehensive tutorials for mastering professional invoicing from basic to advanced.</p>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">About Invoice.wiki</h3>
+                  <p className="text-muted-foreground text-sm">Learn about our free invoice generator and comprehensive invoicing guide.</p>
                 </Link>
                 
 

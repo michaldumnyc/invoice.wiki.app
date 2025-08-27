@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import {
   BreadcrumbJsonLd,
+  WebPageJsonLd,
 } from "../components/JsonLd"
 
 export const metadata: Metadata = {
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-12T00:00:00Z",
+    "article:modified_time": "2025-08-27T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12"
+    "dateModified": "2025-08-27"
   }
 }
 
@@ -57,6 +58,10 @@ const CreateInvoiceForm = dynamic(
 )
 
 export default function CreateInvoicePage() {
+  // ISO 8601 metadata for the page
+  const pageCreationDate = "2025-02-04T12:00:00.000Z"
+  const pageModificationDate = "2025-08-27T18:30:00.000Z"
+
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
     { name: "Create Invoice", url: "https://invoice.wiki/create-invoice" },
@@ -66,6 +71,13 @@ export default function CreateInvoicePage() {
     <div className="min-h-screen flex flex-col">
       {/* Structured Data */}
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <WebPageJsonLd 
+        url="https://invoice.wiki/create-invoice"
+        name="Create Invoice - Free Online Invoice Generator"
+        description="Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private."
+        dateCreated={pageCreationDate}
+        dateModified={pageModificationDate}
+      />
 
       {/* Main content */}
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
@@ -75,7 +87,7 @@ export default function CreateInvoicePage() {
           </h1>
           <p className="text-base sm:text-lg text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
             Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private - see our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy policy</Link>. 
-            Need help? Check our <Link href="/guides" className="text-primary underline hover:no-underline">step-by-step guides</Link> and <Link href="/faq" className="text-primary underline hover:no-underline">FAQ</Link>.
+            Need help? Check our <Link href="/faq" className="text-primary underline hover:no-underline">FAQ</Link> and <Link href="/about" className="text-primary underline hover:no-underline">about page</Link>.
           </p>
 
           {/* Invoice Form */}

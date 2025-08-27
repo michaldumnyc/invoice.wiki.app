@@ -25,7 +25,7 @@ export function WebsiteJsonLd() {
     "url": "https://invoice.wiki",
     "description": "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12",
+    "dateModified": "2025-08-27",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "potentialAction": {
       "@type": "SearchAction",
@@ -60,7 +60,7 @@ export function OrganizationJsonLd() {
     },
     "description": "Provider of free online invoice generation services",
     "foundingDate": "2025-02-04",
-    "dateModified": "2025-08-12"
+    "dateModified": "2025-08-27"
   }
 
   return <JsonLd data={data} />
@@ -144,7 +144,7 @@ export function FaqJsonLd() {
       }
     ],
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
+    "dateModified": "2025-08-27"
   }
 
   return <JsonLd data={data} />
@@ -176,7 +176,7 @@ export function AboutPageJsonLd() {
       "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
       "softwareVersion": "1.0",
       "datePublished": "2025-02-04",
-      "dateModified": "2025-07-30"
+      "dateModified": "2025-08-27"
     },
     "publisher": {
       "@type": "Organization",
@@ -184,7 +184,7 @@ export function AboutPageJsonLd() {
       "url": "https://invoice.wiki"
     },
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-12",
+    "dateModified": "2025-08-27",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"]
   }
 
@@ -224,7 +224,7 @@ export function InvoiceExampleImageJsonLd() {
       "international invoicing"
     ],
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
+    "dateModified": "2025-08-27"
   }
 
   return <JsonLd data={data} />
@@ -234,11 +234,15 @@ export function InvoiceExampleImageJsonLd() {
 export function WebPageJsonLd({ 
   url, 
   name, 
-  description 
+  description,
+  dateCreated = "2025-02-04",
+  dateModified = "2025-08-27"
 }: { 
-  url: string
+  url: string 
   name: string 
   description: string 
+  dateCreated?: string
+  dateModified?: string
 }) {
   const data = {
     "@context": "https://schema.org",
@@ -246,8 +250,8 @@ export function WebPageJsonLd({
     "name": name,
     "description": description,
     "url": url,
-    "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
+    "datePublished": dateCreated,
+    "dateModified": dateModified
   }
 
   return <JsonLd data={data} />
@@ -270,7 +274,7 @@ export function EnhancedSoftwareApplicationJsonLd() {
     "screenshot": "https://invoice.wiki/images/og-image.png",
     "softwareVersion": "1.0",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30",
+    "dateModified": "2025-08-27",
     "offers": {
       "@type": "Offer",
       "price": "0",

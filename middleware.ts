@@ -38,7 +38,7 @@ export function middleware(request: NextRequest) {
 
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: blob: https://invoice.wiki;
     font-src 'self' data:;
@@ -47,11 +47,10 @@ export function middleware(request: NextRequest) {
     form-action 'self';
     frame-ancestors 'none';
     frame-src 'none';
-    connect-src 'self' ws: wss:;
+    connect-src 'self' ws: wss: https://vitals.vercel-analytics.com;
     media-src 'self';
     worker-src 'self' blob:;
-    child-src 'none';
-    block-all-mixed-content
+    child-src 'none'
   `;
 
   const requestHeaders = new Headers(request.headers)
