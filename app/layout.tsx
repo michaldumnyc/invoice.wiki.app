@@ -104,10 +104,13 @@ export const metadata: Metadata = {
   classification: "Business Software",
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" }
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "32x32" },
+      { url: "/icons/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icons/icon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/icon-512x512.png", type: "image/png", sizes: "512x512" }
     ],
     apple: [
-      { url: "/icons/apple-touch-icon.svg", type: "image/svg+xml" }
+      { url: "/icons/apple-touch-icon.png", type: "image/png", sizes: "180x180" }
     ]
   }
 };
@@ -121,12 +124,12 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         {/* Fonts are now included in global.css */}
-        {/* SVG favicon with PNG fallback for older browsers */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" title="Invoice.wiki Icon" />
-        <link rel="alternate icon" href="/favicon.ico" type="image/x-icon" title="Invoice.wiki Icon" />
+        {/* ICO favicon with PNG fallback for modern browsers */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" title="Invoice.wiki Icon" />
+        <link rel="alternate icon" href="/icons/icon.png" type="image/png" sizes="32x32" title="Invoice.wiki Icon" />
         <link rel="manifest" href="/manifest.json" />
-        {/* SVG Apple Touch Icon */}
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.svg" type="image/svg+xml" title="Invoice.wiki Apple Touch Icon" />
+        {/* Apple Touch Icon */}
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" type="image/png" title="Invoice.wiki Apple Touch Icon" />
         {/* PWA Meta Tags */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

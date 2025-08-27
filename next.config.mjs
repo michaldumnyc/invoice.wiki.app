@@ -7,8 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   
-  // Safe performance optimizations
-  swcMinify: true,
+  // SWC is now default in Next.js 15
   
   // Image optimization
   images: {

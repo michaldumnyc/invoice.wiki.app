@@ -76,7 +76,8 @@ export default function CreateInvoicePage() {
             Create Invoice
           </h1>
           <p className="text-base sm:text-lg text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private - see our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy policy</Link>.
+            Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private - see our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy policy</Link>. 
+            Need help? Check our <Link href="/guides" className="text-primary underline hover:no-underline">step-by-step guides</Link> and <Link href="/faq" className="text-primary underline hover:no-underline">FAQ</Link>.
           </p>
 
           {/* Invoice Form */}
@@ -85,6 +86,55 @@ export default function CreateInvoicePage() {
           </Suspense>
         </section>
       </main>
+
+      {/* FAQ Section */}
+      <section className="w-full bg-muted/50 py-12">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
+            Frequently Asked Questions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="font-semibold text-lg mb-3">Is this really free?</h3>
+              <p className="text-muted-foreground">Yes! No hidden fees, no registration required, no subscription costs. Create unlimited professional invoices completely free.</p>
+            </div>
+            
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="font-semibold text-lg mb-3">Is my data secure?</h3>
+              <p className="text-muted-foreground">Absolutely. All processing happens locally in your browser. Your sensitive business data never leaves your device or gets stored on our servers.</p>
+            </div>
+            
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="font-semibold text-lg mb-3">What languages are supported?</h3>
+              <p className="text-muted-foreground">We support 6 languages: English, German, Czech, Polish, Slovak, and Ukrainian. Perfect for international business.</p>
+            </div>
+            
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="font-semibold text-lg mb-3">Can I customize colors?</h3>
+              <p className="text-muted-foreground">Yes! Choose from 10 professional accent colors to match your brand identity and create consistent invoices.</p>
+            </div>
+            
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="font-semibold text-lg mb-3">Does it calculate VAT automatically?</h3>
+              <p className="text-muted-foreground">Yes! Our calculator handles EU VAT rates, tax calculations, and ensures compliance with international invoicing standards.</p>
+            </div>
+            
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="font-semibold text-lg mb-3">How quickly can I create an invoice?</h3>
+              <p className="text-muted-foreground">Most users create professional invoices in under 2 minutes. Fill in the details, preview, and download your PDF instantly.</p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link 
+              href="/faq"
+              className="inline-flex items-center px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              View All FAQs →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Full-width footer */}
       <footer className="w-full mt-auto">

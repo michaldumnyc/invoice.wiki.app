@@ -7,7 +7,7 @@ import { sanitizeInput } from "@/lib/security"
 import { InvoiceFormValues } from "./types"
 
 interface InvoiceNotesProps {
-  control: Control<InvoiceFormValues>
+  control: Control<any>
   highlightedField: string | null
 }
 

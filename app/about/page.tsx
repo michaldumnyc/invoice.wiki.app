@@ -72,7 +72,9 @@ export default function AboutPage() {
             <p className="text-xl text-foreground mb-8">
               Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
               contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no
-              registration needed. Explore our comprehensive invoice generator now.
+              registration needed. Explore our comprehensive invoice generator and learn from our 
+              <Link href="/guides" className="text-primary underline hover:no-underline">step-by-step guides</Link> and 
+              <Link href="/blog" className="text-primary underline hover:no-underline">expert insights</Link> now.
             </p>
 
             <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
@@ -166,7 +168,8 @@ export default function AboutPage() {
             <p className="mb-6">
               Invoices are official commercial records. They can be used for tax reporting, financial accounting, and
               legal protection. Depending on your country, invoicing may follow specific rules like VAT formatting in
-              the EU or sales tax declarations in the US.
+              the EU or sales tax declarations in the US. Learn more about international requirements in our 
+              <Link href="/blog/international-invoice-guide" className="text-primary underline hover:no-underline">international invoice guide</Link>.
             </p>
             <p className="mb-6">Common legal purposes of invoices include:</p>
             <ul className="list-disc pl-6 space-y-2 mb-8">
@@ -174,6 +177,50 @@ export default function AboutPage() {
               <li>Filing tax returns and claiming deductions.</li>
               <li>Documenting payment terms and amounts.</li>
               <li>Providing evidence in disputes or audits.</li>
+            </ul>
+
+            {/* International Standards */}
+            <h2 className="text-2xl font-semibold mt-12 mb-4">International Invoicing Standards</h2>
+            <p className="mb-6">
+              Modern businesses operate across borders, making international invoicing standards crucial for seamless commerce. 
+              Our generator supports international best practices including ISO 20022 standards, EU VAT compliance, 
+              and multi-currency formatting that meets global business requirements.
+            </p>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">European Union Compliance</h3>
+            <p className="mb-4">
+              For businesses operating within the EU, invoices must comply with the EU VAT Directive and national implementations. 
+              Key requirements include:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-6">
+              <li>Valid VAT identification numbers for cross-border transactions</li>
+              <li>Proper reverse charge mechanisms for B2B services</li>
+              <li>Compliant invoice numbering and record keeping</li>
+              <li>Accurate tax rate application based on place of supply rules</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">Digital Invoice Security</h3>
+            <p className="mb-4">
+              With increasing digitalization, invoice security has become paramount. Our platform ensures:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>Data Privacy:</strong> All processing occurs locally in your browser</li>
+              <li><strong>GDPR Compliance:</strong> No personal data collection or storage</li>
+              <li><strong>Audit Trails:</strong> Sequential numbering for tax compliance</li>
+              <li><strong>Format Integrity:</strong> PDF generation maintains professional standards</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-8 mb-4">Multi-Language Business Support</h3>
+            <p className="mb-4">
+              International business requires clear communication across language barriers. We support:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-8">
+              <li><strong>English:</strong> Global business standard</li>
+              <li><strong>German (Deutsch):</strong> Central European commerce</li>
+              <li><strong>Czech (Čeština):</strong> Regional business hub</li>
+              <li><strong>Polish (Polski):</strong> Major EU economy</li>
+              <li><strong>Slovak (Slovenčina):</strong> Eurozone member</li>
+              <li><strong>Ukrainian (Українська):</strong> Emerging market support</li>
             </ul>
 
             {/* Advantages of Invoice.wiki */}

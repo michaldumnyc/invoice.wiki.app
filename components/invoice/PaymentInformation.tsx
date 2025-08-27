@@ -18,7 +18,7 @@ const paymentMethods = [
 ]
 
 interface PaymentInformationProps {
-  control: Control<InvoiceFormValues>
+  control: Control<any>
   fieldVisibility: Pick<FieldVisibility, 'referenceNumber' | 'customerReferenceNumber' | 'orderNumber' | 'bankAccount' | 'iban' | 'swift'>
   toggleFieldVisibility: (field: keyof FieldVisibility) => void
   highlightedField: string | null
@@ -27,7 +27,7 @@ interface PaymentInformationProps {
   invoiceNumber: string
   manuallyEditedReference: boolean
   setManuallyEditedReference: (value: boolean) => void
-  setValue: UseFormSetValue<InvoiceFormValues>
+  setValue: UseFormSetValue<any>
 }
 
 export function PaymentInformation({

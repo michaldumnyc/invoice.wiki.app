@@ -6,7 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { InvoiceFormValues } from "./types"
 
 interface PaymentStatusProps {
-  control: Control<InvoiceFormValues>
+  control: Control<any>
 }
 
 export function PaymentStatus({ control }: PaymentStatusProps) {

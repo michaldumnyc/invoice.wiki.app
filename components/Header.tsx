@@ -37,17 +37,6 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/about"
-                  className={cn(
-                    "text-foreground hover:text-primary transition-colors",
-                    pathname === "/about" && "text-primary",
-                  )}
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/create-invoice"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",
@@ -55,6 +44,18 @@ export default function Header() {
                   )}
                 >
                   Create Invoice
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/about"
+                  className={cn(
+                    "text-foreground hover:text-primary transition-colors",
+                    pathname === "/about" && "text-primary",
+                  )}
+                >
+                  About
                 </Link>
               </li>
             </ul>

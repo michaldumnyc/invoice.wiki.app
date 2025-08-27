@@ -41,13 +41,6 @@ export function MobileMenu() {
                 Home
               </Link>
               <Link
-                href="/about"
-                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/about" && "bg-accent")}
-                onClick={closeMenu}
-              >
-                About
-              </Link>
-              <Link
                 href="/create-invoice"
                 className={cn(
                   "px-4 py-2 text-sm rounded-md hover:bg-accent",
@@ -56,6 +49,14 @@ export function MobileMenu() {
                 onClick={closeMenu}
               >
                 Create Invoice
+              </Link>
+
+              <Link
+                href="/about"
+                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/about" && "bg-accent")}
+                onClick={closeMenu}
+              >
+                About
               </Link>
             </nav>
           </div>

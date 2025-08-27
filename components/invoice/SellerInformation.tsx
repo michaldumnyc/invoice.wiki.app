@@ -8,7 +8,7 @@ import { sanitizeInput } from "@/lib/security"
 import { FieldVisibility, InvoiceFormValues } from "./types"
 
 interface SellerInformationProps {
-  control: Control<InvoiceFormValues>
+  control: Control<any>
   fieldVisibility: Pick<FieldVisibility, 'sellerCompanyId' | 'sellerVatId' | 'sellerEmail' | 'sellerWebsite'>
   toggleFieldVisibility: (field: keyof FieldVisibility) => void
   highlightedField: string | null

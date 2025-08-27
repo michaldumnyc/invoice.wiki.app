@@ -10,7 +10,7 @@ import { currencies } from "@/app/utils/currencies"
 import { InvoiceFormValues } from "./types"
 
 interface InvoiceDetailsProps {
-  control: Control<InvoiceFormValues>
+  control: Control<any>
   highlightedField: string | null
   isMobile: boolean
 }

@@ -4,6 +4,8 @@ Allow: /
 
 # Disallow specific paths
 Disallow: /api/
+Disallow: /_next/
+Disallow: /_vercel/
 
 # Sitemap
 Sitemap: https://invoice.wiki/sitemap.xml 

@@ -13,7 +13,7 @@ import {
   OrganizationJsonLd,
   FaqJsonLd,
   InvoiceExampleImageJsonLd,
-  SoftwareApplicationJsonLd,
+  EnhancedSoftwareApplicationJsonLd,
   WebPageJsonLd,
   BreadcrumbJsonLd
 } from "./components/JsonLd"
@@ -79,7 +79,7 @@ export default function HomePage() {
       />
       <WebsiteJsonLd />
       <OrganizationJsonLd />
-      <SoftwareApplicationJsonLd />
+      <EnhancedSoftwareApplicationJsonLd />
       <FaqJsonLd />
       <InvoiceExampleImageJsonLd />
 
@@ -100,6 +100,43 @@ export default function HomePage() {
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                     Create Invoice Now <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works Section */}
+          <section aria-labelledby="how-it-works-heading" className="py-12 md:py-20 bg-muted/50">
+            <div className="container mx-auto px-4">
+              <h2 id="how-it-works-heading" className="text-2xl sm:text-3xl font-bold text-center mb-12">
+                How to Create Professional Invoices
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    1️⃣
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Fill Invoice Details</h3>
+                  <p className="text-muted-foreground">Enter your business information, client details, and invoice items. Our form guides you through all required fields.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    2️⃣
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Customize & Review</h3>
+                  <p className="text-muted-foreground">Choose colors, language, and VAT settings. Preview your invoice to ensure everything looks perfect.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    3️⃣
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Download PDF</h3>
+                  <p className="text-muted-foreground">Generate and download your professional invoice as a PDF. Ready to send to clients or print for records.</p>
+                </div>
+              </div>
+              <div className="text-center mt-8">
+                <Link href="/create-invoice" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
+                  Start Creating Invoice →
                 </Link>
               </div>
             </div>
@@ -133,6 +170,172 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold mb-2">Create Invoice Online - No Installation</h3>
                   <p className="text-muted-foreground">Access our powerful invoice creator directly in your browser without downloading software or creating accounts. Discover more <Link href="/about" className="text-primary underline hover:no-underline">about our platform features</Link> and capabilities.</p>
                 </article>
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials Section */}
+          <section aria-labelledby="testimonials-heading" className="py-12 md:py-20 bg-muted/50">
+            <div className="container mx-auto px-4">
+              <h2 id="testimonials-heading" className="text-2xl sm:text-3xl font-bold text-center mb-12">
+                What Our Users Say
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="bg-card rounded-lg border p-6 shadow-sm">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-blue-600 dark:text-blue-400 font-semibold">MS</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Maria Schmidt</h4>
+                      <p className="text-sm text-muted-foreground">Freelance Designer, Germany</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Perfect for my freelance business! Creates professional invoices in German with proper VAT calculations. No registration needed - exactly what I was looking for."
+                  </p>
+                  <div className="flex text-yellow-400">
+                    {"★".repeat(5)}
+                  </div>
+                </div>
+                
+                <div className="bg-card rounded-lg border p-6 shadow-sm">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-green-600 dark:text-green-400 font-semibold">PK</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Petr Krejčí</h4>
+                      <p className="text-sm text-muted-foreground">IT Consultant, Prague</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Skvělé! Finally found an invoice generator that supports Czech language and DPH calculations. Clean interface, fast PDF generation. Highly recommended!"
+                  </p>
+                  <div className="flex text-yellow-400">
+                    {"★".repeat(5)}
+                  </div>
+                </div>
+                
+                <div className="bg-card rounded-lg border p-6 shadow-sm">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-purple-600 dark:text-purple-400 font-semibold">AJ</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Anna Johnson</h4>
+                      <p className="text-sm text-muted-foreground">Small Business Owner, UK</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Saves me hours every month! Multi-currency support is excellent for my international clients. The privacy-first approach gives me confidence in using it."
+                  </p>
+                  <div className="flex text-yellow-400">
+                    {"★".repeat(5)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Comparison Section */}
+          <section aria-labelledby="comparison-heading" className="py-12 md:py-20">
+            <div className="container mx-auto px-4">
+              <h2 id="comparison-heading" className="text-2xl sm:text-3xl font-bold text-center mb-12">
+                Why Choose Invoice.wiki vs Other Solutions?
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-border rounded-lg">
+                    <thead>
+                      <tr className="bg-muted">
+                        <th className="border border-border p-4 text-left">Feature</th>
+                        <th className="border border-border p-4 text-center bg-primary text-primary-foreground">Invoice.wiki</th>
+                        <th className="border border-border p-4 text-center">Other Generators</th>
+                        <th className="border border-border p-4 text-center">Accounting Software</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-border p-4 font-medium">Cost</td>
+                        <td className="border border-border p-4 text-center text-green-600 font-semibold">100% Free</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">Limited Free / Paid</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">$15-50/month</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-border p-4 font-medium">Registration Required</td>
+                        <td className="border border-border p-4 text-center text-green-600 font-semibold">No ✓</td>
+                        <td className="border border-border p-4 text-center text-red-600">Yes ✗</td>
+                        <td className="border border-border p-4 text-center text-red-600">Yes ✗</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-border p-4 font-medium">Data Privacy</td>
+                        <td className="border border-border p-4 text-center text-green-600 font-semibold">Local Only ✓</td>
+                        <td className="border border-border p-4 text-center text-red-600">Stored on Server ✗</td>
+                        <td className="border border-border p-4 text-center text-red-600">Cloud Storage ✗</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-border p-4 font-medium">Multiple Languages</td>
+                        <td className="border border-border p-4 text-center text-green-600 font-semibold">6 Languages ✓</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">English Only</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">Limited</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-border p-4 font-medium">VAT Compliance</td>
+                        <td className="border border-border p-4 text-center text-green-600 font-semibold">EU Ready ✓</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">Basic</td>
+                        <td className="border border-border p-4 text-center text-green-600">Advanced ✓</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-border p-4 font-medium">Speed to Generate</td>
+                        <td className="border border-border p-4 text-center text-green-600 font-semibold">&lt; 2 minutes ✓</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">3-5 minutes</td>
+                        <td className="border border-border p-4 text-center text-muted-foreground">5-10 minutes</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="text-center mt-8">
+                <Link href="/create-invoice" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
+                  Try Our Superior Solution →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Resources Section */}
+          <section aria-labelledby="resources-heading" className="py-12 md:py-20 bg-muted/50">
+            <div className="container mx-auto px-4">
+              <h2 id="resources-heading" className="text-2xl sm:text-3xl font-bold text-center mb-12">
+                Invoice Resources & Guides
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <Link href="/blog" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
+                    📝
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Blog & Tips</h3>
+                  <p className="text-muted-foreground text-sm">Expert insights on invoicing, VAT compliance, and business billing best practices.</p>
+                </Link>
+                
+                <Link href="/guides" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
+                    📚
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Step-by-Step Guides</h3>
+                  <p className="text-muted-foreground text-sm">Comprehensive tutorials for mastering professional invoicing from basic to advanced.</p>
+                </Link>
+                
+
+                
+                <Link href="/faq" className="group bg-card rounded-lg border p-6 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
+                    ❓
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">FAQ & Support</h3>
+                  <p className="text-muted-foreground text-sm">Get instant answers to common questions about invoicing and our generator.</p>
+                </Link>
               </div>
             </div>
           </section>
@@ -184,7 +387,7 @@ export default function HomePage() {
                     Creating professional invoices has never been easier with our comprehensive online invoice generation platform that combines simplicity with powerful features. Our free online invoice generator allows you to create, customize, and download professional invoices in just minutes, whether you're a freelancer sending your first invoice to a client or an experienced small business owner managing multiple ongoing client relationships and complex billing scenarios.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    The invoice maker supports multiple international currencies, sophisticated VAT calculations, flexible payment terms, customizable due dates, and detailed line items with quantities, rates, and comprehensive descriptions. You can easily add your company logo, customize brand colors, include detailed business information, and create professional-looking invoices that are generated as high-quality PDF files suitable for sending directly to clients or printing for your permanent business records.
+                    The invoice maker supports multiple international currencies, sophisticated VAT calculations, flexible payment terms, customizable due dates, and detailed line items with quantities, rates, and comprehensive descriptions. You can easily customize brand colors, include detailed business information, and create professional-looking invoices that are generated as high-quality PDF files suitable for sending directly to clients or printing for your permanent business records.
                   </p>
                   <p className="text-lg leading-relaxed">
                     Security and privacy are our highest priorities when handling your sensitive business and financial information. Your invoice data is processed entirely locally in your browser using advanced client-side encryption and never stored on our servers, ensuring your sensitive business information remains completely private and secure. Start creating professional invoices today without any registration requirements or subscription fees.

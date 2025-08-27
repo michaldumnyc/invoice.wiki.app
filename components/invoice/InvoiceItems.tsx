@@ -9,9 +9,9 @@ import { sanitizeInput, sanitizeNumber } from "@/lib/security"
 import { InvoiceFormValues } from "./types"
 
 interface InvoiceItemsProps {
-  control: Control<InvoiceFormValues>
-  fields: FieldArrayWithId<InvoiceFormValues, "items", "id">[]
-  append: UseFieldArrayAppend<InvoiceFormValues, "items">
+  control: Control<any>
+  fields: FieldArrayWithId<any, "items", "id">[]
+  append: UseFieldArrayAppend<any, "items">
   remove: UseFieldArrayRemove
   highlightedField: string | null
   isMobile: boolean

@@ -98,7 +98,6 @@ export default function PrivacyPolicyPage() {
                 <li>Your name, email address, or contact information</li>
                 <li>Client names, addresses, or business details</li>
                 <li>Invoice amounts, line items, or payment information</li>
-                <li>Company logos, branding, or custom content</li>
                 <li>Bank account details or payment methods</li>
                 <li>IP addresses for tracking purposes</li>
                 <li>Browser fingerprints or device identifiers</li>

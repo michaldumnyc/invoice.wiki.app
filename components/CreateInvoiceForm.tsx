@@ -71,7 +71,7 @@ const CreateInvoiceForm: React.FC = () => {
     }))
   }
 
-  const form = useForm<InvoiceFormValues>({
+  const form = useForm({
     resolver: zodResolver(invoiceFormSchema),
     defaultValues: {
       sellerCompanyName: "",
@@ -151,7 +151,7 @@ const CreateInvoiceForm: React.FC = () => {
   }
 
   const onSubmit = useCallback(
-    async (data: InvoiceFormValues) => {
+    async (data: any) => {
       try {
         setIsSubmitting(true)
         
@@ -341,7 +341,7 @@ const CreateInvoiceForm: React.FC = () => {
                       <FormItem>
                         <FormControl>
                           <InvoiceColorPicker
-                            selectedColorId={field.value}
+                            selectedColorId={field.value || "blue"}
                             onColorChange={field.onChange}
                             translations={{
                               title: formTranslations.invoiceColorSelection,
@@ -362,7 +362,7 @@ const CreateInvoiceForm: React.FC = () => {
                       <FormItem>
                         <FormControl>
                           <InvoiceLanguagePicker
-                            selectedLanguageId={field.value}
+                            selectedLanguageId={field.value || "en"}
                             onLanguageChange={field.onChange}
                             translations={{
                               title: formTranslations.invoiceLanguageSelection,

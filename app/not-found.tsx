@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react"
 import Link from "next/link"
 import Header from "@/components/Header"
@@ -23,7 +21,7 @@ export default function NotFound() {
       <main className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-gray-50 dark:bg-gradient-to-br dark:from-background dark:via-secondary dark:to-background overflow-hidden relative">
         {/* Floating Documents Animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 animate-float">
+          <div className="absolute top-1/4 left-1/4 animate-pulse">
             <div className="w-16 h-20 bg-card rounded shadow-lg border border-border transform rotate-12 opacity-70">
               <div className="p-1 space-y-1">
                 <div className="h-1 bg-muted rounded"></div>
@@ -33,7 +31,7 @@ export default function NotFound() {
             </div>
           </div>
           
-          <div className="absolute top-1/3 right-1/4 animate-float-delayed">
+          <div className="absolute top-1/3 right-1/4 animate-pulse">
             <div className="w-14 h-18 bg-card rounded shadow-lg border border-border transform -rotate-6 opacity-60">
               <div className="p-1 space-y-1">
                 <div className="h-1 bg-muted rounded"></div>
@@ -42,7 +40,7 @@ export default function NotFound() {
             </div>
           </div>
           
-          <div className="absolute bottom-1/3 left-1/3 animate-float">
+          <div className="absolute bottom-1/3 left-1/3 animate-pulse">
             <div className="w-12 h-16 bg-card rounded shadow-lg border border-border transform rotate-45 opacity-50">
               <div className="p-1 space-y-1">
                 <div className="h-1 bg-muted rounded"></div>
@@ -51,7 +49,7 @@ export default function NotFound() {
             </div>
           </div>
           
-          <div className="absolute bottom-1/4 right-1/3 animate-float-delayed">
+          <div className="absolute bottom-1/4 right-1/3 animate-pulse">
             <div className="w-18 h-22 bg-card rounded shadow-lg border border-border transform -rotate-12 opacity-40">
               <div className="p-1 space-y-1">
                 <div className="h-1 bg-muted rounded"></div>
@@ -75,95 +73,40 @@ export default function NotFound() {
           </div>
 
           {/* Animated 404 Number */}
-          <h1 className="text-8xl md:text-9xl font-bold text-foreground mb-4 animate-bounce-slow">
+          <h1 className="text-8xl md:text-9xl font-bold text-foreground mb-4 animate-bounce">
             404
           </h1>
 
           {/* Main Message */}
           <div className="mb-8">
-            <p className="text-xl md:text-2xl text-muted-foreground mb-2 animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-blue-600 mx-auto max-w-fit">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-2">
               Invoice Not Found!
             </p>
             
-            <p className="text-lg text-muted-foreground mb-8 animate-fade-in-up">
+            <p className="text-lg text-muted-foreground mb-8">
               Looks like this invoice escaped our filing system.
             </p>
           </div>
           
-          <p className="text-lg text-muted-foreground mb-8 animate-fade-in-up">
+          <p className="text-lg text-muted-foreground mb-8">
             Don't worry! Let's get you back to creating professional invoices
           </p>
         </div>
 
         {/* Animated Button */}
-        <Link href="/">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-bounce-gentle">
-            🏠 Return to Invoice Generator
-          </Button>
-        </Link>
-
-        <div className="mt-8">
-          <Link href="/create-invoice" className="text-primary hover:text-primary/80 underline hover:no-underline transition-colors duration-200">
-            Or start creating an invoice right away →
+        <div className="space-y-6">
+          <Link href="/">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              🏠 Return to Invoice Generator
+            </Button>
           </Link>
-        </div>
 
-        {/* Custom CSS Animations */}
-        <style jsx>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(-5deg); }
-          }
-          
-          @keyframes float-delayed {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(-5deg); }
-          }
-          
-          @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-          }
-          
-          @keyframes bounce-slow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-          }
-          
-          @keyframes bounce-gentle {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-2px) scale(1.02); }
-          }
-          
-          @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
-          }
-          
-          @keyframes fade-in-up {
-            from { 
-              opacity: 0; 
-              transform: translateY(20px); 
-            }
-            to { 
-              opacity: 1; 
-              transform: translateY(0); 
-            }
-          }
-          
-          .animate-float { animation: float 4s ease-in-out infinite; }
-          .animate-float-delayed { animation: float-delayed 4s ease-in-out infinite; }
-          .animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
-          .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
-          .animate-bounce-gentle { animation: bounce-gentle 4s ease-in-out infinite; }
-          .animate-typewriter { 
-            animation: typewriter 3s steps(35, end) 1s both;
-          }
-          .animate-fade-in-up { 
-            animation: fade-in-up 1s ease-out 4s both;
-          }
-        `}</style>
+          <div className="mt-8">
+            <Link href="/create-invoice" className="text-primary hover:text-primary/80 underline hover:no-underline transition-colors duration-200">
+              Or start creating an invoice right away →
+            </Link>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
