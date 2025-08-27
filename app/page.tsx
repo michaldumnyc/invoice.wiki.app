@@ -80,7 +80,6 @@ export default function HomePage() {
       <WebsiteJsonLd />
       <OrganizationJsonLd />
       <EnhancedSoftwareApplicationJsonLd />
-      <FaqJsonLd />
       <InvoiceExampleImageJsonLd />
 
       <div className="min-h-screen flex flex-col">

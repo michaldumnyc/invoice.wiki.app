@@ -72,35 +72,7 @@ export function OrganizationJsonLd() {
   return <JsonLd data={data} />
 }
 
-// ✅ SoftwareApplication (changed from Product)
-export function SoftwareApplicationJsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Free Online Invoice Maker & Generator",
-    "description":
-      "Professional invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Any",
-    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2099-12-31"
-    },
-    // REMOVED aggregateRating and review - no real reviews on site
-    "url": "https://invoice.wiki",
-    "image": "https://invoice.wiki/images/og-image.png",
-    "screenshot": "https://invoice.wiki/images/og-image.png",
-    "softwareVersion": "1.0",
-    "datePublished": "2025-02-04",
-    "dateModified": "2025-07-30"
-  }
 
-  return <JsonLd data={data} />
-}
 
 // ✅ Breadcrumb
 export function BreadcrumbJsonLd({
@@ -242,7 +214,10 @@ export function InvoiceExampleImageJsonLd() {
       "name": "Invoice.wiki",
       "url": "https://invoice.wiki"
     },
-    "license": "https://invoice.wiki",
+    "copyrightNotice": "© 2025 Invoice.wiki - Free to use for personal and commercial purposes",
+    "creditText": "Invoice example created with Invoice.wiki - Free Online Invoice Generator",
+    "acquireLicensePage": "https://invoice.wiki/privacy-policy",
+    "license": "https://invoice.wiki/privacy-policy",
     "keywords": [
       "invoice example",
       "professional invoice template",
@@ -284,26 +259,7 @@ export function WebPageJsonLd({
   return <JsonLd data={data} />
 }
 
-// ✅ Blog Schema
-export function BlogJsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Invoice.wiki Blog",
-    "description": "Expert insights on invoicing, VAT compliance, business billing, and invoice management. Learn invoice best practices for freelancers and businesses.",
-    "url": "https://invoice.wiki/blog",
-    "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
-    "publisher": {
-      "@type": "Organization",
-      "name": "Invoice.wiki",
-      "url": "https://invoice.wiki"
-    },
-    "datePublished": "2025-01-20",
-    "dateModified": "2025-01-20"
-  }
 
-  return <JsonLd data={data} />
-}
 
 // ✅ Fixed structured data missing properties
 export function EnhancedSoftwareApplicationJsonLd() {

@@ -6,7 +6,6 @@ import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import {
   BreadcrumbJsonLd,
-  SoftwareApplicationJsonLd,
 } from "../components/JsonLd"
 
 export const metadata: Metadata = {
@@ -66,7 +65,6 @@ export default function CreateInvoicePage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Structured Data */}
-      <SoftwareApplicationJsonLd />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 
       {/* Main content */}

@@ -52,6 +52,13 @@ export function MobileMenu() {
               </Link>
 
               <Link
+                href="/faq"
+                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/faq" && "bg-accent")}
+                onClick={closeMenu}
+              >
+                FAQ
+              </Link>
+              <Link
                 href="/about"
                 className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/about" && "bg-accent")}
                 onClick={closeMenu}

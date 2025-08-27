@@ -49,6 +49,17 @@ export default function Header() {
 
               <li>
                 <Link
+                  href="/faq"
+                  className={cn(
+                    "text-foreground hover:text-primary transition-colors",
+                    pathname === "/faq" && "text-primary",
+                  )}
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",
