@@ -82,8 +82,7 @@ export default function AboutPage() {
             <p className="text-xl text-foreground mb-8">
               Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses,
               contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no
-              registration needed. Explore our comprehensive invoice generator and learn from our 
-              <Link href="/faq" className="text-primary underline hover:no-underline">FAQ section</Link> and 
+              registration needed. Use our free invoice generator and 
               <Link href="/create-invoice" className="text-primary underline hover:no-underline">create your first invoice</Link> now.
             </p>
 
@@ -110,7 +109,7 @@ export default function AboutPage() {
             </p>
 
             {/* What is an invoice */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">What is an Invoice? Generate Invoice Guide</h2>
+            <h2 className="text-2xl font-semibold mt-12 mb-4">What is an Invoice?</h2>
             <p className="mb-6">
               An invoice is an official document used to request payment for goods or services. It outlines what was
               sold, who sold it, who bought it, the agreed price, tax amounts, and payment terms. Invoices serve as
@@ -178,8 +177,7 @@ export default function AboutPage() {
             <p className="mb-6">
               Invoices are official commercial records. They can be used for tax reporting, financial accounting, and
               legal protection. Depending on your country, invoicing may follow specific rules like VAT formatting in
-              the EU or sales tax declarations in the US. Learn more about international requirements in our 
-              our comprehensive guide above.
+              the EU or sales tax declarations in the US. Different countries have specific invoicing requirements for tax compliance.
             </p>
             <p className="mb-6">Common legal purposes of invoices include:</p>
             <ul className="list-disc pl-6 space-y-2 mb-8">

@@ -51,19 +51,19 @@ const faqCategories = [
     questions: [
       {
         question: "Do I need to register to create invoices?",
-        answer: "Absolutely not! Our invoice generator is completely free and doesn't require any registration, login, or account creation whatsoever. Simply visit our invoice creation page and start building professional invoices immediately without providing personal information."
+        answer: "No! Our invoice generator is free and doesn't require registration, login, or account creation. Simply visit our invoice creation page and start building invoices without providing personal information."
       },
       {
         question: "How quickly can I create an invoice?",
-        answer: "You can create a professional invoice in under 2 minutes! Our streamlined interface guides you through the essential fields, and you can download your PDF immediately after completing the form."
+        answer: "You can create an invoice quickly! Our streamlined interface guides you through the essential fields, and you can download your PDF after completing the form."
       },
       {
         question: "Is this tool completely free?",
-        answer: "Yes, Invoice.wiki is a 100% free invoice maker for both personal and commercial use with no hidden fees, subscription costs, or premium features. We believe professional invoice generation should be accessible to everyone, from individual freelancers to growing businesses."
+        answer: "Yes, Invoice.wiki is a free invoice maker for both personal and commercial use with no hidden fees or subscription costs."
       },
       {
         question: "What makes your invoice generator different?",
-        answer: "Our generator processes everything locally in your browser for maximum privacy, requires no registration, supports 40+ currencies and 6 languages, includes automatic VAT calculations, and offers customizable colors to match your brand."
+        answer: "Our generator processes everything locally in your browser for privacy, requires no registration, supports multiple currencies and 6 languages, includes VAT calculations, and offers customizable colors to match your brand."
       }
     ]
   },
@@ -73,7 +73,7 @@ const faqCategories = [
     questions: [
       {
         question: "Is my data safe and private?",
-        answer: "Absolutely! All invoice processing happens locally in your browser. Your sensitive business data never leaves your device or gets stored on our servers. We cannot see, access, or store any of your invoice information."
+        answer: "Yes! All invoice processing happens locally in your browser. Your business data stays on your device and is not stored on our servers."
       },
       {
         question: "Do you store my invoice data?",

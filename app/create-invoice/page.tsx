@@ -74,7 +74,7 @@ export default function CreateInvoicePage() {
       <WebPageJsonLd 
         url="https://invoice.wiki/create-invoice"
         name="Create Invoice - Free Online Invoice Generator"
-        description="Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private."
+        description="Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required."
         dateCreated={pageCreationDate}
         dateModified={pageModificationDate}
       />
@@ -87,7 +87,7 @@ export default function CreateInvoicePage() {
           </h1>
           <p className="text-base sm:text-lg text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
             Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private - see our <Link href="/privacy-policy" className="text-primary underline hover:no-underline">privacy policy</Link>. 
-            Need help? Check our <Link href="/faq" className="text-primary underline hover:no-underline">FAQ</Link> and <Link href="/about" className="text-primary underline hover:no-underline">about page</Link>.
+            Need help? Check our <Link href="/faq" className="text-primary underline hover:no-underline">FAQ section</Link>.
           </p>
 
           {/* Invoice Form */}
@@ -126,12 +126,12 @@ export default function CreateInvoicePage() {
             
             <div className="bg-card rounded-lg border p-6">
               <h3 className="font-semibold text-lg mb-3">Does it calculate VAT automatically?</h3>
-              <p className="text-muted-foreground">Yes! Our calculator handles EU VAT rates, tax calculations, and ensures compliance with international invoicing standards.</p>
+              <p className="text-muted-foreground">Yes! Our calculator handles VAT rates and tax calculations for professional invoices.</p>
             </div>
             
             <div className="bg-card rounded-lg border p-6">
               <h3 className="font-semibold text-lg mb-3">How quickly can I create an invoice?</h3>
-              <p className="text-muted-foreground">Most users create professional invoices in under 2 minutes. Fill in the details, preview, and download your PDF instantly.</p>
+              <p className="text-muted-foreground">Create professional invoices quickly. Fill in the details, preview, and download your PDF instantly.</p>
             </div>
           </div>
           
