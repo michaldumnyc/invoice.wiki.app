@@ -138,7 +138,7 @@ const faqCategories = [
     ]
   },
   {
-    category: "Technical Support",
+    category: "Technical Questions",
     icon: "🛠️",
     questions: [
       {
@@ -151,7 +151,7 @@ const faqCategories = [
       },
       {
         question: "What if I encounter technical issues?",
-        answer: "If you experience any technical problems, try refreshing the page or using a different browser. Most issues are resolved by clearing your browser cache. For persistent problems, the issue is usually browser-specific and can be resolved by updating your browser."
+        answer: "If you experience any technical problems, try refreshing the page or using a different browser. Most issues are resolved by clearing your browser cache. For persistent problems, try updating your browser or using an incognito/private browsing window."
       },
       {
         question: "Can I save my work and continue later?",

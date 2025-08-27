@@ -60,13 +60,7 @@ export function OrganizationJsonLd() {
     },
     "description": "Provider of free online invoice generation services",
     "foundingDate": "2025-02-04",
-    "dateModified": "2025-08-12",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "info@invoice.wiki",
-      "availableLanguage": ["English", "German", "Czech", "Polish", "Slovak", "Ukrainian"]
-    }
+    "dateModified": "2025-08-12"
   }
 
   return <JsonLd data={data} />
