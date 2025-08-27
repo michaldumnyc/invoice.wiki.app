@@ -36,8 +36,7 @@ export const metadata: Metadata = {
     description:
       "Learn about Invoice.wiki's privacy-first approach to online invoice generation.",
     images: ["/images/twitter-card.png"],
-    site: "@invoice_wiki",
-    creator: "@invoice_wiki",
+
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",

@@ -94,8 +94,7 @@ export const metadata: Metadata = {
     title: "Invoice.wiki - Free Invoice Generator",
     description: "Create professional invoices online instantly. Free invoice maker with PDF download, VAT support, and multiple currencies. No registration required.",
     images: ["/images/twitter-card.png"],
-    site: "@invoice_wiki",
-    creator: "@invoice_wiki",
+
   },
   category: "Finance",
   applicationName: "Invoice.wiki",

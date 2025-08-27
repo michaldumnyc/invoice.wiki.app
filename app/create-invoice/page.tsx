@@ -39,8 +39,7 @@ export const metadata: Metadata = {
     description:
       "Generate invoices online with PDF export and multi-currency support.",
     images: ["/images/twitter-card.png"],
-    site: "@invoice_wiki",
-    creator: "@invoice_wiki",
+
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",

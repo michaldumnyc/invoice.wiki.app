@@ -4,7 +4,7 @@ import { ContactButton } from "@/components/ContactButton"
 import { AboutInvoiceExample } from "@/components/AboutInvoiceExample"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { BreadcrumbJsonLd, AboutPageJsonLd, WebPageJsonLd } from "../components/JsonLd"
+import { BreadcrumbJsonLd, AboutPageJsonLd, WebPageJsonLd, InvoiceExampleImageJsonLd } from "../components/JsonLd"
 
 export const metadata: Metadata = {
   title: "About Invoice.wiki - Free Invoice Generator & Secure Online Billing",
@@ -37,8 +37,7 @@ export const metadata: Metadata = {
     description:
       "Learn about our free online invoice generator for freelancers and businesses.",
     images: ["/images/twitter-card.png"],
-    site: "@invoice_wiki",
-    creator: "@invoice_wiki",
+
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
@@ -71,6 +70,7 @@ export default function AboutPage() {
         dateModified={pageModificationDate}
       />
       <AboutPageJsonLd />
+      <InvoiceExampleImageJsonLd />
       <Header />
       <main className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12">

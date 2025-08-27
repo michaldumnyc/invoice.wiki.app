@@ -55,10 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Invoice.wiki - Free Invoice Generator",
     description:
-      "Create professional invoices instantly. Free PDF download, no registration needed.",
+      "Create invoices quickly. Free PDF download, no registration needed.",
     images: ["/images/twitter-card.png"],
-    site: "@invoice_wiki",
-    creator: "@invoice_wiki",
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
