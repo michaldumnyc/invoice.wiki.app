@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-27T00:00:00Z",
+    "article:modified_time": "2025-12-07T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   }
 }
 
@@ -52,7 +52,7 @@ const privacyEmail = process.env.PRIVACY_EMAIL || "contact@example.com"
 export default function PrivacyPolicyPage() {
   // ISO 8601 metadata for the page
   const pageCreationDate = "2025-02-04T12:00:00.000Z"
-  const pageModificationDate = "2025-08-27T18:30:00.000Z"
+  const pageModificationDate = "2025-12-07T12:00:00.000Z"
 
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },

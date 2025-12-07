@@ -10,6 +10,7 @@ export interface FormLanguage {
     paymentInformation: string
     invoiceColorSelection: string
     invoiceLanguageSelection: string
+    taxTypeSelection: string
     notes: string
     paymentStatus: string
     items: string
@@ -37,7 +38,21 @@ export interface FormLanguage {
     itemName: string
     quantity: string
     price: string
-    vatRate: string
+    taxRate: string
+    
+    // Tax types
+    taxTypes: {
+      vat: string
+      gst: string
+      sales_tax: string
+      none: string
+    }
+    
+    // Tax options
+    showTax: string
+    hideTax: string
+    reverseCharge: string
+    reverseChargeDescription: string
     
     // Placeholders
     placeholders: {
@@ -69,6 +84,7 @@ export interface FormLanguage {
     // Descriptions
     colorDescription: string
     languageDescription: string
+    taxTypeDescription: string
     notesDescription: string
     
     // Payment methods
@@ -94,6 +110,7 @@ export const formLanguages: FormLanguage[] = [
       paymentInformation: 'Payment Information',
       invoiceColorSelection: 'Invoice Accent Color',
       invoiceLanguageSelection: 'Invoice Language',
+      taxTypeSelection: 'Tax Type',
       notes: 'Notes',
       paymentStatus: 'Payment Status',
       items: 'Items',
@@ -120,7 +137,19 @@ export const formLanguages: FormLanguage[] = [
       itemName: 'Item Name',
       quantity: 'Quantity',
       price: 'Price',
-      vatRate: 'VAT Rate (%)',
+      taxRate: 'Tax Rate (%)',
+      
+      taxTypes: {
+        vat: 'VAT (Value Added Tax)',
+        gst: 'GST (Goods & Services Tax)',
+        sales_tax: 'Sales Tax',
+        none: 'No Tax'
+      },
+      
+      showTax: 'Show tax columns',
+      hideTax: 'Hide tax in invoice',
+      reverseCharge: 'Reverse Charge (B2B)',
+      reverseChargeDescription: 'VAT to be paid by the buyer (EU B2B services)',
       
       placeholders: {
         companyName: 'Your Company Ltd.',
@@ -149,6 +178,7 @@ export const formLanguages: FormLanguage[] = [
       
       colorDescription: 'Choose the accent color for your invoice headers and highlights',
       languageDescription: 'Choose the language for your invoice content and labels',
+      taxTypeDescription: 'Select the tax system used in your region',
       notesDescription: 'Add payment terms, thank you notes, or additional information',
       
       paymentMethods: {
@@ -171,6 +201,7 @@ export const formLanguages: FormLanguage[] = [
       paymentInformation: 'Zahlungsinformationen',
       invoiceColorSelection: 'Rechnungsfarbe',
       invoiceLanguageSelection: 'Rechnungssprache',
+      taxTypeSelection: 'Steuerart',
       notes: 'Notizen',
       paymentStatus: 'Zahlungsstatus',
       items: 'Positionen',
@@ -197,7 +228,19 @@ export const formLanguages: FormLanguage[] = [
       itemName: 'Artikelname',
       quantity: 'Menge',
       price: 'Preis',
-      vatRate: 'MwSt-Satz (%)',
+      taxRate: 'Steuersatz (%)',
+      
+      taxTypes: {
+        vat: 'MwSt (Mehrwertsteuer)',
+        gst: 'GST (Waren- und Dienstleistungssteuer)',
+        sales_tax: 'Umsatzsteuer',
+        none: 'Keine Steuer'
+      },
+      
+      showTax: 'Steuerspalten anzeigen',
+      hideTax: 'Steuer in Rechnung ausblenden',
+      reverseCharge: 'Reverse Charge (B2B)',
+      reverseChargeDescription: 'Steuerschuldnerschaft des Leistungsempfängers',
       
       placeholders: {
         companyName: 'Ihre Firma GmbH',
@@ -226,6 +269,7 @@ export const formLanguages: FormLanguage[] = [
       
       colorDescription: 'Wählen Sie die Akzentfarbe für Ihre Rechnungsüberschriften',
       languageDescription: 'Wählen Sie die Sprache für Ihre Rechnungsinhalte',
+      taxTypeDescription: 'Wählen Sie das Steuersystem Ihrer Region',
       notesDescription: 'Zahlungsbedingungen, Dankesnotizen oder zusätzliche Informationen hinzufügen',
       
       paymentMethods: {
@@ -248,6 +292,7 @@ export const formLanguages: FormLanguage[] = [
       paymentInformation: 'Platební informace',
       invoiceColorSelection: 'Barva faktury',
       invoiceLanguageSelection: 'Jazyk faktury',
+      taxTypeSelection: 'Typ daně',
       notes: 'Poznámky',
       paymentStatus: 'Stav platby',
       items: 'Položky',
@@ -274,7 +319,19 @@ export const formLanguages: FormLanguage[] = [
       itemName: 'Název položky',
       quantity: 'Množství',
       price: 'Cena',
-      vatRate: 'Sazba DPH (%)',
+      taxRate: 'Sazba daně (%)',
+      
+      taxTypes: {
+        vat: 'DPH (Daň z přidané hodnoty)',
+        gst: 'GST (Daň ze zboží a služeb)',
+        sales_tax: 'Prodejní daň',
+        none: 'Bez daně'
+      },
+      
+      showTax: 'Zobrazit daňové sloupce',
+      hideTax: 'Skrýt daň ve faktuře',
+      reverseCharge: 'Reverse Charge (B2B)',
+      reverseChargeDescription: 'Daň odvede příjemce plnění',
       
       placeholders: {
         companyName: 'Vaše firma s.r.o.',
@@ -303,6 +360,7 @@ export const formLanguages: FormLanguage[] = [
       
       colorDescription: 'Vyberte barevný akcent pro záhlaví faktury',
       languageDescription: 'Vyberte jazyk pro obsah faktury',
+      taxTypeDescription: 'Vyberte daňový systém vaší oblasti',
       notesDescription: 'Přidejte platební podmínky, poděkování nebo další informace',
       
       paymentMethods: {
@@ -325,6 +383,7 @@ export const formLanguages: FormLanguage[] = [
       paymentInformation: 'Informacje o płatności',
       invoiceColorSelection: 'Kolor faktury',
       invoiceLanguageSelection: 'Język faktury',
+      taxTypeSelection: 'Typ podatku',
       notes: 'Uwagi',
       paymentStatus: 'Status płatności',
       items: 'Pozycje',
@@ -351,7 +410,19 @@ export const formLanguages: FormLanguage[] = [
       itemName: 'Nazwa pozycji',
       quantity: 'Ilość',
       price: 'Cena',
-      vatRate: 'Stawka VAT (%)',
+      taxRate: 'Stawka podatku (%)',
+      
+      taxTypes: {
+        vat: 'VAT (Podatek od wartości dodanej)',
+        gst: 'GST (Podatek od towarów i usług)',
+        sales_tax: 'Podatek od sprzedaży',
+        none: 'Bez podatku'
+      },
+      
+      showTax: 'Pokaż kolumny podatkowe',
+      hideTax: 'Ukryj podatek na fakturze',
+      reverseCharge: 'Odwrotne obciążenie (B2B)',
+      reverseChargeDescription: 'Podatek rozlicza nabywca usługi',
       
       placeholders: {
         companyName: 'Twoja Firma Sp. z o.o.',
@@ -380,6 +451,7 @@ export const formLanguages: FormLanguage[] = [
       
       colorDescription: 'Wybierz kolor akcentu dla nagłówków faktury',
       languageDescription: 'Wybierz język zawartości faktury',
+      taxTypeDescription: 'Wybierz system podatkowy dla twojego regionu',
       notesDescription: 'Dodaj warunki płatności, podziękowania lub dodatkowe informacje',
       
       paymentMethods: {
@@ -402,6 +474,7 @@ export const formLanguages: FormLanguage[] = [
       paymentInformation: 'Platobné informácie',
       invoiceColorSelection: 'Farba faktúry',
       invoiceLanguageSelection: 'Jazyk faktúry',
+      taxTypeSelection: 'Typ dane',
       notes: 'Poznámky',
       paymentStatus: 'Stav platby',
       items: 'Položky',
@@ -428,7 +501,19 @@ export const formLanguages: FormLanguage[] = [
       itemName: 'Názov položky',
       quantity: 'Množstvo',
       price: 'Cena',
-      vatRate: 'Sadzba DPH (%)',
+      taxRate: 'Sadzba dane (%)',
+      
+      taxTypes: {
+        vat: 'DPH (Daň z pridanej hodnoty)',
+        gst: 'GST (Daň z tovarov a služieb)',
+        sales_tax: 'Predajná daň',
+        none: 'Bez dane'
+      },
+      
+      showTax: 'Zobraziť daňové stĺpce',
+      hideTax: 'Skryť daň vo faktúre',
+      reverseCharge: 'Reverse Charge (B2B)',
+      reverseChargeDescription: 'Daň odvedie príjemca plnenia',
       
       placeholders: {
         companyName: 'Vaša firma s.r.o.',
@@ -457,6 +542,7 @@ export const formLanguages: FormLanguage[] = [
       
       colorDescription: 'Vyberte farebný akcent pre hlavičky faktúry',
       languageDescription: 'Vyberte jazyk pre obsah faktúry',
+      taxTypeDescription: 'Vyberte daňový systém vašej oblasti',
       notesDescription: 'Pridajte platobné podmienky, poďakovanie alebo ďalšie informácie',
       
       paymentMethods: {
@@ -479,6 +565,7 @@ export const formLanguages: FormLanguage[] = [
       paymentInformation: 'Платіжна інформація',
       invoiceColorSelection: 'Колір рахунку',
       invoiceLanguageSelection: 'Мова рахунку',
+      taxTypeSelection: 'Тип податку',
       notes: 'Примітки',
       paymentStatus: 'Статус оплати',
       items: 'Позиції',
@@ -505,7 +592,19 @@ export const formLanguages: FormLanguage[] = [
       itemName: 'Назва позиції',
       quantity: 'Кількість',
       price: 'Ціна',
-      vatRate: 'Ставка ПДВ (%)',
+      taxRate: 'Ставка податку (%)',
+      
+      taxTypes: {
+        vat: 'ПДВ (Податок на додану вартість)',
+        gst: 'GST (Податок на товари та послуги)',
+        sales_tax: 'Податок з продажу',
+        none: 'Без податку'
+      },
+      
+      showTax: 'Показати колонки податку',
+      hideTax: 'Приховати податок у рахунку',
+      reverseCharge: 'Зворотне нарахування (B2B)',
+      reverseChargeDescription: 'Податок сплачує отримувач послуги',
       
       placeholders: {
         companyName: 'Ваша Компанія ТОВ',
@@ -534,6 +633,7 @@ export const formLanguages: FormLanguage[] = [
       
       colorDescription: 'Виберіть акцентний колір для заголовків рахунку',
       languageDescription: 'Виберіть мову для вмісту рахунку',
+      taxTypeDescription: 'Виберіть податкову систему вашого регіону',
       notesDescription: 'Додайте умови оплати, подяку або додаткову інформацію',
       
       paymentMethods: {

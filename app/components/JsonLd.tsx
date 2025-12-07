@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react"
 
 interface JsonLdProps {
@@ -23,9 +21,9 @@ export function WebsiteJsonLd() {
     "name": "Invoice.wiki",
     "alternateName": "Free Online Invoice Maker & Generator",
     "url": "https://invoice.wiki",
-    "description": "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
+    "description": "Free online invoice maker with PDF download, tax support, 40+ currencies and 6 languages. No registration required.",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27",
+    "dateModified": "2025-12-07",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
     "potentialAction": {
       "@type": "SearchAction",
@@ -60,7 +58,7 @@ export function OrganizationJsonLd() {
     },
     "description": "Provider of free online invoice generation services",
     "foundingDate": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   }
 
   return <JsonLd data={data} />
@@ -120,10 +118,10 @@ export function FaqJsonLd() {
       },
       {
         "@type": "Question",
-        "name": "Does it support VAT and tax calculations?",
+        "name": "Does it support tax calculations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! You can easily add VAT rates, tax percentages, and various fee structures to your invoices with automatic calculations. Our system supports multiple tax types and handles complex billing scenarios commonly required in different countries and industries."
+          "text": "Yes! Add any tax rate. Totals calculate automatically. Works for any country."
         }
       },
       {
@@ -144,7 +142,7 @@ export function FaqJsonLd() {
       }
     ],
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   }
 
   return <JsonLd data={data} />
@@ -162,7 +160,7 @@ export function AboutPageJsonLd() {
     "mainEntity": {
       "@type": "SoftwareApplication",
       "name": "Invoice.wiki",
-      "description": "Free online invoice maker and generator with PDF download, VAT support, multiple currencies and languages.",
+      "description": "Free online invoice maker with PDF download, tax support, 40+ currencies and 6 languages.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any",
       "url": "https://invoice.wiki",
@@ -176,7 +174,7 @@ export function AboutPageJsonLd() {
       "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
       "softwareVersion": "1.0",
       "datePublished": "2025-02-04",
-      "dateModified": "2025-08-27"
+      "dateModified": "2025-12-07"
     },
     "publisher": {
       "@type": "Organization",
@@ -184,7 +182,7 @@ export function AboutPageJsonLd() {
       "url": "https://invoice.wiki"
     },
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27",
+    "dateModified": "2025-12-07",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"]
   }
 
@@ -197,7 +195,7 @@ export function InvoiceExampleImageJsonLd() {
     "@context": "https://schema.org",
     "@type": "ImageObject",
     "name": "Professional Invoice Example",
-    "description": "Sample professional invoice created with Invoice.wiki free online invoice generator showing complete business details, itemized services, VAT calculations, payment information, and clean formatting ready for PDF download. Now features customizable colors and multi-language support.",
+    "description": "Sample invoice created with Invoice.wiki showing business details, itemized services, tax calculations, and payment info. Customizable colors, 6 languages, PDF download.",
     "url": "https://invoice.wiki/images/invoice-example.png",
     "contentUrl": "https://invoice.wiki/images/invoice-example.png",
     "width": "800",
@@ -214,17 +212,15 @@ export function InvoiceExampleImageJsonLd() {
     "license": "https://invoice.wiki/privacy-policy",
     "keywords": [
       "invoice example",
-      "professional invoice template",
+      "invoice template",
       "free invoice generator",
-      "business invoice sample",
-      "VAT invoice template",
-      "PDF invoice example",
-      "customizable invoice colors",
-      "multi-language invoices",
-      "international invoicing"
+      "PDF invoice",
+      "business invoice",
+      "tax invoice",
+      "multi-language invoice"
     ],
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   }
 
   return <JsonLd data={data} />
@@ -236,7 +232,7 @@ export function WebPageJsonLd({
   name, 
   description,
   dateCreated = "2025-02-04",
-  dateModified = "2025-08-27"
+  dateModified = "2025-12-07"
 }: { 
   url: string 
   name: string 
@@ -265,7 +261,7 @@ export function EnhancedSoftwareApplicationJsonLd() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Free Online Invoice Maker & Generator",
-    "description": "Professional invoice maker and generator with PDF download, VAT support, and multiple currencies. No registration required.",
+    "description": "Free invoice maker with PDF download, tax support, 40+ currencies and 6 languages. No registration required.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any",
     "inLanguage": ["en-US", "de-DE", "cs-CZ", "pl-PL", "sk-SK", "uk-UA"],
@@ -274,7 +270,7 @@ export function EnhancedSoftwareApplicationJsonLd() {
     "screenshot": "https://invoice.wiki/images/og-image.png",
     "softwareVersion": "1.0",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27",
+    "dateModified": "2025-12-07",
     "offers": {
       "@type": "Offer",
       "price": "0",

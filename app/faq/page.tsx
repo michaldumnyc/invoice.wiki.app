@@ -15,7 +15,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions - Invoice Generator | Invoice.wiki",
-  description: "Get answers to common questions about our free invoice generator. Learn about invoicing, VAT compliance, PDF downloads, and business billing.",
+  description: "Get answers to common questions about our free invoice generator. Learn about invoicing, tax support, PDF downloads, and business billing.",
   alternates: {
     canonical: "https://invoice.wiki/faq",
   },
@@ -51,11 +51,11 @@ const faqCategories = [
     questions: [
       {
         question: "Do I need to register to create invoices?",
-        answer: "No! Our invoice generator is free and doesn't require registration, login, or account creation. Simply visit our invoice creation page and start building invoices without providing personal information."
+        answer: "No! Just open the form and start creating. No login, no signup, no personal info required."
       },
       {
         question: "How quickly can I create an invoice?",
-        answer: "You can create an invoice quickly! Our streamlined interface guides you through the essential fields, and you can download your PDF after completing the form."
+        answer: "2-3 minutes. Fill in the fields, click download — done."
       },
       {
         question: "Is this tool completely free?",
@@ -63,7 +63,7 @@ const faqCategories = [
       },
       {
         question: "What makes your invoice generator different?",
-        answer: "Our generator processes everything locally in your browser for privacy, requires no registration, supports multiple currencies and 6 languages, includes VAT calculations, and offers customizable colors to match your brand."
+        answer: "Everything runs in your browser — your data never leaves your device. No registration, 40+ currencies, 6 languages, flexible tax support, and customizable colors."
       }
     ]
   },
@@ -72,20 +72,20 @@ const faqCategories = [
     icon: "🔒",
     questions: [
       {
-        question: "Is my data safe and private?",
-        answer: "Yes! All invoice processing happens locally in your browser. Your business data stays on your device and is not stored on our servers."
+        question: "Is my data safe?",
+        answer: "Yes! Everything runs in your browser. Nothing is sent to servers."
       },
       {
         question: "Do you store my invoice data?",
-        answer: "No, we don't store any of your invoice data. Everything is processed locally in your browser using JavaScript. When you close the browser tab, all your data is automatically cleared."
+        answer: "No. All processing is local. Close the tab — data is gone."
       },
       {
-        question: "Can I use this for sensitive business information?",
-        answer: "Yes! Since all processing happens locally and no data is transmitted to our servers, you can safely use our generator for any business information, including confidential client details and financial data."
+        question: "Can I use this for sensitive info?",
+        answer: "Yes. No data leaves your device — safe for confidential details."
       },
       {
-        question: "What happens to my data when I download the PDF?",
-        answer: "The PDF is generated entirely in your browser and downloaded directly to your device. No copy is stored on our servers or transmitted anywhere else."
+        question: "What happens when I download the PDF?",
+        answer: "PDF is generated in your browser and saved to your device. Nothing stored server-side."
       }
     ]
   },
@@ -95,23 +95,23 @@ const faqCategories = [
     questions: [
       {
         question: "Can I download my invoice as PDF?",
-        answer: "Yes, you can instantly download your professionally formatted invoice as a high-quality PDF file that's ready for sending to clients or printing for your business records. Our PDF generation system ensures perfect formatting across all devices and platforms."
+        answer: "Yes! Click 'Generate Invoice' and your PDF downloads instantly. Ready to send or print."
       },
       {
-        question: "Does it support VAT and tax calculations?",
-        answer: "Absolutely! You can easily add VAT rates, tax percentages, and various fee structures to your invoices with automatic calculations. Our system supports multiple tax types and handles complex billing scenarios commonly required in different countries and industries."
+        question: "Does it support tax calculations?",
+        answer: "Yes! Enter any tax rate. Totals calculate automatically."
       },
       {
         question: "What currencies are supported?",
-        answer: "Our invoice generator supports 40+ international currencies including USD, EUR, GBP, CAD, AUD, CHF, JPY, SEK, NOK, DKK, PLN, CZK, UAH, CNY, INR, SGD, HKD, NZD, BRL, MXN, ZAR, TRY, ILS, AED, THB, and many others. You can select your preferred currency and the system will format amounts according to standard financial conventions for that currency."
+        answer: "40+ currencies: USD, EUR, GBP, PLN, CZK, UAH, JPY, and many more. Amounts format automatically based on the selected currency."
       },
       {
         question: "Can I customize invoice colors and languages?",
-        answer: "Yes! By popular demand, we've added customization options. Choose from 10 professional accent colors (Blue, Green, Red, Purple, Orange, Pink, Teal, Yellow, Slate, Black) to match your brand identity. Plus, generate invoices in 6 languages: English, German (Deutsch), Czech (Čeština), Polish (Polski), Slovak (Slovenčina), and Ukrainian (Українська) to serve international clients professionally."
+        answer: "Yes! 10 accent colors to match your brand + 6 languages (EN, DE, CS, PL, SK, UK) for international clients."
       },
       {
         question: "Can I add my company logo?",
-        answer: "Currently, our generator focuses on clean, professional text-based invoices without logo upload functionality. This ensures maximum compatibility, fast loading, and privacy (no image uploads to servers). You can include your complete company information in the text fields for professional presentation."
+        answer: "Not yet — we focus on clean text-based invoices for privacy (no uploads to servers). Your company details in text fields look professional."
       }
     ]
   },
@@ -121,19 +121,19 @@ const faqCategories = [
     questions: [
       {
         question: "Are the invoices legally valid?",
-        answer: "Yes, our invoices include all essential elements required for legal business documents: unique invoice numbers, dates, seller/buyer information, itemized services/products, taxes, and totals. However, specific legal requirements vary by country, so please verify local regulations for your jurisdiction."
+        answer: "Yes — includes all required elements: invoice number, dates, parties, items, taxes, totals. Check your local regulations for specifics."
       },
       {
         question: "Can I use this for international business?",
-        answer: "Absolutely! Our generator supports international invoicing with multi-currency support, VAT calculations for EU business, and multiple languages. It's perfect for cross-border transactions and international client relationships."
+        answer: "Yes! 40+ currencies, 6 languages, flexible tax. Works globally."
       },
       {
-        question: "What invoice information is required?",
-        answer: "Essential elements include: your business information (name, address, contact), client information, invoice number and date, description of goods/services, quantities and prices, applicable taxes (VAT), and payment terms. Our form guides you through all required fields."
+        question: "What info is required?",
+        answer: "Your business details, client info, invoice number, date, items with prices. Tax is optional."
       },
       {
-        question: "How should I number my invoices?",
-        answer: "Use a sequential numbering system (e.g., INV-001, INV-002) or include year/month (2024-001, 2024-002). Our generator suggests the next number, but you can customize it to fit your business system. Consistent numbering is important for accounting and legal compliance."
+        question: "How should I number invoices?",
+        answer: "Sequential (INV-001, INV-002) or with date (2024-001). Be consistent for accounting."
       }
     ]
   },
@@ -143,19 +143,19 @@ const faqCategories = [
     questions: [
       {
         question: "What browsers are supported?",
-        answer: "Our invoice generator works on all modern browsers including Chrome, Firefox, Safari, and Edge. It's optimized for both desktop and mobile devices, so you can create invoices anywhere."
+        answer: "All modern browsers: Chrome, Firefox, Safari, Edge. Desktop and mobile."
       },
       {
-        question: "Can I use this on mobile devices?",
-        answer: "Yes! Our generator is fully responsive and works perfectly on smartphones and tablets. You can create professional invoices on the go with the same functionality as the desktop version."
+        question: "Can I use this on mobile?",
+        answer: "Yes! Fully responsive — works on phones and tablets."
       },
       {
-        question: "What if I encounter technical issues?",
-        answer: "If you experience any technical problems, try refreshing the page or using a different browser. Most issues are resolved by clearing your browser cache. For persistent problems, try updating your browser or using an incognito/private browsing window."
+        question: "Technical issues?",
+        answer: "Try refresh, clear cache, or incognito mode. That fixes most issues."
       },
       {
-        question: "Can I save my work and continue later?",
-        answer: "Since everything runs locally in your browser for privacy, your work is only saved during the current session. We recommend completing your invoice in one session or copying your information to a text document if you need to continue later."
+        question: "Can I save and continue later?",
+        answer: "No persistent save (for privacy). Complete in one session or copy to notes."
       }
     ]
   },
@@ -164,20 +164,20 @@ const faqCategories = [
     icon: "💼",
     questions: [
       {
-        question: "Is this suitable for freelancers?",
-        answer: "Absolutely! Our generator is perfect for freelancers who need to create professional invoices quickly without ongoing subscription costs. It includes all the features freelancers need: time-based billing, project descriptions, tax calculations, and professional formatting."
+        question: "Good for freelancers?",
+        answer: "Perfect. Professional invoices, no costs, tax included."
       },
       {
-        question: "Can small businesses use this?",
-        answer: "Yes, our invoice generator is ideal for small businesses, startups, and entrepreneurs. It provides enterprise-level invoice formatting without the complexity or cost of specialized software."
+        question: "Small businesses?",
+        answer: "Yes! Professional output without enterprise complexity."
       },
       {
-        question: "How do I handle recurring invoices?",
-        answer: "While our generator doesn't automate recurring billing, you can easily recreate regular invoices by copying the previous invoice information and updating the date and invoice number. This gives you full control over each invoice."
+        question: "Recurring invoices?",
+        answer: "No automation, but easy to duplicate — just update date and number."
       },
       {
-        question: "Can I track payments?",
-        answer: "Our generator creates the invoices, but payment tracking is handled by your business systems. We recommend keeping a simple spreadsheet or using basic accounting software to track which invoices have been paid."
+        question: "Payment tracking?",
+        answer: "We create invoices; use a spreadsheet or accounting app to track payments."
       }
     ]
   }
@@ -186,7 +186,7 @@ const faqCategories = [
 export default function FAQPage() {
   // ISO 8601 metadata for the page
   const pageCreationDate = "2025-08-26T12:00:00.000Z"  // вчера
-  const pageModificationDate = "2025-08-27T18:30:00.000Z"  // сегодня
+  const pageModificationDate = "2025-12-07T12:00:00.000Z"
 
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
@@ -200,7 +200,7 @@ export default function FAQPage() {
       <WebPageJsonLd 
         url="https://invoice.wiki/faq"
         name="Frequently Asked Questions - Invoice Generator"
-        description="Get answers to common questions about our free invoice generator. Learn about invoicing, VAT compliance, PDF downloads, and business billing."
+        description="Get answers to common questions about our free invoice generator. Learn about invoicing, tax support, PDF downloads, and business billing."
         dateCreated={pageCreationDate}
         dateModified={pageModificationDate}
       />

@@ -71,6 +71,12 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Get language translations
     const selectedLanguage = getInvoiceLanguageById(data.languageId || 'en')
     const t = selectedLanguage.texts
+    
+    // Get tax type labels based on selected tax type
+    const taxType = data.taxType || 'vat'
+    const taxLabels = t.taxTypes[taxType]
+    const showTax = data.showTax !== false
+    const reverseCharge = data.reverseCharge === true
 
     // Header with invoice number
     const pageWidth = doc.internal.pageSize.width
@@ -175,7 +181,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       data.seller?.companyName,
       data.seller?.address,
       data.seller?.companyId && `${t.companyId}: ${data.seller.companyId}`,
-      data.seller?.vatId && `${t.vatId}: ${data.seller.vatId}`,
+      data.seller?.vatId && `${taxLabels.id}: ${data.seller.vatId}`,
       data.seller?.email && `${t.email}: ${data.seller.email}`,
       data.seller?.website && `${t.website}: ${formatWebsiteUrl(data.seller.website)}`,
     ].filter(Boolean)
@@ -204,7 +210,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       data.buyer?.companyName,
       data.buyer?.address,
       data.buyer?.companyId && `${t.companyId}: ${data.buyer.companyId}`,
-      data.buyer?.vatId && `${t.vatId}: ${data.buyer.vatId}`,
+      data.buyer?.vatId && `${taxLabels.id}: ${data.buyer.vatId}`,
       data.buyer?.email && `${t.email}: ${data.buyer.email}`,
       data.buyer?.website && `${t.website}: ${formatWebsiteUrl(data.buyer.website)}`,
     ].filter(Boolean)
@@ -270,9 +276,32 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     }
 
     try {
+      // Define table headers based on showTax setting
+      const tableHeaders = showTax 
+        ? [t.table.description, t.table.quantity, t.table.unitPrice, taxLabels.percent, t.table.netPrice, taxLabels.amount, t.table.total]
+        : [t.table.description, t.table.quantity, t.table.unitPrice, t.table.total]
+      
+      // Define column styles based on showTax setting
+      const columnStyles: { [key: number]: { cellWidth: number; overflow: "linebreak" } } = showTax 
+        ? {
+            0: { cellWidth: 49, overflow: "linebreak" },
+            1: { cellWidth: 13, overflow: "linebreak" },
+            2: { cellWidth: 24, overflow: "linebreak" },
+            3: { cellWidth: 14, overflow: "linebreak" },
+            4: { cellWidth: 25, overflow: "linebreak" },
+            5: { cellWidth: 25, overflow: "linebreak" },
+            6: { cellWidth: 34 - 1, overflow: "linebreak" },
+          }
+        : {
+            0: { cellWidth: 90, overflow: "linebreak" },
+            1: { cellWidth: 20, overflow: "linebreak" },
+            2: { cellWidth: 35, overflow: "linebreak" },
+            3: { cellWidth: 38, overflow: "linebreak" },
+          }
+      
       autoTable(doc, {
         startY: tableStartY,
-        head: [[t.table.description, t.table.quantity, t.table.unitPrice, t.table.vatPercent, t.table.netPrice, t.table.vatAmount, t.table.total]],
+        head: [tableHeaders],
         body: (data.items || []).map((item) => {
           // Use decimal utilities for precise calculations
           const { netPrice, vatAmount, totalPrice } = calculateItemTotal(
@@ -281,15 +310,24 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
             item.vatRate || 0
           )
           
-          return [
-            item.name || "",
-            (item.quantity || 0).toString(),
-            formatCurrency(item.price || 0),
-            `${item.vatRate || 0}%`,
-            formatCurrency(toNumber(netPrice)),
-            formatCurrency(toNumber(vatAmount)),
-            formatCurrency(toNumber(totalPrice)),
-          ]
+          if (showTax) {
+            return [
+              item.name || "",
+              (item.quantity || 0).toString(),
+              formatCurrency(item.price || 0),
+              `${item.vatRate || 0}%`,
+              formatCurrency(toNumber(netPrice)),
+              formatCurrency(toNumber(vatAmount)),
+              formatCurrency(toNumber(totalPrice)),
+            ]
+          } else {
+            return [
+              item.name || "",
+              (item.quantity || 0).toString(),
+              formatCurrency(item.price || 0),
+              formatCurrency(toNumber(totalPrice)),
+            ]
+          }
         }),
         styles: {
           font: "NotoSans",
@@ -301,15 +339,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
           overflow: "linebreak",
           lineWidth: 0.1,
         },
-        columnStyles: {
-          0: { cellWidth: 49, overflow: "linebreak" }, // Description column
-          1: { cellWidth: 13, overflow: "linebreak" }, // Quantity column
-          2: { cellWidth: 24, overflow: "linebreak" }, // Unit Price column
-          3: { cellWidth: 14, overflow: "linebreak" }, // VAT Rate column
-          4: { cellWidth: 25, overflow: "linebreak" }, // Net Price column
-          5: { cellWidth: 25, overflow: "linebreak" }, // VAT Amount column
-          6: { cellWidth: 34 - 1, overflow: "linebreak" }, // Total column - slightly reduced width
-        },
+        columnStyles,
         headStyles: {
           fillColor: primaryColor,
           textColor: selectedColor.headerText,
@@ -368,33 +398,46 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Summary aligned with right edge
     doc.setFontSize(10)
     doc.setTextColor(...mutedColor)
-    doc.text(t.netTotal, rightEdge - 70, finalY)
-    doc.text(t.vatTotal, rightEdge - 70, finalY + 7)
+    
+    let summaryY = finalY
+    
+    if (showTax) {
+      doc.text(t.netTotal, rightEdge - 70, summaryY)
+      doc.text(formatCurrency(netTotal), rightEdge, summaryY, { align: "right" })
+      summaryY += 7
+      
+      doc.text(taxLabels.total, rightEdge - 70, summaryY)
+      doc.text(formatCurrency(vatTotal), rightEdge, summaryY, { align: "right" })
+      summaryY += 7
+    }
+    
     doc.setTextColor(...primaryColor)
     doc.setFontSize(12)
     doc.setFont("NotoSans", "bold")
-    doc.text(t.totalDue, rightEdge - 70, finalY + 14)
+    doc.text(t.totalDue, rightEdge - 70, summaryY)
 
-    // Amounts
+    // Total amount
     doc.setTextColor(...textColor)
-    doc.setFontSize(10)
-    doc.setFont("NotoSans", "normal")
-    doc.text(formatCurrency(netTotal), rightEdge, finalY, { align: "right" })
-    doc.text(formatCurrency(vatTotal), rightEdge, finalY + 7, { align: "right" })
-    doc.setFontSize(12)
-    doc.setTextColor(...primaryColor)
-    doc.setFont("NotoSans", "bold")
-
     if (data.isPaid) {
-      doc.text(t.paid, rightEdge, finalY + 14, { align: "right" })
+      doc.text(t.paid, rightEdge, summaryY, { align: "right" })
     } else {
-      doc.text(formatCurrency(total), rightEdge, finalY + 14, { align: "right" })
+      doc.text(formatCurrency(total), rightEdge, summaryY, { align: "right" })
     }
 
     // Draw line under total
     doc.setDrawColor(...primaryColor)
     doc.setLineWidth(0.5)
-    doc.line(rightEdge - 70, finalY + 18, rightEdge, finalY + 18)
+    doc.line(rightEdge - 70, summaryY + 4, rightEdge, summaryY + 4)
+    
+    // Reverse Charge text (only for VAT and if enabled)
+    if (reverseCharge && taxType === 'vat') {
+      summaryY += 12
+      doc.setFontSize(8)
+      doc.setTextColor(...mutedColor)
+      doc.setFont("NotoSans", "normal")
+      const reverseChargeLines = doc.splitTextToSize(t.reverseChargeText, 100)
+      doc.text(reverseChargeLines, rightEdge - 100, summaryY)
+    }
 
     // Footer
     const pageHeight = doc.internal.pageSize.height

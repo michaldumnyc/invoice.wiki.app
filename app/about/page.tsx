@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-27T00:00:00Z",
+    "article:modified_time": "2025-12-07T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   }
 }
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
   
   // ISO 8601 metadata for the page
   const pageCreationDate = "2025-02-04T12:00:00.000Z"
-  const pageModificationDate = "2025-08-27T18:30:00.000Z"
+  const pageModificationDate = "2025-12-07T12:00:00.000Z"
 
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
@@ -87,17 +87,14 @@ export default function AboutPage() {
             </p>
 
             <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
-              <h2 className="text-xl font-semibold mb-3 text-blue-800 dark:text-blue-300">🎨 New Features by Popular Demand!</h2>
-              <p className="text-blue-700 dark:text-blue-300 mb-4">
-                We've listened to our community and added exciting new customization options to make your invoices even more professional and accessible:
-              </p>
+              <h2 className="text-xl font-semibold mb-3 text-blue-800 dark:text-blue-300">✨ Latest Updates</h2>
               <ul className="space-y-2 text-blue-700 dark:text-blue-300">
-                <li><strong>🎨 Custom Colors:</strong> Choose from 10 beautiful accent colors (Blue, Green, Red, Purple, Orange, Pink, Teal, Yellow, Slate, Black) to match your brand identity.</li>
-                <li><strong>🌍 Multiple Languages:</strong> Generate invoices in 6 languages - English, German (Deutsch), Czech (Čeština), Polish (Polski), Slovak (Slovenčina), and Ukrainian (Українська) to serve international clients.</li>
+                <li><strong>🧮 Flexible Tax Support:</strong> Choose your tax system or hide taxes completely. Works for any country.</li>
+                <li><strong>🔄 Reverse Charge:</strong> EU B2B invoicing with automatic reverse charge disclaimer.</li>
+                <li><strong>👁️ Hide Tax Option:</strong> Create clean invoices without tax columns when not needed.</li>
+                <li><strong>🎨 10 Colors:</strong> Match your brand with custom accent colors.</li>
+                <li><strong>🌍 6 Languages:</strong> EN, DE, CS, PL, SK, UK — serve international clients.</li>
               </ul>
-              <p className="text-blue-700 dark:text-blue-300 mt-4">
-                Try these new features and create invoices that truly represent your business!
-              </p>
             </div>
 
             <h2 className="text-2xl font-semibold mt-12 mb-4">How We Prioritize Your Privacy</h2>
@@ -116,14 +113,6 @@ export default function AboutPage() {
               critical financial and legal records.
             </p>
 
-            {/* History and purpose */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">History and Purpose</h2>
-            <p className="mb-6">
-              Invoices have been part of commerce since early accounting systems were developed. Today, digital
-              invoicing has become standard across industries and borders, supporting smooth trade, clear tax records,
-              and timely payments.
-            </p>
-
             {/* Components of an invoice */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Key Components of an Invoice</h2>
 
@@ -133,7 +122,7 @@ export default function AboutPage() {
               <li><strong>Company Name –</strong> Official business name.</li>
               <li><strong>Business Address –</strong> Registered address of the seller.</li>
               <li><strong>Company ID –</strong> Official registration number.</li>
-              <li><strong>VAT Number –</strong> Tax identification number (if applicable).</li>
+              <li><strong>Tax ID –</strong> Tax identification number (if applicable).</li>
               <li><strong>Contact Details –</strong> Email, phone number, and website.</li>
             </ul>
 
@@ -142,7 +131,7 @@ export default function AboutPage() {
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Client Name –</strong> Name of the person or business being billed.</li>
               <li><strong>Client Address –</strong> Delivery or legal address.</li>
-              <li><strong>Company ID & VAT (if any) –</strong> Tax info of the buyer.</li>
+              <li><strong>Company ID & Tax ID –</strong> Registration and tax info of the buyer.</li>
               <li><strong>Contact –</strong> Client’s email or phone number.</li>
             </ul>
 
@@ -168,16 +157,14 @@ export default function AboutPage() {
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Service/Product –</strong> Name of what was sold.</li>
               <li><strong>Quantity & Unit Price –</strong> Per-item breakdown.</li>
-              <li><strong>VAT –</strong> Percentage applied (if applicable).</li>
+              <li><strong>Tax Rate –</strong> Percentage applied (if applicable).</li>
               <li><strong>Total –</strong> Final amount including tax.</li>
             </ul>
 
             {/* Legal significance */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Legal Relevance of Invoices</h2>
             <p className="mb-6">
-              Invoices are official commercial records. They can be used for tax reporting, financial accounting, and
-              legal protection. Depending on your country, invoicing may follow specific rules like VAT formatting in
-              the EU or sales tax declarations in the US. Different countries have specific invoicing requirements for tax compliance.
+              Invoices are official commercial records used for tax reporting, financial accounting, and legal protection. Requirements vary by country — always verify local regulations.
             </p>
             <p className="mb-6">Common legal purposes of invoices include:</p>
             <ul className="list-disc pl-6 space-y-2 mb-8">
@@ -187,49 +174,26 @@ export default function AboutPage() {
               <li>Providing evidence in disputes or audits.</li>
             </ul>
 
-            {/* International Standards */}
-            <h2 className="text-2xl font-semibold mt-12 mb-4">International Invoicing Standards</h2>
-            <p className="mb-6">
-              Modern businesses operate across borders, making international invoicing standards crucial for seamless commerce. 
-              Our generator supports international best practices including ISO 20022 standards, EU VAT compliance, 
-              and multi-currency formatting that meets global business requirements.
-            </p>
-
-            <h3 className="text-xl font-semibold mt-8 mb-4">European Union Compliance</h3>
-            <p className="mb-4">
-              For businesses operating within the EU, invoices must comply with the EU VAT Directive and national implementations. 
-              Key requirements include:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li>Valid VAT identification numbers for cross-border transactions</li>
-              <li>Proper reverse charge mechanisms for B2B services</li>
-              <li>Compliant invoice numbering and record keeping</li>
-              <li>Accurate tax rate application based on place of supply rules</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold mt-8 mb-4">Digital Invoice Security</h3>
-            <p className="mb-4">
-              With increasing digitalization, invoice security has become paramount. Our platform ensures:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li><strong>Data Privacy:</strong> All processing occurs locally in your browser</li>
-              <li><strong>GDPR Compliance:</strong> No personal data collection or storage</li>
-              <li><strong>Audit Trails:</strong> Sequential numbering for tax compliance</li>
-              <li><strong>Format Integrity:</strong> PDF generation maintains professional standards</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold mt-8 mb-4">Multi-Language Business Support</h3>
-            <p className="mb-4">
-              International business requires clear communication across language barriers. We support:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mb-8">
-              <li><strong>English:</strong> Global business standard</li>
-              <li><strong>German (Deutsch):</strong> Central European commerce</li>
-              <li><strong>Czech (Čeština):</strong> Regional business hub</li>
-              <li><strong>Polish (Polski):</strong> Major EU economy</li>
-              <li><strong>Slovak (Slovenčina):</strong> Eurozone member</li>
-              <li><strong>Ukrainian (Українська):</strong> Emerging market support</li>
-            </ul>
+            {/* International Support */}
+            <h2 className="text-2xl font-semibold mt-12 mb-4">International Support</h2>
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-3">🌍 40+ Currencies</h3>
+                <p className="text-muted-foreground">USD, EUR, GBP, PLN, CZK, UAH, and many more with proper formatting.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-3">🗣️ 6 Languages</h3>
+                <p className="text-muted-foreground">English, German, Czech, Polish, Slovak, Ukrainian.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-3">🧮 Flexible Taxes</h3>
+                <p className="text-muted-foreground">Any tax type — works for any country.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-3">🔄 EU B2B Ready</h3>
+                <p className="text-muted-foreground">Reverse Charge support for cross-border EU services.</p>
+              </div>
+            </div>
 
             {/* Advantages of Invoice.wiki */}
             <h2 className="text-2xl font-semibold mt-12 mb-4">Why Choose Invoice Wiki Generator?</h2>
@@ -254,16 +218,10 @@ export default function AboutPage() {
             <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
               <h3 className="text-xl font-semibold mb-4">Ready to Create Your First Invoice?</h3>
               <p className="mb-4">
-                Join thousands of freelancers and small business owners who trust Invoice.wiki for their billing needs. 
-                Our free invoice generator helps you create professional invoices in minutes, not hours.
-              </p>
-              <p className="mb-4">
-                Whether you need to bill for consulting services, freelance work, or product sales, our platform 
-                handles VAT calculations, multiple currencies, and generates PDF invoices that look professional 
-                and meet international standards.
+                Free forever. No signup. Takes 2 minutes. PDF download included.
               </p>
               <Link href="/create-invoice" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                Start Creating Invoices →
+                Create Invoice →
               </Link>
             </div>
 

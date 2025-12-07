@@ -33,16 +33,16 @@ export const metadata: Metadata = {
     default: "Invoice.wiki - Free Invoice Generator",
     template: "%s | Invoice.wiki",
   },
-  description: "Free online invoice generator. Create professional invoices instantly with PDF download, VAT support, multiple currencies and languages.",
+  description: "Free online invoice generator. Create professional invoices instantly with PDF download, tax support, 40+ currencies and 6 languages. No registration.",
 
   authors: [{ name: "Invoice.wiki Team" }],
   creator: "Invoice.wiki",
   publisher: "Invoice.wiki",
     other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-27T00:00:00Z",
+    "article:modified_time": "2025-12-07T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   },
   formatDetection: {
     email: false,
@@ -92,14 +92,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Invoice.wiki - Free Invoice Generator",
-    description: "Create professional invoices online instantly. Free invoice maker with PDF download, VAT support, and multiple currencies. No registration required.",
+    description: "Create professional invoices online. Free invoice maker with PDF download and tax support. No registration required.",
     images: ["/images/twitter-card.png"],
 
   },
   category: "Finance",
   applicationName: "Invoice.wiki",
   manifest: "/manifest.json",
-  keywords: ["free invoice generator", "invoice maker", "PDF invoice", "VAT calculator", "business invoicing", "freelancer tools"],
+  keywords: ["free invoice generator", "invoice maker", "PDF invoice", "tax invoice", "business invoicing", "freelancer tools"],
   classification: "Business Software",
   icons: {
     icon: [

@@ -130,13 +130,13 @@ export function InvoiceItems({
                   )}
                 />
 
-                {/* vatRate */}
+                {/* taxRate */}
                 <FormField
                   control={control}
                   name={`items.${index}.vatRate`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>VAT Rate (%)</FormLabel>
+                      <FormLabel>Tax Rate (%)</FormLabel>
                       <FormControl>
                         <Input
                           type="number"

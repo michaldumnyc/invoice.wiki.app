@@ -1,23 +1,25 @@
 # Invoice.wiki
 
-> Free online invoice generator that creates professional PDF invoices instantly with VAT calculations, multi-currency support, and complete privacy - no registration required.
+> Free online invoice generator. Create professional PDF invoices with tax support, 40+ currencies, and 6 languages. No registration, 100% private.
 
-Invoice.wiki is a browser-based invoice generation tool designed for freelancers, small businesses, and entrepreneurs. All invoice processing happens locally in your browser for maximum security and privacy. The platform supports 40+ currencies, automatic VAT calculations, customizable colors and languages (English, German, Czech, Polish, Slovak, Ukrainian).
+Invoice.wiki is a browser-based invoice tool for freelancers, small businesses, and entrepreneurs. All processing happens locally in your browser — your data never leaves your device.
 
 Key features:
-- Instant PDF generation with professional formatting
-- Automatic VAT and tax calculations with precision rounding
-- Multi-currency support with proper formatting
-- Complete privacy - no data stored on servers
-- No registration or login required
-- Customizable invoice colors and languages
-- Mobile-responsive design
+- Instant PDF download
+- 40+ currencies (USD, EUR, GBP, etc.)
+- 6 languages (EN, DE, CS, PL, SK, UK)
+- 10 brand colors
+- Flexible tax support (VAT, sales tax, GST, custom rates)
+- Auto calculations (totals, discounts, taxes)
+- Works on any device
+- No signup, no fees
 
 ## Core Pages
 
 - [Homepage](https://invoice.wiki/): Main landing page with features overview and invoice examples
 - [Create Invoice](https://invoice.wiki/create-invoice): Interactive invoice creation form with real-time preview
 - [About](https://invoice.wiki/about): Detailed information about Invoice.wiki, invoice components, and legal significance
+- [FAQ](https://invoice.wiki/faq): Frequently asked questions about invoicing, privacy, features, and business usage
 - [Privacy Policy](https://invoice.wiki/privacy-policy): Complete privacy protection details and data handling practices
 
 ## Technical Documentation

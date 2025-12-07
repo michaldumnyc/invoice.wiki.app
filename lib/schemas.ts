@@ -109,6 +109,9 @@ export const invoiceFormSchema = z.object({
     .transform((v) => (v ? sanitizeString(v) : v)),
   colorId: z.string().min(1).max(20).default("blue").transform(sanitizeString),
   languageId: z.string().min(1).max(10).default("en").transform(sanitizeString),
+  taxType: z.enum(["vat", "gst", "sales_tax", "none"]).default("vat"),
+  showTax: z.boolean().default(true),
+  reverseCharge: z.boolean().default(false),
   isPaid: z.boolean(),
   termsAccepted: z.boolean().refine((val) => val === true, {
     message: "You must accept the terms and conditions",

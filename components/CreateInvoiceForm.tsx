@@ -101,6 +101,9 @@ const CreateInvoiceForm: React.FC = () => {
       notes: "",
       colorId: "blue",
       languageId: "en",
+      taxType: "vat" as const,
+      showTax: true,
+      reverseCharge: false,
       isPaid: false,
       termsAccepted: false,
     },
@@ -118,6 +121,7 @@ const CreateInvoiceForm: React.FC = () => {
   const currency = watch("currency")
   const invoiceNumber = watch("invoiceNumber")
   const languageId = watch("languageId")
+  const taxType = watch("taxType")
 
   // Get form translations based on selected language
   const formTranslations = getFormLanguageById(languageId || 'en').form
@@ -165,6 +169,9 @@ const CreateInvoiceForm: React.FC = () => {
         const pdfData = {
           ...data,
           total: totals.grand,
+          taxType: data.taxType || 'vat',
+          showTax: data.showTax !== false,
+          reverseCharge: data.reverseCharge || false,
           seller: {
             companyName: data.sellerCompanyName,
             address: data.sellerAddress,
@@ -332,8 +339,8 @@ const CreateInvoiceForm: React.FC = () => {
           <FormProvider {...form}>
             <Form {...form}>
               <form onSubmit={handleSubmit(onSubmit, scrollToFirstError)} className="space-y-8 w-full mb-16">
-                {/* Invoice Settings - Color and Language */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-card rounded-lg border border-border">
+                {/* Invoice Settings - Color, Language, Tax Type */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 bg-card rounded-lg border border-border">
                   <FormField
                     control={control}
                     name="colorId"
@@ -371,6 +378,69 @@ const CreateInvoiceForm: React.FC = () => {
                             }}
                           />
                         </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={control}
+                    name="taxType"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="space-y-2">
+                          <FormLabel className="text-base font-semibold">{formTranslations.taxTypeSelection}</FormLabel>
+                          <p className="text-sm text-muted-foreground">{formTranslations.taxTypeDescription}</p>
+                          <FormControl>
+                            <select
+                              value={field.value || "vat"}
+                              onChange={(e) => field.onChange(e.target.value)}
+                              className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            >
+                              <option value="vat">{formTranslations.taxTypes.vat}</option>
+                              <option value="gst">{formTranslations.taxTypes.gst}</option>
+                              <option value="sales_tax">{formTranslations.taxTypes.sales_tax}</option>
+                              <option value="none">{formTranslations.taxTypes.none}</option>
+                            </select>
+                          </FormControl>
+                          
+                          {/* Tax Options */}
+                          <div className="flex flex-col gap-2 pt-2">
+                            <FormField
+                              control={control}
+                              name="showTax"
+                              render={({ field: showTaxField }) => (
+                                <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                  <Checkbox
+                                    checked={showTaxField.value}
+                                    onCheckedChange={showTaxField.onChange}
+                                  />
+                                  <span>{formTranslations.showTax}</span>
+                                </label>
+                              )}
+                            />
+                            
+                            {/* Reverse Charge only for EU languages (not Ukrainian) */}
+                            {taxType === 'vat' && languageId !== 'uk' && (
+                              <FormField
+                                control={control}
+                                name="reverseCharge"
+                                render={({ field: reverseChargeField }) => (
+                                  <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                    <Checkbox
+                                      checked={reverseChargeField.value}
+                                      onCheckedChange={reverseChargeField.onChange}
+                                    />
+                                    <span className="flex flex-col">
+                                      <span className="font-medium">{formTranslations.reverseCharge}</span>
+                                      <span className="text-xs text-muted-foreground">{formTranslations.reverseChargeDescription}</span>
+                                    </span>
+                                  </label>
+                                )}
+                              />
+                            )}
+                          </div>
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}

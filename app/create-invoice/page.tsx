@@ -12,14 +12,14 @@ import {
 export const metadata: Metadata = {
   title: "Create Invoice - Free Online Invoice Generator",
   description:
-    "Create professional invoices online for free. Add items, calculate VAT, set due dates, and download as PDF. Perfect for freelancers and small businesses.",
+    "Create professional invoices online for free. Add items, calculate taxes, set due dates, and download as PDF. No registration required.",
   alternates: {
     canonical: "https://invoice.wiki/create-invoice",
   },
   openGraph: {
     title: "Create Invoice - Free Online Invoice Generator",
     description:
-      "Create invoices with VAT support and PDF export. No login needed.",
+      "Create invoices with tax support and PDF export. No login needed.",
     url: "https://invoice.wiki/create-invoice",
     siteName: "Invoice.wiki",
     images: [
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
-    "article:modified_time": "2025-08-27T00:00:00Z",
+    "article:modified_time": "2025-12-07T00:00:00Z",
     "datePublished": "2025-02-04",
-    "dateModified": "2025-08-27"
+    "dateModified": "2025-12-07"
   }
 }
 
@@ -59,7 +59,7 @@ const CreateInvoiceForm = dynamic(
 export default function CreateInvoicePage() {
   // ISO 8601 metadata for the page
   const pageCreationDate = "2025-02-04T12:00:00.000Z"
-  const pageModificationDate = "2025-08-27T18:30:00.000Z"
+  const pageModificationDate = "2025-12-07T12:00:00.000Z"
 
   const breadcrumbItems = [
     { name: "Home", url: "https://invoice.wiki" },
@@ -124,8 +124,8 @@ export default function CreateInvoicePage() {
             </div>
             
             <div className="bg-card rounded-lg border p-6">
-              <h3 className="font-semibold text-lg mb-3">Does it calculate VAT automatically?</h3>
-              <p className="text-muted-foreground">Yes! Our calculator handles VAT rates and tax calculations for professional invoices.</p>
+              <h3 className="font-semibold text-lg mb-3">Does it calculate taxes automatically?</h3>
+              <p className="text-muted-foreground">Yes! Enter any tax rate. Totals auto-calculate.</p>
             </div>
             
             <div className="bg-card rounded-lg border p-6">

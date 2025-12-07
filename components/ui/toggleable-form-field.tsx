@@ -54,9 +54,9 @@ export function ToggleableFormField({
           {isVisible ? hideText : showText}
         </Button>
       </div>
-      <FormControl>
-        {isVisible && (
-          customContent || (
+      {isVisible && (
+        <FormControl>
+          {customContent || (
             <Input
               {...field}
               type={type}
@@ -69,9 +69,9 @@ export function ToggleableFormField({
               onChange={(e) => field.onChange(sanitizer(e.target.value))}
               className={highlightedField === fieldName ? "border-red-500 error-highlight" : ""}
             />
-          )
-        )}
-      </FormControl>
+          )}
+        </FormControl>
+      )}
       <FormMessage />
     </FormItem>
   )

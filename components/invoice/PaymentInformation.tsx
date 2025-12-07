@@ -63,9 +63,10 @@ export function PaymentInformation({
                 maxLength={35}
                 highlightedField={highlightedField}
                 customContent={
-                  <>
+                  <div>
                     <Input
                       {...field}
+                      type="text"
                       maxLength={35}
                       placeholder="123456789"
                       aria-label="Reference Number"
@@ -94,7 +95,7 @@ export function PaymentInformation({
                         </Button>
                       )}
                     </div>
-                  </>
+                  </div>
                 }
               />
             )}
