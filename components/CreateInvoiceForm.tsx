@@ -216,22 +216,37 @@ const CreateInvoiceForm: React.FC = () => {
           return
         }
 
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/292dbdac-c8fe-4506-a6e2-91adda4e7959',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'CreateInvoiceForm.tsx:219',message:'PDF download triggered in CreateInvoiceForm',data:{invoiceNumber:data.invoiceNumber},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A-fix'})}).catch(()=>{});
+        // #endregion
         const blob = new Blob([pdfBlob.output("blob")], { type: "application/pdf" })
         const url = URL.createObjectURL(blob)
 
         const link = document.createElement("a")
         link.href = url
         link.download = `invoice-${data.invoiceNumber}.pdf`
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        URL.revokeObjectURL(url)
+        link.target = "_blank"
+        link.rel = "noopener noreferrer"
+        
+        // Handle mobile browsers differently
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          window.open(url, "_blank")
+          // Delay URL revocation on mobile to allow time for download
+          setTimeout(() => URL.revokeObjectURL(url), 60000)
+        } else {
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          URL.revokeObjectURL(url)
+        }
 
         showToast(`Invoice #${data.invoiceNumber} created successfully!`, "success")
         form.reset()
         setManuallyEditedReference(false)
         setIsSubmitting(false)
       } catch (err) {
+        setIsSubmitting(false) // Reset submit state on any error
+        
         // Check if it's our intentional critical error
         if (err instanceof Error && err.message === "PDF Generation Failed") {
           // Re-throw to show error.tsx

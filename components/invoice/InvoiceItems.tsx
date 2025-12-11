@@ -170,6 +170,7 @@ export function InvoiceItems({
                 size="sm"
                 className="text-white font-medium"
                 onClick={() => remove(index)}
+                disabled={fields.length <= 1}
               >
                 <Trash2 className="h-4 w-4 mr-1" />
                 Remove

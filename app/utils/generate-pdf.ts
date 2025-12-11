@@ -160,7 +160,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
 
         return lines.length
       } catch (wrapError) {
-        return y // Return the original position
+        return 1 // Return 1 line as fallback to prevent layout overflow
       }
     }
 
@@ -454,22 +454,9 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       { align: "center" }
     )
 
-    const blob = new Blob([doc.output("blob")], { type: "application/pdf" })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement("a")
-    link.href = url
-    link.download = `invoice-${data.invoice?.number || ""}.pdf`
-    link.target = "_blank" // Add target blank for mobile browsers
-    link.rel = "noopener noreferrer" // Security best practice
-    // Try to open PDF in new tab for mobile browsers
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      window.open(url, "_blank")
-    } else {
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-    }
-    URL.revokeObjectURL(url)
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/292dbdac-c8fe-4506-a6e2-91adda4e7959',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'generate-pdf.ts:457',message:'PDF generation complete, returning doc (no download here)',data:{invoiceNumber:data.invoice?.number},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A-fix'})}).catch(()=>{});
+    // #endregion
 
     return doc
   } catch (error) {
