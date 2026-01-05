@@ -98,7 +98,7 @@ export const config = {
      * - _next/image (image optimization files)
      * - Static files from /public directory
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.json|ads.txt|llms.txt|icons/.*|images/.*|.well-known/.*|36f7ff9a-6917-499a-8386-4ef54ead6195.txt|720be7ce99844bd6aba70be9a4809aa9.txt).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.json|ads.txt|llms.txt|icons/.*|images/.*|.well-known/.*).*)',
     '/_vercel/insights/:path*'      // Include Vercel Insights
   ]
 }
