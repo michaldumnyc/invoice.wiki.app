@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="text-xl font-semibold mb-4">Invoice.wiki</div>
             <p className="mb-3">© {new Date().getFullYear()} Invoice.wiki</p>
             <a 
-              href="https://github.com/roovard/invoice.wiki.app" 
+              href="https://github.com/michaldumnyc/invoice.wiki.app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm hover:text-primary transition-colors"

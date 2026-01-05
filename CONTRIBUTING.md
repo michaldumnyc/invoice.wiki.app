@@ -7,7 +7,7 @@ Thank you for your interest in contributing! 🎉
 ### 1. Fork & Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/invoice.wiki.app.git
+git clone https://github.com/michaldumnyc/invoice.wiki.app.git
 cd invoice.wiki.app
 npm install
 ```
