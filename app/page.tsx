@@ -88,7 +88,7 @@ export default function HomePage() {
 
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 pt-[72px] sm:pt-[80px]">
+        <main id="main-content" className="flex-1 pt-[72px] sm:pt-[80px]">
           {/* Hero Section */}
           <section aria-labelledby="hero-heading" className="bg-background py-12 md:py-20">
             <div className="container mx-auto px-4">

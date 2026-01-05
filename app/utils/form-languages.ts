@@ -421,7 +421,7 @@ export const formLanguages: FormLanguage[] = [
       
       showTax: 'Pokaż kolumny podatkowe',
       hideTax: 'Ukryj podatek na fakturze',
-      reverseCharge: 'Odwrotne obciążenie (B2B)',
+      reverseCharge: 'Reverse Charge (B2B)',
       reverseChargeDescription: 'Podatek rozlicza nabywca usługi',
       
       placeholders: {
@@ -603,8 +603,8 @@ export const formLanguages: FormLanguage[] = [
       
       showTax: 'Показати колонки податку',
       hideTax: 'Приховати податок у рахунку',
-      reverseCharge: 'Зворотне нарахування (B2B)',
-      reverseChargeDescription: 'Податок сплачує отримувач послуги',
+      reverseCharge: '', // Not used for Ukrainian
+      reverseChargeDescription: '', // Not used for Ukrainian
       
       placeholders: {
         companyName: 'Ваша Компанія ТОВ',

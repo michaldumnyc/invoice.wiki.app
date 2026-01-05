@@ -9,9 +9,10 @@ interface InvoiceTotalsProps {
   }
   currency: string
   isPaid: boolean
+  showTax?: boolean
 }
 
-export function InvoiceTotals({ totals, currency, isPaid }: InvoiceTotalsProps) {
+export function InvoiceTotals({ totals, currency, isPaid, showTax = true }: InvoiceTotalsProps) {
   if (totals.grand <= 0) return null
 
   // Get currency symbol for display consistency with PDF
@@ -22,15 +23,19 @@ export function InvoiceTotals({ totals, currency, isPaid }: InvoiceTotalsProps) 
     <div className="mt-8 text-right space-y-2">
       <div className="flex flex-col items-end">
         <div className="grid grid-cols-2 gap-x-4 text-right">
-          <span className="text-muted-foreground">Net Total:</span>
-          <span className="text-foreground font-medium">
-            {currencySymbol} {totals.net.toFixed(2)}
-          </span>
+          {showTax && (
+            <>
+              <span className="text-muted-foreground">Net Total:</span>
+              <span className="text-foreground font-medium">
+                {currencySymbol} {totals.net.toFixed(2)}
+              </span>
 
-          <span className="text-muted-foreground">VAT Total:</span>
-          <span className="text-foreground font-medium">
-            {currencySymbol} {totals.vat.toFixed(2)}
-          </span>
+              <span className="text-muted-foreground">VAT Total:</span>
+              <span className="text-foreground font-medium">
+                {currencySymbol} {totals.vat.toFixed(2)}
+              </span>
+            </>
+          )}
 
           <span className="text-muted-foreground font-bold">Total Due:</span>
           <span className="text-foreground font-bold text-lg">

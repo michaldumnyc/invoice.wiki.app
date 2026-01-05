@@ -434,7 +434,7 @@ export const invoiceLanguages: InvoiceLanguage[] = [
       totalDue: 'До сплати',
       paid: 'СПЛАЧЕНО!',
       
-      reverseChargeText: 'Зворотне нарахування - Податок сплачує отримувач послуги згідно ст. 196 директиви 2006/112/ЄС',
+      reverseChargeText: '', // Not applicable for Ukrainian invoices
       
       generatedBy: 'Створено Invoice.wiki'
     }

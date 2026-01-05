@@ -1,3 +1,6 @@
+export const dynamic = 'force-static'
+export const revalidate = 86400 // 24h
+
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import type { Metadata } from "next"
@@ -206,7 +209,7 @@ export default function FAQPage() {
       />
       
       <Header />
-      <main className="flex-1 pt-[72px] sm:pt-[80px]">
+      <main id="main-content" className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12 max-w-4xl mx-auto">
           
           {/* Header Section */}

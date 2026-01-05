@@ -454,10 +454,6 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
       { align: "center" }
     )
 
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/292dbdac-c8fe-4506-a6e2-91adda4e7959',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'generate-pdf.ts:457',message:'PDF generation complete, returning doc (no download here)',data:{invoiceNumber:data.invoice?.number},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A-fix'})}).catch(()=>{});
-    // #endregion
-
     return doc
   } catch (error) {
     return null

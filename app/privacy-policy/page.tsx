@@ -1,3 +1,6 @@
+export const dynamic = 'force-static'
+export const revalidate = 86400 // 24h
+
 import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
@@ -70,7 +73,7 @@ export default function PrivacyPolicyPage() {
         dateModified={pageModificationDate}
       />
       <Header />
-      <main className="flex-1 pt-[72px] sm:pt-[80px]">
+      <main id="main-content" className="flex-1 pt-[72px] sm:pt-[80px]">
         <div className="container px-4 md:px-6 py-8 md:py-12">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold mb-8">Privacy Policy - Invoice Wiki Generator</h1>

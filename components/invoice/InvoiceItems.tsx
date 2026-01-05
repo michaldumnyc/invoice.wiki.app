@@ -15,6 +15,7 @@ interface InvoiceItemsProps {
   remove: UseFieldArrayRemove
   highlightedField: string | null
   isMobile: boolean
+  showTaxColumn?: boolean
 }
 
 export function InvoiceItems({
@@ -23,7 +24,8 @@ export function InvoiceItems({
   append,
   remove,
   highlightedField,
-  isMobile
+  isMobile,
+  showTaxColumn = true
 }: InvoiceItemsProps) {
   return (
     <Card className="card-content">
@@ -36,7 +38,7 @@ export function InvoiceItems({
             <div key={fieldItem.id} className="space-y-4">
               <div
                 className={`grid ${
-                  isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-4"
+                  isMobile ? "grid-cols-1" : showTaxColumn ? "grid-cols-1 md:grid-cols-4" : "grid-cols-1 md:grid-cols-3"
                 } gap-4`}
               >
                 {/* item name */}
@@ -130,39 +132,41 @@ export function InvoiceItems({
                   )}
                 />
 
-                {/* taxRate */}
-                <FormField
-                  control={control}
-                  name={`items.${index}.vatRate`}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Tax Rate (%)</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="number"
-                          {...field}
-                          autoComplete="off"
-                          data-lpignore="true"
-                          data-form-type="other"
-                          onChange={(e) => {
-                            const raw = sanitizeNumber(e.target.value)
-                            let valueNum = parseFloat(raw)
-                            if (Number.isNaN(valueNum) || valueNum < 0) {
-                              valueNum = 0
-                            }
-                            // from 0 to 100
-                            const clamped = Math.min(valueNum, 100)
-                            field.onChange(clamped)
-                          }}
-                          min={0}
-                          max={100}
-                          step={0.1}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                {/* taxRate - only show when tax is enabled */}
+                {showTaxColumn && (
+                  <FormField
+                    control={control}
+                    name={`items.${index}.vatRate`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Tax Rate (%)</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="number"
+                            {...field}
+                            autoComplete="off"
+                            data-lpignore="true"
+                            data-form-type="other"
+                            onChange={(e) => {
+                              const raw = sanitizeNumber(e.target.value)
+                              let valueNum = parseFloat(raw)
+                              if (Number.isNaN(valueNum) || valueNum < 0) {
+                                valueNum = 0
+                              }
+                              // from 0 to 100
+                              const clamped = Math.min(valueNum, 100)
+                              field.onChange(clamped)
+                            }}
+                            min={0}
+                            max={100}
+                            step={0.1}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
               </div>
               <Button
                 type="button"
@@ -171,8 +175,9 @@ export function InvoiceItems({
                 className="text-white font-medium"
                 onClick={() => remove(index)}
                 disabled={fields.length <= 1}
+                aria-label={`Remove item ${index + 1}`}
               >
-                <Trash2 className="h-4 w-4 mr-1" />
+                <Trash2 className="h-4 w-4 mr-1" aria-hidden="true" />
                 Remove
               </Button>
             </div>
@@ -184,8 +189,9 @@ export function InvoiceItems({
             variant="outline"
             onClick={() => append({ name: "", quantity: 1, price: 0, vatRate: 0 })}
             disabled={fields.length >= 10}
+            aria-label="Add new invoice item"
           >
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Add Item
           </Button>
           {fields.length >= 10 && (

@@ -122,6 +122,7 @@ const CreateInvoiceForm: React.FC = () => {
   const invoiceNumber = watch("invoiceNumber")
   const languageId = watch("languageId")
   const taxType = watch("taxType")
+  const showTax = watch("showTax")
 
   // Get form translations based on selected language
   const formTranslations = getFormLanguageById(languageId || 'en').form
@@ -135,6 +136,13 @@ const CreateInvoiceForm: React.FC = () => {
       }
     }
   }, [invoiceNumber, setValue, manuallyEditedReference])
+
+  // Auto-disable showTax when taxType is 'none'
+  useEffect(() => {
+    if (taxType === 'none') {
+      setValue("showTax", false)
+    }
+  }, [taxType, setValue])
 
   const totals = useMemo(() => {
     const { netTotal, vatTotal, grandTotal } = calculateInvoiceTotals(items)
@@ -216,9 +224,6 @@ const CreateInvoiceForm: React.FC = () => {
           return
         }
 
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/292dbdac-c8fe-4506-a6e2-91adda4e7959',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'CreateInvoiceForm.tsx:219',message:'PDF download triggered in CreateInvoiceForm',data:{invoiceNumber:data.invoiceNumber},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A-fix'})}).catch(()=>{});
-        // #endregion
         const blob = new Blob([pdfBlob.output("blob")], { type: "application/pdf" })
         const url = URL.createObjectURL(blob)
 
@@ -410,6 +415,7 @@ const CreateInvoiceForm: React.FC = () => {
                             <select
                               value={field.value || "vat"}
                               onChange={(e) => field.onChange(e.target.value)}
+                              aria-label={formTranslations.taxTypeSelection}
                               className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                             >
                               <option value="vat">{formTranslations.taxTypes.vat}</option>
@@ -419,24 +425,25 @@ const CreateInvoiceForm: React.FC = () => {
                             </select>
                           </FormControl>
                           
-                          {/* Tax Options */}
-                          <div className="flex flex-col gap-2 pt-2">
-                            <FormField
-                              control={control}
-                              name="showTax"
-                              render={({ field: showTaxField }) => (
-                                <label className="flex items-center gap-2 text-sm cursor-pointer">
-                                  <Checkbox
-                                    checked={showTaxField.value}
-                                    onCheckedChange={showTaxField.onChange}
-                                  />
-                                  <span>{formTranslations.showTax}</span>
-                                </label>
-                              )}
-                            />
-                            
-                            {/* Reverse Charge only for EU languages (not Ukrainian) */}
-                            {taxType === 'vat' && languageId !== 'uk' && (
+                          {/* Tax Options - only show when tax type is not 'none' */}
+                          {taxType !== 'none' && (
+                            <div className="flex flex-col gap-2 pt-2">
+                              <FormField
+                                control={control}
+                                name="showTax"
+                                render={({ field: showTaxField }) => (
+                                  <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                    <Checkbox
+                                      checked={showTaxField.value}
+                                      onCheckedChange={showTaxField.onChange}
+                                    />
+                                    <span>{formTranslations.showTax}</span>
+                                  </label>
+                                )}
+                              />
+                              
+                              {/* Reverse Charge only for EU languages (not Ukrainian) */}
+                              {taxType === 'vat' && languageId !== 'uk' && (
                               <FormField
                                 control={control}
                                 name="reverseCharge"
@@ -454,7 +461,8 @@ const CreateInvoiceForm: React.FC = () => {
                                 )}
                               />
                             )}
-                          </div>
+                            </div>
+                          )}
                         </div>
                         <FormMessage />
                       </FormItem>
@@ -544,6 +552,7 @@ const CreateInvoiceForm: React.FC = () => {
                   remove={remove}
                   highlightedField={highlightedField}
                   isMobile={isMobile}
+                  showTaxColumn={taxType !== 'none' && showTax}
                 />
 
                 {/* Terms and Submit */}
@@ -612,6 +621,7 @@ const CreateInvoiceForm: React.FC = () => {
                   totals={totals}
                   currency={currency}
                   isPaid={isPaid}
+                  showTax={taxType !== 'none' && showTax}
                 />
               </form>
             </Form>
