@@ -4,8 +4,6 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   
-  // SWC is now default in Next.js 15
-  
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
