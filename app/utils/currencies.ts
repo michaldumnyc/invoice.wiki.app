@@ -44,4 +44,4 @@ export const currencies = [
   { code: "IDR", name: "Indonesian Rupiah", symbol: "Rp" },
   { code: "PHP", name: "Philippine Peso", symbol: "₱" },
   { code: "VND", name: "Vietnamese Dong", symbol: "₫" },
-];
+]

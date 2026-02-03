@@ -112,4 +112,3 @@ export function TermsDialog({ open, onOpenChange }: TermsDialogProps) {
     </Dialog>
   )
 }
-

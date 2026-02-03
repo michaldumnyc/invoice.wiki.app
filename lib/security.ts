@@ -20,7 +20,7 @@ export function sanitizeEmail(email: string): string {
   // First remove tags
   const sanitized = DOMPurify.sanitize(email)
   // Remove any potentially harmful characters but keep basic email characters
-  return sanitized.replace(/[^a-zA-Z0-9@._+-]/g, '').slice(0, 200)
+  return sanitized.replace(/[^a-zA-Z0-9@._+-]/g, "").slice(0, 200)
 }
 
 /**

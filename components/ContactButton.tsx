@@ -17,4 +17,3 @@ export function ContactButton({ email }: ContactButtonProps) {
     </Button>
   )
 }
-

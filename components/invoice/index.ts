@@ -1,11 +1,11 @@
-export { SellerInformation } from './SellerInformation'
-export { BuyerInformation } from './BuyerInformation'
-export { InvoiceDetails } from './InvoiceDetails'
-export { PaymentInformation } from './PaymentInformation'
-export { InvoiceNotes } from './InvoiceNotes'
-export { PaymentStatus } from './PaymentStatus'
-export { InvoiceItems } from './InvoiceItems'
-export { InvoiceTotals } from './InvoiceTotals'
-export { InvoiceColorPicker } from './InvoiceColorPicker'
-export { InvoiceLanguagePicker } from './InvoiceLanguagePicker'
-export type { FieldVisibility, InvoiceFormValues, InvoiceItem, InvoiceTotals as InvoiceTotalsType } from './types' 
+export { SellerInformation } from "./SellerInformation"
+export { BuyerInformation } from "./BuyerInformation"
+export { InvoiceDetails } from "./InvoiceDetails"
+export { PaymentInformation } from "./PaymentInformation"
+export { InvoiceNotes } from "./InvoiceNotes"
+export { PaymentStatus } from "./PaymentStatus"
+export { InvoiceItems } from "./InvoiceItems"
+export { InvoiceTotals } from "./InvoiceTotals"
+export { InvoiceColorPicker } from "./InvoiceColorPicker"
+export { InvoiceLanguagePicker } from "./InvoiceLanguagePicker"
+export type { FieldVisibility, InvoiceFormValues, InvoiceItem, InvoiceTotals as InvoiceTotalsType } from "./types"

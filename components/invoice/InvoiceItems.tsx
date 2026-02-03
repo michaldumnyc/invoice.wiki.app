@@ -25,7 +25,7 @@ export function InvoiceItems({
   remove,
   highlightedField,
   isMobile,
-  showTaxColumn = true
+  showTaxColumn = true,
 }: InvoiceItemsProps) {
   return (
     <Card className="card-content">
@@ -195,12 +195,10 @@ export function InvoiceItems({
             Add Item
           </Button>
           {fields.length >= 10 && (
-            <p className="text-sm text-muted-foreground mt-2">
-              Maximum number of items (10) reached.
-            </p>
+            <p className="text-sm text-muted-foreground mt-2">Maximum number of items (10) reached.</p>
           )}
         </div>
       </CardContent>
     </Card>
   )
-} 
+}

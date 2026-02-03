@@ -7,7 +7,8 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Page Not Found - Invoice.wiki",
-  description: "The page you're looking for doesn't exist. Return to Invoice.wiki free invoice generator to create professional invoices online.",
+  description:
+    "The page you're looking for doesn't exist. Return to Invoice.wiki free invoice generator to create professional invoices online.",
   robots: {
     index: false,
     follow: false,
@@ -30,7 +31,7 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          
+
           <div className="absolute top-1/3 right-1/4 animate-pulse">
             <div className="w-14 h-18 bg-card rounded shadow-lg border border-border transform -rotate-6 opacity-60">
               <div className="p-1 space-y-1">
@@ -39,7 +40,7 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          
+
           <div className="absolute bottom-1/3 left-1/3 animate-pulse">
             <div className="w-12 h-16 bg-card rounded shadow-lg border border-border transform rotate-45 opacity-50">
               <div className="p-1 space-y-1">
@@ -48,7 +49,7 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          
+
           <div className="absolute bottom-1/4 right-1/3 animate-pulse">
             <div className="w-18 h-22 bg-card rounded shadow-lg border border-border transform -rotate-12 opacity-40">
               <div className="p-1 space-y-1">
@@ -73,21 +74,15 @@ export default function NotFound() {
           </div>
 
           {/* Animated 404 Number */}
-          <h1 className="text-8xl md:text-9xl font-bold text-foreground mb-4 animate-bounce">
-            404
-          </h1>
+          <h1 className="text-8xl md:text-9xl font-bold text-foreground mb-4 animate-bounce">404</h1>
 
           {/* Main Message */}
           <div className="mb-8">
-            <p className="text-xl md:text-2xl text-muted-foreground mb-2">
-              Invoice Not Found!
-            </p>
-            
-            <p className="text-lg text-muted-foreground mb-8">
-              Looks like this invoice escaped our filing system.
-            </p>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-2">Invoice Not Found!</p>
+
+            <p className="text-lg text-muted-foreground mb-8">Looks like this invoice escaped our filing system.</p>
           </div>
-          
+
           <p className="text-lg text-muted-foreground mb-8">
             Don't worry! Let's get you back to creating professional invoices
           </p>
@@ -102,7 +97,10 @@ export default function NotFound() {
           </Link>
 
           <div className="mt-8">
-            <Link href="/create-invoice" className="text-primary hover:text-primary/80 underline hover:no-underline transition-colors duration-200">
+            <Link
+              href="/create-invoice"
+              className="text-primary hover:text-primary/80 underline hover:no-underline transition-colors duration-200"
+            >
               Or start creating an invoice right away →
             </Link>
           </div>

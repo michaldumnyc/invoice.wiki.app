@@ -43,8 +43,8 @@ export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
                   aria-label="Invoice notes and payment terms"
                   onFocus={(e) => {
                     // Prevent browser extensions from interfering
-                    e.target.setAttribute('data-form-type', 'other')
-                    e.target.setAttribute('autocomplete', 'off')
+                    e.target.setAttribute("data-form-type", "other")
+                    e.target.setAttribute("autocomplete", "off")
                   }}
                   onChange={(e) => {
                     let value = sanitizeInput(e.target.value)
@@ -62,4 +62,4 @@ export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
       </CardContent>
     </Card>
   )
-} 
+}

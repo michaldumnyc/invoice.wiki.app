@@ -51,4 +51,4 @@ export function InvoiceTotals({ totals, currency, isPaid, showTax = true }: Invo
       </div>
     </div>
   )
-} 
+}

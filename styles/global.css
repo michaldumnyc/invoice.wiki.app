@@ -5,16 +5,16 @@
 /* ========= FONT DEFINITIONS ========= */
 /* Fonts are loaded via standard CSS */
 @font-face {
-  font-family: 'NotoSans';
-  src: url('/fonts/NotoSans-Regular.ttf') format('truetype');
+  font-family: "NotoSans";
+  src: url("/fonts/NotoSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'NotoSans';
-  src: url('/fonts/NotoSans-Bold.ttf') format('truetype');
+  font-family: "NotoSans";
+  src: url("/fonts/NotoSans-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -179,12 +179,18 @@
 /* ========= CUSTOM COMPONENT STYLES ========= */
 
 /* Fix for H1 in semantic elements - explicit font size */
-section h1, article h1, aside h1, nav h1 {
+section h1,
+article h1,
+aside h1,
+nav h1 {
   font-size: 2.25rem !important; /* text-4xl */
 }
 
 @media (min-width: 640px) {
-  section h1, article h1, aside h1, nav h1 {
+  section h1,
+  article h1,
+  aside h1,
+  nav h1 {
     font-size: 3rem !important; /* sm:text-5xl */
   }
 }

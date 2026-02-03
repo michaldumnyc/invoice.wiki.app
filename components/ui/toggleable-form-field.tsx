@@ -33,7 +33,7 @@ export function ToggleableFormField({
   type = "text",
   customContent,
   hideText = "Hide",
-  showText = "Show"
+  showText = "Show",
 }: ToggleableFormFieldProps) {
   return (
     <FormItem>
@@ -46,11 +46,7 @@ export function ToggleableFormField({
           onClick={onToggle}
           aria-label={isVisible ? `Hide ${label}` : `Show ${label}`}
         >
-          {isVisible ? (
-            <EyeOff className="h-4 w-4 mr-2" />
-          ) : (
-            <Eye className="h-4 w-4 mr-2" />
-          )}
+          {isVisible ? <EyeOff className="h-4 w-4 mr-2" /> : <Eye className="h-4 w-4 mr-2" />}
           {isVisible ? hideText : showText}
         </Button>
       </div>
@@ -75,4 +71,4 @@ export function ToggleableFormField({
       <FormMessage />
     </FormItem>
   )
-} 
+}

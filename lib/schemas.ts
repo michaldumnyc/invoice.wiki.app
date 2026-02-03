@@ -98,7 +98,7 @@ export const invoiceFormSchema = z.object({
         quantity: z.number().int().min(1).max(999999),
         price: z.number().min(0).max(999999999),
         vatRate: z.number().min(0).max(100),
-      }),
+      })
     )
     .min(1)
     .max(10),
@@ -117,4 +117,3 @@ export const invoiceFormSchema = z.object({
     message: "You must accept the terms and conditions",
   }),
 })
-

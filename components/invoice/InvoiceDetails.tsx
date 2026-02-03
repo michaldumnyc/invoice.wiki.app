@@ -15,11 +15,7 @@ interface InvoiceDetailsProps {
   isMobile: boolean
 }
 
-export function InvoiceDetails({
-  control,
-  highlightedField,
-  isMobile
-}: InvoiceDetailsProps) {
+export function InvoiceDetails({ control, highlightedField, isMobile }: InvoiceDetailsProps) {
   return (
     <Card className="card-content">
       <CardHeader>
@@ -50,7 +46,7 @@ export function InvoiceDetails({
               </FormItem>
             )}
           />
-          
+
           {/* issueDate */}
           <FormField
             control={control}
@@ -75,7 +71,7 @@ export function InvoiceDetails({
               </FormItem>
             )}
           />
-          
+
           {/* dueDate */}
           <FormField
             control={control}
@@ -100,7 +96,7 @@ export function InvoiceDetails({
               </FormItem>
             )}
           />
-          
+
           {/* currency */}
           <FormField
             control={control}
@@ -130,4 +126,4 @@ export function InvoiceDetails({
       </CardContent>
     </Card>
   )
-} 
+}

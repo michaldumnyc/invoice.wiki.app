@@ -1,31 +1,30 @@
-import type React from "react";
-import "@/styles/global.css";
-import type { Metadata, Viewport } from "next";
+import type React from "react"
+import "@/styles/global.css"
+import type { Metadata, Viewport } from "next"
 
-import { ToastProvider } from "@/components/ui/toast-provider";
-
+import { ToastProvider } from "@/components/ui/toast-provider"
 
 // Import local base64-encoded fonts (these will be handled in global.css)
-import { notoSansRegularBase64 } from "@/utils/fonts/notoSansRegular";
-import { notoSansBoldBase64 } from "@/utils/fonts/notoSansBold";
+import { notoSansRegularBase64 } from "@/utils/fonts/notoSansRegular"
+import { notoSansBoldBase64 } from "@/utils/fonts/notoSansBold"
 
 // Function to clean base64 by removing prefix
 const cleanBase64 = (base64String: string) => {
   return base64String.startsWith("data:font/ttf;base64,")
     ? base64String.replace("data:font/ttf;base64,", "")
-    : base64String;
-};
+    : base64String
+}
 
 // Create cleaned base64 font strings
-const cleanedNotoSansRegular = cleanBase64(notoSansRegularBase64);
-const cleanedNotoSansBold = cleanBase64(notoSansBoldBase64);
+const cleanedNotoSansRegular = cleanBase64(notoSansRegularBase64)
+const cleanedNotoSansBold = cleanBase64(notoSansBoldBase64)
 
 // Viewport configuration for all pages - removed maximumScale for accessibility
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  themeColor: '#3b82f6' // blue color for browser theme
-};
+  themeColor: "#3b82f6", // blue color for browser theme
+}
 
 // Extended metadata for SEO
 export const metadata: Metadata = {
@@ -33,16 +32,17 @@ export const metadata: Metadata = {
     default: "Invoice.wiki - Free Invoice Generator",
     template: "%s | Invoice.wiki",
   },
-  description: "Free online invoice generator. Create professional invoices instantly with PDF download, tax support, 40+ currencies and 6 languages. No registration.",
+  description:
+    "Free online invoice generator. Create professional invoices instantly with PDF download, tax support, 40+ currencies and 6 languages. No registration.",
 
   authors: [{ name: "Invoice.wiki Team" }],
   creator: "Invoice.wiki",
   publisher: "Invoice.wiki",
-    other: {
+  other: {
     "article:published_time": "2025-02-04T00:00:00Z",
     "article:modified_time": "2025-12-07T00:00:00Z",
-    "datePublished": "2025-02-04",
-    "dateModified": "2025-12-07"
+    datePublished: "2025-02-04",
+    dateModified: "2025-12-07",
   },
   formatDetection: {
     email: false,
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      'en-US': '/'
-    }
+      "en-US": "/",
+    },
   },
   robots: {
     index: true,
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
-      'max-video-preview': -1,
-      'max-snippet': -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
       noimageindex: false,
       notranslate: false,
       noarchive: false,
@@ -76,7 +76,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://invoice.wiki",
     title: "Invoice.wiki - Free Invoice Generator",
-    description: "Free invoice maker and generator. Create invoices online instantly and for Free. No registration required. Perfect for freelancers and small businesses.",
+    description:
+      "Free invoice maker and generator. Create invoices online instantly and for Free. No registration required. Perfect for freelancers and small businesses.",
     siteName: "Invoice.wiki",
     images: [
       {
@@ -92,33 +93,34 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Invoice.wiki - Free Invoice Generator",
-    description: "Create professional invoices online. Free invoice maker with PDF download and tax support. No registration required.",
+    description:
+      "Create professional invoices online. Free invoice maker with PDF download and tax support. No registration required.",
     images: ["/images/twitter-card.png"],
-
   },
   category: "Finance",
   applicationName: "Invoice.wiki",
   manifest: "/manifest.json",
-  keywords: ["free invoice generator", "invoice maker", "PDF invoice", "tax invoice", "business invoicing", "freelancer tools"],
+  keywords: [
+    "free invoice generator",
+    "invoice maker",
+    "PDF invoice",
+    "tax invoice",
+    "business invoicing",
+    "freelancer tools",
+  ],
   classification: "Business Software",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon", sizes: "32x32" },
       { url: "/icons/icon.png", type: "image/png", sizes: "32x32" },
       { url: "/icons/icon-192x192.png", type: "image/png", sizes: "192x192" },
-      { url: "/icons/icon-512x512.png", type: "image/png", sizes: "512x512" }
+      { url: "/icons/icon-512x512.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: [
-      { url: "/icons/apple-touch-icon.png", type: "image/png", sizes: "180x180" }
-    ]
-  }
-};
+    apple: [{ url: "/icons/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+  },
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -128,7 +130,13 @@ export default function RootLayout({
         <link rel="alternate icon" href="/icons/icon.png" type="image/png" sizes="32x32" title="Invoice.wiki Icon" />
         <link rel="manifest" href="/manifest.json" />
         {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" type="image/png" title="Invoice.wiki Apple Touch Icon" />
+        <link
+          rel="apple-touch-icon"
+          href="/icons/apple-touch-icon.png"
+          sizes="180x180"
+          type="image/png"
+          title="Invoice.wiki Apple Touch Icon"
+        />
         {/* PWA Meta Tags */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,20 +148,17 @@ export default function RootLayout({
         {/* Using local base64 fonts - no external font loading needed */}
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="https://invoice.wiki" />
-
       </head>
       <body className="min-h-screen antialiased bg-background text-foreground">
         {/* Skip to main content link for screen readers */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
         >
           Skip to main content
         </a>
-        <ToastProvider>
-          {children}
-        </ToastProvider>
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
-  );
+  )
 }

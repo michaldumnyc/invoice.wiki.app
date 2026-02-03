@@ -5,13 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, RefreshCw, AlertTriangle } from "lucide-react"
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
+export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
     console.error(error)
   }, [error])
@@ -21,13 +15,13 @@ export default function Error({
   // Determine error type and customize instructions
   const isPdfError = error.message.includes("PDF Generation Failed")
   const isValidationError = error.message.includes("validation") || error.message.includes("required")
-  
+
   const getErrorTitle = () => {
     if (isPdfError) return "PDF Generation Problem"
     if (isValidationError) return "Form Validation Error"
     return "Oops! Something went wrong"
   }
-  
+
   const getErrorDescription = () => {
     if (isPdfError) {
       return "We couldn't generate your PDF invoice. This is usually a temporary issue with the PDF generation system."
@@ -37,7 +31,7 @@ export default function Error({
     }
     return "An unexpected error occurred while creating your invoice. We're sorry for the inconvenience."
   }
-  
+
   const getSpecificInstructions = () => {
     if (isPdfError) {
       return (
@@ -53,7 +47,7 @@ export default function Error({
         </div>
       )
     }
-    
+
     if (isValidationError) {
       return (
         <div className="mb-4">
@@ -67,18 +61,19 @@ export default function Error({
         </div>
       )
     }
-    
+
     return null
   }
-  
+
   // Safe error info for email (no sensitive data)
   const handleEmailSupport = () => {
-    const errorType = isPdfError ? 'PDF Generation' : isValidationError ? 'Form Validation' : 'General'
+    const errorType = isPdfError ? "PDF Generation" : isValidationError ? "Form Validation" : "General"
     const timestamp = new Date().toISOString()
     const browserInfo = navigator.userAgent
-    
+
     const subject = encodeURIComponent("Invoice Generator Error Report")
-    const body = encodeURIComponent(`
+    const body = encodeURIComponent(
+      `
 Hello,
 
 I encountered an error while using the Invoice Generator:
@@ -94,9 +89,10 @@ Additional Details:
 [Any other relevant information]
 
 Thank you for your help!
-    `.trim())
-    
-    window.open(`mailto:${supportEmail}?subject=${subject}&body=${body}`, '_blank')
+    `.trim()
+    )
+
+    window.open(`mailto:${supportEmail}?subject=${subject}&body=${body}`, "_blank")
   }
 
   return (
@@ -106,21 +102,15 @@ Thank you for your help!
           <div className="mx-auto w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
             <AlertTriangle className="w-8 h-8 text-red-600 dark:text-red-400" />
           </div>
-          <CardTitle className="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">
-            {getErrorTitle()}
-          </CardTitle>
-          <p className="text-muted-foreground">
-            {getErrorDescription()}
-          </p>
+          <CardTitle className="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">{getErrorTitle()}</CardTitle>
+          <p className="text-muted-foreground">{getErrorDescription()}</p>
         </CardHeader>
-        
+
         <CardContent className="space-y-6">
           {/* Specific Instructions */}
           {getSpecificInstructions() && (
             <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800">
-              <h3 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-3">
-                Quick Fix Suggestions
-              </h3>
+              <h3 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-3">Quick Fix Suggestions</h3>
               {getSpecificInstructions()}
             </div>
           )}
@@ -147,10 +137,7 @@ Thank you for your help!
             </p>
 
             {supportEmail && (
-              <Button 
-                onClick={handleEmailSupport}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              >
+              <Button onClick={handleEmailSupport} className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                 <Mail className="w-4 h-4 mr-2" />
                 Contact Support
               </Button>
@@ -174,4 +161,3 @@ Thank you for your help!
     </div>
   )
 }
-

@@ -22,13 +22,13 @@ export function ImageModal({ isOpen, onClose, imageSrc, imageAlt, imageTitle }: 
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       onClose()
     }
   }
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
       onClick={handleBackdropClick}
       onKeyDown={handleKeyDown}
@@ -46,7 +46,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, imageAlt, imageTitle }: 
         >
           <X size={32} />
         </button>
-        
+
         {/* Image container */}
         <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden">
           {imageTitle && (
@@ -56,7 +56,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, imageAlt, imageTitle }: 
               </h3>
             </div>
           )}
-          
+
           <div className="relative">
             <Image
               src={imageSrc}
@@ -68,7 +68,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, imageAlt, imageTitle }: 
               priority={false}
             />
           </div>
-          
+
           {/* Click hint */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
             Click outside to close

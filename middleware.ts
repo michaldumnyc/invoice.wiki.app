@@ -1,33 +1,32 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
-
 export function middleware(request: NextRequest) {
   const url = request.nextUrl
 
   // Redirect www to non-www (canonical URL)
-  if (url.hostname.startsWith('www.')) {
+  if (url.hostname.startsWith("www.")) {
     const newUrl = new URL(url)
     newUrl.hostname = url.hostname.substring(4)
     return NextResponse.redirect(newUrl, 301)
   }
 
   // Redirect index files to root (comprehensive list)
-  const indexPaths = ['/index.html', '/index.php', '/index.htm', '/default.html', '/default.php']
+  const indexPaths = ["/index.html", "/index.php", "/index.htm", "/default.html", "/default.php"]
   if (indexPaths.includes(url.pathname)) {
-    return NextResponse.redirect(new URL('/', url), 301)
+    return NextResponse.redirect(new URL("/", url), 301)
   }
 
   // Handle Vercel Insights
-  if (request.nextUrl.pathname.startsWith('/_vercel/insights/')) {
+  if (request.nextUrl.pathname.startsWith("/_vercel/insights/")) {
     const response = NextResponse.next()
-    response.headers.set('X-Content-Type-Options', 'nosniff')
-    response.headers.set('Cache-Control', 'public, max-age=31536000')
+    response.headers.set("X-Content-Type-Options", "nosniff")
+    response.headers.set("Cache-Control", "public, max-age=31536000")
     return response
   }
 
   // Handle static files
-  if (request.nextUrl.pathname.startsWith('/_next/static/')) {
+  if (request.nextUrl.pathname.startsWith("/_next/static/")) {
     return NextResponse.next()
   }
 
@@ -51,7 +50,7 @@ export function middleware(request: NextRequest) {
     media-src 'self';
     worker-src 'self' blob:;
     child-src 'none'
-  `;
+  `
 
   const requestHeaders = new Headers(request.headers)
 
@@ -61,8 +60,6 @@ export function middleware(request: NextRequest) {
     },
   })
 
-
-  
   // Add security headers
   response.headers.set("Content-Security-Policy", cspHeader.replace(/\s{2,}/g, " ").trim())
   response.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
@@ -98,7 +95,7 @@ export const config = {
      * - _next/image (image optimization files)
      * - Static files from /public directory
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.json|ads.txt|llms.txt|icons/.*|images/.*|.well-known/.*).*)',
-    '/_vercel/insights/:path*'      // Include Vercel Insights
-  ]
+    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.json|ads.txt|llms.txt|icons/.*|images/.*|.well-known/.*).*)",
+    "/_vercel/insights/:path*", // Include Vercel Insights
+  ],
 }

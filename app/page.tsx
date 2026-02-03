@@ -1,4 +1,4 @@
-export const dynamic = 'force-static'
+export const dynamic = "force-static"
 export const revalidate = 3600 // 1h
 
 // ISO 8601 metadata for the page
@@ -19,7 +19,7 @@ import {
   InvoiceExampleImageJsonLd,
   EnhancedSoftwareApplicationJsonLd,
   WebPageJsonLd,
-  BreadcrumbJsonLd
+  BreadcrumbJsonLd,
 } from "./components/JsonLd"
 import { InvoiceExampleSection } from "@/components/InvoiceExampleSection"
 
@@ -30,13 +30,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://invoice.wiki",
     languages: {
-      "en-US": "/"
-    }
+      "en-US": "/",
+    },
   },
   openGraph: {
     title: "Invoice.wiki - Free Invoice Generator",
-    description:
-      "Create invoices instantly online. Free PDF download, no registration needed.",
+    description: "Create invoices instantly online. Free PDF download, no registration needed.",
     url: "https://invoice.wiki",
     siteName: "Invoice.wiki",
     images: [
@@ -46,35 +45,32 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Invoice.wiki - Free Online Invoice Maker",
         type: "image/png",
-      }
+      },
     ],
     locale: "en_US",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Invoice.wiki - Free Invoice Generator",
-    description:
-      "Create invoices quickly. Free PDF download, no registration needed.",
+    description: "Create invoices quickly. Free PDF download, no registration needed.",
     images: ["/images/twitter-card.png"],
   },
   other: {
     "article:published_time": "2025-02-04T00:00:00Z",
     "article:modified_time": "2025-12-07T00:00:00Z",
-    "datePublished": "2025-02-04",
-    "dateModified": "2025-12-07"
-  }
+    datePublished: "2025-02-04",
+    dateModified: "2025-12-07",
+  },
 }
 
 export default function HomePage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://invoice.wiki" }
-  ]
+  const breadcrumbItems = [{ name: "Home", url: "https://invoice.wiki" }]
 
   return (
     <>
       <BreadcrumbJsonLd items={breadcrumbItems} />
-      <WebPageJsonLd 
+      <WebPageJsonLd
         url="https://invoice.wiki"
         name="Free Invoice Generator - Invoice.wiki"
         description="Free online invoice maker. Create professional invoices instantly with PDF download, tax support, multiple currencies and languages. No registration."
@@ -97,7 +93,9 @@ export default function HomePage() {
                   Free Invoice Generator - Create PDF Invoices
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground mb-8">
-                  Create and download <strong>professional PDF invoices</strong> in minutes. Our free invoice maker supports <strong>40+ currencies</strong>, automatic tax calculations, and <strong>6 languages</strong>. No registration, no fees — just fill in your details and download.
+                  Create and download <strong>professional PDF invoices</strong> in minutes. Our free invoice maker
+                  supports <strong>40+ currencies</strong>, automatic tax calculations, and <strong>6 languages</strong>
+                  . No registration, no fees — just fill in your details and download.
                 </p>
                 <Link href="/create-invoice" aria-label="Start creating your professional invoice now">
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
@@ -120,25 +118,35 @@ export default function HomePage() {
                     1️⃣
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Fill Invoice Details</h3>
-                  <p className="text-muted-foreground">Enter your business information, client details, and invoice items. Our form guides you through all required fields.</p>
+                  <p className="text-muted-foreground">
+                    Enter your business information, client details, and invoice items. Our form guides you through all
+                    required fields.
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
                     2️⃣
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Customize & Review</h3>
-                  <p className="text-muted-foreground">Choose colors, language, and tax settings. Preview your invoice before downloading.</p>
+                  <p className="text-muted-foreground">
+                    Choose colors, language, and tax settings. Preview your invoice before downloading.
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
                     3️⃣
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Download PDF</h3>
-                  <p className="text-muted-foreground">Generate and download your invoice as a PDF. Ready to send to clients or print for records.</p>
+                  <p className="text-muted-foreground">
+                    Generate and download your invoice as a PDF. Ready to send to clients or print for records.
+                  </p>
                 </div>
               </div>
               <div className="text-center mt-8">
-                <Link href="/create-invoice" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
+                <Link
+                  href="/create-invoice"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                >
                   Start Creating Invoice →
                 </Link>
               </div>
@@ -157,21 +165,33 @@ export default function HomePage() {
                     ⚡
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Fast & Simple</h3>
-                  <p className="text-muted-foreground">Fill out the form, hit download. Your PDF invoice is ready in seconds.</p>
+                  <p className="text-muted-foreground">
+                    Fill out the form, hit download. Your PDF invoice is ready in seconds.
+                  </p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                     🔒
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Private & Secure</h3>
-                  <p className="text-muted-foreground">Everything runs in your browser. We don't store or see your data. <Link href="/privacy-policy" className="text-primary underline hover:no-underline">Privacy details →</Link></p>
+                  <p className="text-muted-foreground">
+                    Everything runs in your browser. We don't store or see your data.{" "}
+                    <Link href="/privacy-policy" className="text-primary underline hover:no-underline">
+                      Privacy details →
+                    </Link>
+                  </p>
                 </article>
                 <article className="text-center p-6">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                     🌐
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Works Everywhere</h3>
-                  <p className="text-muted-foreground">Desktop, tablet, phone — any browser, any device. No apps to install. <Link href="/about" className="text-primary underline hover:no-underline">Learn more →</Link></p>
+                  <p className="text-muted-foreground">
+                    Desktop, tablet, phone — any browser, any device. No apps to install.{" "}
+                    <Link href="/about" className="text-primary underline hover:no-underline">
+                      Learn more →
+                    </Link>
+                  </p>
                 </article>
               </div>
             </div>
@@ -182,7 +202,9 @@ export default function HomePage() {
           {/* FAQ Section */}
           <section aria-labelledby="faq-heading" className="py-12 md:py-20 bg-muted">
             <div className="container mx-auto px-4 max-w-3xl">
-              <h2 id="faq-heading" className="text-2xl sm:text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+              <h2 id="faq-heading" className="text-2xl sm:text-3xl font-bold text-center mb-10">
+                Frequently Asked Questions
+              </h2>
               <div className="space-y-6 text-foreground/90">
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Do I need to register?</h3>
@@ -266,10 +288,10 @@ export default function HomePage() {
           {/* CTA Section */}
           <section aria-labelledby="cta-heading" className="bg-background dark:bg-background border-t py-12 md:py-16">
             <div className="container mx-auto px-4 text-center">
-              <h2 id="cta-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Ready to Create Your Invoice?</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                No signup. No fees. Takes 2 minutes.
-              </p>
+              <h2 id="cta-heading" className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                Ready to Create Your Invoice?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">No signup. No fees. Takes 2 minutes.</p>
               <Link href="/create-invoice" aria-label="Create your invoice now">
                 <Button size="lg" variant="default" className="bg-blue-600 hover:bg-blue-700">
                   Create Invoice <ArrowRight className="ml-2 h-5 w-5" />

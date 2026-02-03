@@ -19,14 +19,14 @@ export function PrivacyBanner() {
       className={cn(
         "fixed bottom-0 left-0 right-0 z-50 bg-gray-900/95 text-white backdrop-blur-sm",
         "transform transition-transform duration-300 ease-in-out",
-        "border-t border-gray-800",
+        "border-t border-gray-800"
       )}
     >
       <div className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
           <p className="text-sm text-center sm:text-left flex-1">
-            This website uses Vercel for hosting. Vercel collects basic visit
-            statistics (e.g., IP address, browser type) for operational purposes. By using this site, you agree to these terms.
+            This website uses Vercel for hosting. Vercel collects basic visit statistics (e.g., IP address, browser
+            type) for operational purposes. By using this site, you agree to these terms.
           </p>
           <div className="flex items-center gap-2 sm:gap-4">
             <Link href="/privacy-policy">
@@ -47,4 +47,3 @@ export function PrivacyBanner() {
     </div>
   )
 }
-
