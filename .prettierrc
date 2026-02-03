@@ -5,7 +5,7 @@
   "useTabs": false,
   "trailingComma": "es5",
   "printWidth": 120,
-  "endOfLine": "crlf",
+  "endOfLine": "lf",
   "bracketSpacing": true,
   "jsxSingleQuote": false,
   "arrowParens": "always"
