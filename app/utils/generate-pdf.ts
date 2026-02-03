@@ -63,17 +63,17 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     }
 
     // Define colors based on selected invoice color
-    const selectedColor = getInvoiceColorById(data.colorId || 'blue')
+    const selectedColor = getInvoiceColorById(data.colorId || "blue")
     const primaryColor: [number, number, number] = selectedColor.rgb
     const textColor: [number, number, number] = [31, 41, 55] // gray-800 in RGB
     const mutedColor: [number, number, number] = [107, 114, 128] // gray-500 in RGB
 
     // Get language translations
-    const selectedLanguage = getInvoiceLanguageById(data.languageId || 'en')
+    const selectedLanguage = getInvoiceLanguageById(data.languageId || "en")
     const t = selectedLanguage.texts
-    
+
     // Get tax type labels based on selected tax type
-    const taxType = data.taxType || 'vat'
+    const taxType = data.taxType || "vat"
     const taxLabels = t.taxTypes[taxType]
     const showTax = data.showTax !== false
     const reverseCharge = data.reverseCharge === true
@@ -152,7 +152,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
           try {
             const xPos = options.align === "right" ? x - doc.getStringUnitWidth(line) * doc.getFontSize() : x
             doc.text(line, xPos, y + index * 5)
-                  } catch (textError) {
+          } catch (textError) {
             // Fallback to a simple text rendering without alignment
             doc.text(line, x, y + index * 5)
           }
@@ -260,7 +260,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
         data.payment.iban && `${t.iban}: ${data.payment.iban}`,
         data.payment.swift && `${t.swiftBic}: ${data.payment.swift}`,
       ].filter(Boolean) as string[] // Type hint
-      
+
       paymentInfo.forEach((info) => {
         doc.text(info, 15, paymentY)
         paymentY += 6
@@ -277,12 +277,20 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
 
     try {
       // Define table headers based on showTax setting
-      const tableHeaders = showTax 
-        ? [t.table.description, t.table.quantity, t.table.unitPrice, taxLabels.percent, t.table.netPrice, taxLabels.amount, t.table.total]
+      const tableHeaders = showTax
+        ? [
+            t.table.description,
+            t.table.quantity,
+            t.table.unitPrice,
+            taxLabels.percent,
+            t.table.netPrice,
+            taxLabels.amount,
+            t.table.total,
+          ]
         : [t.table.description, t.table.quantity, t.table.unitPrice, t.table.total]
-      
+
       // Define column styles based on showTax setting
-      const columnStyles: { [key: number]: { cellWidth: number; overflow: "linebreak" } } = showTax 
+      const columnStyles: { [key: number]: { cellWidth: number; overflow: "linebreak" } } = showTax
         ? {
             0: { cellWidth: 49, overflow: "linebreak" },
             1: { cellWidth: 13, overflow: "linebreak" },
@@ -298,7 +306,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
             2: { cellWidth: 35, overflow: "linebreak" },
             3: { cellWidth: 38, overflow: "linebreak" },
           }
-      
+
       autoTable(doc, {
         startY: tableStartY,
         head: [tableHeaders],
@@ -309,7 +317,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
             item.quantity || 0,
             item.vatRate || 0
           )
-          
+
           if (showTax) {
             return [
               item.name || "",
@@ -359,8 +367,8 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
             `${data.pageNumber}/${doc.getNumberOfPages()}`,
             doc.internal.pageSize.width / 2,
             doc.internal.pageSize.height - 5,
-            { align: "center" },
-          )          
+            { align: "center" }
+          )
         },
       })
     } catch (tableError) {
@@ -368,14 +376,18 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     }
 
     // Calculate totals using precise decimal arithmetic
-    const { netTotal: netTotalDecimal, vatTotal: vatTotalDecimal, grandTotal: grandTotalDecimal } = calculateInvoiceTotals(data.items || [])
+    const {
+      netTotal: netTotalDecimal,
+      vatTotal: vatTotalDecimal,
+      grandTotal: grandTotalDecimal,
+    } = calculateInvoiceTotals(data.items || [])
     const netTotal = toNumber(netTotalDecimal)
     const vatTotal = toNumber(vatTotalDecimal)
     const total = toNumber(grandTotalDecimal)
 
     // Add more space before totals
     // TypeScript doesn't know about lastAutoTable property added by autoTable plugin
-    const finalY = 'lastAutoTable' in doc ? (doc as any).lastAutoTable.finalY + 10 : 200
+    const finalY = "lastAutoTable" in doc ? (doc as any).lastAutoTable.finalY + 10 : 200
 
     // Get the right edge of the table for alignment
     const rightEdge = pageWidth - 16 // Adjusted to match the table right margin
@@ -398,19 +410,19 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Summary aligned with right edge
     doc.setFontSize(10)
     doc.setTextColor(...mutedColor)
-    
+
     let summaryY = finalY
-    
+
     if (showTax) {
       doc.text(t.netTotal, rightEdge - 70, summaryY)
       doc.text(formatCurrency(netTotal), rightEdge, summaryY, { align: "right" })
       summaryY += 7
-      
+
       doc.text(taxLabels.total, rightEdge - 70, summaryY)
       doc.text(formatCurrency(vatTotal), rightEdge, summaryY, { align: "right" })
       summaryY += 7
     }
-    
+
     doc.setTextColor(...primaryColor)
     doc.setFontSize(12)
     doc.setFont("NotoSans", "bold")
@@ -428,9 +440,9 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     doc.setDrawColor(...primaryColor)
     doc.setLineWidth(0.5)
     doc.line(rightEdge - 70, summaryY + 4, rightEdge, summaryY + 4)
-    
+
     // Reverse Charge text (only for VAT and if enabled)
-    if (reverseCharge && taxType === 'vat') {
+    if (reverseCharge && taxType === "vat") {
       summaryY += 12
       doc.setFontSize(8)
       doc.setTextColor(...mutedColor)
@@ -447,16 +459,12 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     doc.text(t.generatedBy, doc.internal.pageSize.width / 2, pageHeight - 10, { align: "center" })
 
     // Page number
-    doc.text(
-      `${doc.getNumberOfPages()}/${doc.getNumberOfPages()}`,
-      doc.internal.pageSize.width / 2, 
-      pageHeight - 5, 
-      { align: "center" }
-    )
+    doc.text(`${doc.getNumberOfPages()}/${doc.getNumberOfPages()}`, doc.internal.pageSize.width / 2, pageHeight - 5, {
+      align: "center",
+    })
 
     return doc
   } catch (error) {
     return null
   }
 }
-

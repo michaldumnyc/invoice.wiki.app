@@ -14,7 +14,10 @@ export function InvoiceExampleSection() {
   return (
     <>
       {/* Invoice Example Section */}
-      <section aria-labelledby="example-heading" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-background dark:via-secondary dark:to-background">
+      <section
+        aria-labelledby="example-heading"
+        className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-background dark:via-secondary dark:to-background"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -22,28 +25,30 @@ export function InvoiceExampleSection() {
                 See What You'll Create
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Generate professional invoices that impress clients and ensure prompt payment. Our free invoice generator creates clean, modern invoices with all essential business details, automatic calculations, and perfect formatting.
+                Generate professional invoices that impress clients and ensure prompt payment. Our free invoice
+                generator creates clean, modern invoices with all essential business details, automatic calculations,
+                and perfect formatting.
               </p>
             </div>
-            
+
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Invoice Preview Image */}
               <div className="order-2 lg:order-1">
                 <div className="relative bg-card rounded-lg shadow-2xl p-4 sm:p-6 border border-border">
-                  <div 
+                  <div
                     className="cursor-pointer transition-transform hover:scale-105 group"
                     onClick={openModal}
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
+                      if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault()
                         openModal()
                       }
                     }}
                     aria-label="Click to view invoice example in full size"
                   >
-                    <Image 
+                    <Image
                       src="/images/invoice-example.png"
                       alt="Create invoice example - Professional invoice generator Invoice Wiki showing PDF invoice template with VAT calculations, invoice creator features, and generate invoice details"
                       className="w-full h-auto rounded border invoice-example-img"
@@ -65,61 +70,80 @@ export function InvoiceExampleSection() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Benefits Content */}
               <div className="order-1 lg:order-2 space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                      ✓
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg text-foreground">Clean Professional Design</h3>
-                      <p className="text-muted-foreground">Every invoice generated maintains consistent, professional formatting that reflects well on your business and builds client trust.</p>
-                    </div>
+                <div className="flex items-start space-x-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
+                    ✓
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Clean Professional Design</h3>
+                    <p className="text-muted-foreground">
+                      Every invoice generated maintains consistent, professional formatting that reflects well on your
+                      business and builds client trust.
+                    </p>
                   </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                      ✓
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg text-foreground">Automatic Calculations</h3>
-                      <p className="text-muted-foreground">VAT rates, subtotals, and grand totals are calculated automatically with high precision using mathematical rounding (0.5 rounds up) to 2 decimal places, eliminating manual errors and saving valuable time.</p>
-                    </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
+                    ✓
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Automatic Calculations</h3>
+                    <p className="text-muted-foreground">
+                      VAT rates, subtotals, and grand totals are calculated automatically with high precision using
+                      mathematical rounding (0.5 rounds up) to 2 decimal places, eliminating manual errors and saving
+                      valuable time.
+                    </p>
                   </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                      ✓
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg text-foreground">Complete Business Information</h3>
-                      <p className="text-muted-foreground">Include all necessary business details: company information, addresses, VAT IDs, payment terms, and contact information for complete transparency.</p>
-                    </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
+                    ✓
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Complete Business Information</h3>
+                    <p className="text-muted-foreground">
+                      Include all necessary business details: company information, addresses, VAT IDs, payment terms,
+                      and contact information for complete transparency.
+                    </p>
                   </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                      ✓
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg text-foreground">Instant PDF Download</h3>
-                      <p className="text-muted-foreground">Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation.</p>
-                    </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
+                    ✓
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Instant PDF Download</h3>
+                    <p className="text-muted-foreground">
+                      Download your completed invoices as high-quality PDF files that are ready for printing, emailing,
+                      or digital storage with perfect formatting preservation.
+                    </p>
                   </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                      ✓
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg text-foreground">Customizable Colors & Languages</h3>
-                      <p className="text-muted-foreground">NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech, Polish, Slovak, Ukrainian) to match your brand and serve international clients.</p>
-                    </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
+                    ✓
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Customizable Colors & Languages</h3>
+                    <p className="text-muted-foreground">
+                      NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech,
+                      Polish, Slovak, Ukrainian) to match your brand and serve international clients.
+                    </p>
                   </div>
-                
+                </div>
+
                 <div className="pt-4">
-                  <Link href="/create-invoice" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                  <Link
+                    href="/create-invoice"
+                    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  >
                     Try It Now - Free →
                   </Link>
                 </div>

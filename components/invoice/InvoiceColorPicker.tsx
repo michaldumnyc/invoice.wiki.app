@@ -16,22 +16,25 @@ interface InvoiceColorPickerProps {
   }
 }
 
-export function InvoiceColorPicker({ selectedColorId, onColorChange, className, translations }: InvoiceColorPickerProps) {
+export function InvoiceColorPicker({
+  selectedColorId,
+  onColorChange,
+  className,
+  translations,
+}: InvoiceColorPickerProps) {
   const defaultTranslations = {
     title: "Invoice Accent Color",
     description: "Choose the accent color for your invoice headers and highlights",
-    selected: "Selected"
+    selected: "Selected",
   }
-  
+
   const t = translations || defaultTranslations
-  const selectedColor = invoiceColors.find(c => c.id === selectedColorId)
-  
+  const selectedColor = invoiceColors.find((c) => c.id === selectedColorId)
+
   return (
     <div className={cn("space-y-2", className)}>
-      <label className="text-sm font-medium text-foreground">
-        {t.title}
-      </label>
-      
+      <label className="text-sm font-medium text-foreground">{t.title}</label>
+
       <Select value={selectedColorId} onValueChange={onColorChange}>
         <SelectTrigger className="w-full" aria-label="Select invoice accent color">
           <SelectValue>
@@ -60,4 +63,4 @@ export function InvoiceColorPicker({ selectedColorId, onColorChange, className, 
       </Select>
     </div>
   )
-} 
+}

@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   darkMode: "class", // Enable class-based dark mode
@@ -9,7 +9,7 @@ const config: Config = {
     "./lib/**/*.{js,ts,jsx,tsx,mdx}",
     "./types/**/*.{js,ts,jsx,tsx,mdx}",
     "./utils/**/*.{js,ts,jsx,tsx,mdx}",
-    "./styles/**/*.css"
+    "./styles/**/*.css",
   ],
   theme: {
     extend: {
@@ -46,7 +46,7 @@ const config: Config = {
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))"
+        ring: "hsl(var(--ring))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,6 +70,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}
 
-export default config;
+export default config

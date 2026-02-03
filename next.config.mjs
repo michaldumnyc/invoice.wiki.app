@@ -3,14 +3,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  
+
   // Image optimization
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 31536000, // 1 year
   },
-
-
 
   webpack: (config, { dev, isServer }) => {
     // PDF generation optimization
@@ -19,17 +17,17 @@ const nextConfig = {
         ...config.optimization.splitChunks.cacheGroups,
         // Separate chunk for PDF generation libraries
         pdf: {
-          name: 'pdf-generator',
+          name: "pdf-generator",
           test: /[\\/]node_modules[\\/](jspdf|jspdf-autotable)[\\/]/,
-          chunks: 'all',
+          chunks: "all",
           priority: 10,
           enforce: true,
         },
         // Separate chunk for large utilities
         decimal: {
-          name: 'decimal-utils',
+          name: "decimal-utils",
           test: /[\\/]node_modules[\\/](decimal\.js)[\\/]/,
-          chunks: 'all',
+          chunks: "all",
           priority: 9,
           enforce: true,
         },
@@ -43,21 +41,15 @@ const nextConfig = {
       // Static assets caching
       {
         source: "/_next/static/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
         source: "/images/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000" },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000" }],
       },
       {
-        source: "/icons/:path*", 
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000" },
-        ],
+        source: "/icons/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000" }],
       },
       // Security headers for pages
       {
@@ -74,9 +66,9 @@ const nextConfig = {
           { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains; preload" },
         ],
       },
-    ];
+    ]
   },
-  poweredByHeader: false
-};
+  poweredByHeader: false,
+}
 
-export default nextConfig;
+export default nextConfig

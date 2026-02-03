@@ -9,7 +9,7 @@ import { FieldVisibility, InvoiceFormValues } from "./types"
 
 interface SellerInformationProps {
   control: Control<any>
-  fieldVisibility: Pick<FieldVisibility, 'sellerCompanyId' | 'sellerVatId' | 'sellerEmail' | 'sellerWebsite'>
+  fieldVisibility: Pick<FieldVisibility, "sellerCompanyId" | "sellerVatId" | "sellerEmail" | "sellerWebsite">
   toggleFieldVisibility: (field: keyof FieldVisibility) => void
   highlightedField: string | null
   translations?: {
@@ -38,7 +38,7 @@ export function SellerInformation({
   fieldVisibility,
   toggleFieldVisibility,
   highlightedField,
-  translations
+  translations,
 }: SellerInformationProps) {
   const defaultTranslations = {
     title: "Seller Information",
@@ -56,10 +56,10 @@ export function SellerInformation({
       companyId: "12345678",
       vatId: "GB123456789",
       email: "contact@company.com",
-      website: "example.com"
-    }
+      website: "example.com",
+    },
   }
-  
+
   const t = translations || defaultTranslations
 
   return (
@@ -128,7 +128,7 @@ export function SellerInformation({
               placeholder={t.placeholders.companyId}
               maxLength={40}
               isVisible={fieldVisibility.sellerCompanyId}
-              onToggle={() => toggleFieldVisibility('sellerCompanyId')}
+              onToggle={() => toggleFieldVisibility("sellerCompanyId")}
               highlightedField={highlightedField}
               hideText={t.hide}
               showText={t.show}
@@ -148,7 +148,7 @@ export function SellerInformation({
               placeholder={t.placeholders.vatId}
               maxLength={43}
               isVisible={fieldVisibility.sellerVatId}
-              onToggle={() => toggleFieldVisibility('sellerVatId')}
+              onToggle={() => toggleFieldVisibility("sellerVatId")}
               highlightedField={highlightedField}
               hideText={t.hide}
               showText={t.show}
@@ -169,7 +169,7 @@ export function SellerInformation({
               maxLength={90}
               type="email"
               isVisible={fieldVisibility.sellerEmail}
-              onToggle={() => toggleFieldVisibility('sellerEmail')}
+              onToggle={() => toggleFieldVisibility("sellerEmail")}
               highlightedField={highlightedField}
               sanitizer={(value) => value} // email sanitizer will be handled in Input
               hideText={t.hide}
@@ -191,7 +191,7 @@ export function SellerInformation({
               maxLength={60}
               type="text"
               isVisible={fieldVisibility.sellerWebsite}
-              onToggle={() => toggleFieldVisibility('sellerWebsite')}
+              onToggle={() => toggleFieldVisibility("sellerWebsite")}
               highlightedField={highlightedField}
               sanitizer={(value) => value.replace(/^(https?:\/\/)/, "")} // remove protocol
               hideText={t.hide}
@@ -202,4 +202,4 @@ export function SellerInformation({
       </CardContent>
     </Card>
   )
-} 
+}

@@ -36,24 +36,24 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
     }
-    
+
     setToast({ message, visible: true, type })
-    
+
     // Automatically hide after 4 seconds
     timeoutRef.current = setTimeout(() => {
-      setToast(prev => ({ ...prev, visible: false }))
+      setToast((prev) => ({ ...prev, visible: false }))
     }, 4000)
   }
 
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
-      <Toast 
-        message={toast.message} 
-        open={toast.visible} 
+      <Toast
+        message={toast.message}
+        open={toast.visible}
         variant={toast.type}
-        onClose={() => setToast(prev => ({ ...prev, visible: false }))} 
+        onClose={() => setToast((prev) => ({ ...prev, visible: false }))}
       />
     </ToastContext.Provider>
   )
-} 
+}

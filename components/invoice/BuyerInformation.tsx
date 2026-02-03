@@ -9,7 +9,7 @@ import { FieldVisibility, InvoiceFormValues } from "./types"
 
 interface BuyerInformationProps {
   control: Control<any>
-  fieldVisibility: Pick<FieldVisibility, 'buyerCompanyId' | 'buyerVatId' | 'buyerEmail' | 'buyerWebsite'>
+  fieldVisibility: Pick<FieldVisibility, "buyerCompanyId" | "buyerVatId" | "buyerEmail" | "buyerWebsite">
   toggleFieldVisibility: (field: keyof FieldVisibility) => void
   highlightedField: string | null
   translations?: {
@@ -38,7 +38,7 @@ export function BuyerInformation({
   fieldVisibility,
   toggleFieldVisibility,
   highlightedField,
-  translations
+  translations,
 }: BuyerInformationProps) {
   const defaultTranslations = {
     title: "Buyer Information",
@@ -56,11 +56,11 @@ export function BuyerInformation({
       companyId: "87654321",
       vatId: "GB987654321",
       email: "client@company.com",
-      website: "client.com"
-    }
-  };
+      website: "client.com",
+    },
+  }
 
-  const t = translations || defaultTranslations;
+  const t = translations || defaultTranslations
 
   return (
     <Card className="card-content">
@@ -203,4 +203,4 @@ export function BuyerInformation({
       </CardContent>
     </Card>
   )
-} 
+}

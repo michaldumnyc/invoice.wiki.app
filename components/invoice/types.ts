@@ -32,4 +32,4 @@ export interface InvoiceTotals {
   net: number
   vat: number
   grand: number
-} 
+}

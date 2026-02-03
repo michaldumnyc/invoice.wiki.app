@@ -30,7 +30,7 @@ import {
   InvoiceColorPicker,
   InvoiceLanguagePicker,
   type FieldVisibility,
-  type InvoiceFormValues
+  type InvoiceFormValues,
 } from "@/components/invoice"
 
 // Import decimal utilities for precise financial calculations
@@ -58,7 +58,7 @@ const CreateInvoiceForm: React.FC = () => {
     iban: true,
     swift: true,
   })
-  
+
   const [termsDialogOpen, setTermsDialogOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [manuallyEditedReference, setManuallyEditedReference] = useState(false)
@@ -125,7 +125,7 @@ const CreateInvoiceForm: React.FC = () => {
   const showTax = watch("showTax")
 
   // Get form translations based on selected language
-  const formTranslations = getFormLanguageById(languageId || 'en').form
+  const formTranslations = getFormLanguageById(languageId || "en").form
 
   // Watch for changes in invoiceNumber and update referenceNumber with digits only
   useEffect(() => {
@@ -139,7 +139,7 @@ const CreateInvoiceForm: React.FC = () => {
 
   // Auto-disable showTax when taxType is 'none'
   useEffect(() => {
-    if (taxType === 'none') {
+    if (taxType === "none") {
       setValue("showTax", false)
     }
   }, [taxType, setValue])
@@ -149,7 +149,7 @@ const CreateInvoiceForm: React.FC = () => {
     return {
       net: toNumber(netTotal),
       vat: toNumber(vatTotal),
-      grand: toNumber(grandTotal)
+      grand: toNumber(grandTotal),
     }
   }, [items])
 
@@ -166,18 +166,18 @@ const CreateInvoiceForm: React.FC = () => {
     async (data: any) => {
       try {
         setIsSubmitting(true)
-        
+
         // Validate dates before processing - keep as toast (validation error)
         if (!isValid(data.issueDate) || !isValid(data.dueDate)) {
           showToast("Please ensure all dates are valid", "error")
           setIsSubmitting(false)
           return
         }
-        
+
         const pdfData = {
           ...data,
           total: totals.grand,
-          taxType: data.taxType || 'vat',
+          taxType: data.taxType || "vat",
           showTax: data.showTax !== false,
           reverseCharge: data.reverseCharge || false,
           seller: {
@@ -218,7 +218,7 @@ const CreateInvoiceForm: React.FC = () => {
         if (!pdfBlob) {
           // Critical error - show error.tsx with instructions
           handleCriticalError(
-            "PDF Generation Failed", 
+            "PDF Generation Failed",
             "The PDF generation system is currently unavailable. This could be due to browser compatibility issues, memory constraints, or a temporary service problem."
           )
           return
@@ -232,7 +232,7 @@ const CreateInvoiceForm: React.FC = () => {
         link.download = `invoice-${data.invoiceNumber}.pdf`
         link.target = "_blank"
         link.rel = "noopener noreferrer"
-        
+
         // Handle mobile browsers differently
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           window.open(url, "_blank")
@@ -251,28 +251,28 @@ const CreateInvoiceForm: React.FC = () => {
         setIsSubmitting(false)
       } catch (err) {
         setIsSubmitting(false) // Reset submit state on any error
-        
+
         // Check if it's our intentional critical error
         if (err instanceof Error && err.message === "PDF Generation Failed") {
           // Re-throw to show error.tsx
           throw err
         }
-        
+
         // For unexpected errors, also show error.tsx with technical details
         handleCriticalError(
           "Unexpected Error During Invoice Creation",
-          `An unexpected error occurred: ${err instanceof Error ? err.message : 'Unknown error'}\n\nTechnical details: ${err instanceof Error ? err.stack : 'No stack trace available'}`
+          `An unexpected error occurred: ${err instanceof Error ? err.message : "Unknown error"}\n\nTechnical details: ${err instanceof Error ? err.stack : "No stack trace available"}`
         )
       }
     },
-    [form, totals.grand, showToast],
+    [form, totals.grand, showToast]
   )
 
   // Add CSS for the pulsating animation
   useEffect(() => {
-    if (!document.getElementById('pulsate-animation')) {
-      const style = document.createElement('style')
-      style.id = 'pulsate-animation'
+    if (!document.getElementById("pulsate-animation")) {
+      const style = document.createElement("style")
+      style.id = "pulsate-animation"
       style.innerHTML = `
         @keyframes pulsate {
           0% { box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.7); }
@@ -287,7 +287,7 @@ const CreateInvoiceForm: React.FC = () => {
       document.head.appendChild(style)
     }
   }, [])
-  
+
   const highlightField = (fieldName: string) => {
     setHighlightedField(fieldName)
     setTimeout(() => {
@@ -298,12 +298,12 @@ const CreateInvoiceForm: React.FC = () => {
   const scrollToFirstError = (errors: any) => {
     const errorFields = Object.keys(errors)
     if (errorFields.length === 0) return
-    
+
     const firstErrorField = errorFields[0]
     let selector = `[name="${firstErrorField}"]`
     let fieldToHighlight = firstErrorField
-    
-    if (firstErrorField === 'items') {
+
+    if (firstErrorField === "items") {
       const itemsErrors = errors.items
       if (itemsErrors && Array.isArray(itemsErrors)) {
         for (let i = 0; i < itemsErrors.length; i++) {
@@ -318,35 +318,35 @@ const CreateInvoiceForm: React.FC = () => {
         }
       }
     }
-    
+
     const errorElement = document.querySelector(selector)
-    
+
     if (errorElement) {
-      errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      errorElement.scrollIntoView({ behavior: "smooth", block: "center" })
       ;(errorElement as HTMLElement).focus()
       highlightField(fieldToHighlight)
-      
+
       let validationErrorMessage = "Please fill in all required fields to generate the invoice."
-      
+
       const fieldLabels: Record<string, string> = {
-        'sellerCompanyName': 'Seller Company Name',
-        'sellerAddress': 'Seller Address',
-        'buyerCompanyName': 'Buyer Company Name',
-        'buyerAddress': 'Buyer Address',
-        'invoiceNumber': 'Invoice Number',
-        'termsAccepted': 'Terms and Conditions',
+        sellerCompanyName: "Seller Company Name",
+        sellerAddress: "Seller Address",
+        buyerCompanyName: "Buyer Company Name",
+        buyerAddress: "Buyer Address",
+        invoiceNumber: "Invoice Number",
+        termsAccepted: "Terms and Conditions",
       }
-      
-      if (fieldToHighlight.startsWith('items.')) {
-        const parts = fieldToHighlight.split('.')
-        if (parts.length === 3 && parts[2] === 'name') {
+
+      if (fieldToHighlight.startsWith("items.")) {
+        const parts = fieldToHighlight.split(".")
+        if (parts.length === 3 && parts[2] === "name") {
           const itemIndex = parseInt(parts[1]) + 1
           validationErrorMessage = `Please provide a name for Item #${itemIndex}`
         }
       } else if (fieldLabels[fieldToHighlight]) {
         validationErrorMessage = `Please fill in the "${fieldLabels[fieldToHighlight]}" field`
       }
-      
+
       showToast(validationErrorMessage, "error")
     }
   }
@@ -373,7 +373,7 @@ const CreateInvoiceForm: React.FC = () => {
                             translations={{
                               title: formTranslations.invoiceColorSelection,
                               description: formTranslations.colorDescription,
-                              selected: "Selected"
+                              selected: "Selected",
                             }}
                           />
                         </FormControl>
@@ -381,7 +381,7 @@ const CreateInvoiceForm: React.FC = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={control}
                     name="languageId"
@@ -394,7 +394,7 @@ const CreateInvoiceForm: React.FC = () => {
                             translations={{
                               title: formTranslations.invoiceLanguageSelection,
                               description: formTranslations.languageDescription,
-                              selected: "Selected"
+                              selected: "Selected",
                             }}
                           />
                         </FormControl>
@@ -424,43 +424,42 @@ const CreateInvoiceForm: React.FC = () => {
                               <option value="none">{formTranslations.taxTypes.none}</option>
                             </select>
                           </FormControl>
-                          
+
                           {/* Tax Options - only show when tax type is not 'none' */}
-                          {taxType !== 'none' && (
+                          {taxType !== "none" && (
                             <div className="flex flex-col gap-2 pt-2">
                               <FormField
                                 control={control}
                                 name="showTax"
                                 render={({ field: showTaxField }) => (
                                   <label className="flex items-center gap-2 text-sm cursor-pointer">
-                                    <Checkbox
-                                      checked={showTaxField.value}
-                                      onCheckedChange={showTaxField.onChange}
-                                    />
+                                    <Checkbox checked={showTaxField.value} onCheckedChange={showTaxField.onChange} />
                                     <span>{formTranslations.showTax}</span>
                                   </label>
                                 )}
                               />
-                              
+
                               {/* Reverse Charge only for EU languages (not Ukrainian) */}
-                              {taxType === 'vat' && languageId !== 'uk' && (
-                              <FormField
-                                control={control}
-                                name="reverseCharge"
-                                render={({ field: reverseChargeField }) => (
-                                  <label className="flex items-center gap-2 text-sm cursor-pointer">
-                                    <Checkbox
-                                      checked={reverseChargeField.value}
-                                      onCheckedChange={reverseChargeField.onChange}
-                                    />
-                                    <span className="flex flex-col">
-                                      <span className="font-medium">{formTranslations.reverseCharge}</span>
-                                      <span className="text-xs text-muted-foreground">{formTranslations.reverseChargeDescription}</span>
-                                    </span>
-                                  </label>
-                                )}
-                              />
-                            )}
+                              {taxType === "vat" && languageId !== "uk" && (
+                                <FormField
+                                  control={control}
+                                  name="reverseCharge"
+                                  render={({ field: reverseChargeField }) => (
+                                    <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                      <Checkbox
+                                        checked={reverseChargeField.value}
+                                        onCheckedChange={reverseChargeField.onChange}
+                                      />
+                                      <span className="flex flex-col">
+                                        <span className="font-medium">{formTranslations.reverseCharge}</span>
+                                        <span className="text-xs text-muted-foreground">
+                                          {formTranslations.reverseChargeDescription}
+                                        </span>
+                                      </span>
+                                    </label>
+                                  )}
+                                />
+                              )}
                             </div>
                           )}
                         </div>
@@ -487,7 +486,7 @@ const CreateInvoiceForm: React.FC = () => {
                       website: formTranslations.website,
                       hide: formTranslations.hide,
                       show: formTranslations.show,
-                      placeholders: formTranslations.placeholders
+                      placeholders: formTranslations.placeholders,
                     }}
                   />
                   <div>
@@ -506,20 +505,14 @@ const CreateInvoiceForm: React.FC = () => {
                         website: formTranslations.website,
                         hide: formTranslations.hide,
                         show: formTranslations.show,
-                        placeholders: formTranslations.placeholders
+                        placeholders: formTranslations.placeholders,
                       }}
                     />
                   </div>
                 </div>
 
                 {/* Invoice Details */}
-                <InvoiceDetails
-                  control={control}
-                  highlightedField={highlightedField}
-                  isMobile={isMobile}
-                />
-
-
+                <InvoiceDetails control={control} highlightedField={highlightedField} isMobile={isMobile} />
 
                 {/* Payment Information */}
                 <PaymentInformation
@@ -536,10 +529,7 @@ const CreateInvoiceForm: React.FC = () => {
                 />
 
                 {/* Notes */}
-                <InvoiceNotes
-                  control={control}
-                  highlightedField={highlightedField}
-                />
+                <InvoiceNotes control={control} highlightedField={highlightedField} />
 
                 {/* Payment Status */}
                 <PaymentStatus control={control} />
@@ -552,7 +542,7 @@ const CreateInvoiceForm: React.FC = () => {
                   remove={remove}
                   highlightedField={highlightedField}
                   isMobile={isMobile}
-                  showTaxColumn={taxType !== 'none' && showTax}
+                  showTaxColumn={taxType !== "none" && showTax}
                 />
 
                 {/* Terms and Submit */}
@@ -578,8 +568,8 @@ const CreateInvoiceForm: React.FC = () => {
                               onClick={() => setTermsDialogOpen(true)}
                             >
                               Terms and Conditions
-                            </button>
-                            {" "}*
+                            </button>{" "}
+                            *
                           </FormLabel>
                           <FormMessage />
                         </div>
@@ -621,7 +611,7 @@ const CreateInvoiceForm: React.FC = () => {
                   totals={totals}
                   currency={currency}
                   isPaid={isPaid}
-                  showTax={taxType !== 'none' && showTax}
+                  showTax={taxType !== "none" && showTax}
                 />
               </form>
             </Form>

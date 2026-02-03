@@ -19,7 +19,10 @@ const paymentMethods = [
 
 interface PaymentInformationProps {
   control: Control<any>
-  fieldVisibility: Pick<FieldVisibility, 'referenceNumber' | 'customerReferenceNumber' | 'orderNumber' | 'bankAccount' | 'iban' | 'swift'>
+  fieldVisibility: Pick<
+    FieldVisibility,
+    "referenceNumber" | "customerReferenceNumber" | "orderNumber" | "bankAccount" | "iban" | "swift"
+  >
   toggleFieldVisibility: (field: keyof FieldVisibility) => void
   highlightedField: string | null
   isMobile: boolean
@@ -40,7 +43,7 @@ export function PaymentInformation({
   invoiceNumber,
   manuallyEditedReference,
   setManuallyEditedReference,
-  setValue
+  setValue,
 }: PaymentInformationProps) {
   return (
     <Card className="bg-card card-content">
@@ -74,8 +77,8 @@ export function PaymentInformation({
                       data-lpignore="true"
                       data-form-type="other"
                       onChange={(e) => {
-                        field.onChange(sanitizeInput(e.target.value));
-                        setManuallyEditedReference(true);
+                        field.onChange(sanitizeInput(e.target.value))
+                        setManuallyEditedReference(true)
                       }}
                       className={highlightedField === "referenceNumber" ? "border-red-500 error-highlight" : ""}
                     />
@@ -86,9 +89,9 @@ export function PaymentInformation({
                           variant="ghost"
                           size="sm"
                           onClick={() => {
-                            const digitsOnly = invoiceNumber.replace(/[^0-9]/g, "");
-                            setValue("referenceNumber", digitsOnly);
-                            setManuallyEditedReference(false);
+                            const digitsOnly = invoiceNumber.replace(/[^0-9]/g, "")
+                            setValue("referenceNumber", digitsOnly)
+                            setManuallyEditedReference(false)
                           }}
                         >
                           Reset
@@ -229,4 +232,4 @@ export function PaymentInformation({
       </CardContent>
     </Card>
   )
-} 
+}

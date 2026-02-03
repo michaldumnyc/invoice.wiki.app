@@ -44,10 +44,9 @@ export type InvoiceFormData = {
   notes?: string
   colorId: string
   languageId: string
-  taxType: 'vat' | 'gst' | 'sales_tax' | 'none'
+  taxType: "vat" | "gst" | "sales_tax" | "none"
   showTax: boolean
   reverseCharge: boolean
   isPaid: boolean
   total: number
 }
-

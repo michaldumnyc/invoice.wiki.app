@@ -16,22 +16,25 @@ interface InvoiceLanguagePickerProps {
   }
 }
 
-export function InvoiceLanguagePicker({ selectedLanguageId, onLanguageChange, className, translations }: InvoiceLanguagePickerProps) {
+export function InvoiceLanguagePicker({
+  selectedLanguageId,
+  onLanguageChange,
+  className,
+  translations,
+}: InvoiceLanguagePickerProps) {
   const defaultTranslations = {
     title: "Invoice Language",
     description: "Choose the language for your invoice content and labels",
-    selected: "Selected"
+    selected: "Selected",
   }
-  
+
   const t = translations || defaultTranslations
-  const selectedLanguage = invoiceLanguages.find(l => l.id === selectedLanguageId)
-  
+  const selectedLanguage = invoiceLanguages.find((l) => l.id === selectedLanguageId)
+
   return (
     <div className={cn("space-y-2", className)}>
-      <label className="text-sm font-medium text-foreground">
-        {t.title}
-      </label>
-      
+      <label className="text-sm font-medium text-foreground">{t.title}</label>
+
       <Select value={selectedLanguageId} onValueChange={onLanguageChange}>
         <SelectTrigger className="w-full" aria-label="Select invoice language">
           <SelectValue>
@@ -60,4 +63,4 @@ export function InvoiceLanguagePicker({ selectedLanguageId, onLanguageChange, cl
       </Select>
     </div>
   )
-} 
+}

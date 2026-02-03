@@ -29,7 +29,7 @@ export default function Header() {
                   href="/"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",
-                    pathname === "/" && "text-primary",
+                    pathname === "/" && "text-primary"
                   )}
                 >
                   Home
@@ -40,7 +40,7 @@ export default function Header() {
                   href="/create-invoice"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",
-                    pathname === "/create-invoice" && "text-primary",
+                    pathname === "/create-invoice" && "text-primary"
                   )}
                 >
                   Create Invoice
@@ -52,7 +52,7 @@ export default function Header() {
                   href="/faq"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",
-                    pathname === "/faq" && "text-primary",
+                    pathname === "/faq" && "text-primary"
                   )}
                 >
                   FAQ
@@ -63,7 +63,7 @@ export default function Header() {
                   href="/about"
                   className={cn(
                     "text-foreground hover:text-primary transition-colors",
-                    pathname === "/about" && "text-primary",
+                    pathname === "/about" && "text-primary"
                   )}
                 >
                   About

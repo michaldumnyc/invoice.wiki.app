@@ -5,22 +5,19 @@ import { X, CheckCircle, AlertCircle, AlertTriangle, Info } from "lucide-react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
-const toastVariants = cva(
-  "relative flex items-center justify-between p-4 mb-2 rounded-lg shadow-lg",
-  {
-    variants: {
-      variant: {
-        default: "bg-card text-card-foreground border-l-4 border-primary",
-        success: "bg-card text-card-foreground border-l-4 border-green-500",
-        error: "bg-card text-card-foreground border-l-4 border-red-500",
-        warning: "bg-card text-card-foreground border-l-4 border-yellow-500",
-      },
+const toastVariants = cva("relative flex items-center justify-between p-4 mb-2 rounded-lg shadow-lg", {
+  variants: {
+    variant: {
+      default: "bg-card text-card-foreground border-l-4 border-primary",
+      success: "bg-card text-card-foreground border-l-4 border-green-500",
+      error: "bg-card text-card-foreground border-l-4 border-red-500",
+      warning: "bg-card text-card-foreground border-l-4 border-yellow-500",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+})
 
 export interface ToastProps extends VariantProps<typeof toastVariants> {
   message: string
@@ -29,13 +26,7 @@ export interface ToastProps extends VariantProps<typeof toastVariants> {
   duration?: number
 }
 
-export function Toast({
-  message,
-  variant,
-  open,
-  onClose,
-  duration = 4000,
-}: ToastProps) {
+export function Toast({ message, variant, open, onClose, duration = 4000 }: ToastProps) {
   const [isVisible, setIsVisible] = useState(open)
 
   useEffect(() => {
@@ -69,13 +60,7 @@ export function Toast({
   }[variant || "default"]
 
   return (
-    <div 
-      className={cn(
-        toastVariants({ variant }),
-        "flex items-center gap-3"
-      )} 
-      role="alert"
-    >
+    <div className={cn(toastVariants({ variant }), "flex items-center gap-3")} role="alert">
       <IconComponent className={cn("h-5 w-5", iconColor)} />
       <div className="text-sm font-medium flex-grow">{message}</div>
       <button
@@ -123,4 +108,4 @@ export function useToast() {
     dismiss,
     ...state,
   }
-} 
+}

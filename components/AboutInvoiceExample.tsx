@@ -16,13 +16,13 @@ export function AboutInvoiceExample() {
       <div className="bg-card rounded-lg border-2 border-border p-4 mb-8 shadow-lg">
         <div className="flex flex-col md:flex-row gap-6 items-center">
           <div className="md:w-1/2">
-            <div 
+            <div
               className="cursor-pointer transition-transform hover:scale-105 group"
               onClick={openModal}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
+                if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault()
                   openModal()
                 }
@@ -30,7 +30,7 @@ export function AboutInvoiceExample() {
               aria-label="Click to view invoice example in full size"
             >
               <div className="relative">
-                <Image 
+                <Image
                   src="/images/invoice-example.png"
                   alt="Generate invoice sample - Invoice Wiki generator creates professional invoices with invoice creator tools, PDF export, and VAT calculations"
                   className="w-full h-auto rounded border shadow-sm invoice-example-img"
@@ -71,8 +71,8 @@ export function AboutInvoiceExample() {
               </li>
             </ul>
             <p className="text-sm text-muted-foreground mt-4">
-              Every invoice maintains this professional standard, ensuring your business 
-              makes a great impression with every client interaction.
+              Every invoice maintains this professional standard, ensuring your business makes a great impression with
+              every client interaction.
             </p>
           </div>
         </div>

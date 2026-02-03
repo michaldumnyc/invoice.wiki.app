@@ -9,9 +9,7 @@ const Dialog = DialogPrimitive.Root
 const DialogTrigger = DialogPrimitive.Trigger
 
 // Remove className destructuring as DialogPortalProps doesn't contain this prop
-const DialogPortal = (props: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal {...props} />
-)
+const DialogPortal = (props: DialogPrimitive.DialogPortalProps) => <DialogPrimitive.Portal {...props} />
 DialogPortal.displayName = DialogPrimitive.Portal.displayName
 
 const DialogOverlay = React.forwardRef<
@@ -53,25 +51,13 @@ const DialogContent = React.forwardRef<
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-const DialogHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
-    {...props}
-  />
+const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)} {...props} />
 )
 DialogHeader.displayName = "DialogHeader"
 
-const DialogFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
-    {...props}
-  />
+const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)} {...props} />
 )
 DialogFooter.displayName = "DialogFooter"
 
@@ -91,20 +77,8 @@ const DialogDescription = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
-  />
+  <DialogPrimitive.Description ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props} />
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
-export {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription
-}
+export { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription }
