@@ -16,10 +16,17 @@ Thanks for your interest in contributing!
    git checkout -b feature/your-feature
    ```
 4. Make your changes
-5. Push and open a Pull Request
+5. Before committing, run:
+   ```bash
+   npm run format        # Format code with Prettier
+   npm run type-check    # Check TypeScript
+   npm run build         # Verify build works
+   ```
+6. Push and open a Pull Request
 
 ## Guidelines
 
+- Code is formatted with Prettier (LF line endings)
 - Follow existing code style
 - Test your changes locally
 - Keep PRs focused and small

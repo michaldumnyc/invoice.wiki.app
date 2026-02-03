@@ -1,5 +1,8 @@
 # Invoice.wiki
 
+[![CI](https://github.com/michaldumnyc/invoice.wiki.app/actions/workflows/ci.yml/badge.svg)](https://github.com/michaldumnyc/invoice.wiki.app/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Free online invoice generator with PDF export. No sign-up required.
 
 🌐 **Live:** [invoice.wiki](https://invoice.wiki)
@@ -33,6 +36,16 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run format` | Format code with Prettier |
+| `npm run format:check` | Check code formatting |
+| `npm run type-check` | TypeScript validation |
 
 ## Contributing
 
