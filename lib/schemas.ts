@@ -31,7 +31,7 @@ export const invoiceFormSchema = z.object({
     .string()
     .max(60)
     .optional()
-    .transform((v) => (v ? sanitizeString(v) : v)),
+    .transform((v) => (v ? sanitizeWebsite(sanitizeString(v)) : v)),
   buyerCompanyName: z.string().min(1, { message: "Company name is required" }).max(100).transform(sanitizeString),
   buyerAddress: z.string().min(1, { message: "Address is required" }).max(250).transform(sanitizeString),
   buyerCompanyId: z
@@ -55,7 +55,7 @@ export const invoiceFormSchema = z.object({
     .string()
     .max(60)
     .optional()
-    .transform((v) => (v ? sanitizeString(v) : v)),
+    .transform((v) => (v ? sanitizeWebsite(sanitizeString(v)) : v)),
   invoiceNumber: z.string().min(1, { message: "Invoice number is required" }).max(30).transform(sanitizeString),
   issueDate: z.date(),
   dueDate: z.date(),

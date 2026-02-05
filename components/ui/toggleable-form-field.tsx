@@ -1,13 +1,18 @@
 import React from "react"
+import type { ControllerRenderProps, Path } from "react-hook-form"
+import type { z } from "zod"
 import { Eye, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { invoiceFormSchema } from "@/lib/schemas"
+
+type InvoiceFormValues = z.infer<typeof invoiceFormSchema>
 
 interface ToggleableFormFieldProps {
   label: string
   fieldName: string
-  field: any
+  field: ControllerRenderProps<InvoiceFormValues, Path<InvoiceFormValues>>
   isVisible: boolean
   onToggle: () => void
   maxLength?: number
@@ -54,7 +59,10 @@ export function ToggleableFormField({
         <FormControl>
           {customContent || (
             <Input
-              {...field}
+              name={field.name}
+              value={String(field.value ?? "")}
+              onBlur={field.onBlur}
+              ref={field.ref}
               type={type}
               maxLength={maxLength}
               placeholder={placeholder}

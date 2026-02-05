@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { invoiceLanguages, type InvoiceLanguage } from "@/app/utils/invoice-languages"
+import { invoiceLanguages } from "@/app/utils/invoice-languages"
 import { cn } from "@/lib/utils"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 

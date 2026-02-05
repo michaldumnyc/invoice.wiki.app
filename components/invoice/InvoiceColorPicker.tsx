@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { invoiceColors, type InvoiceColor } from "@/app/utils/invoice-colors"
+import { invoiceColors } from "@/app/utils/invoice-colors"
 import { cn } from "@/lib/utils"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 

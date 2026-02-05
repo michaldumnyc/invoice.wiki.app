@@ -30,7 +30,8 @@ export function Toast({ message, variant, open, onClose, duration = 4000 }: Toas
   const [isVisible, setIsVisible] = useState(open)
 
   useEffect(() => {
-    setIsVisible(open)
+    // Defer setState so it's not synchronous in effect (avoids cascading render warning)
+    queueMicrotask(() => setIsVisible(open))
     if (open && duration) {
       const timer = setTimeout(() => {
         setIsVisible(false)

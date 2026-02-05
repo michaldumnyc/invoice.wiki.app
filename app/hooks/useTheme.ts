@@ -34,22 +34,24 @@ export function useTheme() {
     [getSystemTheme]
   )
 
-  // Initialize theme on load
+  // Initialize theme on load (defer setState to avoid synchronous setState-in-effect)
   useEffect(() => {
-    setMounted(true)
-    // Check if theme is stored in localStorage
-    const storedTheme = window.localStorage.getItem("theme") as Theme | null
+    const raw = window.localStorage.getItem("theme")
+    const storedTheme: Theme | null = raw === "light" || raw === "dark" || raw === "system" ? raw : null
 
-    if (storedTheme) {
-      // Пользователь уже делал выбор - используем его выбор
-      setTheme(storedTheme)
-      applyTheme(storedTheme)
-    } else {
-      // Первый визит - определяем системную тему и сохраняем как выбор пользователя
-      const systemTheme = getSystemTheme()
-      setTheme(systemTheme)
-      applyTheme(systemTheme)
+    const applyInitial = () => {
+      setMounted(true)
+      if (storedTheme) {
+        setTheme(storedTheme)
+        applyTheme(storedTheme)
+      } else {
+        const systemTheme = getSystemTheme()
+        setTheme(systemTheme)
+        applyTheme(systemTheme)
+      }
     }
+
+    queueMicrotask(applyInitial)
   }, [applyTheme, getSystemTheme])
 
   // Listen for system theme changes ONLY if user chose "system"

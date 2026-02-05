@@ -1,23 +1,7 @@
 import type React from "react"
 import "@/styles/global.css"
 import type { Metadata, Viewport } from "next"
-
 import { ToastProvider } from "@/components/ui/toast-provider"
-
-// Import local base64-encoded fonts (these will be handled in global.css)
-import { notoSansRegularBase64 } from "@/utils/fonts/notoSansRegular"
-import { notoSansBoldBase64 } from "@/utils/fonts/notoSansBold"
-
-// Function to clean base64 by removing prefix
-const cleanBase64 = (base64String: string) => {
-  return base64String.startsWith("data:font/ttf;base64,")
-    ? base64String.replace("data:font/ttf;base64,", "")
-    : base64String
-}
-
-// Create cleaned base64 font strings
-const cleanedNotoSansRegular = cleanBase64(notoSansRegularBase64)
-const cleanedNotoSansBold = cleanBase64(notoSansBoldBase64)
 
 // Viewport configuration for all pages - removed maximumScale for accessibility
 export const viewport: Viewport = {

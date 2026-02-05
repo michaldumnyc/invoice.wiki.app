@@ -6,7 +6,7 @@ import DOMPurify from "isomorphic-dompurify"
  * 2. Trim length to maxLength (default 250)
  */
 export function sanitizeInput(input: string, maxLength = 250): string {
-  let sanitized = DOMPurify.sanitize(input)
+  const sanitized = DOMPurify.sanitize(input)
   return sanitized.slice(0, maxLength)
 }
 

@@ -10,7 +10,8 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
     console.error(error)
   }, [error])
 
-  const supportEmail = process.env.SUPPORT_EMAIL
+  // Next.js exposes only NEXT_PUBLIC_* env vars to client components
+  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL
 
   // Determine error type and customize instructions
   const isPdfError = error.message.includes("PDF Generation Failed")

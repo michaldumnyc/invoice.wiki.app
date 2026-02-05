@@ -68,7 +68,7 @@ export function middleware(request: NextRequest) {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
   response.headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
   response.headers.set("Cross-Origin-Opener-Policy", "same-origin")
-  response.headers.set("Cross-Origin-Embedder-Policy", "require-corp")
+  response.headers.set("Cross-Origin-Embedder-Policy", "credentialless")
   response.headers.set("Cross-Origin-Resource-Policy", "same-origin")
 
   // Removing headings that disclose technologies
