@@ -33,6 +33,10 @@ export function MobileMenu() {
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col space-y-4">
+              <div className="flex items-center gap-2 px-4 py-2">
+                <span className="text-sm text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
               <Link
                 href="/"
                 className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/" && "bg-accent")}

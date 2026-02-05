@@ -2,7 +2,7 @@
 
 import React from "react"
 import { useState, useCallback, useMemo, useEffect } from "react"
-import { useForm, useFieldArray, FormProvider } from "react-hook-form"
+import { useForm, useFieldArray, FormProvider, useWatch, type FieldErrors, type Resolver } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ArrowRight } from "lucide-react"
 
@@ -11,7 +11,6 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { generateInvoicePDFLazy, preloadPDFModules } from "@/lib/pdf-generator"
 import Header from "@/components/Header"
-import Footer from "@/components/Footer"
 import { TermsDialog } from "@/components/TermsDialog"
 import { invoiceFormSchema } from "@/lib/schemas"
 import { useMediaQuery } from "@/app/hooks/useMediaQuery"
@@ -71,8 +70,8 @@ const CreateInvoiceForm: React.FC = () => {
     }))
   }
 
-  const form = useForm({
-    resolver: zodResolver(invoiceFormSchema),
+  const form = useForm<InvoiceFormValues>({
+    resolver: zodResolver(invoiceFormSchema) as Resolver<InvoiceFormValues>,
     defaultValues: {
       sellerCompanyName: "",
       sellerAddress: "",
@@ -109,20 +108,22 @@ const CreateInvoiceForm: React.FC = () => {
     },
   })
 
-  const { control, handleSubmit, watch, setValue } = form
+  const { control, handleSubmit, setValue } = form
   const { fields, append, remove } = useFieldArray({
     control,
     name: "items",
   })
 
-  const items = watch("items")
-  const paymentMethod = watch("paymentMethod")
-  const isPaid = watch("isPaid")
-  const currency = watch("currency")
-  const invoiceNumber = watch("invoiceNumber")
-  const languageId = watch("languageId")
-  const taxType = watch("taxType")
-  const showTax = watch("showTax")
+  const defaultItems = useMemo(() => [{ name: "", quantity: 1, price: 0, vatRate: 0 }], [])
+  const watched = useWatch({ control })
+  const items = watched?.items ?? defaultItems
+  const paymentMethod = watched?.paymentMethod ?? "bank_transfer"
+  const isPaid = watched?.isPaid ?? false
+  const currency = watched?.currency ?? "USD"
+  const invoiceNumber = watched?.invoiceNumber ?? ""
+  const languageId = watched?.languageId ?? "en"
+  const taxType = watched?.taxType ?? "vat"
+  const showTax = watched?.showTax ?? true
 
   // Get form translations based on selected language
   const formTranslations = getFormLanguageById(languageId || "en").form
@@ -145,7 +146,12 @@ const CreateInvoiceForm: React.FC = () => {
   }, [taxType, setValue])
 
   const totals = useMemo(() => {
-    const { netTotal, vatTotal, grandTotal } = calculateInvoiceTotals(items)
+    const normalizedItems = items.map((item) => ({
+      price: item.price ?? 0,
+      quantity: item.quantity ?? 0,
+      vatRate: item.vatRate ?? 0,
+    }))
+    const { netTotal, vatTotal, grandTotal } = calculateInvoiceTotals(normalizedItems)
     return {
       net: toNumber(netTotal),
       vat: toNumber(vatTotal),
@@ -163,7 +169,7 @@ const CreateInvoiceForm: React.FC = () => {
   }
 
   const onSubmit = useCallback(
-    async (data: any) => {
+    async (data: InvoiceFormValues) => {
       try {
         setIsSubmitting(true)
 
@@ -229,7 +235,9 @@ const CreateInvoiceForm: React.FC = () => {
 
         const link = document.createElement("a")
         link.href = url
-        link.download = `invoice-${data.invoiceNumber}.pdf`
+        // Sanitize filename: no path chars (security + cross‑platform)
+        const safeName = (data.invoiceNumber || "invoice").replace(/[/\\:*?"<>|]/g, "")
+        link.download = `invoice-${safeName}.pdf`
         link.target = "_blank"
         link.rel = "noopener noreferrer"
 
@@ -295,7 +303,7 @@ const CreateInvoiceForm: React.FC = () => {
     }, 3000)
   }
 
-  const scrollToFirstError = (errors: any) => {
+  const scrollToFirstError = (errors: FieldErrors<InvoiceFormValues>) => {
     const errorFields = Object.keys(errors)
     if (errorFields.length === 0) return
 
@@ -581,7 +589,7 @@ const CreateInvoiceForm: React.FC = () => {
                     type="submit"
                     className="w-full max-w-md bg-blue-400 hover:bg-blue-500 text-white"
                     size="lg"
-                    disabled={!form.watch("termsAccepted") || isSubmitting}
+                    disabled={!watched?.termsAccepted || isSubmitting}
                     onMouseEnter={preloadPDFModules}
                     onClick={() => {
                       form.trigger().then((isValid) => {

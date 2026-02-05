@@ -79,6 +79,7 @@ export default function HomePage() {
       />
       <WebsiteJsonLd />
       <OrganizationJsonLd />
+      <FaqJsonLd />
       <EnhancedSoftwareApplicationJsonLd />
       <InvoiceExampleImageJsonLd />
 

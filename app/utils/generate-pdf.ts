@@ -1,5 +1,8 @@
 import jsPDF from "jspdf"
 import autoTable from "jspdf-autotable"
+
+type JsPDFInstance = InstanceType<typeof jsPDF>
+type JsPDFWithAutoTable = JsPDFInstance & { lastAutoTable?: { finalY: number } }
 import { format, isValid } from "date-fns"
 import type { InvoiceFormData } from "@/types/invoice"
 import { currencies } from "./currencies"
@@ -107,7 +110,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     const detailsStartY = headerY + headerHeight + 10
 
     // Helper function to safely format dates
-    const formatSafeDate = (date: any): string => {
+    const formatSafeDate = (date: Date | string | number | undefined | null): string => {
       const safeDate = date ? new Date(date) : new Date()
       return isValid(safeDate) ? format(safeDate, "dd.MM.yyyy") : format(new Date(), "dd.MM.yyyy")
     }
@@ -130,7 +133,14 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     const startY = detailsStartY + invoiceDetails.length * 6 + 5
 
     // Helper function to wrap and print text with proper word boundaries
-    function printWrappedText(doc: any, text: string, x: number, y: number, maxWidth: number, options: any = {}) {
+    function printWrappedText(
+      doc: JsPDFInstance,
+      text: string,
+      x: number,
+      y: number,
+      maxWidth: number,
+      options: { align?: string } = {}
+    ) {
       try {
         const words = text.split(/\s+/)
         const lines = []
@@ -152,14 +162,14 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
           try {
             const xPos = options.align === "right" ? x - doc.getStringUnitWidth(line) * doc.getFontSize() : x
             doc.text(line, xPos, y + index * 5)
-          } catch (textError) {
+          } catch {
             // Fallback to a simple text rendering without alignment
             doc.text(line, x, y + index * 5)
           }
         })
 
         return lines.length
-      } catch (wrapError) {
+      } catch {
         return 1 // Return 1 line as fallback to prevent layout overflow
       }
     }
@@ -371,7 +381,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
           )
         },
       })
-    } catch (tableError) {
+    } catch {
       // Table creation failed, continue without table
     }
 
@@ -387,7 +397,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
 
     // Add more space before totals
     // TypeScript doesn't know about lastAutoTable property added by autoTable plugin
-    const finalY = "lastAutoTable" in doc ? (doc as any).lastAutoTable.finalY + 10 : 200
+    const finalY = "lastAutoTable" in doc ? (doc as JsPDFWithAutoTable).lastAutoTable!.finalY + 10 : 200
 
     // Get the right edge of the table for alignment
     const rightEdge = pageWidth - 16 // Adjusted to match the table right margin
@@ -464,7 +474,7 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     })
 
     return doc
-  } catch (error) {
+  } catch {
     return null
   }
 }
