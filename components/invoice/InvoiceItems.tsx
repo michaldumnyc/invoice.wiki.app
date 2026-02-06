@@ -7,6 +7,7 @@ import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/comp
 import { Input } from "@/components/ui/input"
 import { sanitizeInput, sanitizeNumber } from "@/lib/security"
 import { InvoiceFormValues } from "./types"
+import type { FormLanguage } from "@/app/utils/form-languages"
 
 interface InvoiceItemsProps {
   control: Control<InvoiceFormValues>
@@ -16,6 +17,10 @@ interface InvoiceItemsProps {
   highlightedField: string | null
   isMobile: boolean
   showTaxColumn?: boolean
+  translations?: Pick<
+    FormLanguage["form"],
+    "items" | "itemName" | "quantity" | "price" | "taxRate" | "remove" | "addItem" | "maxItemsReached" | "placeholders"
+  >
 }
 
 export function InvoiceItems({
@@ -26,11 +31,12 @@ export function InvoiceItems({
   highlightedField,
   isMobile,
   showTaxColumn = true,
+  translations: t,
 }: InvoiceItemsProps) {
   return (
     <Card className="card-content">
       <CardHeader>
-        <CardTitle>Items</CardTitle>
+        <CardTitle>{t?.items ?? "Items"}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -47,12 +53,12 @@ export function InvoiceItems({
                   name={`items.${index}.name`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Item Name *</FormLabel>
+                      <FormLabel>{t?.itemName ?? "Item Name"} *</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
                           maxLength={130}
-                          placeholder="Product or service name"
+                          placeholder={t?.placeholders?.itemName ?? "Product or service name"}
                           autoComplete="off"
                           data-lpignore="true"
                           data-form-type="other"
@@ -71,7 +77,7 @@ export function InvoiceItems({
                   name={`items.${index}.quantity`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Quantity</FormLabel>
+                      <FormLabel>{t?.quantity ?? "Quantity"}</FormLabel>
                       <FormControl>
                         <Input
                           type="number"
@@ -104,7 +110,7 @@ export function InvoiceItems({
                   name={`items.${index}.price`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Price</FormLabel>
+                      <FormLabel>{t?.price ?? "Price"}</FormLabel>
                       <FormControl>
                         <Input
                           type="number"
@@ -139,7 +145,7 @@ export function InvoiceItems({
                     name={`items.${index}.vatRate`}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Tax Rate (%)</FormLabel>
+                        <FormLabel>{t?.taxRate ?? "Tax Rate (%)"}</FormLabel>
                         <FormControl>
                           <Input
                             type="number"
@@ -178,7 +184,7 @@ export function InvoiceItems({
                 aria-label={`Remove item ${index + 1}`}
               >
                 <Trash2 className="h-4 w-4 mr-1" aria-hidden="true" />
-                Remove
+                {t?.remove ?? "Remove"}
               </Button>
             </div>
           ))}
@@ -192,10 +198,12 @@ export function InvoiceItems({
             aria-label="Add new invoice item"
           >
             <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            Add Item
+            {t?.addItem ?? "Add Item"}
           </Button>
           {fields.length >= 10 && (
-            <p className="text-sm text-muted-foreground mt-2">Maximum number of items (10) reached.</p>
+            <p className="text-sm text-muted-foreground mt-2">
+              {t?.maxItemsReached ?? "Maximum number of items (10) reached."}
+            </p>
           )}
         </div>
       </CardContent>

@@ -14,6 +14,7 @@ interface InvoiceColorPickerProps {
     description: string
     selected: string
   }
+  colorNames?: Record<string, string>
 }
 
 export function InvoiceColorPicker({
@@ -21,6 +22,7 @@ export function InvoiceColorPicker({
   onColorChange,
   className,
   translations,
+  colorNames,
 }: InvoiceColorPickerProps) {
   const defaultTranslations = {
     title: "Invoice Accent Color",
@@ -30,6 +32,10 @@ export function InvoiceColorPicker({
 
   const t = translations || defaultTranslations
   const selectedColor = invoiceColors.find((c) => c.id === selectedColorId)
+
+  const getColorName = (color: { id: string; name: string }) => {
+    return colorNames?.[color.id] ?? color.name
+  }
 
   return (
     <div className={cn("space-y-2", className)}>
@@ -43,7 +49,7 @@ export function InvoiceColorPicker({
                 <div className="w-4 h-4 rounded-full overflow-hidden border border-border">
                   <div className="w-full h-full" style={{ backgroundColor: selectedColor.hex }}></div>
                 </div>
-                <span>{selectedColor.name}</span>
+                <span>{getColorName(selectedColor)}</span>
               </div>
             )}
           </SelectValue>
@@ -55,7 +61,7 @@ export function InvoiceColorPicker({
                 <div className="w-4 h-4 rounded-full overflow-hidden border border-border">
                   <div className="w-full h-full" style={{ backgroundColor: color.hex }}></div>
                 </div>
-                <span>{color.name}</span>
+                <span>{getColorName(color)}</span>
               </div>
             </SelectItem>
           ))}

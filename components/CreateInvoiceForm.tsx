@@ -36,8 +36,15 @@ import {
 import { calculateInvoiceTotals, toNumber } from "@/lib/decimal-utils"
 import { isValid } from "date-fns"
 import { getFormLanguageById } from "@/app/utils/form-languages"
+import type { Dictionary } from "@/lib/get-dictionary"
 
-const CreateInvoiceForm: React.FC = () => {
+interface CreateInvoiceFormProps {
+  formDict: Dictionary["createInvoice"]["form"]
+  termsDict: Dictionary["terms"]
+  locale: string
+}
+
+const CreateInvoiceForm: React.FC<CreateInvoiceFormProps> = ({ formDict, termsDict, locale }) => {
   const { showToast } = useToastProvider()
   const isMobile = useMediaQuery("(max-width: 768px)")
 
@@ -70,8 +77,22 @@ const CreateInvoiceForm: React.FC = () => {
     }))
   }
 
+  const localizedResolver: Resolver<InvoiceFormValues> = useCallback(
+    async (values, context, options) => {
+      const result = await (zodResolver(invoiceFormSchema) as Resolver<InvoiceFormValues>)(values, context, options)
+      if (result.errors.termsAccepted) {
+        result.errors.termsAccepted = {
+          ...result.errors.termsAccepted,
+          message: formDict.termsRequired,
+        }
+      }
+      return result
+    },
+    [formDict.termsRequired]
+  )
+
   const form = useForm<InvoiceFormValues>({
-    resolver: zodResolver(invoiceFormSchema) as Resolver<InvoiceFormValues>,
+    resolver: localizedResolver,
     defaultValues: {
       sellerCompanyName: "",
       sellerAddress: "",
@@ -115,15 +136,15 @@ const CreateInvoiceForm: React.FC = () => {
   })
 
   const defaultItems = useMemo(() => [{ name: "", quantity: 1, price: 0, vatRate: 0 }], [])
-  const watched = useWatch({ control })
-  const items = watched?.items ?? defaultItems
-  const paymentMethod = watched?.paymentMethod ?? "bank_transfer"
-  const isPaid = watched?.isPaid ?? false
-  const currency = watched?.currency ?? "USD"
-  const invoiceNumber = watched?.invoiceNumber ?? ""
-  const languageId = watched?.languageId ?? "en"
-  const taxType = watched?.taxType ?? "vat"
-  const showTax = watched?.showTax ?? true
+  const items = useWatch({ control, name: "items" }) ?? defaultItems
+  const paymentMethod = useWatch({ control, name: "paymentMethod" }) ?? "bank_transfer"
+  const isPaid = useWatch({ control, name: "isPaid" }) ?? false
+  const currency = useWatch({ control, name: "currency" }) ?? "USD"
+  const invoiceNumber = useWatch({ control, name: "invoiceNumber" }) ?? ""
+  const languageId = useWatch({ control, name: "languageId" }) ?? "en"
+  const taxType = useWatch({ control, name: "taxType" }) ?? "vat"
+  const showTax = useWatch({ control, name: "showTax" }) ?? true
+  const termsAccepted = useWatch({ control, name: "termsAccepted" }) ?? false
 
   // Get form translations based on selected language
   const formTranslations = getFormLanguageById(languageId || "en").form
@@ -368,113 +389,119 @@ const CreateInvoiceForm: React.FC = () => {
             <Form {...form}>
               <form onSubmit={handleSubmit(onSubmit, scrollToFirstError)} className="space-y-8 w-full mb-16">
                 {/* Invoice Settings - Color, Language, Tax Type */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 bg-card rounded-lg border border-border">
-                  <FormField
-                    control={control}
-                    name="colorId"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <InvoiceColorPicker
-                            selectedColorId={field.value || "blue"}
-                            onColorChange={field.onChange}
-                            translations={{
-                              title: formTranslations.invoiceColorSelection,
-                              description: formTranslations.colorDescription,
-                              selected: "Selected",
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={control}
-                    name="languageId"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <InvoiceLanguagePicker
-                            selectedLanguageId={field.value || "en"}
-                            onLanguageChange={field.onChange}
-                            translations={{
-                              title: formTranslations.invoiceLanguageSelection,
-                              description: formTranslations.languageDescription,
-                              selected: "Selected",
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={control}
-                    name="taxType"
-                    render={({ field }) => (
-                      <FormItem>
-                        <div className="space-y-2">
-                          <FormLabel className="text-base font-semibold">{formTranslations.taxTypeSelection}</FormLabel>
-                          <p className="text-sm text-muted-foreground">{formTranslations.taxTypeDescription}</p>
+                <div className="p-4 bg-card rounded-lg border border-border space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <FormField
+                      control={control}
+                      name="colorId"
+                      render={({ field }) => (
+                        <FormItem>
                           <FormControl>
-                            <select
-                              value={field.value || "vat"}
-                              onChange={(e) => field.onChange(e.target.value)}
-                              aria-label={formTranslations.taxTypeSelection}
-                              className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            >
-                              <option value="vat">{formTranslations.taxTypes.vat}</option>
-                              <option value="gst">{formTranslations.taxTypes.gst}</option>
-                              <option value="sales_tax">{formTranslations.taxTypes.sales_tax}</option>
-                              <option value="none">{formTranslations.taxTypes.none}</option>
-                            </select>
+                            <InvoiceColorPicker
+                              selectedColorId={field.value || "blue"}
+                              onColorChange={field.onChange}
+                              translations={{
+                                title: formTranslations.invoiceColorSelection,
+                                description: formTranslations.colorDescription,
+                                selected: "Selected",
+                              }}
+                              colorNames={formTranslations.colors}
+                            />
                           </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                          {/* Tax Options - only show when tax type is not 'none' */}
-                          {taxType !== "none" && (
-                            <div className="flex flex-col gap-2 pt-2">
-                              <FormField
-                                control={control}
-                                name="showTax"
-                                render={({ field: showTaxField }) => (
-                                  <label className="flex items-center gap-2 text-sm cursor-pointer">
-                                    <Checkbox checked={showTaxField.value} onCheckedChange={showTaxField.onChange} />
-                                    <span>{formTranslations.showTax}</span>
-                                  </label>
-                                )}
-                              />
+                    <FormField
+                      control={control}
+                      name="languageId"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <InvoiceLanguagePicker
+                              selectedLanguageId={field.value || "en"}
+                              onLanguageChange={field.onChange}
+                              translations={{
+                                title: formTranslations.invoiceLanguageSelection,
+                                description: formTranslations.languageDescription,
+                                selected: "Selected",
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                              {/* Reverse Charge only for EU languages (not Ukrainian) */}
-                              {taxType === "vat" && languageId !== "uk" && (
+                    <FormField
+                      control={control}
+                      name="taxType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <div className="space-y-2">
+                            <FormLabel className="text-base font-semibold">
+                              {formTranslations.taxTypeSelection}
+                            </FormLabel>
+                            <FormControl>
+                              <select
+                                value={field.value || "vat"}
+                                onChange={(e) => field.onChange(e.target.value)}
+                                aria-label={formTranslations.taxTypeSelection}
+                                className="w-full h-10 px-3 py-2 text-sm bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                              >
+                                <option value="vat">{formTranslations.taxTypes.vat}</option>
+                                <option value="gst">{formTranslations.taxTypes.gst}</option>
+                                <option value="sales_tax">{formTranslations.taxTypes.sales_tax}</option>
+                                <option value="none">{formTranslations.taxTypes.none}</option>
+                              </select>
+                            </FormControl>
+
+                            {/* Tax Options - only show when tax type is not 'none' */}
+                            {taxType !== "none" && (
+                              <div className="flex flex-col gap-2 pt-2">
                                 <FormField
                                   control={control}
-                                  name="reverseCharge"
-                                  render={({ field: reverseChargeField }) => (
+                                  name="showTax"
+                                  render={({ field: showTaxField }) => (
                                     <label className="flex items-center gap-2 text-sm cursor-pointer">
-                                      <Checkbox
-                                        checked={reverseChargeField.value}
-                                        onCheckedChange={reverseChargeField.onChange}
-                                      />
-                                      <span className="flex flex-col">
-                                        <span className="font-medium">{formTranslations.reverseCharge}</span>
-                                        <span className="text-xs text-muted-foreground">
-                                          {formTranslations.reverseChargeDescription}
-                                        </span>
-                                      </span>
+                                      <Checkbox checked={showTaxField.value} onCheckedChange={showTaxField.onChange} />
+                                      <span>{formTranslations.showTax}</span>
                                     </label>
                                   )}
                                 />
-                              )}
-                            </div>
-                          )}
-                        </div>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+
+                                {/* Reverse Charge only for EU languages (not Ukrainian) */}
+                                {taxType === "vat" && languageId !== "uk" && (
+                                  <FormField
+                                    control={control}
+                                    name="reverseCharge"
+                                    render={({ field: reverseChargeField }) => (
+                                      <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                        <Checkbox
+                                          checked={reverseChargeField.value}
+                                          onCheckedChange={reverseChargeField.onChange}
+                                        />
+                                        <span className="flex flex-col">
+                                          <span className="font-medium">{formTranslations.reverseCharge}</span>
+                                          <span className="text-xs text-muted-foreground">
+                                            {formTranslations.reverseChargeDescription}
+                                          </span>
+                                        </span>
+                                      </label>
+                                    )}
+                                  />
+                                )}
+                              </div>
+                            )}
+                          </div>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <p className="text-sm text-muted-foreground">{formTranslations.taxTypeDescription}</p>
                 </div>
 
                 {/* Seller and Buyer Information */}
@@ -520,7 +547,12 @@ const CreateInvoiceForm: React.FC = () => {
                 </div>
 
                 {/* Invoice Details */}
-                <InvoiceDetails control={control} highlightedField={highlightedField} isMobile={isMobile} />
+                <InvoiceDetails
+                  control={control}
+                  highlightedField={highlightedField}
+                  isMobile={isMobile}
+                  translations={formTranslations}
+                />
 
                 {/* Payment Information */}
                 <PaymentInformation
@@ -534,13 +566,14 @@ const CreateInvoiceForm: React.FC = () => {
                   manuallyEditedReference={manuallyEditedReference}
                   setManuallyEditedReference={setManuallyEditedReference}
                   setValue={setValue}
+                  translations={formTranslations}
                 />
 
                 {/* Notes */}
-                <InvoiceNotes control={control} highlightedField={highlightedField} />
+                <InvoiceNotes control={control} highlightedField={highlightedField} translations={formTranslations} />
 
                 {/* Payment Status */}
-                <PaymentStatus control={control} />
+                <PaymentStatus control={control} translations={formTranslations} />
 
                 {/* Items */}
                 <InvoiceItems
@@ -551,6 +584,7 @@ const CreateInvoiceForm: React.FC = () => {
                   highlightedField={highlightedField}
                   isMobile={isMobile}
                   showTaxColumn={taxType !== "none" && showTax}
+                  translations={formTranslations}
                 />
 
                 {/* Terms and Submit */}
@@ -569,15 +603,15 @@ const CreateInvoiceForm: React.FC = () => {
                         </FormControl>
                         <div className="space-y-1 leading-none">
                           <FormLabel>
-                            I agree to the invoice.wiki{" "}
+                            {formDict.agreePrefix}{" "}
                             <button
                               type="button"
                               className="text-primary hover:underline font-medium"
                               onClick={() => setTermsDialogOpen(true)}
                             >
-                              Terms and Conditions
-                            </button>{" "}
-                            *
+                              {formDict.termsLink}
+                            </button>
+                            {formDict.agreeSuffix ? ` ${formDict.agreeSuffix}` : ""} *
                           </FormLabel>
                           <FormMessage />
                         </div>
@@ -589,7 +623,7 @@ const CreateInvoiceForm: React.FC = () => {
                     type="submit"
                     className="w-full max-w-md bg-blue-400 hover:bg-blue-500 text-white"
                     size="lg"
-                    disabled={!watched?.termsAccepted || isSubmitting}
+                    disabled={!termsAccepted || isSubmitting}
                     onMouseEnter={preloadPDFModules}
                     onClick={() => {
                       form.trigger().then((isValid) => {
@@ -601,18 +635,23 @@ const CreateInvoiceForm: React.FC = () => {
                   >
                     {isSubmitting ? (
                       <>
-                        <span className="animate-pulse">Generating Invoice...</span>
+                        <span className="animate-pulse">{formDict.generatingInvoice}</span>
                       </>
                     ) : (
                       <>
-                        Generate Invoice
+                        {formDict.generateInvoice}
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </>
                     )}
                   </Button>
                 </div>
 
-                <TermsDialog open={termsDialogOpen} onOpenChange={setTermsDialogOpen} />
+                <TermsDialog
+                  open={termsDialogOpen}
+                  onOpenChange={setTermsDialogOpen}
+                  dict={termsDict}
+                  locale={locale}
+                />
 
                 {/* Totals */}
                 <InvoiceTotals

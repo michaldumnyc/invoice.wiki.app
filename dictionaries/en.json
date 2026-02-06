@@ -1,0 +1,618 @@
+{
+  "nav": {
+    "home": "Home",
+    "createInvoice": "Create Invoice",
+    "faq": "FAQ",
+    "about": "About",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System",
+      "toggleTheme": "Toggle theme"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "freeInvoiceGenerator": "Free Invoice Generator",
+    "aboutSite": "About Invoice.wiki",
+    "createProfessionalInvoice": "Create Professional Invoice",
+    "privacyPolicy": "Privacy Policy Details",
+    "openSource": "Open Source on GitHub"
+  },
+  "home": {
+    "meta": {
+      "title": "Free Invoice Generator - Invoice.wiki",
+      "description": "Free online invoice maker. Create professional invoices instantly with PDF download, tax support, multiple currencies and languages. No registration.",
+      "ogTitle": "Invoice.wiki - Free Invoice Generator",
+      "ogDescription": "Create invoices instantly online. Free PDF download, no registration needed."
+    },
+    "hero": {
+      "title": "Free Invoice Generator - Create PDF Invoices",
+      "description": "Create and download <strong>professional PDF invoices</strong> in minutes. Our free invoice maker supports <strong>40+ currencies</strong>, automatic tax calculations, and <strong>6 languages</strong>. No registration, no fees — just fill in your details and download.",
+      "cta": "Create Invoice Now"
+    },
+    "howItWorks": {
+      "title": "How to Create Professional Invoices",
+      "steps": [
+        {
+          "title": "Fill Invoice Details",
+          "description": "Enter your business information, client details, and invoice items. Our form guides you through all required fields."
+        },
+        {
+          "title": "Customize & Review",
+          "description": "Choose colors, language, and tax settings. Preview your invoice before downloading."
+        },
+        {
+          "title": "Download PDF",
+          "description": "Generate and download your invoice as a PDF. Ready to send to clients or print for records."
+        }
+      ],
+      "cta": "Start Creating Invoice →"
+    },
+    "features": {
+      "title": "Why Choose Our Invoice Generator?",
+      "items": [
+        {
+          "title": "Fast & Simple",
+          "description": "Fill out the form, hit download. Your PDF invoice is ready in seconds."
+        },
+        {
+          "title": "Private & Secure",
+          "description": "Everything runs in your browser. We don't store or see your data."
+        },
+        {
+          "title": "Works Everywhere",
+          "description": "Desktop, tablet, phone — any browser, any device. No apps to install."
+        }
+      ],
+      "privacyLink": "Privacy details →",
+      "learnMoreLink": "Learn more →"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "Do I need to register?",
+          "answer": "No! Just open the form and start creating. No login, no signup."
+        },
+        { "question": "Can I download as PDF?", "answer": "Yes — instant PDF download, ready to send or print." },
+        { "question": "Is it really free?", "answer": "100% free. No hidden fees, no subscriptions, no limits." },
+        { "question": "Tax calculations?", "answer": "Yes! Any tax type — auto-calculated totals." },
+        { "question": "What currencies?", "answer": "40+ currencies: USD, EUR, GBP, PLN, CZK, UAH, and more." },
+        { "question": "Customization?", "answer": "10 colors + 6 languages (EN, DE, CS, PL, SK, UK)." }
+      ]
+    },
+    "grid": {
+      "title": "Everything You Need",
+      "items": [
+        { "title": "40+ Currencies", "subtitle": "USD, EUR, GBP, and more" },
+        { "title": "6 Languages", "subtitle": "EN, DE, CS, PL, SK, UK" },
+        { "title": "10 Colors", "subtitle": "Match your brand" },
+        { "title": "Instant PDF", "subtitle": "Download & send" },
+        { "title": "Auto Calculations", "subtitle": "Tax, totals, discounts" },
+        { "title": "Any Device", "subtitle": "Desktop, tablet, phone" },
+        { "title": "100% Private", "subtitle": "Data stays local" },
+        { "title": "Forever Free", "subtitle": "No hidden fees" }
+      ]
+    },
+    "invoiceExample": {
+      "title": "See What You'll Create",
+      "description": "Generate professional invoices that impress clients and ensure prompt payment. Our free invoice generator creates clean, modern invoices with all essential business details, automatic calculations, and perfect formatting.",
+      "clickToEnlarge": "Click to enlarge",
+      "imageAlt": "Create invoice example - Professional invoice generator showing PDF invoice template with VAT calculations and invoice details",
+      "imageTitle": "Professional Invoice Example",
+      "pdfReady": "PDF Ready",
+      "tryItNow": "Try It Now - Free →",
+      "benefits": [
+        {
+          "title": "Clean Professional Design",
+          "description": "Every invoice generated maintains consistent, professional formatting that reflects well on your business and builds client trust."
+        },
+        {
+          "title": "Automatic Calculations",
+          "description": "VAT rates, subtotals, and grand totals are calculated automatically with high precision using mathematical rounding (0.5 rounds up) to 2 decimal places, eliminating manual errors and saving valuable time."
+        },
+        {
+          "title": "Complete Business Information",
+          "description": "Include all necessary business details: company information, addresses, VAT IDs, payment terms, and contact information for complete transparency."
+        },
+        {
+          "title": "Instant PDF Download",
+          "description": "Download your completed invoices as high-quality PDF files that are ready for printing, emailing, or digital storage with perfect formatting preservation."
+        },
+        {
+          "title": "Customizable Colors & Languages",
+          "description": "NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech, Polish, Slovak, Ukrainian) to match your brand and serve international clients."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Create Your Invoice?",
+      "subtitle": "No signup. No fees. Takes 2 minutes.",
+      "button": "Create Invoice"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Invoice.wiki - Free Invoice Generator & Secure Online Billing",
+      "description": "Discover how Invoice.wiki helps freelancers, contractors, and businesses create free invoices online. Secure, fast, no registration, and PDF download included.",
+      "ogTitle": "About Invoice.wiki - Free Invoice Generator",
+      "ogDescription": "Learn how Invoice.wiki provides free online invoice generation for freelancers and businesses. No registration required, secure browser-based processing."
+    },
+    "title": "About Invoice Wiki - Create Invoice Generator for Freelancers & Businesses",
+    "intro": "Invoice.wiki is a free and easy-to-use online invoice generator built for freelancers, small businesses, contractors, and entrepreneurs. Create and download professional invoices as PDFs with full privacy — no registration needed. Use our free invoice generator and",
+    "createFirstInvoice": "create your first invoice",
+    "latestUpdates": {
+      "title": "Latest Updates",
+      "items": [
+        "Flexible Tax Support: Choose your tax system or hide taxes completely. Works for any country.",
+        "Reverse Charge: EU B2B invoicing with automatic reverse charge disclaimer.",
+        "Hide Tax Option: Create clean invoices without tax columns when not needed.",
+        "10 Colors: Match your brand with custom accent colors.",
+        "6 Languages: EN, DE, CS, PL, SK, UK — serve international clients."
+      ]
+    },
+    "privacy": {
+      "title": "How We Prioritize Your Privacy",
+      "content": "We believe professional invoicing should be accessible to everyone. Our online invoice maker simplifies the process while maintaining the highest standards of data protection and user privacy. Your invoice information stays entirely on your device, processed locally in your browser for maximum data security. Learn more about our",
+      "link": "privacy protection measures"
+    },
+    "whatIsInvoice": {
+      "title": "What is an Invoice?",
+      "content": "An invoice is an official document used to request payment for goods or services. It outlines what was sold, who sold it, who bought it, the agreed price, tax amounts, and payment terms. Invoices serve as critical financial and legal records."
+    },
+    "components": {
+      "title": "Key Components of an Invoice",
+      "seller": {
+        "title": "Invoice Creator - Seller Information",
+        "items": [
+          "Company Name – Official business name.",
+          "Business Address – Registered address of the seller.",
+          "Company ID – Official registration number.",
+          "Tax ID – Tax identification number (if applicable).",
+          "Contact Details – Email, phone number, and website."
+        ]
+      },
+      "buyer": {
+        "title": "Buyer Information",
+        "items": [
+          "Client Name – Name of the person or business being billed.",
+          "Client Address – Delivery or legal address.",
+          "Company ID & Tax ID – Registration and tax info of the buyer.",
+          "Contact – Client's email or phone number."
+        ]
+      },
+      "details": {
+        "title": "Generate Invoice Details",
+        "items": [
+          "Invoice Number – Unique identifier for tracking.",
+          "Issue & Due Dates – When invoice was created and when payment is due.",
+          "Currency – Used for the transaction.",
+          "Reference – Optional PO or order numbers."
+        ]
+      },
+      "payment": {
+        "title": "Payment Information",
+        "items": [
+          "Accepted Methods – Bank transfer, card, PayPal, cash, etc.",
+          "Bank Details – Account number, IBAN, BIC/SWIFT.",
+          "Status – Paid or unpaid label."
+        ]
+      },
+      "itemsTotals": {
+        "title": "Invoice Generator - Items and Totals",
+        "items": [
+          "Service/Product – Name of what was sold.",
+          "Quantity & Unit Price – Per-item breakdown.",
+          "Tax Rate – Percentage applied (if applicable).",
+          "Total – Final amount including tax."
+        ]
+      }
+    },
+    "legal": {
+      "title": "Legal Relevance of Invoices",
+      "content": "Invoices are official commercial records used for tax reporting, financial accounting, and legal protection. Requirements vary by country — always verify local regulations.",
+      "purposeIntro": "Common legal purposes of invoices include:",
+      "purposes": [
+        "Verifying business transactions.",
+        "Filing tax returns and claiming deductions.",
+        "Documenting payment terms and amounts.",
+        "Providing evidence in disputes or audits."
+      ]
+    },
+    "international": {
+      "title": "International Support",
+      "items": [
+        {
+          "title": "40+ Currencies",
+          "description": "USD, EUR, GBP, PLN, CZK, UAH, and many more with proper formatting."
+        },
+        { "title": "6 Languages", "description": "English, German, Czech, Polish, Slovak, Ukrainian." },
+        { "title": "Flexible Taxes", "description": "Any tax type — works for any country." },
+        { "title": "EU B2B Ready", "description": "Reverse Charge support for cross-border EU services." }
+      ]
+    },
+    "whyChoose": {
+      "title": "Why Choose Invoice Wiki Generator?",
+      "items": [
+        "Free forever – No subscriptions, no trials, no fees.",
+        "Instant PDF invoices – Ready-to-download professional documents.",
+        "Browser-based – Use on any device without installing anything.",
+        "No login – Start creating invoices immediately.",
+        "Multi-currency & tax support – Ideal for international invoicing.",
+        "Secure & private – Your data never leaves your browser."
+      ]
+    },
+    "invoiceQuality": {
+      "title": "Create Invoices - Professional Results Every Time",
+      "content": "Our invoice generator creates clean, professional documents that reflect well on your business. Here's an example of what your invoices will look like:"
+    },
+    "invoiceExample": {
+      "whatYouGet": "What You Get:",
+      "items": [
+        "Professional layout with clear structure",
+        "Automatic VAT calculations and totals",
+        "Complete business and client information",
+        "Payment terms and banking details",
+        "Print-ready formatting"
+      ],
+      "note": "Every invoice maintains this professional standard, ensuring your business makes a great impression with every client interaction.",
+      "clickToEnlarge": "Click to enlarge",
+      "imageTitle": "Professional Invoice Sample",
+      "imageAlt": "Create invoice example - Professional invoice generator showing PDF invoice template with VAT calculations and invoice details"
+    },
+    "readyCta": {
+      "title": "Ready to Create Your First Invoice?",
+      "subtitle": "Free forever. No signup. Takes 2 minutes. PDF download included.",
+      "button": "Create Invoice →"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "Have questions, suggestions, or feedback? We'd love to hear from you."
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Frequently Asked Questions - Invoice Generator | Invoice.wiki",
+      "description": "Get answers to common questions about our free invoice generator. Learn about invoicing, tax support, PDF downloads, and business billing.",
+      "ogTitle": "FAQ - Invoice Generator Questions | Invoice.wiki",
+      "ogDescription": "Get answers to common questions about our free invoice generator and invoicing best practices."
+    },
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get instant answers to common questions about our free invoice generator, privacy protection, and professional invoicing best practices.",
+    "categories": [
+      {
+        "category": "Getting Started",
+        "icon": "🚀",
+        "questions": [
+          {
+            "question": "Do I need to register to create invoices?",
+            "answer": "No! Just open the form and start creating. No login, no signup, no personal info required."
+          },
+          {
+            "question": "How quickly can I create an invoice?",
+            "answer": "2-3 minutes. Fill in the fields, click download — done."
+          },
+          {
+            "question": "Is this tool completely free?",
+            "answer": "Yes, Invoice.wiki is a free invoice maker for both personal and commercial use with no hidden fees or subscription costs."
+          },
+          {
+            "question": "What makes your invoice generator different?",
+            "answer": "Everything runs in your browser — your data never leaves your device. No registration, 40+ currencies, 6 languages, flexible tax support, and customizable colors."
+          }
+        ]
+      },
+      {
+        "category": "Privacy & Security",
+        "icon": "🔒",
+        "questions": [
+          {
+            "question": "Is my data safe?",
+            "answer": "Yes! Everything runs in your browser. Nothing is sent to servers."
+          },
+          {
+            "question": "Do you store my invoice data?",
+            "answer": "No. All processing is local. Close the tab — data is gone."
+          },
+          {
+            "question": "Can I use this for sensitive info?",
+            "answer": "Yes. No data leaves your device — safe for confidential details."
+          },
+          {
+            "question": "What happens when I download the PDF?",
+            "answer": "PDF is generated in your browser and saved to your device. Nothing stored server-side."
+          }
+        ]
+      },
+      {
+        "category": "Features & Functionality",
+        "icon": "⚡",
+        "questions": [
+          {
+            "question": "Can I download my invoice as PDF?",
+            "answer": "Yes! Click 'Generate Invoice' and your PDF downloads instantly. Ready to send or print."
+          },
+          {
+            "question": "How does tax calculation work?",
+            "answer": "Tax is calculated per line item using the tax-exclusive method: Net Price × Tax Rate%. The tax amount is added on top of the net price. This is the standard for B2B invoicing worldwide. You can choose between VAT, GST, Sales Tax, or disable tax entirely. Each item can have its own tax rate."
+          },
+          {
+            "question": "What currencies are supported?",
+            "answer": "40+ currencies: USD, EUR, GBP, PLN, CZK, UAH, JPY, and many more. Amounts format automatically based on the selected currency."
+          },
+          {
+            "question": "Can I customize invoice colors and languages?",
+            "answer": "Yes! 10 accent colors to match your brand + 6 languages (EN, DE, CS, PL, SK, UK) for international clients."
+          },
+          {
+            "question": "Can I add my company logo?",
+            "answer": "Not yet — we focus on clean text-based invoices for privacy (no uploads to servers). Your company details in text fields look professional."
+          }
+        ]
+      },
+      {
+        "category": "Business & Legal",
+        "icon": "📋",
+        "questions": [
+          {
+            "question": "Are the invoices legally valid?",
+            "answer": "Yes — includes all required elements: invoice number, dates, parties, items, taxes, totals. Check your local regulations for specifics."
+          },
+          {
+            "question": "Can I use this for international business?",
+            "answer": "Yes! 40+ currencies, 6 languages, flexible tax. Works globally."
+          },
+          {
+            "question": "What info is required?",
+            "answer": "Your business details, client info, invoice number, date, items with prices. Tax is optional."
+          },
+          {
+            "question": "How should I number invoices?",
+            "answer": "Sequential (INV-001, INV-002) or with date (2024-001). Be consistent for accounting."
+          }
+        ]
+      },
+      {
+        "category": "Technical Questions",
+        "icon": "🛠️",
+        "questions": [
+          {
+            "question": "What browsers are supported?",
+            "answer": "All modern browsers: Chrome, Firefox, Safari, Edge. Desktop and mobile."
+          },
+          { "question": "Can I use this on mobile?", "answer": "Yes! Fully responsive — works on phones and tablets." },
+          {
+            "question": "Technical issues?",
+            "answer": "Try refresh, clear cache, or incognito mode. That fixes most issues."
+          },
+          {
+            "question": "Can I save and continue later?",
+            "answer": "No persistent save (for privacy). Complete in one session or copy to notes."
+          }
+        ]
+      },
+      {
+        "category": "Business Usage",
+        "icon": "💼",
+        "questions": [
+          { "question": "Good for freelancers?", "answer": "Perfect. Professional invoices, no costs, tax included." },
+          { "question": "Small businesses?", "answer": "Yes! Professional output without enterprise complexity." },
+          {
+            "question": "Recurring invoices?",
+            "answer": "No automation, but easy to duplicate — just update date and number."
+          },
+          {
+            "question": "Payment tracking?",
+            "answer": "We create invoices; use a spreadsheet or accounting app to track payments."
+          }
+        ]
+      }
+    ],
+    "stillHaveQuestions": {
+      "title": "Still Have Questions?",
+      "content": "Can't find the answer you're looking for? Start creating your professional invoice right away or learn more about our service.",
+      "createInvoice": "Create Invoice Now",
+      "aboutSite": "About Invoice.wiki"
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy - Invoice.wiki",
+      "description": "Invoice.wiki privacy policy. We don't collect personal data - all processing happens in your browser. No tracking, no data storage, complete privacy protection.",
+      "ogTitle": "Privacy Policy - Invoice.wiki",
+      "ogDescription": "Complete privacy protection with Invoice.wiki. No data collection, browser-based processing, and secure invoice generation."
+    },
+    "title": "Privacy Policy - Invoice Wiki Generator",
+    "noCollection": {
+      "title": "Invoice Generator Privacy - No Data Collection",
+      "content": [
+        "free invoice generator does not collect personal data. All invoice creation and PDF generation happens within your web browser. Professional invoices are created on your device, and all invoice data is cleared when you close your browser.",
+        "We do not use cookies for tracking or advertising. The only data we store in your browser is theme preferences (light/dark) in localStorage to provide a consistent user experience.",
+        "We use Vercel Analytics to collect anonymous usage statistics that help us improve the service. This data does not contain any personal information."
+      ]
+    },
+    "howWeProtect": {
+      "title": "How Invoice Wiki Protects Your Privacy When You Create Invoice",
+      "intro": "At Invoice Wiki, we believe your business information should remain completely private. Our free invoice generator is designed with privacy-first principles when you generate invoice:",
+      "items": [
+        {
+          "title": "Local Processing",
+          "content": "All invoice generator data is processed locally in your browser using JavaScript. No information is sent to our servers when you create invoice."
+        },
+        {
+          "title": "No Registration Required",
+          "content": "You can start creating invoices immediately without providing any personal information to use our invoice creator."
+        },
+        {
+          "title": "No Data Storage",
+          "content": "We don't store your invoice details, client information, or business data on our servers when you generate invoice."
+        },
+        {
+          "title": "Secure PDF Generation",
+          "content": "PDF invoice files are created locally in your browser and downloaded directly to your device."
+        },
+        {
+          "title": "No Email Required",
+          "content": "Unlike other invoice generators, we never ask for your email address or contact details to create invoice."
+        }
+      ]
+    },
+    "whatWeDoNotCollect": {
+      "title": "What Information We Don't Collect",
+      "intro": "To be completely transparent, here's what we specifically do NOT collect:",
+      "items": [
+        "Your name, email address, or contact information",
+        "Client names, addresses, or business details",
+        "Invoice amounts, line items, or payment information",
+        "Bank account details or payment methods",
+        "IP addresses for tracking purposes",
+        "Browser fingerprints or device identifiers"
+      ]
+    },
+    "analytics": {
+      "title": "Anonymous Analytics",
+      "intro": "We use Vercel Analytics to understand how our free invoice generator is being used. This helps us improve the service and identify technical issues. The analytics data is completely anonymous and includes only:",
+      "items": [
+        "Page views and popular features",
+        "Browser types and device categories (mobile/desktop)",
+        "General geographic regions (country-level)",
+        "Technical performance metrics"
+      ],
+      "note": "This data cannot be used to identify individual users and is aggregated across all visitors."
+    },
+    "thirdParty": {
+      "title": "Third-Party Services",
+      "content": "Invoice.wiki is hosted on Vercel's secure infrastructure. While we don't send your invoice data to any third parties, standard web hosting logs may contain basic technical information like request times and general error data. Learn more",
+      "link": "about our platform"
+    },
+    "rights": {
+      "title": "Your Rights and Control",
+      "intro": "Since we don't collect your personal data, there's nothing for us to delete, modify, or transfer. You maintain complete control over your information at all times. If you have concerns about privacy, you can:",
+      "items": [
+        "Use Invoice.wiki in incognito/private browsing mode",
+        "Clear your browser's localStorage to remove theme preferences",
+        "Disable JavaScript (though this will prevent the invoice generator from working)"
+      ]
+    },
+    "readyCta": {
+      "title": "Ready to Create Secure Invoices?",
+      "content": "Experience the most private way to generate professional invoices online. No registration, no data collection, just fast and secure billing.",
+      "button": "Start Creating Private Invoices →"
+    },
+    "contactTitle": "Contact Information",
+    "contactContent": "If you have any questions about our privacy policy or security measures, please"
+  },
+  "createInvoice": {
+    "meta": {
+      "title": "Create Invoice - Free Online Invoice Generator",
+      "description": "Create professional invoices online for free. Add items, calculate taxes, set due dates, and download as PDF. No registration required.",
+      "ogTitle": "Create Invoice - Free Online Invoice Generator",
+      "ogDescription": "Create invoices with tax support and PDF export. No login needed."
+    },
+    "title": "Create Invoice",
+    "subtitle": "Generate professional invoices with PDF export. Use our free invoice maker to create professional business invoices with PDF download. No registration required. Your data stays private - see our",
+    "privacyLink": "privacy policy",
+    "faqLink": "FAQ section",
+    "needHelp": "Need help? Check our",
+    "faqTitle": "Frequently Asked Questions",
+    "faqItems": [
+      {
+        "question": "Is this really free?",
+        "answer": "Yes! No hidden fees, no registration required, no subscription costs. Create unlimited professional invoices completely free."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Absolutely. All processing happens locally in your browser. Your sensitive business data never leaves your device or gets stored on our servers."
+      },
+      {
+        "question": "What languages are supported?",
+        "answer": "We support 6 languages: English, German, Czech, Polish, Slovak, and Ukrainian. Perfect for international business."
+      },
+      {
+        "question": "Can I customize colors?",
+        "answer": "Yes! Choose from 10 professional accent colors to match your brand identity and create consistent invoices."
+      },
+      {
+        "question": "Does it calculate taxes automatically?",
+        "answer": "Yes! Enter any tax rate. Totals auto-calculate."
+      },
+      {
+        "question": "How quickly can I create an invoice?",
+        "answer": "Create professional invoices quickly. Fill in the details, preview, and download your PDF instantly."
+      }
+    ],
+    "viewAllFaqs": "View All FAQs →",
+    "form": {
+      "agreePrefix": "I agree to the invoice.wiki",
+      "termsLink": "Terms and Conditions",
+      "agreeSuffix": "",
+      "termsRequired": "You must accept the terms and conditions",
+      "generateInvoice": "Generate Invoice",
+      "generatingInvoice": "Generating Invoice..."
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "version": "Version 1.0 – Initial Release",
+    "lastUpdated": "Last updated: February 25, 2025",
+    "acceptanceOfTerms": {
+      "title": "1. Acceptance of Terms",
+      "content": "By accessing or using Invoice.wiki (the \"Service\"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions (\"Terms\"). If you do not agree with any part of these Terms, you must discontinue use of the Service immediately."
+    },
+    "descriptionOfService": {
+      "title": "2. Description of Service",
+      "content": "Invoice.wiki provides a free, web-based invoice generation tool. All invoice generation occurs entirely within your browser; no data is transmitted to or stored on our servers. We do not offer data storage, retrieval, or recovery services."
+    },
+    "noWarranties": {
+      "title": "3. No Warranties",
+      "content": "The Service is provided \"as is\" and \"as available,\" without any warranties of any kind, whether express or implied. We do not guarantee that the Service will be error-free, uninterrupted, or free from defects. To the fullest extent permitted by law, we disclaim all warranties, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement."
+    },
+    "limitationOfLiability": {
+      "title": "4. Limitation of Liability",
+      "content": "To the extent permitted by applicable law, Invoice.wiki, its owners, employees, officers, agents, affiliates, and partners shall not be liable for any indirect, incidental, special, consequential, or exemplary damages arising from your use of the Service. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses, even if we have been advised of the possibility of such damages."
+    },
+    "indemnification": {
+      "title": "5. Indemnification",
+      "content": "You agree to indemnify and hold harmless Invoice.wiki, its owners, employees, officers, agents, affiliates, and partners from any claims, damages, liabilities, costs, and expenses (including reasonable legal fees) arising out of:",
+      "items": [
+        "Your use or misuse of the Service.",
+        "Your violation of these Terms.",
+        "Any claims made by third parties related to invoices generated using the Service."
+      ]
+    },
+    "governingLaw": {
+      "title": "6. Governing Law and Jurisdiction",
+      "content": "These Terms shall be governed by and construed in accordance with the laws of the Czech Republic. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of the Czech Republic."
+    },
+    "changesToTerms": {
+      "title": "7. Changes to Terms",
+      "content": "We reserve the right to modify these Terms at any time. Any changes will be effective immediately upon posting on our website. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms."
+    },
+    "versionHistory": {
+      "title": "8. Version History",
+      "content": "This section provides a historical record of changes to these Terms and Conditions.",
+      "v1": "Version 1.0 (Published: February 25, 2025) – Initial release of Terms and Conditions."
+    },
+    "contactInfo": {
+      "title": "9. Contact Information",
+      "content": "If you have any questions regarding these Terms, please contact us:",
+      "link": "Contact Support"
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Page Not Found - Invoice.wiki",
+      "description": "The page you're looking for doesn't exist. Return to Invoice.wiki free invoice generator."
+    },
+    "code": "404",
+    "title": "Invoice Not Found!",
+    "subtitle": "Looks like this invoice escaped our filing system.",
+    "encouragement": "Don't worry! Let's get you back to creating professional invoices",
+    "returnHome": "Return to Invoice Generator",
+    "createInvoice": "Or start creating an invoice right away →"
+  },
+  "skipToContent": "Skip to main content"
+}

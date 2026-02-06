@@ -1,6 +1,6 @@
 {
   "name": "invoice-wiki",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Free online invoice generator with PDF export",
   "author": "Michal Dumnyc",
   "license": "MIT",

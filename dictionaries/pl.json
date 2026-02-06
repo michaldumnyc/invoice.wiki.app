@@ -1,0 +1,633 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "createInvoice": "Utwórz fakturę",
+    "faq": "FAQ",
+    "about": "O nas",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "theme": {
+      "light": "Jasny",
+      "dark": "Ciemny",
+      "system": "System",
+      "toggleTheme": "Zmień motyw"
+    }
+  },
+  "footer": {
+    "quickLinks": "Szybkie linki",
+    "freeInvoiceGenerator": "Darmowy generator faktur",
+    "aboutSite": "O Invoice.wiki",
+    "createProfessionalInvoice": "Utwórz profesjonalną fakturę",
+    "privacyPolicy": "Szczegóły polityki prywatności",
+    "openSource": "Otwarte źródło na GitHub"
+  },
+  "home": {
+    "meta": {
+      "title": "Darmowy generator faktur - Invoice.wiki",
+      "description": "Darmowy generator faktur online. Twórz profesjonalne faktury natychmiast z pobieraniem PDF, obsługą podatków, wieloma walutami i językami. Bez rejestracji.",
+      "ogTitle": "Invoice.wiki - Darmowy generator faktur",
+      "ogDescription": "Twórz faktury natychmiast online. Darmowe pobieranie PDF, bez rejestracji."
+    },
+    "hero": {
+      "title": "Darmowy generator faktur - Twórz faktury PDF",
+      "description": "Twórz i pobieraj <strong>profesjonalne faktury PDF</strong> w kilka minut. Nasz darmowy generator faktur obsługuje <strong>ponad 40 walut</strong>, automatyczne obliczenia podatkowe i <strong>6 języków</strong>. Bez rejestracji, bez opłat — wystarczy wypełnić dane i pobrać.",
+      "cta": "Utwórz fakturę teraz"
+    },
+    "howItWorks": {
+      "title": "Jak tworzyć profesjonalne faktury",
+      "steps": [
+        {
+          "title": "Wypełnij dane faktury",
+          "description": "Wprowadź dane swojej firmy, dane klienta i pozycje faktury. Nasz formularz przeprowadzi Cię przez wszystkie wymagane pola."
+        },
+        {
+          "title": "Dostosuj i sprawdź",
+          "description": "Wybierz kolory, język i ustawienia podatkowe. Podgląd faktury przed pobraniem."
+        },
+        {
+          "title": "Pobierz PDF",
+          "description": "Wygeneruj i pobierz fakturę jako PDF. Gotowa do wysłania klientom lub wydruku."
+        }
+      ],
+      "cta": "Zacznij tworzyć fakturę →"
+    },
+    "features": {
+      "title": "Dlaczego wybrać nasz generator faktur?",
+      "items": [
+        {
+          "title": "Szybko i prosto",
+          "description": "Wypełnij formularz, kliknij pobierz. Twoja faktura PDF jest gotowa w kilka sekund."
+        },
+        {
+          "title": "Prywatnie i bezpiecznie",
+          "description": "Wszystko działa w Twojej przeglądarce. Nie przechowujemy ani nie widzimy Twoich danych."
+        },
+        {
+          "title": "Działa wszędzie",
+          "description": "Komputer, tablet, telefon — dowolna przeglądarka, dowolne urządzenie. Bez instalacji."
+        }
+      ],
+      "privacyLink": "Szczegóły prywatności →",
+      "learnMoreLink": "Dowiedz się więcej →"
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": [
+        {
+          "question": "Czy muszę się rejestrować?",
+          "answer": "Nie! Po prostu otwórz formularz i zacznij tworzyć. Bez logowania, bez rejestracji."
+        },
+        {
+          "question": "Czy mogę pobrać jako PDF?",
+          "answer": "Tak — natychmiastowe pobranie PDF, gotowe do wysłania lub wydruku."
+        },
+        {
+          "question": "Czy to naprawdę darmowe?",
+          "answer": "W 100% darmowe. Bez ukrytych opłat, bez subskrypcji, bez limitów."
+        },
+        { "question": "Obliczenia podatkowe?", "answer": "Tak! Dowolny typ podatku — automatycznie obliczane sumy." },
+        { "question": "Jakie waluty?", "answer": "Ponad 40 walut: USD, EUR, GBP, PLN, CZK, UAH i wiele więcej." },
+        { "question": "Personalizacja?", "answer": "10 kolorów + 6 języków (EN, DE, CS, PL, SK, UK)." }
+      ]
+    },
+    "grid": {
+      "title": "Wszystko, czego potrzebujesz",
+      "items": [
+        { "title": "Ponad 40 walut", "subtitle": "USD, EUR, GBP i więcej" },
+        { "title": "6 języków", "subtitle": "EN, DE, CS, PL, SK, UK" },
+        { "title": "10 kolorów", "subtitle": "Dopasuj do swojej marki" },
+        { "title": "Natychmiastowy PDF", "subtitle": "Pobierz i wyślij" },
+        { "title": "Automatyczne obliczenia", "subtitle": "Podatki, sumy, rabaty" },
+        { "title": "Dowolne urządzenie", "subtitle": "Komputer, tablet, telefon" },
+        { "title": "100% prywatności", "subtitle": "Dane pozostają lokalne" },
+        { "title": "Na zawsze darmowe", "subtitle": "Bez ukrytych opłat" }
+      ]
+    },
+    "invoiceExample": {
+      "title": "Zobacz, co stworzysz",
+      "description": "Generuj profesjonalne faktury, które robią wrażenie na klientach i zapewniają terminowe płatności. Nasz darmowy generator faktur tworzy czyste, nowoczesne faktury ze wszystkimi niezbędnymi danymi biznesowymi, automatycznymi obliczeniami i idealnym formatowaniem.",
+      "clickToEnlarge": "Kliknij, aby powiększyć",
+      "imageAlt": "Przykład faktury - Profesjonalny generator faktur pokazujący szablon PDF faktury z obliczeniami VAT i szczegółami",
+      "imageTitle": "Przykładowa profesjonalna faktura",
+      "pdfReady": "PDF gotowy",
+      "tryItNow": "Wypróbuj za darmo →",
+      "benefits": [
+        {
+          "title": "Czysty profesjonalny design",
+          "description": "Każda wygenerowana faktura zachowuje spójne, profesjonalne formatowanie, które dobrze reprezentuje Twoją firmę i buduje zaufanie klientów."
+        },
+        {
+          "title": "Automatyczne obliczenia",
+          "description": "Stawki VAT, sumy częściowe i sumy końcowe są obliczane automatycznie z wysoką precyzją przy użyciu zaokrąglania matematycznego (0,5 zaokrągla w górę) do 2 miejsc po przecinku, eliminując błędy ręczne i oszczędzając cenny czas."
+        },
+        {
+          "title": "Kompletne dane firmowe",
+          "description": "Uwzględnij wszystkie niezbędne dane biznesowe: informacje o firmie, adresy, NIP, warunki płatności i dane kontaktowe dla pełnej przejrzystości."
+        },
+        {
+          "title": "Natychmiastowe pobieranie PDF",
+          "description": "Pobierz gotowe faktury jako wysokiej jakości pliki PDF, gotowe do druku, wysyłki e-mailem lub cyfrowego przechowywania z doskonałym zachowaniem formatowania."
+        },
+        {
+          "title": "Dostosowywalne kolory i języki",
+          "description": "NOWOŚĆ: Na życzenie! Wybierz spośród 10 kolorów akcentowych i 6 języków (angielski, niemiecki, czeski, polski, słowacki, ukraiński), aby dopasować markę i obsługiwać międzynarodowych klientów."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Gotowy, aby utworzyć fakturę?",
+      "subtitle": "Bez rejestracji. Bez opłat. Zajmuje 2 minuty.",
+      "button": "Utwórz fakturę"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "O Invoice.wiki - Darmowy generator faktur i bezpieczne fakturowanie online",
+      "description": "Dowiedz się, jak Invoice.wiki pomaga freelancerom, wykonawcom i firmom tworzyć darmowe faktury online. Bezpiecznie, szybko, bez rejestracji, z pobieraniem PDF.",
+      "ogTitle": "O Invoice.wiki - Darmowy generator faktur",
+      "ogDescription": "Dowiedz się, jak Invoice.wiki zapewnia darmowe generowanie faktur online dla freelancerów i firm. Bez rejestracji, bezpieczne przetwarzanie w przeglądarce."
+    },
+    "title": "O Invoice Wiki - Generator faktur dla freelancerów i firm",
+    "intro": "Invoice.wiki to darmowy i łatwy w użyciu generator faktur online stworzony dla freelancerów, małych firm, wykonawców i przedsiębiorców. Twórz i pobieraj profesjonalne faktury jako PDF z pełną prywatnością — bez rejestracji. Skorzystaj z naszego darmowego generatora faktur i",
+    "createFirstInvoice": "utwórz swoją pierwszą fakturę",
+    "latestUpdates": {
+      "title": "Najnowsze aktualizacje",
+      "items": [
+        "Elastyczna obsługa podatków: Wybierz swój system podatkowy lub całkowicie ukryj podatki. Działa w każdym kraju.",
+        "Odwrotne obciążenie: Fakturowanie B2B w UE z automatyczną adnotacją o odwrotnym obciążeniu.",
+        "Opcja ukrycia podatku: Twórz czyste faktury bez kolumn podatkowych, gdy nie są potrzebne.",
+        "10 kolorów: Dopasuj do swojej marki dzięki niestandardowym kolorom akcentowym.",
+        "6 języków: EN, DE, CS, PL, SK, UK — obsługuj klientów międzynarodowych."
+      ]
+    },
+    "privacy": {
+      "title": "Jak chronimy Twoją prywatność",
+      "content": "Wierzymy, że profesjonalne fakturowanie powinno być dostępne dla każdego. Nasz generator faktur online upraszcza proces, zachowując najwyższe standardy ochrony danych i prywatności użytkowników. Dane faktur pozostają w całości na Twoim urządzeniu, przetwarzane lokalnie w przeglądarce dla maksymalnego bezpieczeństwa danych. Dowiedz się więcej o naszych",
+      "link": "środkach ochrony prywatności"
+    },
+    "whatIsInvoice": {
+      "title": "Czym jest faktura?",
+      "content": "Faktura to oficjalny dokument służący do żądania zapłaty za towary lub usługi. Określa, co zostało sprzedane, kto sprzedał, kto kupił, uzgodnioną cenę, kwoty podatków i warunki płatności. Faktury stanowią kluczowe dokumenty finansowe i prawne."
+    },
+    "components": {
+      "title": "Kluczowe elementy faktury",
+      "seller": {
+        "title": "Wystawca faktury - Dane sprzedawcy",
+        "items": [
+          "Nazwa firmy – Oficjalna nazwa firmy.",
+          "Adres firmy – Zarejestrowany adres sprzedawcy.",
+          "Numer identyfikacyjny – Oficjalny numer rejestracyjny.",
+          "NIP – Numer identyfikacji podatkowej (jeśli dotyczy).",
+          "Dane kontaktowe – E-mail, numer telefonu i strona internetowa."
+        ]
+      },
+      "buyer": {
+        "title": "Dane nabywcy",
+        "items": [
+          "Nazwa klienta – Nazwa osoby lub firmy, której wystawiana jest faktura.",
+          "Adres klienta – Adres dostawy lub adres prawny.",
+          "Numer identyfikacyjny i NIP – Dane rejestrowe i podatkowe nabywcy.",
+          "Kontakt – E-mail lub numer telefonu klienta."
+        ]
+      },
+      "details": {
+        "title": "Szczegóły faktury",
+        "items": [
+          "Numer faktury – Unikalny identyfikator do śledzenia.",
+          "Data wystawienia i termin płatności – Data utworzenia faktury i termin zapłaty.",
+          "Waluta – Używana w transakcji.",
+          "Odniesienie – Opcjonalny numer zamówienia."
+        ]
+      },
+      "payment": {
+        "title": "Informacje o płatności",
+        "items": [
+          "Akceptowane metody – Przelew bankowy, karta, PayPal, gotówka itp.",
+          "Dane bankowe – Numer konta, IBAN, BIC/SWIFT.",
+          "Status – Oznaczenie opłacona lub nieopłacona."
+        ]
+      },
+      "itemsTotals": {
+        "title": "Generator faktur - Pozycje i sumy",
+        "items": [
+          "Usługa/Produkt – Nazwa tego, co zostało sprzedane.",
+          "Ilość i cena jednostkowa – Rozbicie na poszczególne pozycje.",
+          "Stawka podatku – Zastosowany procent (jeśli dotyczy).",
+          "Suma – Kwota końcowa z podatkiem."
+        ]
+      }
+    },
+    "legal": {
+      "title": "Znaczenie prawne faktur",
+      "content": "Faktury są oficjalnymi dokumentami handlowymi służącymi do rozliczeń podatkowych, księgowości i ochrony prawnej. Wymagania różnią się w zależności od kraju — zawsze sprawdzaj lokalne przepisy.",
+      "purposeIntro": "Typowe cele prawne faktur to:",
+      "purposes": [
+        "Weryfikacja transakcji handlowych.",
+        "Składanie deklaracji podatkowych i odliczeń.",
+        "Dokumentowanie warunków i kwot płatności.",
+        "Dostarczanie dowodów w sporach lub audytach."
+      ]
+    },
+    "international": {
+      "title": "Wsparcie międzynarodowe",
+      "items": [
+        {
+          "title": "Ponad 40 walut",
+          "description": "USD, EUR, GBP, PLN, CZK, UAH i wiele więcej z prawidłowym formatowaniem."
+        },
+        { "title": "6 języków", "description": "Angielski, niemiecki, czeski, polski, słowacki, ukraiński." },
+        { "title": "Elastyczne podatki", "description": "Dowolny typ podatku — działa w każdym kraju." },
+        {
+          "title": "Gotowe dla B2B w UE",
+          "description": "Obsługa odwrotnego obciążenia dla transgranicznych usług w UE."
+        }
+      ]
+    },
+    "whyChoose": {
+      "title": "Dlaczego wybrać generator Invoice Wiki?",
+      "items": [
+        "Na zawsze darmowy – Bez subskrypcji, bez okresów próbnych, bez opłat.",
+        "Natychmiastowe faktury PDF – Profesjonalne dokumenty gotowe do pobrania.",
+        "W przeglądarce – Używaj na dowolnym urządzeniu bez instalacji.",
+        "Bez logowania – Zacznij tworzyć faktury natychmiast.",
+        "Obsługa wielu walut i podatków – Idealny do fakturowania międzynarodowego.",
+        "Bezpieczne i prywatne – Twoje dane nigdy nie opuszczają przeglądarki."
+      ]
+    },
+    "invoiceQuality": {
+      "title": "Twórz faktury - Profesjonalne rezultaty za każdym razem",
+      "content": "Nasz generator faktur tworzy czyste, profesjonalne dokumenty, które dobrze reprezentują Twoją firmę. Oto przykład, jak będą wyglądać Twoje faktury:"
+    },
+    "invoiceExample": {
+      "whatYouGet": "Co otrzymujesz:",
+      "items": [
+        "Profesjonalny układ z przejrzystą strukturą",
+        "Automatyczne obliczenia VAT i sum",
+        "Kompletne dane firmy i klienta",
+        "Warunki płatności i dane bankowe",
+        "Formatowanie gotowe do druku"
+      ],
+      "note": "Każda faktura zachowuje ten profesjonalny standard, zapewniając, że Twoja firma robi świetne wrażenie przy każdej interakcji z klientem.",
+      "clickToEnlarge": "Kliknij, aby powiększyć",
+      "imageTitle": "Przykładowa profesjonalna faktura",
+      "imageAlt": "Przykład faktury - Profesjonalny generator faktur pokazujący szablon PDF faktury z obliczeniami VAT i szczegółami"
+    },
+    "readyCta": {
+      "title": "Gotowy, aby utworzyć swoją pierwszą fakturę?",
+      "subtitle": "Na zawsze darmowe. Bez rejestracji. Zajmuje 2 minuty. Pobieranie PDF w zestawie.",
+      "button": "Utwórz fakturę →"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "content": "Masz pytania, sugestie lub uwagi? Chętnie je poznamy."
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Najczęściej zadawane pytania - Generator faktur | Invoice.wiki",
+      "description": "Odpowiedzi na najczęstsze pytania o naszym darmowym generatorze faktur. Dowiedz się o fakturowaniu, obsłudze podatków, pobieraniu PDF i rozliczeniach firmowych.",
+      "ogTitle": "FAQ - Pytania o generator faktur | Invoice.wiki",
+      "ogDescription": "Odpowiedzi na najczęstsze pytania o naszym darmowym generatorze faktur i najlepszych praktykach fakturowania."
+    },
+    "title": "Najczęściej zadawane pytania",
+    "subtitle": "Natychmiastowe odpowiedzi na najczęstsze pytania o naszym darmowym generatorze faktur, ochronie prywatności i profesjonalnych praktykach fakturowania.",
+    "categories": [
+      {
+        "category": "Rozpoczęcie pracy",
+        "icon": "🚀",
+        "questions": [
+          {
+            "question": "Czy muszę się rejestrować, aby tworzyć faktury?",
+            "answer": "Nie! Po prostu otwórz formularz i zacznij tworzyć. Bez logowania, bez rejestracji, bez podawania danych osobowych."
+          },
+          {
+            "question": "Jak szybko mogę utworzyć fakturę?",
+            "answer": "2-3 minuty. Wypełnij pola, kliknij pobierz — gotowe."
+          },
+          {
+            "question": "Czy to narzędzie jest całkowicie darmowe?",
+            "answer": "Tak, Invoice.wiki to darmowy generator faktur zarówno do użytku osobistego, jak i komercyjnego, bez ukrytych opłat ani kosztów subskrypcji."
+          },
+          {
+            "question": "Co wyróżnia wasz generator faktur?",
+            "answer": "Wszystko działa w Twojej przeglądarce — Twoje dane nigdy nie opuszczają urządzenia. Bez rejestracji, ponad 40 walut, 6 języków, elastyczna obsługa podatków i konfigurowalne kolory."
+          }
+        ]
+      },
+      {
+        "category": "Prywatność i bezpieczeństwo",
+        "icon": "🔒",
+        "questions": [
+          {
+            "question": "Czy moje dane są bezpieczne?",
+            "answer": "Tak! Wszystko działa w Twojej przeglądarce. Nic nie jest wysyłane na serwery."
+          },
+          {
+            "question": "Czy przechowujecie dane moich faktur?",
+            "answer": "Nie. Całe przetwarzanie odbywa się lokalnie. Zamknij kartę — dane znikają."
+          },
+          {
+            "question": "Czy mogę używać tego do poufnych informacji?",
+            "answer": "Tak. Żadne dane nie opuszczają Twojego urządzenia — bezpieczne dla poufnych szczegółów."
+          },
+          {
+            "question": "Co się dzieje, gdy pobieram PDF?",
+            "answer": "PDF jest generowany w Twojej przeglądarce i zapisywany na Twoim urządzeniu. Nic nie jest przechowywane po stronie serwera."
+          }
+        ]
+      },
+      {
+        "category": "Funkcje i możliwości",
+        "icon": "⚡",
+        "questions": [
+          {
+            "question": "Czy mogę pobrać fakturę jako PDF?",
+            "answer": "Tak! Kliknij 'Generuj fakturę', a PDF zostanie natychmiast pobrany. Gotowy do wysłania lub wydruku."
+          },
+          {
+            "question": "Jak działają obliczenia podatkowe?",
+            "answer": "Podatek jest obliczany dla każdej pozycji metodą netto: Cena netto × Stawka podatku%. Kwota podatku jest doliczana do ceny netto. Jest to standard fakturowania B2B na całym świecie. Możesz wybrać VAT, GST, podatek od sprzedaży lub całkowicie wyłączyć podatek. Każda pozycja może mieć własną stawkę podatkową."
+          },
+          {
+            "question": "Jakie waluty są obsługiwane?",
+            "answer": "Ponad 40 walut: USD, EUR, GBP, PLN, CZK, UAH, JPY i wiele więcej. Kwoty formatują się automatycznie na podstawie wybranej waluty."
+          },
+          {
+            "question": "Czy mogę dostosować kolory i języki faktur?",
+            "answer": "Tak! 10 kolorów akcentowych dopasowanych do Twojej marki + 6 języków (EN, DE, CS, PL, SK, UK) dla klientów międzynarodowych."
+          },
+          {
+            "question": "Czy mogę dodać logo firmy?",
+            "answer": "Jeszcze nie — skupiamy się na czystych fakturach tekstowych dla zachowania prywatności (bez przesyłania na serwery). Dane Twojej firmy w polach tekstowych wyglądają profesjonalnie."
+          }
+        ]
+      },
+      {
+        "category": "Biznes i prawo",
+        "icon": "📋",
+        "questions": [
+          {
+            "question": "Czy faktury są prawnie ważne?",
+            "answer": "Tak — zawierają wszystkie wymagane elementy: numer faktury, daty, strony, pozycje, podatki, sumy. Sprawdź lokalne przepisy w swoim kraju."
+          },
+          {
+            "question": "Czy mogę używać tego w biznesie międzynarodowym?",
+            "answer": "Tak! Ponad 40 walut, 6 języków, elastyczne podatki. Działa globalnie."
+          },
+          {
+            "question": "Jakie informacje są wymagane?",
+            "answer": "Dane Twojej firmy, dane klienta, numer faktury, data, pozycje z cenami. Podatek jest opcjonalny."
+          },
+          {
+            "question": "Jak numerować faktury?",
+            "answer": "Sekwencyjnie (FV-001, FV-002) lub z datą (2024-001). Bądź konsekwentny dla celów księgowych."
+          }
+        ]
+      },
+      {
+        "category": "Pytania techniczne",
+        "icon": "🛠️",
+        "questions": [
+          {
+            "question": "Jakie przeglądarki są obsługiwane?",
+            "answer": "Wszystkie nowoczesne przeglądarki: Chrome, Firefox, Safari, Edge. Komputer i urządzenia mobilne."
+          },
+          {
+            "question": "Czy mogę używać tego na telefonie?",
+            "answer": "Tak! W pełni responsywny — działa na telefonach i tabletach."
+          },
+          {
+            "question": "Problemy techniczne?",
+            "answer": "Spróbuj odświeżyć stronę, wyczyścić pamięć podręczną lub użyć trybu incognito. To rozwiązuje większość problemów."
+          },
+          {
+            "question": "Czy mogę zapisać i kontynuować później?",
+            "answer": "Nie ma trwałego zapisu (ze względu na prywatność). Ukończ w jednej sesji lub skopiuj do notatek."
+          }
+        ]
+      },
+      {
+        "category": "Zastosowanie biznesowe",
+        "icon": "💼",
+        "questions": [
+          {
+            "question": "Dobre dla freelancerów?",
+            "answer": "Idealne. Profesjonalne faktury, bez kosztów, z podatkiem."
+          },
+          { "question": "Małe firmy?", "answer": "Tak! Profesjonalny wynik bez korporacyjnej złożoności." },
+          {
+            "question": "Faktury cykliczne?",
+            "answer": "Bez automatyzacji, ale łatwe do powielenia — wystarczy zaktualizować datę i numer."
+          },
+          {
+            "question": "Śledzenie płatności?",
+            "answer": "Tworzymy faktury; do śledzenia płatności użyj arkusza kalkulacyjnego lub aplikacji księgowej."
+          }
+        ]
+      }
+    ],
+    "stillHaveQuestions": {
+      "title": "Nadal masz pytania?",
+      "content": "Nie możesz znaleźć odpowiedzi? Zacznij tworzyć profesjonalną fakturę od razu lub dowiedz się więcej o naszej usłudze.",
+      "createInvoice": "Utwórz fakturę teraz",
+      "aboutSite": "O Invoice.wiki"
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Polityka prywatności - Invoice.wiki",
+      "description": "Polityka prywatności Invoice.wiki. Nie zbieramy danych osobowych — całe przetwarzanie odbywa się w Twojej przeglądarce. Bez śledzenia, bez przechowywania danych, pełna ochrona prywatności.",
+      "ogTitle": "Polityka prywatności - Invoice.wiki",
+      "ogDescription": "Pełna ochrona prywatności z Invoice.wiki. Bez zbierania danych, przetwarzanie w przeglądarce i bezpieczne generowanie faktur."
+    },
+    "title": "Polityka prywatności - Generator Invoice Wiki",
+    "noCollection": {
+      "title": "Prywatność generatora faktur - Bez zbierania danych",
+      "content": [
+        "darmowy generator faktur nie zbiera danych osobowych. Całe tworzenie faktur i generowanie PDF odbywa się w Twojej przeglądarce internetowej. Profesjonalne faktury są tworzone na Twoim urządzeniu, a wszystkie dane faktur są usuwane po zamknięciu przeglądarki.",
+        "Nie używamy plików cookie do śledzenia ani reklam. Jedyne dane, które przechowujemy w Twojej przeglądarce, to preferencje motywu (jasny/ciemny) w localStorage, aby zapewnić spójne wrażenia użytkownika.",
+        "Używamy Vercel Analytics do zbierania anonimowych statystyk użytkowania, które pomagają nam ulepszać usługę. Te dane nie zawierają żadnych informacji osobowych."
+      ]
+    },
+    "howWeProtect": {
+      "title": "Jak Invoice Wiki chroni Twoją prywatność podczas tworzenia faktur",
+      "intro": "W Invoice Wiki wierzymy, że Twoje dane firmowe powinny pozostać całkowicie prywatne. Nasz darmowy generator faktur został zaprojektowany z zasadą prywatności na pierwszym miejscu:",
+      "items": [
+        {
+          "title": "Przetwarzanie lokalne",
+          "content": "Wszystkie dane generatora faktur są przetwarzane lokalnie w Twojej przeglądarce za pomocą JavaScript. Żadne informacje nie są wysyłane na nasze serwery podczas tworzenia faktury."
+        },
+        {
+          "title": "Bez rejestracji",
+          "content": "Możesz natychmiast zacząć tworzyć faktury bez podawania jakichkolwiek danych osobowych."
+        },
+        {
+          "title": "Bez przechowywania danych",
+          "content": "Nie przechowujemy szczegółów faktur, informacji o klientach ani danych firmowych na naszych serwerach."
+        },
+        {
+          "title": "Bezpieczne generowanie PDF",
+          "content": "Pliki PDF faktur są tworzone lokalnie w Twojej przeglądarce i pobierane bezpośrednio na Twoje urządzenie."
+        },
+        {
+          "title": "Bez wymaganego e-maila",
+          "content": "W przeciwieństwie do innych generatorów faktur, nigdy nie prosimy o Twój adres e-mail ani dane kontaktowe."
+        }
+      ]
+    },
+    "whatWeDoNotCollect": {
+      "title": "Jakich informacji nie zbieramy",
+      "intro": "Dla pełnej przejrzystości, oto czego konkretnie NIE zbieramy:",
+      "items": [
+        "Twoje imię i nazwisko, adres e-mail ani dane kontaktowe",
+        "Nazwy klientów, adresy ani dane firmowe",
+        "Kwoty faktur, pozycje ani informacje o płatnościach",
+        "Dane kont bankowych ani metody płatności",
+        "Adresy IP w celach śledzenia",
+        "Odciski przeglądarki ani identyfikatory urządzeń"
+      ]
+    },
+    "analytics": {
+      "title": "Anonimowe statystyki",
+      "intro": "Używamy Vercel Analytics, aby zrozumieć, jak nasz darmowy generator faktur jest wykorzystywany. Pomaga nam to ulepszać usługę i identyfikować problemy techniczne. Dane analityczne są całkowicie anonimowe i obejmują jedynie:",
+      "items": [
+        "Wyświetlenia stron i popularne funkcje",
+        "Typy przeglądarek i kategorie urządzeń (mobilne/stacjonarne)",
+        "Ogólne regiony geograficzne (na poziomie kraju)",
+        "Metryki wydajności technicznej"
+      ],
+      "note": "Te dane nie mogą być użyte do identyfikacji poszczególnych użytkowników i są agregowane ze wszystkich odwiedzających."
+    },
+    "thirdParty": {
+      "title": "Usługi zewnętrzne",
+      "content": "Invoice.wiki jest hostowany na bezpiecznej infrastrukturze Vercel. Chociaż nie wysyłamy danych faktur do żadnych podmiotów zewnętrznych, standardowe logi serwera mogą zawierać podstawowe informacje techniczne, takie jak czasy żądań i ogólne dane o błędach. Dowiedz się więcej",
+      "link": "o naszej platformie"
+    },
+    "rights": {
+      "title": "Twoje prawa i kontrola",
+      "intro": "Ponieważ nie zbieramy Twoich danych osobowych, nie ma nic do usunięcia, zmodyfikowania ani przeniesienia. Zachowujesz pełną kontrolę nad swoimi informacjami przez cały czas. Jeśli masz obawy dotyczące prywatności, możesz:",
+      "items": [
+        "Używać Invoice.wiki w trybie incognito/prywatnym przeglądarki",
+        "Wyczyścić localStorage przeglądarki, aby usunąć preferencje motywu",
+        "Wyłączyć JavaScript (choć uniemożliwi to działanie generatora faktur)"
+      ]
+    },
+    "readyCta": {
+      "title": "Gotowy na tworzenie bezpiecznych faktur?",
+      "content": "Poznaj najbardziej prywatny sposób generowania profesjonalnych faktur online. Bez rejestracji, bez zbierania danych, po prostu szybkie i bezpieczne fakturowanie.",
+      "button": "Zacznij tworzyć prywatne faktury →"
+    },
+    "contactTitle": "Informacje kontaktowe",
+    "contactContent": "Jeśli masz pytania dotyczące naszej polityki prywatności lub środków bezpieczeństwa, prosimy o"
+  },
+  "createInvoice": {
+    "meta": {
+      "title": "Utwórz fakturę - Darmowy generator faktur online",
+      "description": "Twórz profesjonalne faktury online za darmo. Dodawaj pozycje, obliczaj podatki, ustalaj terminy płatności i pobieraj jako PDF. Bez rejestracji.",
+      "ogTitle": "Utwórz fakturę - Darmowy generator faktur online",
+      "ogDescription": "Twórz faktury z obsługą podatków i eksportem PDF. Bez logowania."
+    },
+    "title": "Utwórz fakturę",
+    "subtitle": "Generuj profesjonalne faktury z eksportem PDF. Skorzystaj z naszego darmowego generatora faktur, aby tworzyć profesjonalne faktury firmowe z pobieraniem PDF. Bez rejestracji. Twoje dane pozostają prywatne - zobacz naszą",
+    "privacyLink": "politykę prywatności",
+    "faqLink": "sekcję FAQ",
+    "needHelp": "Potrzebujesz pomocy? Sprawdź naszą",
+    "faqTitle": "Najczęściej zadawane pytania",
+    "faqItems": [
+      {
+        "question": "Czy to naprawdę darmowe?",
+        "answer": "Tak! Bez ukrytych opłat, bez rejestracji, bez kosztów subskrypcji. Twórz nieograniczoną liczbę profesjonalnych faktur całkowicie za darmo."
+      },
+      {
+        "question": "Czy moje dane są bezpieczne?",
+        "answer": "Absolutnie. Całe przetwarzanie odbywa się lokalnie w Twojej przeglądarce. Twoje wrażliwe dane firmowe nigdy nie opuszczają urządzenia ani nie są przechowywane na naszych serwerach."
+      },
+      {
+        "question": "Jakie języki są obsługiwane?",
+        "answer": "Obsługujemy 6 języków: angielski, niemiecki, czeski, polski, słowacki i ukraiński. Idealny do biznesu międzynarodowego."
+      },
+      {
+        "question": "Czy mogę dostosować kolory?",
+        "answer": "Tak! Wybierz spośród 10 profesjonalnych kolorów akcentowych, aby dopasować tożsamość marki i tworzyć spójne faktury."
+      },
+      {
+        "question": "Czy automatycznie oblicza podatki?",
+        "answer": "Tak! Wprowadź dowolną stawkę podatkową. Sumy obliczają się automatycznie."
+      },
+      {
+        "question": "Jak szybko mogę utworzyć fakturę?",
+        "answer": "Twórz profesjonalne faktury szybko. Wypełnij dane, sprawdź podgląd i pobierz PDF natychmiast."
+      }
+    ],
+    "viewAllFaqs": "Zobacz wszystkie FAQ →",
+    "form": {
+      "agreePrefix": "Akceptuję",
+      "termsLink": "Regulamin",
+      "agreeSuffix": "invoice.wiki",
+      "termsRequired": "Musisz zaakceptować regulamin",
+      "generateInvoice": "Generuj fakturę",
+      "generatingInvoice": "Generowanie faktury..."
+    }
+  },
+  "terms": {
+    "title": "Regulamin",
+    "version": "Wersja 1.0 – Wydanie początkowe",
+    "lastUpdated": "Ostatnia aktualizacja: 25 lutego 2025",
+    "acceptanceOfTerms": {
+      "title": "1. Akceptacja warunków",
+      "content": "Uzyskując dostęp do Invoice.wiki (\u201eUsługa\u201c) lub korzystając z niej, potwierdzasz, że przeczytałeś, zrozumiałeś i zgadzasz się z niniejszym Regulaminem (\u201eWarunki\u201c). Jeśli nie zgadzasz się z jakąkolwiek częścią niniejszych Warunków, musisz natychmiast zaprzestać korzystania z Usługi."
+    },
+    "descriptionOfService": {
+      "title": "2. Opis usługi",
+      "content": "Invoice.wiki zapewnia bezpłatne, internetowe narzędzie do generowania faktur. Całe generowanie faktur odbywa się wyłącznie w Twojej przeglądarce; żadne dane nie są przesyłane na nasze serwery ani na nich przechowywane. Nie oferujemy usług przechowywania, pobierania ani odzyskiwania danych."
+    },
+    "noWarranties": {
+      "title": "3. Brak gwarancji",
+      "content": "Usługa jest świadczona \u201ew stanie, w jakim jest\u201c i \u201ew miarę dostępności\u201c, bez jakichkolwiek gwarancji, wyraźnych lub dorozumianych. Nie gwarantujemy, że Usługa będzie wolna od błędów, nieprzerwana lub wolna od wad. W najszerszym zakresie dozwolonym przez prawo wyłączamy wszelkie gwarancje, w tym gwarancje przydatności handlowej, przydatności do określonego celu i nienaruszania praw."
+    },
+    "limitationOfLiability": {
+      "title": "4. Ograniczenie odpowiedzialności",
+      "content": "W zakresie dozwolonym przez obowiązujące prawo Invoice.wiki, jej właściciele, pracownicy, członkowie zarządu, agenci, podmioty stowarzyszone i partnerzy nie ponoszą odpowiedzialności za jakiekolwiek szkody pośrednie, przypadkowe, szczególne, wynikowe lub karne wynikające z korzystania z Usługi. Obejmuje to między innymi szkody z tytułu utraty zysków, wartości firmy, danych lub innych strat niematerialnych, nawet jeśli zostaliśmy poinformowani o możliwości wystąpienia takich szkód."
+    },
+    "indemnification": {
+      "title": "5. Zwolnienie z odpowiedzialności",
+      "content": "Zgadzasz się zwolnić z odpowiedzialności Invoice.wiki, jej właścicieli, pracowników, członków zarządu, agentów, podmioty stowarzyszone i partnerów od wszelkich roszczeń, szkód, zobowiązań, kosztów i wydatków (w tym uzasadnionych kosztów prawnych) wynikających z:",
+      "items": [
+        "Twojego korzystania z Usługi lub jej niewłaściwego używania.",
+        "Twojego naruszenia niniejszych Warunków.",
+        "Wszelkich roszczeń stron trzecich związanych z fakturami wygenerowanymi za pomocą Usługi."
+      ]
+    },
+    "governingLaw": {
+      "title": "6. Prawo właściwe i jurysdykcja",
+      "content": "Niniejsze Warunki podlegają prawu Republiki Czeskiej i są zgodnie z nim interpretowane. Wszelkie spory wynikające z niniejszych Warunków lub z nimi związane podlegają wyłącznej jurysdykcji sądów Republiki Czeskiej."
+    },
+    "changesToTerms": {
+      "title": "7. Zmiany warunków",
+      "content": "Zastrzegamy sobie prawo do zmiany niniejszych Warunków w dowolnym czasie. Wszelkie zmiany wchodzą w życie natychmiast po opublikowaniu na naszej stronie internetowej. Dalsze korzystanie z Usługi po takich zmianach oznacza akceptację nowych Warunków."
+    },
+    "versionHistory": {
+      "title": "8. Historia wersji",
+      "content": "Ta sekcja zawiera historyczny zapis zmian niniejszego Regulaminu.",
+      "v1": "Wersja 1.0 (Opublikowano: 25 lutego 2025) – Początkowe wydanie Regulaminu."
+    },
+    "contactInfo": {
+      "title": "9. Informacje kontaktowe",
+      "content": "Jeśli masz jakiekolwiek pytania dotyczące niniejszych Warunków, skontaktuj się z nami:",
+      "link": "Kontakt z pomocą techniczną"
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Nie znaleziono strony - Invoice.wiki",
+      "description": "Strona, której szukasz, nie istnieje. Wróć do darmowego generatora faktur Invoice.wiki."
+    },
+    "code": "404",
+    "title": "Nie znaleziono faktury!",
+    "subtitle": "Wygląda na to, że ta faktura uciekła z naszego systemu archiwizacji.",
+    "encouragement": "Nie martw się! Wróćmy do tworzenia profesjonalnych faktur",
+    "returnHome": "Wróć do generatora faktur",
+    "createInvoice": "Lub zacznij tworzyć fakturę od razu →"
+  },
+  "skipToContent": "Przejdź do głównej treści"
+}

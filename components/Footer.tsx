@@ -1,13 +1,19 @@
+"use client"
+
 import Link from "next/link"
+import { useLocale } from "@/app/[locale]/providers"
 
 export default function Footer() {
+  const { locale, dict } = useLocale()
+  const href = (path: string) => `/${locale}${path === "/" ? "" : path}`
+
   return (
     <footer className="bg-secondary text-secondary-foreground py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div className="text-xl font-semibold mb-4">Invoice.wiki</div>
-            <p className="mb-3">© {new Date().getFullYear()} Invoice.wiki</p>
+            <p className="mb-3">&copy; {new Date().getFullYear()} Invoice.wiki</p>
             <a
               href="https://github.com/michaldumnyc/invoice.wiki.app"
               target="_blank"
@@ -22,30 +28,30 @@ export default function Footer() {
                   clipRule="evenodd"
                 />
               </svg>
-              Open Source on GitHub
+              {dict.footer.openSource}
             </a>
           </div>
           <div>
-            <div className="text-xl font-semibold mb-4">Quick Links</div>
+            <div className="text-xl font-semibold mb-4">{dict.footer.quickLinks}</div>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-primary transition-colors">
-                  Free Invoice Generator
+                <Link href={href("/")} className="hover:text-primary transition-colors">
+                  {dict.footer.freeInvoiceGenerator}
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-primary transition-colors">
-                  About Invoice.wiki
+                <Link href={href("/about")} className="hover:text-primary transition-colors">
+                  {dict.footer.aboutSite}
                 </Link>
               </li>
               <li>
-                <Link href="/create-invoice" className="hover:text-primary transition-colors">
-                  Create Professional Invoice
+                <Link href={href("/create-invoice")} className="hover:text-primary transition-colors">
+                  {dict.footer.createProfessionalInvoice}
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:text-primary transition-colors">
-                  Privacy Policy Details
+                <Link href={href("/privacy-policy")} className="hover:text-primary transition-colors">
+                  {dict.footer.privacyPolicy}
                 </Link>
               </li>
             </ul>

@@ -1,0 +1,636 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "createInvoice": "Rechnung erstellen",
+    "faq": "FAQ",
+    "about": "Über uns",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "theme": {
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System",
+      "toggleTheme": "Farbschema wechseln"
+    }
+  },
+  "footer": {
+    "quickLinks": "Schnellzugriff",
+    "freeInvoiceGenerator": "Kostenloser Rechnungsgenerator",
+    "aboutSite": "Über Invoice.wiki",
+    "createProfessionalInvoice": "Professionelle Rechnung erstellen",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "openSource": "Open Source auf GitHub"
+  },
+  "home": {
+    "meta": {
+      "title": "Kostenloser Rechnungsgenerator - Invoice.wiki",
+      "description": "Kostenloser Online-Rechnungsgenerator. Erstellen Sie sofort professionelle Rechnungen mit PDF-Download, Steuerunterstützung, mehreren Währungen und Sprachen. Keine Registrierung.",
+      "ogTitle": "Invoice.wiki - Kostenloser Rechnungsgenerator",
+      "ogDescription": "Erstellen Sie sofort Rechnungen online. Kostenloser PDF-Download, keine Registrierung erforderlich."
+    },
+    "hero": {
+      "title": "Kostenloser Rechnungsgenerator - PDF-Rechnungen erstellen",
+      "description": "Erstellen und laden Sie <strong>professionelle PDF-Rechnungen</strong> in wenigen Minuten herunter. Unser kostenloser Rechnungsgenerator unterstützt <strong>über 40 Währungen</strong>, automatische Steuerberechnungen und <strong>6 Sprachen</strong>. Keine Registrierung, keine Gebühren — einfach Daten eingeben und herunterladen.",
+      "cta": "Jetzt Rechnung erstellen"
+    },
+    "howItWorks": {
+      "title": "So erstellen Sie professionelle Rechnungen",
+      "steps": [
+        {
+          "title": "Rechnungsdetails ausfüllen",
+          "description": "Geben Sie Ihre Geschäftsinformationen, Kundendaten und Rechnungspositionen ein. Unser Formular führt Sie durch alle erforderlichen Felder."
+        },
+        {
+          "title": "Anpassen & Überprüfen",
+          "description": "Wählen Sie Farben, Sprache und Steuereinstellungen. Überprüfen Sie Ihre Rechnung vor dem Herunterladen."
+        },
+        {
+          "title": "PDF herunterladen",
+          "description": "Erstellen und laden Sie Ihre Rechnung als PDF herunter. Bereit zum Versenden an Kunden oder zum Ausdrucken."
+        }
+      ],
+      "cta": "Rechnung erstellen →"
+    },
+    "features": {
+      "title": "Warum unseren Rechnungsgenerator wählen?",
+      "items": [
+        {
+          "title": "Schnell & Einfach",
+          "description": "Formular ausfüllen, herunterladen klicken. Ihre PDF-Rechnung ist in Sekunden fertig."
+        },
+        {
+          "title": "Privat & Sicher",
+          "description": "Alles läuft in Ihrem Browser. Wir speichern oder sehen Ihre Daten nicht."
+        },
+        {
+          "title": "Überall nutzbar",
+          "description": "Desktop, Tablet, Handy — jeder Browser, jedes Gerät. Keine App-Installation nötig."
+        }
+      ],
+      "privacyLink": "Datenschutzdetails →",
+      "learnMoreLink": "Mehr erfahren →"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "question": "Muss ich mich registrieren?",
+          "answer": "Nein! Öffnen Sie einfach das Formular und legen Sie los. Kein Login, keine Anmeldung."
+        },
+        {
+          "question": "Kann ich als PDF herunterladen?",
+          "answer": "Ja — sofortiger PDF-Download, bereit zum Versenden oder Drucken."
+        },
+        {
+          "question": "Ist es wirklich kostenlos?",
+          "answer": "100% kostenlos. Keine versteckten Gebühren, keine Abonnements, keine Einschränkungen."
+        },
+        { "question": "Steuerberechnungen?", "answer": "Ja! Jede Steuerart — automatisch berechnete Summen." },
+        { "question": "Welche Währungen?", "answer": "Über 40 Währungen: USD, EUR, GBP, PLN, CZK, UAH und mehr." },
+        { "question": "Anpassungsmöglichkeiten?", "answer": "10 Farben + 6 Sprachen (EN, DE, CS, PL, SK, UK)." }
+      ]
+    },
+    "grid": {
+      "title": "Alles, was Sie brauchen",
+      "items": [
+        { "title": "Über 40 Währungen", "subtitle": "USD, EUR, GBP und mehr" },
+        { "title": "6 Sprachen", "subtitle": "EN, DE, CS, PL, SK, UK" },
+        { "title": "10 Farben", "subtitle": "Passend zu Ihrer Marke" },
+        { "title": "Sofort-PDF", "subtitle": "Herunterladen & versenden" },
+        { "title": "Automatische Berechnung", "subtitle": "Steuer, Summen, Rabatte" },
+        { "title": "Jedes Gerät", "subtitle": "Desktop, Tablet, Handy" },
+        { "title": "100% Privat", "subtitle": "Daten bleiben lokal" },
+        { "title": "Für immer kostenlos", "subtitle": "Keine versteckten Gebühren" }
+      ]
+    },
+    "invoiceExample": {
+      "title": "Sehen Sie, was Sie erstellen werden",
+      "description": "Erstellen Sie professionelle Rechnungen, die Kunden beeindrucken und pünktliche Zahlungen sicherstellen. Unser kostenloser Rechnungsgenerator erstellt saubere, moderne Rechnungen mit allen wesentlichen Geschäftsdetails, automatischen Berechnungen und perfekter Formatierung.",
+      "clickToEnlarge": "Klicken zum Vergrößern",
+      "imageAlt": "Rechnungsbeispiel - Professioneller Rechnungsgenerator mit PDF-Rechnungsvorlage, MwSt-Berechnungen und Rechnungsdetails",
+      "imageTitle": "Professionelles Rechnungsmuster",
+      "pdfReady": "PDF bereit",
+      "tryItNow": "Jetzt kostenlos testen →",
+      "benefits": [
+        {
+          "title": "Sauberes professionelles Design",
+          "description": "Jede erstellte Rechnung behält eine konsistente, professionelle Formatierung bei, die Ihr Unternehmen gut repräsentiert und Kundenvertrauen aufbaut."
+        },
+        {
+          "title": "Automatische Berechnungen",
+          "description": "MwSt-Sätze, Zwischensummen und Gesamtbeträge werden automatisch mit hoher Präzision berechnet, unter Verwendung mathematischer Rundung (0,5 wird aufgerundet) auf 2 Dezimalstellen, wodurch manuelle Fehler eliminiert und wertvolle Zeit gespart wird."
+        },
+        {
+          "title": "Vollständige Geschäftsinformationen",
+          "description": "Geben Sie alle notwendigen Geschäftsdetails an: Firmeninformationen, Adressen, USt-IdNr., Zahlungsbedingungen und Kontaktinformationen für vollständige Transparenz."
+        },
+        {
+          "title": "Sofortiger PDF-Download",
+          "description": "Laden Sie Ihre fertiggestellten Rechnungen als hochwertige PDF-Dateien herunter, die zum Drucken, per E-Mail versenden oder zur digitalen Speicherung mit perfekter Formatierungserhaltung bereit sind."
+        },
+        {
+          "title": "Anpassbare Farben & Sprachen",
+          "description": "NEU: Auf vielfachen Wunsch! Wählen Sie aus 10 Akzentfarben und 6 Sprachen (Englisch, Deutsch, Tschechisch, Polnisch, Slowakisch, Ukrainisch), um Ihre Marke zu repräsentieren und internationale Kunden zu bedienen."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit, Ihre Rechnung zu erstellen?",
+      "subtitle": "Keine Anmeldung. Keine Gebühren. Dauert 2 Minuten.",
+      "button": "Rechnung erstellen"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Über Invoice.wiki - Kostenloser Rechnungsgenerator & Sichere Online-Abrechnung",
+      "description": "Erfahren Sie, wie Invoice.wiki Freiberuflern, Auftragnehmern und Unternehmen hilft, kostenlose Rechnungen online zu erstellen. Sicher, schnell, keine Registrierung und PDF-Download inklusive.",
+      "ogTitle": "Über Invoice.wiki - Kostenloser Rechnungsgenerator",
+      "ogDescription": "Erfahren Sie, wie Invoice.wiki kostenlose Online-Rechnungserstellung für Freiberufler und Unternehmen bietet. Keine Registrierung erforderlich, sichere browserbasierte Verarbeitung."
+    },
+    "title": "Über Invoice Wiki - Rechnungsgenerator für Freiberufler & Unternehmen",
+    "intro": "Invoice.wiki ist ein kostenloser und benutzerfreundlicher Online-Rechnungsgenerator für Freiberufler, kleine Unternehmen, Auftragnehmer und Selbstständige. Erstellen und laden Sie professionelle Rechnungen als PDF herunter — mit vollem Datenschutz und ohne Registrierung. Nutzen Sie unseren kostenlosen Rechnungsgenerator und",
+    "createFirstInvoice": "erstellen Sie Ihre erste Rechnung",
+    "latestUpdates": {
+      "title": "Neueste Aktualisierungen",
+      "items": [
+        "Flexible Steuerunterstützung: Wählen Sie Ihr Steuersystem oder blenden Sie Steuern vollständig aus. Funktioniert für jedes Land.",
+        "Reverse-Charge: EU-B2B-Rechnungsstellung mit automatischem Reverse-Charge-Hinweis.",
+        "Steuer ausblenden: Erstellen Sie übersichtliche Rechnungen ohne Steuerspalten, wenn nicht benötigt.",
+        "10 Farben: Passen Sie Ihre Marke mit individuellen Akzentfarben an.",
+        "6 Sprachen: EN, DE, CS, PL, SK, UK — bedienen Sie internationale Kunden."
+      ]
+    },
+    "privacy": {
+      "title": "Wie wir Ihre Privatsphäre priorisieren",
+      "content": "Wir glauben, dass professionelle Rechnungsstellung für jeden zugänglich sein sollte. Unser Online-Rechnungsgenerator vereinfacht den Prozess und wahrt gleichzeitig die höchsten Standards für Datenschutz und Privatsphäre. Ihre Rechnungsdaten verbleiben vollständig auf Ihrem Gerät und werden lokal in Ihrem Browser verarbeitet, um maximale Datensicherheit zu gewährleisten. Erfahren Sie mehr über unsere",
+      "link": "Datenschutzmaßnahmen"
+    },
+    "whatIsInvoice": {
+      "title": "Was ist eine Rechnung?",
+      "content": "Eine Rechnung ist ein offizielles Dokument, das zur Zahlungsaufforderung für Waren oder Dienstleistungen verwendet wird. Sie beschreibt, was verkauft wurde, wer es verkauft hat, wer es gekauft hat, den vereinbarten Preis, Steuerbeträge und Zahlungsbedingungen. Rechnungen dienen als wichtige finanzielle und rechtliche Dokumente."
+    },
+    "components": {
+      "title": "Wichtige Bestandteile einer Rechnung",
+      "seller": {
+        "title": "Rechnungsersteller - Verkäuferinformationen",
+        "items": [
+          "Firmenname – Offizieller Unternehmensname.",
+          "Geschäftsadresse – Eingetragene Adresse des Verkäufers.",
+          "Handelsregisternummer – Offizielle Registrierungsnummer.",
+          "Steuer-ID – Steueridentifikationsnummer (falls zutreffend).",
+          "Kontaktdaten – E-Mail, Telefonnummer und Webseite."
+        ]
+      },
+      "buyer": {
+        "title": "Käuferinformationen",
+        "items": [
+          "Kundenname – Name der Person oder des Unternehmens, das abgerechnet wird.",
+          "Kundenadresse – Liefer- oder Geschäftsadresse.",
+          "Handelsregisternummer & Steuer-ID – Registrierungs- und Steuerinformationen des Käufers.",
+          "Kontakt – E-Mail oder Telefonnummer des Kunden."
+        ]
+      },
+      "details": {
+        "title": "Rechnungsdetails erstellen",
+        "items": [
+          "Rechnungsnummer – Eindeutige Kennung zur Nachverfolgung.",
+          "Ausstellungs- & Fälligkeitsdatum – Wann die Rechnung erstellt wurde und wann die Zahlung fällig ist.",
+          "Währung – Für die Transaktion verwendet.",
+          "Referenz – Optionale Bestell- oder Auftragsnummern."
+        ]
+      },
+      "payment": {
+        "title": "Zahlungsinformationen",
+        "items": [
+          "Akzeptierte Zahlungsarten – Überweisung, Karte, PayPal, Barzahlung usw.",
+          "Bankdaten – Kontonummer, IBAN, BIC/SWIFT.",
+          "Status – Bezahlt oder unbezahlt."
+        ]
+      },
+      "itemsTotals": {
+        "title": "Rechnungsgenerator - Positionen und Summen",
+        "items": [
+          "Dienstleistung/Produkt – Bezeichnung des Verkauften.",
+          "Menge & Einzelpreis – Aufschlüsselung pro Position.",
+          "Steuersatz – Angewandter Prozentsatz (falls zutreffend).",
+          "Gesamtbetrag – Endbetrag inklusive Steuer."
+        ]
+      }
+    },
+    "legal": {
+      "title": "Rechtliche Bedeutung von Rechnungen",
+      "content": "Rechnungen sind offizielle Geschäftsdokumente, die für Steuererklärungen, Finanzbuchhaltung und rechtlichen Schutz verwendet werden. Die Anforderungen variieren je nach Land — überprüfen Sie immer die lokalen Vorschriften.",
+      "purposeIntro": "Häufige rechtliche Zwecke von Rechnungen umfassen:",
+      "purposes": [
+        "Überprüfung von Geschäftstransaktionen.",
+        "Abgabe von Steuererklärungen und Geltendmachung von Abzügen.",
+        "Dokumentation von Zahlungsbedingungen und -beträgen.",
+        "Beweismittel bei Streitigkeiten oder Prüfungen."
+      ]
+    },
+    "international": {
+      "title": "Internationale Unterstützung",
+      "items": [
+        {
+          "title": "Über 40 Währungen",
+          "description": "USD, EUR, GBP, PLN, CZK, UAH und viele mehr mit korrekter Formatierung."
+        },
+        { "title": "6 Sprachen", "description": "Englisch, Deutsch, Tschechisch, Polnisch, Slowakisch, Ukrainisch." },
+        { "title": "Flexible Steuern", "description": "Jede Steuerart — funktioniert für jedes Land." },
+        {
+          "title": "EU-B2B-fähig",
+          "description": "Reverse-Charge-Unterstützung für grenzüberschreitende EU-Dienstleistungen."
+        }
+      ]
+    },
+    "whyChoose": {
+      "title": "Warum Invoice Wiki Generator wählen?",
+      "items": [
+        "Für immer kostenlos – Keine Abonnements, keine Testphasen, keine Gebühren.",
+        "Sofortige PDF-Rechnungen – Fertige professionelle Dokumente zum Herunterladen.",
+        "Browserbasiert – Nutzen Sie es auf jedem Gerät ohne Installation.",
+        "Kein Login – Beginnen Sie sofort mit der Rechnungserstellung.",
+        "Mehrere Währungen & Steuerunterstützung – Ideal für internationale Rechnungsstellung.",
+        "Sicher & privat – Ihre Daten verlassen niemals Ihren Browser."
+      ]
+    },
+    "invoiceQuality": {
+      "title": "Rechnungen erstellen - Jedes Mal professionelle Ergebnisse",
+      "content": "Unser Rechnungsgenerator erstellt saubere, professionelle Dokumente, die Ihr Unternehmen gut repräsentieren. Hier ist ein Beispiel, wie Ihre Rechnungen aussehen werden:"
+    },
+    "invoiceExample": {
+      "whatYouGet": "Was Sie erhalten:",
+      "items": [
+        "Professionelles Layout mit klarer Struktur",
+        "Automatische MwSt-Berechnungen und Summen",
+        "Vollständige Geschäfts- und Kundeninformationen",
+        "Zahlungsbedingungen und Bankdaten",
+        "Druckfertige Formatierung"
+      ],
+      "note": "Jede Rechnung entspricht diesem professionellen Standard und stellt sicher, dass Ihr Unternehmen bei jeder Kundeninteraktion einen großartigen Eindruck hinterlässt.",
+      "clickToEnlarge": "Klicken zum Vergrößern",
+      "imageTitle": "Professionelles Rechnungsmuster",
+      "imageAlt": "Rechnungsbeispiel - Professioneller Rechnungsgenerator mit PDF-Rechnungsvorlage, MwSt-Berechnungen und Rechnungsdetails"
+    },
+    "readyCta": {
+      "title": "Bereit, Ihre erste Rechnung zu erstellen?",
+      "subtitle": "Für immer kostenlos. Keine Anmeldung. Dauert 2 Minuten. PDF-Download inklusive.",
+      "button": "Rechnung erstellen →"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "content": "Haben Sie Fragen, Anregungen oder Feedback? Wir freuen uns, von Ihnen zu hören."
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Häufig gestellte Fragen - Rechnungsgenerator | Invoice.wiki",
+      "description": "Antworten auf häufige Fragen zu unserem kostenlosen Rechnungsgenerator. Erfahren Sie mehr über Rechnungsstellung, Steuerunterstützung, PDF-Downloads und Geschäftsabrechnung.",
+      "ogTitle": "FAQ - Fragen zum Rechnungsgenerator | Invoice.wiki",
+      "ogDescription": "Antworten auf häufige Fragen zu unserem kostenlosen Rechnungsgenerator und Best Practices für die Rechnungsstellung."
+    },
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Erhalten Sie sofortige Antworten auf häufige Fragen zu unserem kostenlosen Rechnungsgenerator, Datenschutz und Best Practices für professionelle Rechnungsstellung.",
+    "categories": [
+      {
+        "category": "Erste Schritte",
+        "icon": "🚀",
+        "questions": [
+          {
+            "question": "Muss ich mich registrieren, um Rechnungen zu erstellen?",
+            "answer": "Nein! Öffnen Sie einfach das Formular und legen Sie los. Kein Login, keine Anmeldung, keine persönlichen Daten erforderlich."
+          },
+          {
+            "question": "Wie schnell kann ich eine Rechnung erstellen?",
+            "answer": "2-3 Minuten. Felder ausfüllen, Herunterladen klicken — fertig."
+          },
+          {
+            "question": "Ist dieses Tool komplett kostenlos?",
+            "answer": "Ja, Invoice.wiki ist ein kostenloser Rechnungsgenerator für private und geschäftliche Nutzung ohne versteckte Gebühren oder Abonnementkosten."
+          },
+          {
+            "question": "Was macht Ihren Rechnungsgenerator besonders?",
+            "answer": "Alles läuft in Ihrem Browser — Ihre Daten verlassen nie Ihr Gerät. Keine Registrierung, über 40 Währungen, 6 Sprachen, flexible Steuerunterstützung und anpassbare Farben."
+          }
+        ]
+      },
+      {
+        "category": "Datenschutz & Sicherheit",
+        "icon": "🔒",
+        "questions": [
+          {
+            "question": "Sind meine Daten sicher?",
+            "answer": "Ja! Alles läuft in Ihrem Browser. Nichts wird an Server gesendet."
+          },
+          {
+            "question": "Speichern Sie meine Rechnungsdaten?",
+            "answer": "Nein. Die gesamte Verarbeitung erfolgt lokal. Tab schließen — Daten sind weg."
+          },
+          {
+            "question": "Kann ich dies für vertrauliche Informationen verwenden?",
+            "answer": "Ja. Keine Daten verlassen Ihr Gerät — sicher für vertrauliche Details."
+          },
+          {
+            "question": "Was passiert, wenn ich das PDF herunterlade?",
+            "answer": "Das PDF wird in Ihrem Browser erstellt und direkt auf Ihr Gerät gespeichert. Nichts wird serverseitig gespeichert."
+          }
+        ]
+      },
+      {
+        "category": "Funktionen & Möglichkeiten",
+        "icon": "⚡",
+        "questions": [
+          {
+            "question": "Kann ich meine Rechnung als PDF herunterladen?",
+            "answer": "Ja! Klicken Sie auf 'Rechnung erstellen' und Ihr PDF wird sofort heruntergeladen. Bereit zum Versenden oder Drucken."
+          },
+          {
+            "question": "Wie funktioniert die Steuerberechnung?",
+            "answer": "Die Steuer wird pro Position nach der Netto-Methode berechnet: Nettopreis × Steuersatz%. Der Steuerbetrag wird auf den Nettopreis aufgeschlagen. Dies ist der Standard für B2B-Rechnungen weltweit. Sie können zwischen MwSt., GST, Umsatzsteuer wählen oder Steuern komplett deaktivieren. Jede Position kann einen eigenen Steuersatz haben."
+          },
+          {
+            "question": "Welche Währungen werden unterstützt?",
+            "answer": "Über 40 Währungen: USD, EUR, GBP, PLN, CZK, UAH, JPY und viele mehr. Beträge werden automatisch basierend auf der gewählten Währung formatiert."
+          },
+          {
+            "question": "Kann ich Rechnungsfarben und -sprachen anpassen?",
+            "answer": "Ja! 10 Akzentfarben passend zu Ihrer Marke + 6 Sprachen (EN, DE, CS, PL, SK, UK) für internationale Kunden."
+          },
+          {
+            "question": "Kann ich mein Firmenlogo hinzufügen?",
+            "answer": "Noch nicht — wir setzen auf saubere textbasierte Rechnungen zum Schutz der Privatsphäre (keine Uploads auf Server). Ihre Firmenangaben in Textfeldern sehen professionell aus."
+          }
+        ]
+      },
+      {
+        "category": "Geschäft & Recht",
+        "icon": "📋",
+        "questions": [
+          {
+            "question": "Sind die Rechnungen rechtsgültig?",
+            "answer": "Ja — enthält alle erforderlichen Elemente: Rechnungsnummer, Datum, Parteien, Positionen, Steuern, Summen. Prüfen Sie Ihre lokalen Vorschriften für Einzelheiten."
+          },
+          {
+            "question": "Kann ich dies für internationales Geschäft nutzen?",
+            "answer": "Ja! Über 40 Währungen, 6 Sprachen, flexible Steuern. Funktioniert weltweit."
+          },
+          {
+            "question": "Welche Informationen sind erforderlich?",
+            "answer": "Ihre Geschäftsdaten, Kundeninformationen, Rechnungsnummer, Datum, Positionen mit Preisen. Steuer ist optional."
+          },
+          {
+            "question": "Wie sollte ich Rechnungen nummerieren?",
+            "answer": "Fortlaufend (INV-001, INV-002) oder mit Datum (2024-001). Seien Sie konsistent für die Buchhaltung."
+          }
+        ]
+      },
+      {
+        "category": "Technische Fragen",
+        "icon": "🛠️",
+        "questions": [
+          {
+            "question": "Welche Browser werden unterstützt?",
+            "answer": "Alle modernen Browser: Chrome, Firefox, Safari, Edge. Desktop und Mobil."
+          },
+          {
+            "question": "Kann ich dies auf dem Handy nutzen?",
+            "answer": "Ja! Vollständig responsiv — funktioniert auf Smartphones und Tablets."
+          },
+          {
+            "question": "Technische Probleme?",
+            "answer": "Versuchen Sie Seite neu laden, Cache leeren oder Inkognito-Modus. Das löst die meisten Probleme."
+          },
+          {
+            "question": "Kann ich speichern und später fortfahren?",
+            "answer": "Kein dauerhaftes Speichern (aus Datenschutzgründen). In einer Sitzung abschließen oder in Notizen kopieren."
+          }
+        ]
+      },
+      {
+        "category": "Geschäftliche Nutzung",
+        "icon": "💼",
+        "questions": [
+          {
+            "question": "Gut für Freiberufler?",
+            "answer": "Perfekt. Professionelle Rechnungen, keine Kosten, Steuer inklusive."
+          },
+          {
+            "question": "Kleine Unternehmen?",
+            "answer": "Ja! Professionelle Ergebnisse ohne Unternehmens-Komplexität."
+          },
+          {
+            "question": "Wiederkehrende Rechnungen?",
+            "answer": "Keine Automatisierung, aber einfach zu duplizieren — einfach Datum und Nummer aktualisieren."
+          },
+          {
+            "question": "Zahlungsverfolgung?",
+            "answer": "Wir erstellen Rechnungen; nutzen Sie eine Tabelle oder Buchhaltungs-App zur Zahlungsverfolgung."
+          }
+        ]
+      }
+    ],
+    "stillHaveQuestions": {
+      "title": "Noch Fragen?",
+      "content": "Sie finden nicht die gewünschte Antwort? Erstellen Sie jetzt Ihre professionelle Rechnung oder erfahren Sie mehr über unseren Service.",
+      "createInvoice": "Jetzt Rechnung erstellen",
+      "aboutSite": "Über Invoice.wiki"
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Datenschutzrichtlinie - Invoice.wiki",
+      "description": "Invoice.wiki Datenschutzrichtlinie. Wir erfassen keine persönlichen Daten - die gesamte Verarbeitung erfolgt in Ihrem Browser. Kein Tracking, keine Datenspeicherung, vollständiger Datenschutz.",
+      "ogTitle": "Datenschutzrichtlinie - Invoice.wiki",
+      "ogDescription": "Vollständiger Datenschutz mit Invoice.wiki. Keine Datenerfassung, browserbasierte Verarbeitung und sichere Rechnungserstellung."
+    },
+    "title": "Datenschutzrichtlinie - Invoice Wiki Generator",
+    "noCollection": {
+      "title": "Rechnungsgenerator Datenschutz - Keine Datenerfassung",
+      "content": [
+        "Der kostenlose Rechnungsgenerator erfasst keine persönlichen Daten. Die gesamte Rechnungserstellung und PDF-Generierung erfolgt in Ihrem Webbrowser. Professionelle Rechnungen werden auf Ihrem Gerät erstellt, und alle Rechnungsdaten werden gelöscht, wenn Sie Ihren Browser schließen.",
+        "Wir verwenden keine Cookies für Tracking oder Werbung. Die einzigen Daten, die wir in Ihrem Browser speichern, sind Theme-Einstellungen (Hell/Dunkel) im localStorage, um ein konsistentes Nutzererlebnis zu gewährleisten.",
+        "Wir verwenden Vercel Analytics, um anonyme Nutzungsstatistiken zu erheben, die uns helfen, den Service zu verbessern. Diese Daten enthalten keinerlei persönliche Informationen."
+      ]
+    },
+    "howWeProtect": {
+      "title": "Wie Invoice Wiki Ihre Privatsphäre beim Erstellen von Rechnungen schützt",
+      "intro": "Bei Invoice Wiki sind wir überzeugt, dass Ihre Geschäftsinformationen vollständig privat bleiben sollten. Unser kostenloser Rechnungsgenerator wurde nach dem Prinzip 'Datenschutz zuerst' entwickelt:",
+      "items": [
+        {
+          "title": "Lokale Verarbeitung",
+          "content": "Alle Rechnungsdaten werden lokal in Ihrem Browser mit JavaScript verarbeitet. Keine Informationen werden an unsere Server gesendet, wenn Sie eine Rechnung erstellen."
+        },
+        {
+          "title": "Keine Registrierung erforderlich",
+          "content": "Sie können sofort mit der Rechnungserstellung beginnen, ohne persönliche Daten anzugeben."
+        },
+        {
+          "title": "Keine Datenspeicherung",
+          "content": "Wir speichern weder Ihre Rechnungsdetails noch Kundeninformationen oder Geschäftsdaten auf unseren Servern."
+        },
+        {
+          "title": "Sichere PDF-Erstellung",
+          "content": "PDF-Rechnungsdateien werden lokal in Ihrem Browser erstellt und direkt auf Ihr Gerät heruntergeladen."
+        },
+        {
+          "title": "Keine E-Mail erforderlich",
+          "content": "Im Gegensatz zu anderen Rechnungsgeneratoren fragen wir niemals nach Ihrer E-Mail-Adresse oder Kontaktdaten."
+        }
+      ]
+    },
+    "whatWeDoNotCollect": {
+      "title": "Welche Informationen wir nicht erfassen",
+      "intro": "Um vollständig transparent zu sein, hier ist, was wir ausdrücklich NICHT erfassen:",
+      "items": [
+        "Ihren Namen, Ihre E-Mail-Adresse oder Kontaktinformationen",
+        "Kundennamen, Adressen oder Geschäftsdaten",
+        "Rechnungsbeträge, Einzelpositionen oder Zahlungsinformationen",
+        "Bankverbindungen oder Zahlungsmethoden",
+        "IP-Adressen zu Tracking-Zwecken",
+        "Browser-Fingerprints oder Gerätekennungen"
+      ]
+    },
+    "analytics": {
+      "title": "Anonyme Analysen",
+      "intro": "Wir verwenden Vercel Analytics, um zu verstehen, wie unser kostenloser Rechnungsgenerator genutzt wird. Dies hilft uns, den Service zu verbessern und technische Probleme zu erkennen. Die Analysedaten sind vollständig anonym und umfassen nur:",
+      "items": [
+        "Seitenaufrufe und beliebte Funktionen",
+        "Browsertypen und Gerätekategorien (Mobil/Desktop)",
+        "Allgemeine geografische Regionen (Länderebene)",
+        "Technische Leistungskennzahlen"
+      ],
+      "note": "Diese Daten können nicht zur Identifizierung einzelner Nutzer verwendet werden und werden über alle Besucher aggregiert."
+    },
+    "thirdParty": {
+      "title": "Drittanbieter-Dienste",
+      "content": "Invoice.wiki wird auf der sicheren Infrastruktur von Vercel gehostet. Obwohl wir Ihre Rechnungsdaten nicht an Dritte weitergeben, können Standard-Webhosting-Protokolle grundlegende technische Informationen wie Anfragezeiten und allgemeine Fehlerdaten enthalten. Erfahren Sie mehr",
+      "link": "über unsere Plattform"
+    },
+    "rights": {
+      "title": "Ihre Rechte und Kontrolle",
+      "intro": "Da wir Ihre persönlichen Daten nicht erfassen, gibt es nichts, was wir löschen, ändern oder übertragen müssten. Sie behalten jederzeit die vollständige Kontrolle über Ihre Informationen. Bei Datenschutzbedenken können Sie:",
+      "items": [
+        "Invoice.wiki im Inkognito-/Privatmodus verwenden",
+        "Den localStorage Ihres Browsers leeren, um Theme-Einstellungen zu entfernen",
+        "JavaScript deaktivieren (dies verhindert allerdings die Funktion des Rechnungsgenerators)"
+      ]
+    },
+    "readyCta": {
+      "title": "Bereit, sichere Rechnungen zu erstellen?",
+      "content": "Erleben Sie die privateste Art, professionelle Rechnungen online zu erstellen. Keine Registrierung, keine Datenerfassung, einfach schnelle und sichere Abrechnung.",
+      "button": "Private Rechnungen erstellen →"
+    },
+    "contactTitle": "Kontaktinformationen",
+    "contactContent": "Wenn Sie Fragen zu unserer Datenschutzrichtlinie oder unseren Sicherheitsmaßnahmen haben, kontaktieren Sie uns bitte"
+  },
+  "createInvoice": {
+    "meta": {
+      "title": "Rechnung erstellen - Kostenloser Online-Rechnungsgenerator",
+      "description": "Erstellen Sie kostenlos professionelle Rechnungen online. Positionen hinzufügen, Steuern berechnen, Fälligkeitsdaten festlegen und als PDF herunterladen. Keine Registrierung erforderlich.",
+      "ogTitle": "Rechnung erstellen - Kostenloser Online-Rechnungsgenerator",
+      "ogDescription": "Erstellen Sie Rechnungen mit Steuerunterstützung und PDF-Export. Kein Login erforderlich."
+    },
+    "title": "Rechnung erstellen",
+    "subtitle": "Erstellen Sie professionelle Rechnungen mit PDF-Export. Nutzen Sie unseren kostenlosen Rechnungsgenerator für professionelle Geschäftsrechnungen mit PDF-Download. Keine Registrierung erforderlich. Ihre Daten bleiben privat - siehe unsere",
+    "privacyLink": "Datenschutzrichtlinie",
+    "faqLink": "FAQ-Bereich",
+    "needHelp": "Brauchen Sie Hilfe? Schauen Sie in unseren",
+    "faqTitle": "Häufig gestellte Fragen",
+    "faqItems": [
+      {
+        "question": "Ist das wirklich kostenlos?",
+        "answer": "Ja! Keine versteckten Gebühren, keine Registrierung erforderlich, keine Abonnementkosten. Erstellen Sie unbegrenzt professionelle Rechnungen komplett kostenlos."
+      },
+      {
+        "question": "Sind meine Daten sicher?",
+        "answer": "Absolut. Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser. Ihre sensiblen Geschäftsdaten verlassen niemals Ihr Gerät und werden nicht auf unseren Servern gespeichert."
+      },
+      {
+        "question": "Welche Sprachen werden unterstützt?",
+        "answer": "Wir unterstützen 6 Sprachen: Englisch, Deutsch, Tschechisch, Polnisch, Slowakisch und Ukrainisch. Perfekt für internationales Geschäft."
+      },
+      {
+        "question": "Kann ich Farben anpassen?",
+        "answer": "Ja! Wählen Sie aus 10 professionellen Akzentfarben, die zu Ihrer Markenidentität passen und einheitliche Rechnungen erstellen."
+      },
+      {
+        "question": "Berechnet es Steuern automatisch?",
+        "answer": "Ja! Geben Sie einen beliebigen Steuersatz ein. Die Summen werden automatisch berechnet."
+      },
+      {
+        "question": "Wie schnell kann ich eine Rechnung erstellen?",
+        "answer": "Erstellen Sie schnell professionelle Rechnungen. Details eingeben, Vorschau ansehen und Ihr PDF sofort herunterladen."
+      }
+    ],
+    "viewAllFaqs": "Alle FAQs anzeigen →",
+    "form": {
+      "agreePrefix": "Ich stimme den",
+      "termsLink": "Allgemeinen Geschäftsbedingungen",
+      "agreeSuffix": "von invoice.wiki zu",
+      "termsRequired": "Sie müssen die Allgemeinen Geschäftsbedingungen akzeptieren",
+      "generateInvoice": "Rechnung erstellen",
+      "generatingInvoice": "Rechnung wird erstellt..."
+    }
+  },
+  "terms": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "version": "Version 1.0 – Erstveröffentlichung",
+    "lastUpdated": "Zuletzt aktualisiert: 25. Februar 2025",
+    "acceptanceOfTerms": {
+      "title": "1. Annahme der Bedingungen",
+      "content": "Durch den Zugriff auf oder die Nutzung von Invoice.wiki (der \u201eDienst\u201c) bestätigen Sie, dass Sie diese Allgemeinen Geschäftsbedingungen (die \u201eBedingungen\u201c) gelesen und verstanden haben und diesen zustimmen. Wenn Sie mit einem Teil dieser Bedingungen nicht einverstanden sind, müssen Sie die Nutzung des Dienstes unverzüglich einstellen."
+    },
+    "descriptionOfService": {
+      "title": "2. Beschreibung des Dienstes",
+      "content": "Invoice.wiki bietet ein kostenloses, webbasiertes Tool zur Rechnungserstellung. Die gesamte Rechnungserstellung erfolgt vollständig in Ihrem Browser; es werden keine Daten an unsere Server übertragen oder dort gespeichert. Wir bieten keine Dienste zur Datenspeicherung, -abfrage oder -wiederherstellung an."
+    },
+    "noWarranties": {
+      "title": "3. Keine Gewährleistung",
+      "content": "Der Dienst wird \u201ewie besehen\u201c und \u201ewie verfügbar\u201c bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Gewährleistung. Wir garantieren nicht, dass der Dienst fehlerfrei, ununterbrochen oder frei von Mängeln ist. Im größtmöglichen gesetzlich zulässigen Umfang lehnen wir alle Gewährleistungen ab, einschließlich der Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten."
+    },
+    "limitationOfLiability": {
+      "title": "4. Haftungsbeschränkung",
+      "content": "Im gesetzlich zulässigen Umfang haften Invoice.wiki, seine Eigentümer, Mitarbeiter, leitenden Angestellten, Vertreter, verbundene Unternehmen und Partner nicht für indirekte, zufällige, besondere, Folge- oder exemplarische Schäden, die aus Ihrer Nutzung des Dienstes entstehen. Dies umfasst unter anderem Schäden für entgangenen Gewinn, Geschäftswert, Daten oder andere immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden."
+    },
+    "indemnification": {
+      "title": "5. Freistellung",
+      "content": "Sie verpflichten sich, Invoice.wiki, seine Eigentümer, Mitarbeiter, leitenden Angestellten, Vertreter, verbundene Unternehmen und Partner von allen Ansprüchen, Schäden, Verbindlichkeiten, Kosten und Ausgaben (einschließlich angemessener Anwaltskosten) freizustellen, die entstehen aus:",
+      "items": [
+        "Ihrer Nutzung oder Ihrem Missbrauch des Dienstes.",
+        "Ihrer Verletzung dieser Bedingungen.",
+        "Ansprüchen Dritter im Zusammenhang mit über den Dienst erstellten Rechnungen."
+      ]
+    },
+    "governingLaw": {
+      "title": "6. Anwendbares Recht und Gerichtsstand",
+      "content": "Diese Bedingungen unterliegen dem Recht der Tschechischen Republik und werden in Übereinstimmung damit ausgelegt. Alle Streitigkeiten, die aus oder im Zusammenhang mit diesen Bedingungen entstehen, unterliegen der ausschließlichen Zuständigkeit der Gerichte der Tschechischen Republik."
+    },
+    "changesToTerms": {
+      "title": "7. Änderungen der Bedingungen",
+      "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Alle Änderungen werden sofort nach Veröffentlichung auf unserer Website wirksam. Ihre fortgesetzte Nutzung des Dienstes nach solchen Änderungen stellt Ihre Zustimmung zu den neuen Bedingungen dar."
+    },
+    "versionHistory": {
+      "title": "8. Versionshistorie",
+      "content": "Dieser Abschnitt enthält eine historische Aufzeichnung der Änderungen an diesen Allgemeinen Geschäftsbedingungen.",
+      "v1": "Version 1.0 (Veröffentlicht: 25. Februar 2025) – Erstveröffentlichung der Allgemeinen Geschäftsbedingungen."
+    },
+    "contactInfo": {
+      "title": "9. Kontaktinformationen",
+      "content": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte:",
+      "link": "Support kontaktieren"
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Seite nicht gefunden - Invoice.wiki",
+      "description": "Die gesuchte Seite existiert nicht. Zurück zum kostenlosen Rechnungsgenerator von Invoice.wiki."
+    },
+    "code": "404",
+    "title": "Rechnung nicht gefunden!",
+    "subtitle": "Diese Rechnung scheint aus unserem Ablagesystem entwischt zu sein.",
+    "encouragement": "Keine Sorge! Lassen Sie uns zurück zur professionellen Rechnungserstellung gehen",
+    "returnHome": "Zurück zum Rechnungsgenerator",
+    "createInvoice": "Oder erstellen Sie jetzt gleich eine Rechnung →"
+  },
+  "skipToContent": "Zum Hauptinhalt springen"
+}

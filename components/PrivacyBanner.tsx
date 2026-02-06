@@ -1,14 +1,33 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
+const STORAGE_KEY = "privacy-banner-dismissed"
+
 export function PrivacyBanner() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    let show = true
+    try {
+      show = localStorage.getItem(STORAGE_KEY) !== "true"
+    } catch {
+      // localStorage unavailable (e.g. private browsing)
+    }
+    // Reading from localStorage on mount — valid external store sync
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsVisible((prev) => (prev !== show ? show : prev))
+  }, [])
 
   const handleAccept = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, "true")
+    } catch {
+      // localStorage unavailable
+    }
     setIsVisible(false)
   }
 

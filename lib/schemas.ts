@@ -1,15 +1,24 @@
 import * as z from "zod"
 import DOMPurify from "isomorphic-dompurify"
 
+const PURIFY_CONFIG = { ALLOWED_TAGS: [] as string[], ALLOWED_ATTR: [] as string[] }
+
+const sanitizeString = (value: string) => DOMPurify.sanitize(value, PURIFY_CONFIG).trim()
+
 const sanitizeWebsite = (url: string): string => {
-  return url.replace(/^(https?:\/\/)/, "").slice(0, 60)
+  const clean = sanitizeString(url)
+  if (/^(javascript|data|vbscript):/i.test(clean)) return ""
+  return clean.replace(/^(https?:\/\/)/, "").slice(0, 60)
 }
 
-const sanitizeString = (value: string) => DOMPurify.sanitize(value)
-
 export const invoiceFormSchema = z.object({
-  sellerCompanyName: z.string().min(1, { message: "Company name is required" }).max(100).transform(sanitizeString),
-  sellerAddress: z.string().min(1, { message: "Address is required" }).max(250).transform(sanitizeString),
+  sellerCompanyName: z
+    .string()
+    .trim()
+    .min(1, { message: "Company name is required" })
+    .max(100)
+    .transform(sanitizeString),
+  sellerAddress: z.string().trim().min(1, { message: "Address is required" }).max(250).transform(sanitizeString),
   sellerCompanyId: z
     .string()
     .max(40)
@@ -32,8 +41,13 @@ export const invoiceFormSchema = z.object({
     .max(60)
     .optional()
     .transform((v) => (v ? sanitizeWebsite(sanitizeString(v)) : v)),
-  buyerCompanyName: z.string().min(1, { message: "Company name is required" }).max(100).transform(sanitizeString),
-  buyerAddress: z.string().min(1, { message: "Address is required" }).max(250).transform(sanitizeString),
+  buyerCompanyName: z
+    .string()
+    .trim()
+    .min(1, { message: "Company name is required" })
+    .max(100)
+    .transform(sanitizeString),
+  buyerAddress: z.string().trim().min(1, { message: "Address is required" }).max(250).transform(sanitizeString),
   buyerCompanyId: z
     .string()
     .max(40)
@@ -56,7 +70,7 @@ export const invoiceFormSchema = z.object({
     .max(60)
     .optional()
     .transform((v) => (v ? sanitizeWebsite(sanitizeString(v)) : v)),
-  invoiceNumber: z.string().min(1, { message: "Invoice number is required" }).max(30).transform(sanitizeString),
+  invoiceNumber: z.string().trim().min(1, { message: "Invoice number is required" }).max(30).transform(sanitizeString),
   issueDate: z.date(),
   dueDate: z.date(),
   currency: z.string().max(3).transform(sanitizeString),
@@ -94,7 +108,7 @@ export const invoiceFormSchema = z.object({
   items: z
     .array(
       z.object({
-        name: z.string().max(130).min(1, { message: "Item name is required" }).transform(sanitizeString),
+        name: z.string().trim().max(130).min(1, { message: "Item name is required" }).transform(sanitizeString),
         quantity: z.number().int().min(1).max(999999),
         price: z.number().min(0).max(999999999),
         vatRate: z.number().min(0).max(100),

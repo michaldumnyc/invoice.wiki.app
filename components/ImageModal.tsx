@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useRef, useCallback } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
 
@@ -13,22 +13,42 @@ interface ImageModalProps {
 }
 
 export function ImageModal({ isOpen, onClose, imageSrc, imageAlt, imageTitle }: ImageModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null)
+
+  // Auto-focus modal for keyboard events + lock body scroll
+  useEffect(() => {
+    if (isOpen) {
+      modalRef.current?.focus()
+      document.body.style.overflow = "hidden"
+    }
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
+
+  const handleBackdropClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (e.target === e.currentTarget) {
+        onClose()
+      }
+    },
+    [onClose]
+  )
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose()
+      }
+    },
+    [onClose]
+  )
+
   if (!isOpen) return null
-
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose()
-    }
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
-      onClose()
-    }
-  }
 
   return (
     <div
+      ref={modalRef}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
       onClick={handleBackdropClick}
       onKeyDown={handleKeyDown}
