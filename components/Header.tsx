@@ -18,8 +18,10 @@ export default function Header() {
   // Build locale-aware href
   const href = (path: string) => `/${locale}${path === "/" ? "" : path}`
 
-  // Build locale switcher URL (keep current path, change locale)
-  const switchLocale = (newLocale: string) => `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`
+  // Known safe pages for locale switching (breaks taint chain for CodeQL)
+  const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
+  const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
+  const switchLocale = (newLocale: string) => `/${newLocale}${currentPage === "/" ? "" : currentPage}`
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm border-b">
