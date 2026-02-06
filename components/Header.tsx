@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { MobileMenu } from "./MobileMenu"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
@@ -10,6 +10,7 @@ import { LOCALES, LOCALE_NAMES } from "@/lib/constants"
 
 export default function Header() {
   const pathname = usePathname()
+  const router = useRouter()
   const { locale, dict } = useLocale()
 
   // Strip locale prefix for active link matching
@@ -21,7 +22,7 @@ export default function Header() {
   // Known safe pages for locale switching (breaks taint chain for CodeQL)
   const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
   const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
-  const switchLocale = (newLocale: string) => `/${newLocale}${currentPage === "/" ? "" : currentPage}`
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm border-b">
@@ -87,9 +88,9 @@ export default function Header() {
             <select
               value={locale}
               onChange={(e) => {
-                const newLocale = e.target.value
-                if (!LOCALES.includes(newLocale as (typeof LOCALES)[number])) return
-                window.location.href = switchLocale(newLocale)
+                const safeLocale = LOCALES.find((l) => l === e.target.value)
+                if (!safeLocale) return
+                router.push(`/${safeLocale}${currentPage === "/" ? "" : currentPage}`)
               }}
               className="text-sm bg-background border border-input rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-ring"
               aria-label="Language"

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -12,6 +12,7 @@ import { LOCALES, LOCALE_NAMES } from "@/lib/constants"
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
   const { locale, dict } = useLocale()
 
   const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/"
@@ -19,7 +20,7 @@ export function MobileMenu() {
   // Known safe pages for locale switching (breaks taint chain for CodeQL)
   const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
   const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
-  const switchLocale = (newLocale: string) => `/${newLocale}${currentPage === "/" ? "" : currentPage}`
+
 
   const closeMenu = useCallback(() => setIsOpen(false), [])
 
@@ -102,9 +103,9 @@ export function MobileMenu() {
               <select
                 value={locale}
                 onChange={(e) => {
-                  const newLocale = e.target.value
-                  if (!LOCALES.includes(newLocale as (typeof LOCALES)[number])) return
-                  window.location.href = switchLocale(newLocale)
+                  const safeLocale = LOCALES.find((l) => l === e.target.value)
+                  if (!safeLocale) return
+                  router.push(`/${safeLocale}${currentPage === "/" ? "" : currentPage}`)
                 }}
                 className="mx-4 text-sm bg-background border border-input rounded-md px-3 py-2"
                 aria-label="Language"
