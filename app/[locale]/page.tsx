@@ -117,10 +117,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-foreground">
                   {dict.home.hero.title}
                 </h1>
-                <p
-                  className="text-lg sm:text-xl text-muted-foreground mb-8"
-                  dangerouslySetInnerHTML={{ __html: dict.home.hero.description }}
-                />
+                <p className="text-lg sm:text-xl text-muted-foreground mb-8">
+                  {dict.home.hero.description.split(/(<strong>.*?<\/strong>)/g).map((part, i) => {
+                    const match = part.match(/^<strong>(.*)<\/strong>$/)
+                    return match ? <strong key={i}>{match[1]}</strong> : <React.Fragment key={i}>{part}</React.Fragment>
+                  })}
+                </p>
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
                   <Link href={`/${locale}/create-invoice`} aria-label={dict.home.hero.cta}>
                     {dict.home.hero.cta} <ArrowRight className="ml-2 h-5 w-5" />

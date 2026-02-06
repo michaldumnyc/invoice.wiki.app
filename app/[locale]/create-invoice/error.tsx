@@ -10,7 +10,9 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
     console.error(error)
   }, [error])
 
-  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "E-mail"
+  const rawEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || ""
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(rawEmail)
+  const supportEmail = isValidEmail ? rawEmail : ""
 
   const isPdfError = error.message.includes("PDF Generation Failed")
   const isValidationError = error.message.includes("validation") || error.message.includes("required")
@@ -90,7 +92,7 @@ Thank you for your help!
     `.trim()
     )
 
-    window.open(`mailto:${supportEmail}?subject=${subject}&body=${body}`, "_blank")
+    window.open(`mailto:${encodeURIComponent(supportEmail)}?subject=${subject}&body=${body}`, "_blank")
   }
 
   return (
@@ -144,7 +146,7 @@ Thank you for your help!
             {supportEmail && (
               <p className="mt-1">
                 You can also contact us directly at{" "}
-                <a href={`mailto:${supportEmail}`} className="text-primary hover:underline">
+                <a href={`mailto:${encodeURIComponent(supportEmail)}`} className="text-primary hover:underline">
                   {supportEmail}
                 </a>
               </p>

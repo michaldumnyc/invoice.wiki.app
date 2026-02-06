@@ -85,7 +85,9 @@ export default function Header() {
             <select
               value={locale}
               onChange={(e) => {
-                window.location.href = switchLocale(e.target.value)
+                const newLocale = e.target.value
+                if (!LOCALES.includes(newLocale as (typeof LOCALES)[number])) return
+                window.location.href = switchLocale(newLocale)
               }}
               className="text-sm bg-background border border-input rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-ring"
               aria-label="Language"

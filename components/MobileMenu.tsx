@@ -99,7 +99,9 @@ export function MobileMenu() {
               <select
                 value={locale}
                 onChange={(e) => {
-                  window.location.href = switchLocale(e.target.value)
+                  const newLocale = e.target.value
+                  if (!LOCALES.includes(newLocale as (typeof LOCALES)[number])) return
+                  window.location.href = switchLocale(newLocale)
                 }}
                 className="mx-4 text-sm bg-background border border-input rounded-md px-3 py-2"
                 aria-label="Language"
