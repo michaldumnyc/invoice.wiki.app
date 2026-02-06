@@ -18,8 +18,10 @@ export default function Header() {
   // Build locale-aware href
   const href = (path: string) => `/${locale}${path === "/" ? "" : path}`
 
-  // Build locale switcher URL (keep current path, change locale)
-  const switchLocale = (newLocale: string) => `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`
+  // Known safe pages for locale switching (breaks taint chain for CodeQL)
+  const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
+  const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
+  const switchLocale = (newLocale: string) => `/${newLocale}${currentPage === "/" ? "" : currentPage}`
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm border-b">
@@ -85,7 +87,9 @@ export default function Header() {
             <select
               value={locale}
               onChange={(e) => {
-                window.location.href = switchLocale(e.target.value)
+                const newLocale = e.target.value
+                if (!LOCALES.includes(newLocale as (typeof LOCALES)[number])) return
+                window.location.href = switchLocale(newLocale)
               }}
               className="text-sm bg-background border border-input rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-ring"
               aria-label="Language"

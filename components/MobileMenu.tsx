@@ -16,7 +16,10 @@ export function MobileMenu() {
 
   const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/"
   const href = (path: string) => `/${locale}${path === "/" ? "" : path}`
-  const switchLocale = (newLocale: string) => `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`
+  // Known safe pages for locale switching (breaks taint chain for CodeQL)
+  const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
+  const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
+  const switchLocale = (newLocale: string) => `/${newLocale}${currentPage === "/" ? "" : currentPage}`
 
   const closeMenu = useCallback(() => setIsOpen(false), [])
 
@@ -99,7 +102,9 @@ export function MobileMenu() {
               <select
                 value={locale}
                 onChange={(e) => {
-                  window.location.href = switchLocale(e.target.value)
+                  const newLocale = e.target.value
+                  if (!LOCALES.includes(newLocale as (typeof LOCALES)[number])) return
+                  window.location.href = switchLocale(newLocale)
                 }}
                 className="mx-4 text-sm bg-background border border-input rounded-md px-3 py-2"
                 aria-label="Language"
