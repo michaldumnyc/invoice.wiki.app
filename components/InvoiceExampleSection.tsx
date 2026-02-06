@@ -4,8 +4,14 @@ import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ImageModal } from "./ImageModal"
+import type { Dictionary } from "@/lib/get-dictionary"
 
-export function InvoiceExampleSection() {
+interface InvoiceExampleSectionProps {
+  translations: Dictionary["home"]["invoiceExample"]
+  locale: string
+}
+
+export function InvoiceExampleSection({ translations: t, locale }: InvoiceExampleSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => setIsModalOpen(true)
@@ -22,13 +28,9 @@ export function InvoiceExampleSection() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 id="example-heading" className="text-2xl sm:text-3xl font-bold text-center mb-4">
-                See What You'll Create
+                {t.title}
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Generate professional invoices that impress clients and ensure prompt payment. Our free invoice
-                generator creates clean, modern invoices with all essential business details, automatic calculations,
-                and perfect formatting.
-              </p>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t.description}</p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -46,11 +48,11 @@ export function InvoiceExampleSection() {
                         openModal()
                       }
                     }}
-                    aria-label="Click to view invoice example in full size"
+                    aria-label={t.clickToEnlarge}
                   >
                     <Image
                       src="/images/invoice-example.png"
-                      alt="Create invoice example - Professional invoice generator Invoice Wiki showing PDF invoice template with VAT calculations, invoice creator features, and generate invoice details"
+                      alt={t.imageAlt}
                       className="w-full h-auto rounded border invoice-example-img"
                       width={400}
                       height={500}
@@ -61,90 +63,36 @@ export function InvoiceExampleSection() {
                     {/* Overlay hint */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors rounded border flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <div className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-                        🔍 Click to enlarge
+                        🔍 {t.clickToEnlarge}
                       </div>
                     </div>
                   </div>
                   <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-                    PDF Ready
+                    {t.pdfReady}
                   </div>
                 </div>
               </div>
 
               {/* Benefits Content */}
               <div className="order-1 lg:order-2 space-y-4">
-                <div className="flex items-start space-x-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                    ✓
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">Clean Professional Design</h3>
-                    <p className="text-muted-foreground">
-                      Every invoice generated maintains consistent, professional formatting that reflects well on your
-                      business and builds client trust.
-                    </p>
+                {t.benefits.map((benefit, i) => (
+                  <div key={i} className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
+                      ✓
+                    </span>
+                    <div>
+                      <h3 className="font-semibold text-lg text-foreground">{benefit.title}</h3>
+                      <p className="text-muted-foreground">{benefit.description}</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                    ✓
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">Automatic Calculations</h3>
-                    <p className="text-muted-foreground">
-                      VAT rates, subtotals, and grand totals are calculated automatically with high precision using
-                      mathematical rounding (0.5 rounds up) to 2 decimal places, eliminating manual errors and saving
-                      valuable time.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                    ✓
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">Complete Business Information</h3>
-                    <p className="text-muted-foreground">
-                      Include all necessary business details: company information, addresses, VAT IDs, payment terms,
-                      and contact information for complete transparency.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                    ✓
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">Instant PDF Download</h3>
-                    <p className="text-muted-foreground">
-                      Download your completed invoices as high-quality PDF files that are ready for printing, emailing,
-                      or digital storage with perfect formatting preservation.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mt-1 text-green-600 dark:text-green-400 text-sm font-bold">
-                    ✓
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">Customizable Colors & Languages</h3>
-                    <p className="text-muted-foreground">
-                      NEW: By popular demand! Choose from 10 accent colors and 6 languages (English, German, Czech,
-                      Polish, Slovak, Ukrainian) to match your brand and serve international clients.
-                    </p>
-                  </div>
-                </div>
+                ))}
 
                 <div className="pt-4">
                   <Link
-                    href="/create-invoice"
+                    href={`/${locale}/create-invoice`}
                     className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
                   >
-                    Try It Now - Free →
+                    {t.tryItNow}
                   </Link>
                 </div>
               </div>
@@ -158,8 +106,8 @@ export function InvoiceExampleSection() {
         isOpen={isModalOpen}
         onClose={closeModal}
         imageSrc="/images/invoice-example.png"
-        imageAlt="Create invoice example - Professional invoice generator Invoice Wiki showing PDF invoice template with VAT calculations, invoice creator features, and generate invoice details"
-        imageTitle="Professional Invoice Example"
+        imageAlt={t.imageAlt}
+        imageTitle={t.imageTitle}
       />
     </>
   )

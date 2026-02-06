@@ -1,0 +1,630 @@
+{
+  "nav": {
+    "home": "Domov",
+    "createInvoice": "Vytvoriť faktúru",
+    "faq": "FAQ",
+    "about": "O nás",
+    "openMenu": "Otvoriť menu",
+    "closeMenu": "Zavrieť menu",
+    "theme": {
+      "light": "Svetlý",
+      "dark": "Tmavý",
+      "system": "Systém",
+      "toggleTheme": "Prepnúť motív"
+    }
+  },
+  "footer": {
+    "quickLinks": "Rýchle odkazy",
+    "freeInvoiceGenerator": "Bezplatný generátor faktúr",
+    "aboutSite": "O Invoice.wiki",
+    "createProfessionalInvoice": "Vytvoriť profesionálnu faktúru",
+    "privacyPolicy": "Podrobnosti o ochrane súkromia",
+    "openSource": "Open Source na GitHub"
+  },
+  "home": {
+    "meta": {
+      "title": "Bezplatný generátor faktúr - Invoice.wiki",
+      "description": "Bezplatný online nástroj na vytváranie faktúr. Vytvárajte profesionálne faktúry okamžite so stiahnutím PDF, podporou daní, viacerými menami a jazykmi. Bez registrácie.",
+      "ogTitle": "Invoice.wiki - Bezplatný generátor faktúr",
+      "ogDescription": "Vytvárajte faktúry okamžite online. Bezplatné stiahnutie PDF, bez nutnosti registrácie."
+    },
+    "hero": {
+      "title": "Bezplatný generátor faktúr - Vytvorte PDF faktúry",
+      "description": "Vytvorte a stiahnite <strong>profesionálne PDF faktúry</strong> za pár minút. Náš bezplatný nástroj na tvorbu faktúr podporuje <strong>40+ mien</strong>, automatické výpočty daní a <strong>6 jazykov</strong>. Bez registrácie, bez poplatkov — stačí vyplniť údaje a stiahnuť.",
+      "cta": "Vytvoriť faktúru teraz"
+    },
+    "howItWorks": {
+      "title": "Ako vytvoriť profesionálne faktúry",
+      "steps": [
+        {
+          "title": "Vyplňte údaje faktúry",
+          "description": "Zadajte informácie o vašej firme, údaje klienta a položky faktúry. Náš formulár vás prevedie všetkými povinnými poľami."
+        },
+        {
+          "title": "Prispôsobte a skontrolujte",
+          "description": "Vyberte farby, jazyk a nastavenia daní. Pred stiahnutím si prezrite náhľad faktúry."
+        },
+        {
+          "title": "Stiahnite PDF",
+          "description": "Vygenerujte a stiahnite svoju faktúru ako PDF. Pripravená na odoslanie klientom alebo tlač pre vaše záznamy."
+        }
+      ],
+      "cta": "Začať vytvárať faktúru →"
+    },
+    "features": {
+      "title": "Prečo si vybrať náš generátor faktúr?",
+      "items": [
+        {
+          "title": "Rýchle a jednoduché",
+          "description": "Vyplňte formulár, kliknite na stiahnutie. Vaša PDF faktúra je pripravená za pár sekúnd."
+        },
+        {
+          "title": "Súkromné a bezpečné",
+          "description": "Všetko beží vo vašom prehliadači. Vaše údaje nevidíme ani neukladáme."
+        },
+        {
+          "title": "Funguje všade",
+          "description": "Počítač, tablet, telefón — akýkoľvek prehliadač, akékoľvek zariadenie. Žiadne aplikácie na inštaláciu."
+        }
+      ],
+      "privacyLink": "Podrobnosti o súkromí →",
+      "learnMoreLink": "Zistiť viac →"
+    },
+    "faq": {
+      "title": "Často kladené otázky",
+      "items": [
+        {
+          "question": "Musím sa registrovať?",
+          "answer": "Nie! Stačí otvoriť formulár a začať vytvárať. Žiadne prihlásenie, žiadna registrácia."
+        },
+        {
+          "question": "Môžem stiahnuť ako PDF?",
+          "answer": "Áno — okamžité stiahnutie PDF, pripravené na odoslanie alebo tlač."
+        },
+        {
+          "question": "Je to naozaj zadarmo?",
+          "answer": "100% zadarmo. Žiadne skryté poplatky, žiadne predplatné, žiadne limity."
+        },
+        { "question": "Výpočty daní?", "answer": "Áno! Akýkoľvek typ dane — automaticky vypočítané súčty." },
+        { "question": "Aké meny?", "answer": "40+ mien: USD, EUR, GBP, PLN, CZK, UAH a ďalšie." },
+        { "question": "Prispôsobenie?", "answer": "10 farieb + 6 jazykov (EN, DE, CS, PL, SK, UK)." }
+      ]
+    },
+    "grid": {
+      "title": "Všetko, čo potrebujete",
+      "items": [
+        { "title": "40+ mien", "subtitle": "USD, EUR, GBP a ďalšie" },
+        { "title": "6 jazykov", "subtitle": "EN, DE, CS, PL, SK, UK" },
+        { "title": "10 farieb", "subtitle": "Zlaďte so svojou značkou" },
+        { "title": "Okamžité PDF", "subtitle": "Stiahnite a odošlite" },
+        { "title": "Automatické výpočty", "subtitle": "Daň, súčty, zľavy" },
+        { "title": "Akékoľvek zariadenie", "subtitle": "Počítač, tablet, telefón" },
+        { "title": "100% súkromné", "subtitle": "Údaje zostávajú lokálne" },
+        { "title": "Navždy zadarmo", "subtitle": "Žiadne skryté poplatky" }
+      ]
+    },
+    "invoiceExample": {
+      "title": "Pozrite sa, čo vytvoríte",
+      "description": "Generujte profesionálne faktúry, ktoré zaujmú klientov a zabezpečia včasné platby. Náš bezplatný generátor faktúr vytvára čisté, moderné faktúry so všetkými potrebnými obchodnými údajmi, automatickými výpočtami a dokonalým formátovaním.",
+      "clickToEnlarge": "Kliknite pre zväčšenie",
+      "imageAlt": "Príklad faktúry - Profesionálny generátor faktúr zobrazujúci PDF šablónu faktúry s výpočtami DPH a detailmi",
+      "imageTitle": "Ukážka profesionálnej faktúry",
+      "pdfReady": "PDF pripravené",
+      "tryItNow": "Vyskúšajte zadarmo →",
+      "benefits": [
+        {
+          "title": "Čistý profesionálny dizajn",
+          "description": "Každá vygenerovaná faktúra zachováva konzistentné, profesionálne formátovanie, ktoré dobre reprezentuje vašu firmu a buduje dôveru klientov."
+        },
+        {
+          "title": "Automatické výpočty",
+          "description": "Sadzby DPH, medzisúčty a celkové súčty sa počítajú automaticky s vysokou presnosťou pomocou matematického zaokrúhľovania (0,5 sa zaokrúhľuje nahor) na 2 desatinné miesta, čím sa eliminujú chyby a šetrí čas."
+        },
+        {
+          "title": "Kompletné firemné informácie",
+          "description": "Uveďte všetky potrebné firemné údaje: informácie o spoločnosti, adresy, IČ DPH, platobné podmienky a kontaktné údaje pre úplnú transparentnosť."
+        },
+        {
+          "title": "Okamžité stiahnutie PDF",
+          "description": "Stiahnite dokončené faktúry ako vysokokvalitné PDF súbory pripravené na tlač, odoslanie e-mailom alebo digitálne uloženie s dokonalým zachovaním formátovania."
+        },
+        {
+          "title": "Prispôsobiteľné farby a jazyky",
+          "description": "NOVINKA: Na základe dopytu! Vyberte si z 10 farebných akcentov a 6 jazykov (angličtina, nemčina, čeština, poľština, slovenčina, ukrajinčina) na zladenie s vašou značkou a obsluhu medzinárodných klientov."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ste pripravení vytvoriť svoju faktúru?",
+      "subtitle": "Bez registrácie. Bez poplatkov. Trvá 2 minúty.",
+      "button": "Vytvoriť faktúru"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "O Invoice.wiki - Bezplatný generátor faktúr a bezpečná online fakturácia",
+      "description": "Zistite, ako Invoice.wiki pomáha freelancerom, dodávateľom a firmám vytvárať bezplatné faktúry online. Bezpečné, rýchle, bez registrácie a so stiahnutím PDF.",
+      "ogTitle": "O Invoice.wiki - Bezplatný generátor faktúr",
+      "ogDescription": "Zistite, ako Invoice.wiki poskytuje bezplatné online generovanie faktúr pre freelancerov a firmy. Bez nutnosti registrácie, bezpečné spracovanie v prehliadači."
+    },
+    "title": "O Invoice Wiki - Generátor faktúr pre freelancerov a firmy",
+    "intro": "Invoice.wiki je bezplatný a jednoduchý online generátor faktúr vytvorený pre freelancerov, malé firmy, dodávateľov a podnikateľov. Vytvárajte a sťahujte profesionálne faktúry ako PDF s úplným súkromím — bez nutnosti registrácie. Použite náš bezplatný generátor faktúr a",
+    "createFirstInvoice": "vytvorte svoju prvú faktúru",
+    "latestUpdates": {
+      "title": "Najnovšie aktualizácie",
+      "items": [
+        "Flexibilná podpora daní: Vyberte si svoj daňový systém alebo úplne skryte dane. Funguje pre akúkoľvek krajinu.",
+        "Reverse Charge: EU B2B fakturácia s automatickým upozornením na prenesenie daňovej povinnosti.",
+        "Možnosť skryť daň: Vytvárajte čisté faktúry bez stĺpcov dane, keď nie sú potrebné.",
+        "10 farieb: Zlaďte so svojou značkou pomocou vlastných farebných akcentov.",
+        "6 jazykov: EN, DE, CS, PL, SK, UK — obslúžte medzinárodných klientov."
+      ]
+    },
+    "privacy": {
+      "title": "Ako uprednostňujeme vaše súkromie",
+      "content": "Veríme, že profesionálna fakturácia by mala byť dostupná pre každého. Náš online nástroj na tvorbu faktúr zjednodušuje proces a zároveň zachováva najvyššie štandardy ochrany údajov a súkromia používateľov. Vaše fakturačné údaje zostávajú úplne na vašom zariadení, spracované lokálne vo vašom prehliadači pre maximálnu bezpečnosť údajov. Zistite viac o našich",
+      "link": "opatreniach na ochranu súkromia"
+    },
+    "whatIsInvoice": {
+      "title": "Čo je faktúra?",
+      "content": "Faktúra je oficiálny dokument používaný na vyžiadanie platby za tovar alebo služby. Uvádza, čo bolo predané, kto to predal, kto to kúpil, dohodnutú cenu, sumy daní a platobné podmienky. Faktúry slúžia ako dôležité finančné a právne záznamy."
+    },
+    "components": {
+      "title": "Kľúčové súčasti faktúry",
+      "seller": {
+        "title": "Vystaviteľ faktúry - Informácie o predávajúcom",
+        "items": [
+          "Názov spoločnosti – Oficiálny obchodný názov.",
+          "Adresa firmy – Registrované sídlo predávajúceho.",
+          "IČO – Oficiálne identifikačné číslo organizácie.",
+          "DIČ – Daňové identifikačné číslo (ak je relevantné).",
+          "Kontaktné údaje – E-mail, telefónne číslo a webová stránka."
+        ]
+      },
+      "buyer": {
+        "title": "Informácie o kupujúcom",
+        "items": [
+          "Meno klienta – Meno osoby alebo názov firmy, ktorej sa fakturuje.",
+          "Adresa klienta – Dodacia alebo právna adresa.",
+          "IČO a DIČ – Registračné a daňové údaje kupujúceho.",
+          "Kontakt – E-mail alebo telefónne číslo klienta."
+        ]
+      },
+      "details": {
+        "title": "Podrobnosti faktúry",
+        "items": [
+          "Číslo faktúry – Jedinečný identifikátor na sledovanie.",
+          "Dátum vystavenia a splatnosti – Kedy bola faktúra vytvorená a kedy je splatná.",
+          "Mena – Použitá pre transakciu.",
+          "Referencia – Voliteľné čísla objednávok alebo PO."
+        ]
+      },
+      "payment": {
+        "title": "Platobné údaje",
+        "items": [
+          "Akceptované metódy – Bankový prevod, karta, PayPal, hotovosť atď.",
+          "Bankové údaje – Číslo účtu, IBAN, BIC/SWIFT.",
+          "Stav – Označenie zaplatené alebo nezaplatené."
+        ]
+      },
+      "itemsTotals": {
+        "title": "Generátor faktúr - Položky a súčty",
+        "items": [
+          "Služba/Produkt – Názov toho, čo bolo predané.",
+          "Množstvo a jednotková cena – Rozpis za položku.",
+          "Sadzba dane – Percentuálna sadzba (ak je relevantná).",
+          "Celkom – Konečná suma vrátane dane."
+        ]
+      }
+    },
+    "legal": {
+      "title": "Právny význam faktúr",
+      "content": "Faktúry sú oficiálne obchodné záznamy používané na daňové výkazníctvo, finančné účtovníctvo a právnu ochranu. Požiadavky sa líšia podľa krajiny — vždy si overte miestne predpisy.",
+      "purposeIntro": "Bežné právne účely faktúr zahŕňajú:",
+      "purposes": [
+        "Overovanie obchodných transakcií.",
+        "Podávanie daňových priznaní a uplatňovanie odpočtov.",
+        "Dokumentovanie platobných podmienok a súm.",
+        "Poskytovanie dôkazov pri sporoch alebo auditoch."
+      ]
+    },
+    "international": {
+      "title": "Medzinárodná podpora",
+      "items": [
+        {
+          "title": "40+ mien",
+          "description": "USD, EUR, GBP, PLN, CZK, UAH a mnoho ďalších so správnym formátovaním."
+        },
+        { "title": "6 jazykov", "description": "Angličtina, nemčina, čeština, poľština, slovenčina, ukrajinčina." },
+        { "title": "Flexibilné dane", "description": "Akýkoľvek typ dane — funguje pre akúkoľvek krajinu." },
+        { "title": "Pripravené pre EU B2B", "description": "Podpora Reverse Charge pre cezhraničné služby v EÚ." }
+      ]
+    },
+    "whyChoose": {
+      "title": "Prečo si vybrať Invoice Wiki generátor?",
+      "items": [
+        "Navždy zadarmo – Žiadne predplatné, žiadne skúšobné obdobia, žiadne poplatky.",
+        "Okamžité PDF faktúry – Profesionálne dokumenty pripravené na stiahnutie.",
+        "V prehliadači – Používajte na akomkoľvek zariadení bez inštalácie.",
+        "Bez prihlásenia – Začnite vytvárať faktúry okamžite.",
+        "Podpora viacerých mien a daní – Ideálne pre medzinárodnú fakturáciu.",
+        "Bezpečné a súkromné – Vaše údaje nikdy neopustia váš prehliadač."
+      ]
+    },
+    "invoiceQuality": {
+      "title": "Vytvárajte faktúry - Profesionálne výsledky zakaždým",
+      "content": "Náš generátor faktúr vytvára čisté, profesionálne dokumenty, ktoré dobre reprezentujú vašu firmu. Tu je príklad toho, ako budú vaše faktúry vyzerať:"
+    },
+    "invoiceExample": {
+      "whatYouGet": "Čo získate:",
+      "items": [
+        "Profesionálne rozloženie s prehľadnou štruktúrou",
+        "Automatické výpočty DPH a súčtov",
+        "Kompletné firemné a klientské údaje",
+        "Platobné podmienky a bankové údaje",
+        "Formátovanie pripravené na tlač"
+      ],
+      "note": "Každá faktúra spĺňa tento profesionálny štandard a zabezpečuje, že vaša firma zanechá skvelý dojem pri každej interakcii s klientom.",
+      "clickToEnlarge": "Kliknite pre zväčšenie",
+      "imageTitle": "Ukážka profesionálnej faktúry",
+      "imageAlt": "Príklad faktúry - Profesionálny generátor faktúr zobrazujúci PDF šablónu faktúry s výpočtami DPH a detailmi"
+    },
+    "readyCta": {
+      "title": "Ste pripravení vytvoriť svoju prvú faktúru?",
+      "subtitle": "Navždy zadarmo. Bez registrácie. Trvá 2 minúty. Stiahnutie PDF v cene.",
+      "button": "Vytvoriť faktúru →"
+    },
+    "contact": {
+      "title": "Kontaktujte nás",
+      "content": "Máte otázky, návrhy alebo spätnú väzbu? Radi si vás vypočujeme."
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Často kladené otázky - Generátor faktúr | Invoice.wiki",
+      "description": "Získajte odpovede na bežné otázky o našom bezplatnom generátore faktúr. Dozviete sa o fakturácii, podpore daní, sťahovaní PDF a firemnej fakturácii.",
+      "ogTitle": "FAQ - Otázky o generátore faktúr | Invoice.wiki",
+      "ogDescription": "Získajte odpovede na bežné otázky o našom bezplatnom generátore faktúr a osvedčených postupoch fakturácie."
+    },
+    "title": "Často kladené otázky",
+    "subtitle": "Získajte okamžité odpovede na bežné otázky o našom bezplatnom generátore faktúr, ochrane súkromia a osvedčených postupoch profesionálnej fakturácie.",
+    "categories": [
+      {
+        "category": "Začíname",
+        "icon": "🚀",
+        "questions": [
+          {
+            "question": "Musím sa registrovať na vytváranie faktúr?",
+            "answer": "Nie! Stačí otvoriť formulár a začať vytvárať. Žiadne prihlásenie, žiadna registrácia, žiadne osobné údaje."
+          },
+          {
+            "question": "Ako rýchlo môžem vytvoriť faktúru?",
+            "answer": "2-3 minúty. Vyplňte polia, kliknite na stiahnutie — hotovo."
+          },
+          {
+            "question": "Je tento nástroj úplne zadarmo?",
+            "answer": "Áno, Invoice.wiki je bezplatný nástroj na tvorbu faktúr pre osobné aj komerčné použitie bez skrytých poplatkov alebo nákladov na predplatné."
+          },
+          {
+            "question": "Čím sa váš generátor faktúr líši?",
+            "answer": "Všetko beží vo vašom prehliadači — vaše údaje nikdy neopustia vaše zariadenie. Bez registrácie, 40+ mien, 6 jazykov, flexibilná podpora daní a prispôsobiteľné farby."
+          }
+        ]
+      },
+      {
+        "category": "Súkromie a bezpečnosť",
+        "icon": "🔒",
+        "questions": [
+          {
+            "question": "Sú moje údaje v bezpečí?",
+            "answer": "Áno! Všetko beží vo vašom prehliadači. Nič sa neodosiela na servery."
+          },
+          {
+            "question": "Ukladáte údaje mojej faktúry?",
+            "answer": "Nie. Všetko spracovanie je lokálne. Zatvorte kartu — údaje sú preč."
+          },
+          {
+            "question": "Môžem to použiť pre citlivé informácie?",
+            "answer": "Áno. Žiadne údaje neopustia vaše zariadenie — bezpečné pre dôverné údaje."
+          },
+          {
+            "question": "Čo sa stane, keď stiahnem PDF?",
+            "answer": "PDF sa vygeneruje vo vašom prehliadači a uloží sa na vaše zariadenie. Nič sa neukladá na strane servera."
+          }
+        ]
+      },
+      {
+        "category": "Funkcie a možnosti",
+        "icon": "⚡",
+        "questions": [
+          {
+            "question": "Môžem stiahnuť faktúru ako PDF?",
+            "answer": "Áno! Kliknite na 'Generovať faktúru' a vaše PDF sa okamžite stiahne. Pripravené na odoslanie alebo tlač."
+          },
+          {
+            "question": "Ako funguje výpočet dane?",
+            "answer": "Daň sa počíta za položku metódou bez dane: Čistá cena × Sadzba dane%. Suma dane sa pripočíta k čistej cene. Toto je štandard pre B2B fakturáciu celosvetovo. Môžete si vybrať medzi DPH, GST, daňou z predaja alebo dane úplne vypnúť. Každá položka môže mať vlastnú sadzbu dane."
+          },
+          {
+            "question": "Aké meny sú podporované?",
+            "answer": "40+ mien: USD, EUR, GBP, PLN, CZK, UAH, JPY a mnoho ďalších. Sumy sa automaticky formátujú podľa vybranej meny."
+          },
+          {
+            "question": "Môžem prispôsobiť farby a jazyky faktúry?",
+            "answer": "Áno! 10 farebných akcentov na zladenie s vašou značkou + 6 jazykov (EN, DE, CS, PL, SK, UK) pre medzinárodných klientov."
+          },
+          {
+            "question": "Môžem pridať logo svojej firmy?",
+            "answer": "Zatiaľ nie — zameriavame sa na čisté textové faktúry kvôli súkromiu (žiadne nahrávanie na servery). Vaše firemné údaje v textových poliach vyzerajú profesionálne."
+          }
+        ]
+      },
+      {
+        "category": "Obchod a právo",
+        "icon": "📋",
+        "questions": [
+          {
+            "question": "Sú faktúry právne platné?",
+            "answer": "Áno — obsahujú všetky povinné prvky: číslo faktúry, dátumy, strany, položky, dane, súčty. Skontrolujte si miestne predpisy pre podrobnosti."
+          },
+          {
+            "question": "Môžem to použiť pre medzinárodné podnikanie?",
+            "answer": "Áno! 40+ mien, 6 jazykov, flexibilné dane. Funguje celosvetovo."
+          },
+          {
+            "question": "Aké informácie sú povinné?",
+            "answer": "Vaše firemné údaje, informácie o klientovi, číslo faktúry, dátum, položky s cenami. Daň je voliteľná."
+          },
+          {
+            "question": "Ako by som mal číslovať faktúry?",
+            "answer": "Postupne (INV-001, INV-002) alebo s dátumom (2024-001). Buďte konzistentní kvôli účtovníctvu."
+          }
+        ]
+      },
+      {
+        "category": "Technické otázky",
+        "icon": "🛠️",
+        "questions": [
+          {
+            "question": "Aké prehliadače sú podporované?",
+            "answer": "Všetky moderné prehliadače: Chrome, Firefox, Safari, Edge. Počítač aj mobil."
+          },
+          {
+            "question": "Môžem to použiť na mobile?",
+            "answer": "Áno! Plne responzívne — funguje na telefónoch a tabletoch."
+          },
+          {
+            "question": "Technické problémy?",
+            "answer": "Skúste obnoviť stránku, vymazať vyrovnávaciu pamäť alebo režim inkognito. To vyrieši väčšinu problémov."
+          },
+          {
+            "question": "Môžem uložiť a pokračovať neskôr?",
+            "answer": "Žiadne trvalé ukladanie (kvôli súkromiu). Dokončite v jednej relácii alebo si skopírujte údaje do poznámok."
+          }
+        ]
+      },
+      {
+        "category": "Firemné využitie",
+        "icon": "💼",
+        "questions": [
+          {
+            "question": "Vhodné pre freelancerov?",
+            "answer": "Ideálne. Profesionálne faktúry, žiadne náklady, daň v cene."
+          },
+          { "question": "Malé firmy?", "answer": "Áno! Profesionálny výstup bez zložitosti podnikových riešení." },
+          {
+            "question": "Opakujúce sa faktúry?",
+            "answer": "Žiadna automatizácia, ale jednoduché na duplikovanie — stačí aktualizovať dátum a číslo."
+          },
+          {
+            "question": "Sledovanie platieb?",
+            "answer": "Vytvárame faktúry; na sledovanie platieb použite tabuľku alebo účtovnú aplikáciu."
+          }
+        ]
+      }
+    ],
+    "stillHaveQuestions": {
+      "title": "Stále máte otázky?",
+      "content": "Nemôžete nájsť odpoveď? Začnite vytvárať svoju profesionálnu faktúru hneď alebo sa dozviete viac o našej službe.",
+      "createInvoice": "Vytvoriť faktúru teraz",
+      "aboutSite": "O Invoice.wiki"
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Ochrana súkromia - Invoice.wiki",
+      "description": "Zásady ochrany súkromia Invoice.wiki. Nezbierame osobné údaje - všetko spracovanie prebieha vo vašom prehliadači. Žiadne sledovanie, žiadne ukladanie údajov, úplná ochrana súkromia.",
+      "ogTitle": "Ochrana súkromia - Invoice.wiki",
+      "ogDescription": "Úplná ochrana súkromia s Invoice.wiki. Žiadne zbieranie údajov, spracovanie v prehliadači a bezpečné generovanie faktúr."
+    },
+    "title": "Ochrana súkromia - Invoice Wiki generátor",
+    "noCollection": {
+      "title": "Ochrana súkromia generátora faktúr - Žiadne zbieranie údajov",
+      "content": [
+        "bezplatný generátor faktúr nezbiera osobné údaje. Všetka tvorba faktúr a generovanie PDF prebieha vo vašom webovom prehliadači. Profesionálne faktúry sa vytvárajú na vašom zariadení a všetky fakturačné údaje sa vymažú po zatvorení prehliadača.",
+        "Nepoužívame cookies na sledovanie ani reklamu. Jediné údaje, ktoré ukladáme vo vašom prehliadači, sú preferencie témy (svetlá/tmavá) v localStorage pre konzistentný používateľský zážitok.",
+        "Používame Vercel Analytics na zber anonymných štatistík používania, ktoré nám pomáhajú zlepšovať službu. Tieto údaje neobsahujú žiadne osobné informácie."
+      ]
+    },
+    "howWeProtect": {
+      "title": "Ako Invoice Wiki chráni vaše súkromie pri vytváraní faktúr",
+      "intro": "V Invoice Wiki veríme, že vaše obchodné informácie by mali zostať úplne súkromné. Náš bezplatný generátor faktúr je navrhnutý s princípmi súkromia na prvom mieste pri generovaní faktúr:",
+      "items": [
+        {
+          "title": "Lokálne spracovanie",
+          "content": "Všetky údaje generátora faktúr sa spracúvajú lokálne vo vašom prehliadači pomocou JavaScript. Pri vytváraní faktúry sa na naše servery neodosielajú žiadne informácie."
+        },
+        {
+          "title": "Bez nutnosti registrácie",
+          "content": "Môžete začať vytvárať faktúry okamžite bez poskytnutia akýchkoľvek osobných údajov na používanie nášho nástroja na tvorbu faktúr."
+        },
+        {
+          "title": "Žiadne ukladanie údajov",
+          "content": "Neukladáme vaše fakturačné údaje, informácie o klientoch ani firemné údaje na našich serveroch pri generovaní faktúr."
+        },
+        {
+          "title": "Bezpečné generovanie PDF",
+          "content": "PDF súbory faktúr sa vytvárajú lokálne vo vašom prehliadači a sťahujú sa priamo na vaše zariadenie."
+        },
+        {
+          "title": "Bez nutnosti e-mailu",
+          "content": "Na rozdiel od iných generátorov faktúr nikdy nepýtame vašu e-mailovú adresu ani kontaktné údaje na vytvorenie faktúry."
+        }
+      ]
+    },
+    "whatWeDoNotCollect": {
+      "title": "Aké informácie nezbierame",
+      "intro": "Aby sme boli úplne transparentní, tu je čo konkrétne NEzbierame:",
+      "items": [
+        "Vaše meno, e-mailovú adresu alebo kontaktné informácie",
+        "Mená klientov, adresy alebo firemné údaje",
+        "Sumy faktúr, položky alebo platobné informácie",
+        "Údaje o bankovom účte alebo platobné metódy",
+        "IP adresy na účely sledovania",
+        "Odtlačky prehliadača alebo identifikátory zariadení"
+      ]
+    },
+    "analytics": {
+      "title": "Anonymná analytika",
+      "intro": "Používame Vercel Analytics na pochopenie toho, ako sa náš bezplatný generátor faktúr používa. To nám pomáha zlepšovať službu a identifikovať technické problémy. Analytické údaje sú úplne anonymné a zahŕňajú iba:",
+      "items": [
+        "Zobrazenia stránok a populárne funkcie",
+        "Typy prehliadačov a kategórie zariadení (mobil/počítač)",
+        "Všeobecné geografické regióny (na úrovni krajiny)",
+        "Metriky technického výkonu"
+      ],
+      "note": "Tieto údaje nemožno použiť na identifikáciu jednotlivých používateľov a sú agregované naprieč všetkými návštevníkmi."
+    },
+    "thirdParty": {
+      "title": "Služby tretích strán",
+      "content": "Invoice.wiki je hostované na bezpečnej infraštruktúre Vercel. Hoci neposielame vaše fakturačné údaje žiadnym tretím stranám, štandardné logy webového hostingu môžu obsahovať základné technické informácie ako časy požiadaviek a všeobecné chybové údaje. Zistite viac",
+      "link": "o našej platforme"
+    },
+    "rights": {
+      "title": "Vaše práva a kontrola",
+      "intro": "Keďže nezbierame vaše osobné údaje, nie je nič, čo by sme mohli vymazať, zmeniť alebo preniesť. Nad svojimi informáciami máte úplnú kontrolu. Ak máte obavy o súkromie, môžete:",
+      "items": [
+        "Používať Invoice.wiki v režime inkognito/súkromného prehliadania",
+        "Vymazať localStorage prehliadača na odstránenie preferencií témy",
+        "Vypnúť JavaScript (hoci to zabráni fungovaniu generátora faktúr)"
+      ]
+    },
+    "readyCta": {
+      "title": "Pripravení vytvárať bezpečné faktúry?",
+      "content": "Zažite najsúkromnejší spôsob generovania profesionálnych faktúr online. Bez registrácie, bez zbierania údajov, len rýchla a bezpečná fakturácia.",
+      "button": "Začať vytvárať súkromné faktúry →"
+    },
+    "contactTitle": "Kontaktné informácie",
+    "contactContent": "Ak máte akékoľvek otázky o našich zásadách ochrany súkromia alebo bezpečnostných opatreniach, prosím"
+  },
+  "createInvoice": {
+    "meta": {
+      "title": "Vytvoriť faktúru - Bezplatný online generátor faktúr",
+      "description": "Vytvárajte profesionálne faktúry online zadarmo. Pridajte položky, vypočítajte dane, nastavte dátumy splatnosti a stiahnite ako PDF. Bez nutnosti registrácie.",
+      "ogTitle": "Vytvoriť faktúru - Bezplatný online generátor faktúr",
+      "ogDescription": "Vytvárajte faktúry s podporou daní a exportom do PDF. Bez nutnosti prihlásenia."
+    },
+    "title": "Vytvoriť faktúru",
+    "subtitle": "Generujte profesionálne faktúry s exportom do PDF. Použite náš bezplatný nástroj na tvorbu faktúr na vytvorenie profesionálnych firemných faktúr so stiahnutím PDF. Bez nutnosti registrácie. Vaše údaje zostávajú súkromné - pozrite si naše",
+    "privacyLink": "zásady ochrany súkromia",
+    "faqLink": "sekciu FAQ",
+    "needHelp": "Potrebujete pomoc? Pozrite si našu",
+    "faqTitle": "Často kladené otázky",
+    "faqItems": [
+      {
+        "question": "Je to naozaj zadarmo?",
+        "answer": "Áno! Žiadne skryté poplatky, bez nutnosti registrácie, žiadne náklady na predplatné. Vytvárajte neobmedzené profesionálne faktúry úplne zadarmo."
+      },
+      {
+        "question": "Sú moje údaje v bezpečí?",
+        "answer": "Absolútne. Všetko spracovanie prebieha lokálne vo vašom prehliadači. Vaše citlivé firemné údaje nikdy neopustia vaše zariadenie a neukladajú sa na našich serveroch."
+      },
+      {
+        "question": "Aké jazyky sú podporované?",
+        "answer": "Podporujeme 6 jazykov: angličtinu, nemčinu, češtinu, poľštinu, slovenčinu a ukrajinčinu. Ideálne pre medzinárodné podnikanie."
+      },
+      {
+        "question": "Môžem prispôsobiť farby?",
+        "answer": "Áno! Vyberte si z 10 profesionálnych farebných akcentov na zladenie s vašou firemnou identitou a vytvárajte konzistentné faktúry."
+      },
+      {
+        "question": "Počíta dane automaticky?",
+        "answer": "Áno! Zadajte akúkoľvek sadzbu dane. Súčty sa vypočítajú automaticky."
+      },
+      {
+        "question": "Ako rýchlo môžem vytvoriť faktúru?",
+        "answer": "Vytvárajte profesionálne faktúry rýchlo. Vyplňte údaje, prezrite si náhľad a okamžite si stiahnite PDF."
+      }
+    ],
+    "viewAllFaqs": "Zobraziť všetky FAQ →",
+    "form": {
+      "agreePrefix": "Súhlasím s",
+      "termsLink": "obchodnými podmienkami",
+      "agreeSuffix": "invoice.wiki",
+      "termsRequired": "Musíte prijať obchodné podmienky",
+      "generateInvoice": "Vygenerovať faktúru",
+      "generatingInvoice": "Generovanie faktúry..."
+    }
+  },
+  "terms": {
+    "title": "Obchodné podmienky",
+    "version": "Verzia 1.0 – Počiatočné vydanie",
+    "lastUpdated": "Posledná aktualizácia: 25. februára 2025",
+    "acceptanceOfTerms": {
+      "title": "1. Prijatie podmienok",
+      "content": "Prístupom k Invoice.wiki (ďalej \u201eSlužba\u201c) alebo jej použitím potvrdzujete, že ste si prečítali, porozumeli a súhlasíte s týmito Obchodnými podmienkami (ďalej \u201ePodmienky\u201c). Ak nesúhlasíte s akoukoľvek časťou týchto Podmienok, musíte okamžite prestať Službu používať."
+    },
+    "descriptionOfService": {
+      "title": "2. Popis služby",
+      "content": "Invoice.wiki poskytuje bezplatný webový nástroj na generovanie faktúr. Celé generovanie faktúr prebieha výhradne vo vašom prehliadači; žiadne údaje nie sú prenášané na naše servery ani na nich ukladané. Neposkytujeme služby ukladania, vyhľadávania ani obnovovania údajov."
+    },
+    "noWarranties": {
+      "title": "3. Žiadne záruky",
+      "content": "Služba je poskytovaná \u201etak, ako je\u201c a \u201eako je dostupná\u201c, bez akýchkoľvek záruk akéhokoľvek druhu, či už výslovných alebo predpokladaných. Negarantujeme, že Služba bude bezchybná, neprerušovaná alebo bez vád. V plnom rozsahu povolenom zákonom sa zriekame všetkých záruk, vrátane záruk predajnosti, vhodnosti pre konkrétny účel a neporušovania práv."
+    },
+    "limitationOfLiability": {
+      "title": "4. Obmedzenie zodpovednosti",
+      "content": "V rozsahu povolenom platným právom Invoice.wiki, jej vlastníci, zamestnanci, konatelia, zástupcovia, pridružené spoločnosti a partneri nenesú zodpovednosť za žiadne nepriame, náhodné, zvláštne, následné alebo exemplárne škody vyplývajúce z vášho používania Služby. To zahŕňa okrem iného škody za stratu zisku, goodwillu, údajov alebo iné nehmotné straty, a to aj v prípade, že sme boli upozornení na možnosť takýchto škôd."
+    },
+    "indemnification": {
+      "title": "5. Odškodnenie",
+      "content": "Súhlasíte s tým, že odškodníte a ochránite Invoice.wiki, jej vlastníkov, zamestnancov, konateľov, zástupcov, pridružené spoločnosti a partnerov pred akýmikoľvek nárokmi, škodami, záväzkami, nákladmi a výdavkami (vrátane primeraných právnych poplatkov) vyplývajúcimi z:",
+      "items": [
+        "Vášho používania alebo zneužitia Služby.",
+        "Vášho porušenia týchto Podmienok.",
+        "Akýchkoľvek nárokov tretích strán súvisiacich s faktúrami vytvorenými pomocou Služby."
+      ]
+    },
+    "governingLaw": {
+      "title": "6. Rozhodné právo a jurisdikcia",
+      "content": "Tieto Podmienky sa riadia a vykladajú v súlade so zákonmi Českej republiky. Všetky spory vyplývajúce z týchto Podmienok alebo v súvislosti s nimi podliehajú výlučnej jurisdikcii súdov Českej republiky."
+    },
+    "changesToTerms": {
+      "title": "7. Zmeny podmienok",
+      "content": "Vyhradzujeme si právo kedykoľvek upraviť tieto Podmienky. Všetky zmeny nadobúdajú účinnosť okamžite po zverejnení na našich webových stránkach. Vaše ďalšie používanie Služby po takýchto zmenách predstavuje váš súhlas s novými Podmienkami."
+    },
+    "versionHistory": {
+      "title": "8. História verzií",
+      "content": "Táto sekcia obsahuje historický záznam zmien týchto Obchodných podmienok.",
+      "v1": "Verzia 1.0 (Publikované: 25. februára 2025) – Počiatočné vydanie Obchodných podmienok."
+    },
+    "contactInfo": {
+      "title": "9. Kontaktné informácie",
+      "content": "Ak máte akékoľvek otázky ohľadom týchto Podmienok, kontaktujte nás:",
+      "link": "Kontaktovať podporu"
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Stránka nenájdená - Invoice.wiki",
+      "description": "Stránka, ktorú hľadáte, neexistuje. Vráťte sa do bezplatného generátora faktúr Invoice.wiki."
+    },
+    "code": "404",
+    "title": "Faktúra nenájdená!",
+    "subtitle": "Vyzerá to, že táto faktúra unikla z nášho archívu.",
+    "encouragement": "Nebojte sa! Vrátime vás k vytváraniu profesionálnych faktúr",
+    "returnHome": "Vrátiť sa do generátora faktúr",
+    "createInvoice": "Alebo začnite vytvárať faktúru hneď →"
+  },
+  "skipToContent": "Preskočiť na hlavný obsah"
+}

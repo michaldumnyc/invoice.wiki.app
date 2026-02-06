@@ -8,18 +8,23 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { sanitizeInput } from "@/lib/security"
 import { currencies } from "@/app/utils/currencies"
 import { InvoiceFormValues } from "./types"
+import type { FormLanguage } from "@/app/utils/form-languages"
 
 interface InvoiceDetailsProps {
   control: Control<InvoiceFormValues>
   highlightedField: string | null
   isMobile: boolean
+  translations?: Pick<
+    FormLanguage["form"],
+    "invoiceDetails" | "invoiceNumber" | "issueDate" | "dueDate" | "currency" | "selectCurrency" | "placeholders"
+  >
 }
 
-export function InvoiceDetails({ control, highlightedField, isMobile }: InvoiceDetailsProps) {
+export function InvoiceDetails({ control, highlightedField, isMobile, translations: t }: InvoiceDetailsProps) {
   return (
     <Card className="card-content">
       <CardHeader>
-        <CardTitle>Invoice Details</CardTitle>
+        <CardTitle>{t?.invoiceDetails ?? "Invoice Details"}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"} gap-4`}>
@@ -29,12 +34,12 @@ export function InvoiceDetails({ control, highlightedField, isMobile }: InvoiceD
             name="invoiceNumber"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Invoice Number *</FormLabel>
+                <FormLabel>{t?.invoiceNumber ?? "Invoice Number"} *</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     maxLength={30}
-                    placeholder="INV-2024-001"
+                    placeholder={t?.placeholders?.invoiceNumber ?? "INV-2024-001"}
                     autoComplete="off"
                     data-lpignore="true"
                     data-form-type="other"
@@ -53,7 +58,7 @@ export function InvoiceDetails({ control, highlightedField, isMobile }: InvoiceD
             name="issueDate"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Issue Date *</FormLabel>
+                <FormLabel>{t?.issueDate ?? "Issue Date"} *</FormLabel>
                 <FormControl>
                   <Input
                     type="date"
@@ -78,7 +83,7 @@ export function InvoiceDetails({ control, highlightedField, isMobile }: InvoiceD
             name="dueDate"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Due Date *</FormLabel>
+                <FormLabel>{t?.dueDate ?? "Due Date"} *</FormLabel>
                 <FormControl>
                   <Input
                     type="date"
@@ -103,11 +108,11 @@ export function InvoiceDetails({ control, highlightedField, isMobile }: InvoiceD
             name="currency"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Currency</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormLabel>{t?.currency ?? "Currency"}</FormLabel>
+                <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select currency" />
+                      <SelectValue placeholder={t?.selectCurrency ?? "Select currency"} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="max-h-[200px] overflow-y-auto">

@@ -132,45 +132,18 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Company Information
     const startY = detailsStartY + invoiceDetails.length * 6 + 5
 
-    // Helper function to wrap and print text with proper word boundaries
-    function printWrappedText(
-      doc: JsPDFInstance,
-      text: string,
-      x: number,
-      y: number,
-      maxWidth: number,
-      options: { align?: string } = {}
-    ) {
+    // Helper function to wrap text using actual font metrics (splitTextToSize)
+    function printWrappedText(doc: JsPDFInstance, text: string, x: number, y: number, maxWidth: number) {
       try {
-        const words = text.split(/\s+/)
-        const lines = []
-        let currentLine = ""
+        const lines: string[] = doc.splitTextToSize(text, maxWidth)
 
-        for (const word of words) {
-          if (currentLine.length + word.length + 1 > 33) {
-            lines.push(currentLine.trim())
-            currentLine = word
-          } else {
-            currentLine += (currentLine ? " " : "") + word
-          }
-        }
-        if (currentLine) {
-          lines.push(currentLine.trim())
-        }
-
-        lines.forEach((line, index) => {
-          try {
-            const xPos = options.align === "right" ? x - doc.getStringUnitWidth(line) * doc.getFontSize() : x
-            doc.text(line, xPos, y + index * 5)
-          } catch {
-            // Fallback to a simple text rendering without alignment
-            doc.text(line, x, y + index * 5)
-          }
+        lines.forEach((line: string, index: number) => {
+          doc.text(line, x, y + index * 5)
         })
 
         return lines.length
       } catch {
-        return 1 // Return 1 line as fallback to prevent layout overflow
+        return 1
       }
     }
 
@@ -369,17 +342,6 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
         },
         margin: { left: 15, right: 15, top: 15, bottom: 15 }, // Adjusted right margin
         tableWidth: tableWidth - 1, // Slightly reduced table width to align with header
-        didDrawPage: (data) => {
-          // Add page number on each page
-          doc.setFontSize(8)
-          doc.setTextColor(...mutedColor)
-          doc.text(
-            `${data.pageNumber}/${doc.getNumberOfPages()}`,
-            doc.internal.pageSize.width / 2,
-            doc.internal.pageSize.height - 5,
-            { align: "center" }
-          )
-        },
       })
     } catch {
       // Table creation failed, continue without table
@@ -401,27 +363,43 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
 
     // Get the right edge of the table for alignment
     const rightEdge = pageWidth - 16 // Adjusted to match the table right margin
+    const pageHeight = doc.internal.pageSize.height
+    const pageBottom = pageHeight - 20 // Reserve space for footer
 
-    // Notes (if provided)
+    // Helper: add new page if content would overflow
+    const ensureSpace = (currentY: number, needed: number): number => {
+      if (currentY + needed > pageBottom) {
+        doc.addPage()
+        return margin + 10
+      }
+      return currentY
+    }
+
+    let contentY = finalY
+
+    // Notes (if provided) — left side, above totals
     if (data.notes) {
+      contentY = ensureSpace(contentY, 20)
       doc.setFontSize(12)
       doc.setTextColor(...primaryColor)
       doc.setFont("NotoSans", "bold")
-      doc.text(t.notes, 15, finalY)
+      doc.text(t.notes, 15, contentY)
       doc.setTextColor(...textColor)
       doc.setFont("NotoSans", "normal")
       doc.setFontSize(10)
 
-      const notesWidth = 100 // Adjust as needed
-      const notesLines = doc.splitTextToSize(data.notes, notesWidth)
-      doc.text(notesLines, 15, finalY + 7)
+      const notesWidth = 90
+      const notesLines: string[] = doc.splitTextToSize(data.notes, notesWidth)
+      doc.text(notesLines, 15, contentY + 7)
+      contentY += 7 + notesLines.length * 5 + 5
     }
 
     // Summary aligned with right edge
+    contentY = ensureSpace(contentY, showTax ? 25 : 15)
     doc.setFontSize(10)
     doc.setTextColor(...mutedColor)
 
-    let summaryY = finalY
+    let summaryY = contentY
 
     if (showTax) {
       doc.text(t.netTotal, rightEdge - 70, summaryY)
@@ -454,24 +432,31 @@ export async function generateInvoicePDF(data: InvoiceFormData): Promise<jsPDF |
     // Reverse Charge text (only for VAT and if enabled)
     if (reverseCharge && taxType === "vat") {
       summaryY += 12
+      summaryY = ensureSpace(summaryY, 15)
       doc.setFontSize(8)
       doc.setTextColor(...mutedColor)
       doc.setFont("NotoSans", "normal")
-      const reverseChargeLines = doc.splitTextToSize(t.reverseChargeText, 100)
+      const reverseChargeLines: string[] = doc.splitTextToSize(t.reverseChargeText, 100)
       doc.text(reverseChargeLines, rightEdge - 100, summaryY)
     }
 
     // Footer
-    const pageHeight = doc.internal.pageSize.height
     doc.setFontSize(8)
     doc.setTextColor(...mutedColor)
     doc.setFont("NotoSans", "normal")
     doc.text(t.generatedBy, doc.internal.pageSize.width / 2, pageHeight - 10, { align: "center" })
 
-    // Page number
-    doc.text(`${doc.getNumberOfPages()}/${doc.getNumberOfPages()}`, doc.internal.pageSize.width / 2, pageHeight - 5, {
-      align: "center",
-    })
+    // Page numbers on all pages
+    const totalPages = doc.getNumberOfPages()
+    for (let i = 1; i <= totalPages; i++) {
+      doc.setPage(i)
+      doc.setFontSize(8)
+      doc.setTextColor(...mutedColor)
+      doc.setFont("NotoSans", "normal")
+      doc.text(`${i}/${totalPages}`, doc.internal.pageSize.width / 2, pageHeight - 5, {
+        align: "center",
+      })
+    }
 
     return doc
   } catch {

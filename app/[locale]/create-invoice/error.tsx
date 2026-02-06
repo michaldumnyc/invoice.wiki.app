@@ -10,10 +10,8 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
     console.error(error)
   }, [error])
 
-  // Next.js exposes only NEXT_PUBLIC_* env vars to client components
-  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL
+  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "E-mail"
 
-  // Determine error type and customize instructions
   const isPdfError = error.message.includes("PDF Generation Failed")
   const isValidationError = error.message.includes("validation") || error.message.includes("required")
 
@@ -66,7 +64,6 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
     return null
   }
 
-  // Safe error info for email (no sensitive data)
   const handleEmailSupport = () => {
     const errorType = isPdfError ? "PDF Generation" : isValidationError ? "Form Validation" : "General"
     const timestamp = new Date().toISOString()
@@ -108,7 +105,6 @@ Thank you for your help!
         </CardHeader>
 
         <CardContent className="space-y-6">
-          {/* Specific Instructions */}
           {getSpecificInstructions() && (
             <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 border border-yellow-200 dark:border-yellow-800">
               <h3 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-3">Quick Fix Suggestions</h3>
@@ -116,7 +112,6 @@ Thank you for your help!
             </div>
           )}
 
-          {/* Quick Actions */}
           <div className="flex gap-3 justify-center">
             <Button onClick={reset} className="flex items-center gap-2">
               <RefreshCw className="w-4 h-4" />
@@ -127,14 +122,13 @@ Thank you for your help!
             </Button>
           </div>
 
-          {/* Help Us Fix This */}
           <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
             <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-3 flex items-center gap-2">
               <Mail className="w-4 h-4" />
               Still having problems?
             </h3>
             <p className="text-blue-700 dark:text-blue-300 text-sm mb-4">
-              If the issue persists, please let us know and we'll help you resolve it quickly.
+              If the issue persists, please let us know and we&apos;ll help you resolve it quickly.
             </p>
 
             {supportEmail && (
@@ -145,7 +139,6 @@ Thank you for your help!
             )}
           </div>
 
-          {/* Alternative Solution */}
           <div className="text-center text-sm text-muted-foreground">
             <p>If the problem persists, try using a different browser or device.</p>
             {supportEmail && (

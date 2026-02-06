@@ -1,18 +1,41 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { useLocale } from "@/app/[locale]/providers"
+import { LOCALES, LOCALE_NAMES } from "@/lib/constants"
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const { locale, dict } = useLocale()
 
-  const closeMenu = () => setIsOpen(false)
+  const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/"
+  const href = (path: string) => `/${locale}${path === "/" ? "" : path}`
+  const switchLocale = (newLocale: string) => `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`
+
+  const closeMenu = useCallback(() => setIsOpen(false), [])
+
+  // Lock body scroll + Escape key handler
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === "Escape") closeMenu()
+      }
+      document.addEventListener("keydown", handleEscape)
+
+      return () => {
+        document.body.style.overflow = ""
+        document.removeEventListener("keydown", handleEscape)
+      }
+    }
+  }, [isOpen, closeMenu])
 
   return (
     <div className="lg:hidden">
@@ -21,7 +44,8 @@ export function MobileMenu() {
         size="icon"
         className="relative z-50"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-label={isOpen ? dict.closeMenu : dict.openMenu}
+        aria-expanded={isOpen}
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
@@ -32,43 +56,60 @@ export function MobileMenu() {
             className="fixed top-[64px] left-0 right-0 p-4 bg-background border-b"
             onClick={(e) => e.stopPropagation()}
           >
-            <nav className="flex flex-col space-y-4">
-              <div className="flex items-center gap-2 px-4 py-2">
-                <span className="text-sm text-muted-foreground">Theme</span>
-                <ThemeToggle />
-              </div>
+            <nav aria-label="Mobile navigation" className="flex flex-col space-y-4">
               <Link
-                href="/"
-                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/" && "bg-accent")}
+                href={href("/")}
+                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathWithoutLocale === "/" && "bg-accent")}
                 onClick={closeMenu}
               >
-                Home
+                {dict.home}
               </Link>
               <Link
-                href="/create-invoice"
+                href={href("/create-invoice")}
                 className={cn(
                   "px-4 py-2 text-sm rounded-md hover:bg-accent",
-                  pathname === "/create-invoice" && "bg-accent"
+                  pathWithoutLocale === "/create-invoice" && "bg-accent"
                 )}
                 onClick={closeMenu}
               >
-                Create Invoice
+                {dict.createInvoice}
+              </Link>
+              <Link
+                href={href("/faq")}
+                className={cn(
+                  "px-4 py-2 text-sm rounded-md hover:bg-accent",
+                  pathWithoutLocale === "/faq" && "bg-accent"
+                )}
+                onClick={closeMenu}
+              >
+                {dict.faq}
+              </Link>
+              <Link
+                href={href("/about")}
+                className={cn(
+                  "px-4 py-2 text-sm rounded-md hover:bg-accent",
+                  pathWithoutLocale === "/about" && "bg-accent"
+                )}
+                onClick={closeMenu}
+              >
+                {dict.about}
               </Link>
 
-              <Link
-                href="/faq"
-                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/faq" && "bg-accent")}
-                onClick={closeMenu}
+              {/* Locale Switcher */}
+              <select
+                value={locale}
+                onChange={(e) => {
+                  window.location.href = switchLocale(e.target.value)
+                }}
+                className="mx-4 text-sm bg-background border border-input rounded-md px-3 py-2"
+                aria-label="Language"
               >
-                FAQ
-              </Link>
-              <Link
-                href="/about"
-                className={cn("px-4 py-2 text-sm rounded-md hover:bg-accent", pathname === "/about" && "bg-accent")}
-                onClick={closeMenu}
-              >
-                About
-              </Link>
+                {LOCALES.map((loc) => (
+                  <option key={loc} value={loc}>
+                    {LOCALE_NAMES[loc]}
+                  </option>
+                ))}
+              </select>
             </nav>
           </div>
         </div>

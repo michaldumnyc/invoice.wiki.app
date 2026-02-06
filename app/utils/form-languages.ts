@@ -81,6 +81,26 @@ export interface FormLanguage {
     generateInvoice: string
     termsAndConditions: string
 
+    // Extra labels
+    reset: string
+    selectCurrency: string
+    selectPaymentMethod: string
+    maxItemsReached: string
+
+    // Color names
+    colors: {
+      blue: string
+      green: string
+      red: string
+      purple: string
+      orange: string
+      pink: string
+      teal: string
+      yellow: string
+      slate: string
+      black: string
+    }
+
     // Descriptions
     colorDescription: string
     languageDescription: string
@@ -176,9 +196,28 @@ export const formLanguages: FormLanguage[] = [
       generateInvoice: "Generate Invoice",
       termsAndConditions: "Terms and Conditions",
 
+      reset: "Reset",
+      selectCurrency: "Select currency",
+      selectPaymentMethod: "Select payment method",
+      maxItemsReached: "Maximum number of items (10) reached.",
+
+      colors: {
+        blue: "Blue",
+        green: "Green",
+        red: "Red",
+        purple: "Purple",
+        orange: "Orange",
+        pink: "Pink",
+        teal: "Teal",
+        yellow: "Yellow",
+        slate: "Slate",
+        black: "Black",
+      },
+
       colorDescription: "Choose the accent color for your invoice headers and highlights",
       languageDescription: "Choose the language for your invoice content and labels",
-      taxTypeDescription: "Select the tax system used in your region",
+      taxTypeDescription:
+        "Tax is calculated per line item: Net × Rate%. All prices are tax-exclusive — tax is added on top of the net amount.",
       notesDescription: "Add payment terms, thank you notes, or additional information",
 
       paymentMethods: {
@@ -267,9 +306,28 @@ export const formLanguages: FormLanguage[] = [
       generateInvoice: "Rechnung erstellen",
       termsAndConditions: "Geschäftsbedingungen",
 
+      reset: "Zurücksetzen",
+      selectCurrency: "Währung wählen",
+      selectPaymentMethod: "Zahlungsart wählen",
+      maxItemsReached: "Maximale Anzahl an Positionen (10) erreicht.",
+
+      colors: {
+        blue: "Blau",
+        green: "Grün",
+        red: "Rot",
+        purple: "Lila",
+        orange: "Orange",
+        pink: "Rosa",
+        teal: "Türkis",
+        yellow: "Gelb",
+        slate: "Schiefergrau",
+        black: "Schwarz",
+      },
+
       colorDescription: "Wählen Sie die Akzentfarbe für Ihre Rechnungsüberschriften",
       languageDescription: "Wählen Sie die Sprache für Ihre Rechnungsinhalte",
-      taxTypeDescription: "Wählen Sie das Steuersystem Ihrer Region",
+      taxTypeDescription:
+        "Steuer wird pro Position berechnet: Netto × Steuersatz%. Alle Preise verstehen sich ohne Steuer — die Steuer wird auf den Nettobetrag aufgeschlagen.",
       notesDescription: "Zahlungsbedingungen, Dankesnotizen oder zusätzliche Informationen hinzufügen",
 
       paymentMethods: {
@@ -358,9 +416,28 @@ export const formLanguages: FormLanguage[] = [
       generateInvoice: "Vytvořit fakturu",
       termsAndConditions: "Obchodní podmínky",
 
+      reset: "Resetovat",
+      selectCurrency: "Vyberte měnu",
+      selectPaymentMethod: "Vyberte způsob platby",
+      maxItemsReached: "Dosažen maximální počet položek (10).",
+
+      colors: {
+        blue: "Modrá",
+        green: "Zelená",
+        red: "Červená",
+        purple: "Fialová",
+        orange: "Oranžová",
+        pink: "Růžová",
+        teal: "Tyrkysová",
+        yellow: "Žlutá",
+        slate: "Břidlicová",
+        black: "Černá",
+      },
+
       colorDescription: "Vyberte barevný akcent pro záhlaví faktury",
       languageDescription: "Vyberte jazyk pro obsah faktury",
-      taxTypeDescription: "Vyberte daňový systém vaší oblasti",
+      taxTypeDescription:
+        "Daň se počítá za každou položku: Netto × Sazba%. Všechny ceny jsou bez daně — daň se připočítává k čisté částce.",
       notesDescription: "Přidejte platební podmínky, poděkování nebo další informace",
 
       paymentMethods: {
@@ -449,9 +526,28 @@ export const formLanguages: FormLanguage[] = [
       generateInvoice: "Wygeneruj fakturę",
       termsAndConditions: "Regulamin",
 
+      reset: "Resetuj",
+      selectCurrency: "Wybierz walutę",
+      selectPaymentMethod: "Wybierz sposób płatności",
+      maxItemsReached: "Osiągnięto maksymalną liczbę pozycji (10).",
+
+      colors: {
+        blue: "Niebieski",
+        green: "Zielony",
+        red: "Czerwony",
+        purple: "Fioletowy",
+        orange: "Pomarańczowy",
+        pink: "Różowy",
+        teal: "Morski",
+        yellow: "Żółty",
+        slate: "Łupkowy",
+        black: "Czarny",
+      },
+
       colorDescription: "Wybierz kolor akcentu dla nagłówków faktury",
       languageDescription: "Wybierz język zawartości faktury",
-      taxTypeDescription: "Wybierz system podatkowy dla twojego regionu",
+      taxTypeDescription:
+        "Podatek jest naliczany na każdą pozycję: Netto × Stawka%. Wszystkie ceny podane są bez podatku — podatek doliczany jest do kwoty netto.",
       notesDescription: "Dodaj warunki płatności, podziękowania lub dodatkowe informacje",
 
       paymentMethods: {
@@ -540,9 +636,28 @@ export const formLanguages: FormLanguage[] = [
       generateInvoice: "Vytvoriť faktúru",
       termsAndConditions: "Obchodné podmienky",
 
+      reset: "Resetovať",
+      selectCurrency: "Vyberte menu",
+      selectPaymentMethod: "Vyberte spôsob platby",
+      maxItemsReached: "Dosiahnutý maximálny počet položiek (10).",
+
+      colors: {
+        blue: "Modrá",
+        green: "Zelená",
+        red: "Červená",
+        purple: "Fialová",
+        orange: "Oranžová",
+        pink: "Ružová",
+        teal: "Tyrkysová",
+        yellow: "Žltá",
+        slate: "Bridlicová",
+        black: "Čierna",
+      },
+
       colorDescription: "Vyberte farebný akcent pre hlavičky faktúry",
       languageDescription: "Vyberte jazyk pre obsah faktúry",
-      taxTypeDescription: "Vyberte daňový systém vašej oblasti",
+      taxTypeDescription:
+        "Daň sa počíta za každú položku: Netto × Sadzba%. Všetky ceny sú bez dane — daň sa pripočítava k čistej sume.",
       notesDescription: "Pridajte platobné podmienky, poďakovanie alebo ďalšie informácie",
 
       paymentMethods: {
@@ -631,9 +746,28 @@ export const formLanguages: FormLanguage[] = [
       generateInvoice: "Генерувати рахунок",
       termsAndConditions: "Умови та положення",
 
+      reset: "Скинути",
+      selectCurrency: "Виберіть валюту",
+      selectPaymentMethod: "Виберіть спосіб оплати",
+      maxItemsReached: "Досягнуто максимальну кількість позицій (10).",
+
+      colors: {
+        blue: "Синій",
+        green: "Зелений",
+        red: "Червоний",
+        purple: "Фіолетовий",
+        orange: "Помаранчевий",
+        pink: "Рожевий",
+        teal: "Бірюзовий",
+        yellow: "Жовтий",
+        slate: "Сланцевий",
+        black: "Чорний",
+      },
+
       colorDescription: "Виберіть акцентний колір для заголовків рахунку",
       languageDescription: "Виберіть мову для вмісту рахунку",
-      taxTypeDescription: "Виберіть податкову систему вашого регіону",
+      taxTypeDescription:
+        "Податок розраховується по кожній позиції: Нетто × Ставка%. Усі ціни вказані без податку — податок нараховується зверху на чисту суму.",
       notesDescription: "Додайте умови оплати, подяку або додаткову інформацію",
 
       paymentMethods: {

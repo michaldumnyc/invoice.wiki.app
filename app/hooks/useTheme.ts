@@ -5,72 +5,51 @@ import { useState, useEffect, useCallback } from "react"
 type Theme = "light" | "dark" | "system"
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>("light") // Start with light to prevent SSR mismatch
+  const [theme, setTheme] = useState<Theme>("light")
   const [mounted, setMounted] = useState(false)
 
-  // Get system theme preference
   const getSystemTheme = useCallback((): "light" | "dark" => {
     if (typeof window !== "undefined" && window.matchMedia) {
       return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
     }
-    return "light" // fallback for SSR
+    return "light"
   }, [])
 
-  // Apply theme to document and localStorage
   const applyTheme = useCallback(
     (newTheme: Theme) => {
-      const root = window.document.documentElement
-
-      // Determine actual theme to apply
+      const root = document.documentElement
       const actualTheme = newTheme === "system" ? getSystemTheme() : newTheme
 
-      // Remove both themes first
       root.classList.remove("light", "dark")
-      // Add actual theme
       root.classList.add(actualTheme)
-      // Update localStorage immediately
-      window.localStorage.setItem("theme", newTheme)
+      localStorage.setItem("theme", newTheme)
     },
     [getSystemTheme]
   )
 
-  // Initialize theme on load (defer setState to avoid synchronous setState-in-effect)
+  // Initialize — blocking script already applied class, just sync React state
   useEffect(() => {
-    const raw = window.localStorage.getItem("theme")
-    const storedTheme: Theme | null = raw === "light" || raw === "dark" || raw === "system" ? raw : null
+    const raw = localStorage.getItem("theme")
+    const stored: Theme | null = raw === "light" || raw === "dark" || raw === "system" ? raw : null
 
-    const applyInitial = () => {
-      setMounted(true)
-      if (storedTheme) {
-        setTheme(storedTheme)
-        applyTheme(storedTheme)
-      } else {
-        const systemTheme = getSystemTheme()
-        setTheme(systemTheme)
-        applyTheme(systemTheme)
-      }
-    }
+    const initial = stored ?? getSystemTheme()
+    // Reading from localStorage on mount is a valid sync-from-external-store pattern
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setTheme((prev) => (prev !== initial ? initial : prev))
+    setMounted(true)
+  }, [getSystemTheme])
 
-    queueMicrotask(applyInitial)
-  }, [applyTheme, getSystemTheme])
-
-  // Listen for system theme changes ONLY if user chose "system"
+  // Listen for system theme changes when "system" is selected
   useEffect(() => {
-    if (theme === "system" && mounted && typeof window !== "undefined" && window.matchMedia) {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    if (theme !== "system" || !mounted) return
 
-      const handleChange = () => {
-        if (theme === "system") {
-          applyTheme("system")
-        }
-      }
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    const handleChange = () => applyTheme("system")
 
-      mediaQuery.addEventListener("change", handleChange)
-      return () => mediaQuery.removeEventListener("change", handleChange)
-    }
+    mediaQuery.addEventListener("change", handleChange)
+    return () => mediaQuery.removeEventListener("change", handleChange)
   }, [theme, applyTheme, mounted])
 
-  // Custom setTheme function that updates both state and applies theme
   const updateTheme = useCallback(
     (newTheme: Theme) => {
       setTheme(newTheme)
@@ -79,7 +58,6 @@ export function useTheme() {
     [applyTheme]
   )
 
-  // Don't render theme toggle until mounted to prevent hydration mismatch
   if (!mounted) {
     return { theme: "light" as Theme, setTheme: updateTheme }
   }

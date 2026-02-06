@@ -8,14 +8,25 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ToggleableFormField } from "@/components/ui/toggleable-form-field"
 import { sanitizeInput } from "@/lib/security"
 import { FieldVisibility, InvoiceFormValues } from "./types"
+import type { FormLanguage } from "@/app/utils/form-languages"
 
-const paymentMethods = [
-  { value: "bank_transfer", label: "Bank Transfer" },
-  { value: "cash", label: "Cash" },
-  { value: "credit_card", label: "Credit Card" },
-  { value: "paypal", label: "PayPal" },
-  { value: "wise", label: "Wise" },
-]
+type PaymentTranslations = Pick<
+  FormLanguage["form"],
+  | "paymentInformation"
+  | "referenceNumber"
+  | "customerReferenceNumber"
+  | "orderNumber"
+  | "paymentMethod"
+  | "bankAccount"
+  | "iban"
+  | "swiftBic"
+  | "hide"
+  | "show"
+  | "reset"
+  | "selectPaymentMethod"
+  | "paymentMethods"
+  | "placeholders"
+>
 
 interface PaymentInformationProps {
   control: Control<InvoiceFormValues>
@@ -31,6 +42,7 @@ interface PaymentInformationProps {
   manuallyEditedReference: boolean
   setManuallyEditedReference: (value: boolean) => void
   setValue: UseFormSetValue<InvoiceFormValues>
+  translations?: PaymentTranslations
 }
 
 export function PaymentInformation({
@@ -44,11 +56,20 @@ export function PaymentInformation({
   manuallyEditedReference,
   setManuallyEditedReference,
   setValue,
+  translations: t,
 }: PaymentInformationProps) {
+  const paymentMethods = [
+    { value: "bank_transfer", label: t?.paymentMethods?.bankTransfer ?? "Bank Transfer" },
+    { value: "cash", label: t?.paymentMethods?.cash ?? "Cash" },
+    { value: "credit_card", label: t?.paymentMethods?.creditCard ?? "Credit Card" },
+    { value: "paypal", label: t?.paymentMethods?.paypal ?? "PayPal" },
+    { value: "wise", label: t?.paymentMethods?.wise ?? "Wise" },
+  ]
+
   return (
     <Card className="bg-card card-content">
       <CardHeader>
-        <CardTitle>Payment Information</CardTitle>
+        <CardTitle>{t?.paymentInformation ?? "Payment Information"}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"} gap-4`}>
@@ -58,21 +79,23 @@ export function PaymentInformation({
             name="referenceNumber"
             render={({ field }) => (
               <ToggleableFormField
-                label="Reference Number"
+                label={t?.referenceNumber ?? "Reference Number"}
                 fieldName="referenceNumber"
                 field={field}
                 isVisible={fieldVisibility.referenceNumber}
                 onToggle={() => toggleFieldVisibility("referenceNumber")}
                 maxLength={35}
                 highlightedField={highlightedField}
+                hideText={t?.hide}
+                showText={t?.show}
                 customContent={
                   <div>
                     <Input
                       {...field}
                       type="text"
                       maxLength={35}
-                      placeholder="123456789"
-                      aria-label="Reference Number"
+                      placeholder={t?.placeholders?.referenceNumber ?? "123456789"}
+                      aria-label={t?.referenceNumber ?? "Reference Number"}
                       autoComplete="off"
                       data-lpignore="true"
                       data-form-type="other"
@@ -94,7 +117,7 @@ export function PaymentInformation({
                             setManuallyEditedReference(false)
                           }}
                         >
-                          Reset
+                          {t?.reset ?? "Reset"}
                         </Button>
                       )}
                     </div>
@@ -110,7 +133,7 @@ export function PaymentInformation({
             name="customerReferenceNumber"
             render={({ field }) => (
               <ToggleableFormField
-                label="Customer Reference Number"
+                label={t?.customerReferenceNumber ?? "Customer Reference Number"}
                 fieldName="customerReferenceNumber"
                 field={field}
                 isVisible={fieldVisibility.customerReferenceNumber}
@@ -118,7 +141,9 @@ export function PaymentInformation({
                 maxLength={35}
                 sanitizer={sanitizeInput}
                 highlightedField={highlightedField}
-                placeholder="REF-2024-001"
+                placeholder={t?.placeholders?.customerReferenceNumber ?? "REF-2024-001"}
+                hideText={t?.hide}
+                showText={t?.show}
               />
             )}
           />
@@ -129,15 +154,17 @@ export function PaymentInformation({
             name="orderNumber"
             render={({ field }) => (
               <ToggleableFormField
-                label="Order Number"
+                label={t?.orderNumber ?? "Order Number"}
                 fieldName="orderNumber"
                 field={field}
                 isVisible={fieldVisibility.orderNumber}
                 onToggle={() => toggleFieldVisibility("orderNumber")}
                 maxLength={35}
                 sanitizer={sanitizeInput}
-                placeholder="ORD-2024-001"
+                placeholder={t?.placeholders?.orderNumber ?? "ORD-2024-001"}
                 highlightedField={highlightedField}
+                hideText={t?.hide}
+                showText={t?.show}
               />
             )}
           />
@@ -148,11 +175,11 @@ export function PaymentInformation({
             name="paymentMethod"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Payment Method</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormLabel>{t?.paymentMethod ?? "Payment Method"}</FormLabel>
+                <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select payment method" />
+                      <SelectValue placeholder={t?.selectPaymentMethod ?? "Select payment method"} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -176,7 +203,7 @@ export function PaymentInformation({
                 name="bankAccount"
                 render={({ field }) => (
                   <ToggleableFormField
-                    label="Bank Account"
+                    label={t?.bankAccount ?? "Bank Account"}
                     fieldName="bankAccount"
                     field={field}
                     isVisible={fieldVisibility.bankAccount}
@@ -184,7 +211,9 @@ export function PaymentInformation({
                     maxLength={35}
                     sanitizer={sanitizeInput}
                     highlightedField={highlightedField}
-                    placeholder="12345678"
+                    placeholder={t?.placeholders?.bankAccount ?? "12345678"}
+                    hideText={t?.hide}
+                    showText={t?.show}
                   />
                 )}
               />
@@ -195,7 +224,7 @@ export function PaymentInformation({
                 name="iban"
                 render={({ field }) => (
                   <ToggleableFormField
-                    label="IBAN"
+                    label={t?.iban ?? "IBAN"}
                     fieldName="iban"
                     field={field}
                     isVisible={fieldVisibility.iban}
@@ -203,7 +232,9 @@ export function PaymentInformation({
                     maxLength={34}
                     sanitizer={sanitizeInput}
                     highlightedField={highlightedField}
-                    placeholder="GB82 WEST 1234 5698 7654 32"
+                    placeholder={t?.placeholders?.iban ?? "GB82 WEST 1234 5698 7654 32"}
+                    hideText={t?.hide}
+                    showText={t?.show}
                   />
                 )}
               />
@@ -214,7 +245,7 @@ export function PaymentInformation({
                 name="swift"
                 render={({ field }) => (
                   <ToggleableFormField
-                    label="SWIFT/BIC"
+                    label={t?.swiftBic ?? "SWIFT/BIC"}
                     fieldName="swift"
                     field={field}
                     isVisible={fieldVisibility.swift}
@@ -222,7 +253,9 @@ export function PaymentInformation({
                     maxLength={11}
                     sanitizer={sanitizeInput}
                     highlightedField={highlightedField}
-                    placeholder="ABNAFRPP"
+                    placeholder={t?.placeholders?.swiftBic ?? "ABNAFRPP"}
+                    hideText={t?.hide}
+                    showText={t?.show}
                   />
                 )}
               />

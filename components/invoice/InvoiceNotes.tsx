@@ -5,17 +5,19 @@ import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/comp
 import { Textarea } from "@/components/ui/textarea"
 import { sanitizeInput } from "@/lib/security"
 import { InvoiceFormValues } from "./types"
+import type { FormLanguage } from "@/app/utils/form-languages"
 
 interface InvoiceNotesProps {
   control: Control<InvoiceFormValues>
   highlightedField: string | null
+  translations?: Pick<FormLanguage["form"], "notes" | "notesField" | "placeholders">
 }
 
-export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
+export function InvoiceNotes({ control, highlightedField, translations: t }: InvoiceNotesProps) {
   return (
     <Card className="card-content">
       <CardHeader>
-        <CardTitle>Notes</CardTitle>
+        <CardTitle>{t?.notes ?? "Notes"}</CardTitle>
       </CardHeader>
       <CardContent>
         <FormField
@@ -23,12 +25,12 @@ export function InvoiceNotes({ control, highlightedField }: InvoiceNotesProps) {
           name="notes"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Notes (max 210 characters)</FormLabel>
+              <FormLabel>{t?.notesField ?? "Notes (max 210 characters)"}</FormLabel>
               <FormControl>
                 <Textarea
                   {...field}
                   maxLength={210}
-                  placeholder="Payment terms: Net 30 days. Thank you for your business!"
+                  placeholder={t?.placeholders?.notes ?? "Payment terms: Net 30 days. Thank you for your business!"}
                   autoComplete="off"
                   autoCapitalize="off"
                   autoCorrect="off"
