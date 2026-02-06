@@ -21,7 +21,6 @@ export function MobileMenu() {
   const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
   const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
 
-
   const closeMenu = useCallback(() => setIsOpen(false), [])
 
   // Lock body scroll + Escape key handler

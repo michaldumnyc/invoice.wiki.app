@@ -23,7 +23,6 @@ export default function Header() {
   const KNOWN_PAGES = ["/", "/create-invoice", "/about", "/faq", "/privacy-policy"] as const
   const currentPage = KNOWN_PAGES.find((p) => pathWithoutLocale === p) ?? "/"
 
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm border-b">
       <div className="w-full px-3 sm:px-4 py-4">
